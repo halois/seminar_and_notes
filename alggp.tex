@@ -1,0 +1,306 @@
+\newcommand{\Ga}{\mathbf{G}_\mathrm{a}}
+\newcommand{\Gm}{\mathbf{G}_\mathrm{m}}
+
+
+\chapter{代数群}
+主讲：魏达盛
+\paragraph{2015.10.15}
+\section{Affine linear algebraic groups}		
+对于一般的代数群$G$，有以下正合列
+\[0\longrightarrow G^{\mbox{aff}} \longrightarrow G\longrightarrow \mathbb{A} \longrightarrow 0\]
+其中$G^{\mbox{aff}}$仿射代数群，$\mathbb{A}$是abelian variety.
+
+\begin{definition}
+	Affine algebraic groups\index{Affine algebraic groups}
+\end{definition}
+\begin{example}一些基本的例子如下
+	\begin{itemize}
+		\item[1] $\Ga$(additive group of $k$)\index{additive group of $k$,$\Ga$}: as a variety, $\Ga \cong \mathbb{A}^1$
+		\[m \colon \mathbb{A}^1 \times \mathbb{A}^1 \longrightarrow \mathbb{A}^1\]
+		\[(x,y) \mapsto x+y\]
+		\item[2] $\Gm$(multiplicative group of $k$)\index{multiplicative group of $k$,$\Gm$}: as a variety, $\Gm \cong \mathbb{A}^1-\{0\}\cong \{xy-1=0\}\subset \mathbb{A}^2$
+		\[m \colon \mathbb{A}^1-\{0\} \times \mathbb{A}^1-\{0\} \longrightarrow \mathbb{A}^1-\{0\}\]
+		\[(x,y) \mapsto xy\]
+		\[i \colon x \mapsto x^{-1}\]
+		\item[3] The subgroup of $n$-th roots of unity of $\Gm$, denoted by $\bm{\mu}_n$: as a variety, $\bm{\mu}_n \cong \{x^n-1=0\}\subset\Gm$. 注：这里要求$\mbox{char}(k) \nmid n$，否则这个不是reduced variety.
+		\item[4] Some classical group. The group of invertible matrices $\GL_n$ over $k$: as a variety $\GL_n \cong \{A \in M_n(k)=\mathbb{A}^{n^2}| \det (A) \neq 0\} \cong \{(A,y)\in M_n(k)\times \mathbb{A}^1 | \det(A)\cdot y=1\}$
+		\[m\colon \GL_n \times \GL_n \longrightarrow GL_n\]
+		\[(A,B)\mapsto AB\]
+		\[i\colon A\mapsto A^{-1}\]
+		\item[5] $\SL_n$: the group of matrices with determinant $=1$. 注：此群是连通的单群，并且$\SL_N\subset \GL_n$是闭子群
+		\item[6] 其余一些正交群、辛群等“对称群”。不连通的代数群：正交群$\bm{O}_n=\{A\in M_n |AA^t=1\}$，它有两个分支其中之一是$\bm{SO}_n=\{A\in M_n | AA^t=1,\det A=1\}$。 $\bm{O}_n$ is not connected.
+	\end{itemize}
+\end{example}若不连通，那么是什么样子？
+\begin{prop}
+	Let $G$ be an affine algebraic group,\\
+	(1) All connected component of $G$ (in Zariski topology) is irreducible. In particular, $\bigsqcup_{i=1}^n G_i$, i.e. it only has finite many connected components.\\
+	(2) The component $G^0$ containing the identity element is a normal closed subgroup, and $G/G^0$ is a finite group, i.e. $[G:G^0]<\infty$.
+\end{prop}
+连通的有限群只有平凡群$\{1\}$.
+\paragraph{Coordinate ring of an affine algebraic group}\index{Coordinate ring of an affine algebraic group}
+
+In general, if $\phi \colon X \longrightarrow Y$ is a morphism of affine sets, then $\phi$ induced a $k$-algebra morphism
+\[\phi\colon \mathbf{A}_Y \longrightarrow \mathbf{A}_X.\]
+We consider
+\[X\subseteq \mathbb{A}^m \longleftrightarrow I_X \]
+\[Y\subseteq \mathbb{A}^n \longleftrightarrow I_Y \]
+the coordinate rings
+\[\mathbf{A}_Y=k[y_1,\cdots,y_n]/I_Y,\mathbf{A}_X=k[x_1,\cdots,x_m]/I_X  \]
+
+\begin{align*}
+	\mathbf{A}_Y & \longrightarrow \mathbf{A}_X\\
+	y_1 &\mapsto f_1(x_1,\cdots,x_m) \in \mathbf{A}_X\\
+	\vdots & \\
+	y_n&\mapsto f_n(x_1,\cdots,x_m) \in \mathbf{A}_X
+\end{align*}
+
+\begin{prop}
+	(1) Given affine sets $X$ and $Y$, $Mor(X,Y)$ is the set of morphisms $X\longrightarrow Y$. Then the map $\phi \mapsto \phi^*$ induces a bijection between $Mor(X,Y)$ and $\Hom(\mathbf{A}_Y,\mathbf{A}_X)$.\\
+	(2) If $A$ is a finitely generated reduced $k$-algebra, there exists an affine set $X$, such that $A\cong \mathbf{A}_X.$
+\end{prop}
+\begin{corollary}
+	The map $X\longrightarrow \mathbf{A}_X$ induces an anti-equivalence $\phi \mapsto \phi^*$ between the category of affine sets over $k$ and that of finitely generated reduced $k$-algebra.
+	\begin{align*}
+		X &\longrightarrow \mathbf{A}_X \\
+		Mor(X,Y) &\mapsto \Hom(\mathbf{A}_Y,\mathbf{A}_X)
+	\end{align*}
+\end{corollary}
+\begin{definition}
+	$X\cong Y$ is an isomophism $\Longleftrightarrow$ $\exists \phi \in Mor(X,Y)$ and $\psi \in Mor(X,Y)$ such that $\phi \circ \psi = \id_Y, \psi \circ \phi =\id_X$.
+\end{definition}
+\begin{corollary}
+	Let $X,Y$ be affine sets\\
+	(1) $X$ and $Y$ are isomorphic $\Longleftrightarrow$ $\mathbf{A}_Y$ and $\mathbf{A}_X$ are isomorphic as $k$-algebra.\\
+	(2) $X$ is isomorphic to a closed subset of $Y$ if and only if there exists a surjective morphism $\mathbf{A}_Y\twoheadrightarrow\mathbf{A}_X$.
+\end{corollary}
+\begin{proof}
+	We only prove (2): $X\subseteq Y \subseteq \mathbb{A}^n$ $\Rightarrow$ $I_Y\subseteq I_X$ $\Rightarrow$ $k[x_1,\cdots,x_n]/I_Y \longrightarrow k[x_1,\cdots,x_n]/I_X$ is surjective.
+
+	On the other hand, $\phi\colon \mathbf{A}_Y\twoheadrightarrow \mathbf{A}_X$, let $I=\ker(\phi)$, so $X'=V(I)=\{y\in Y | f(y)=0 \mbox{ for any } f\in I \}\subseteq Y $ is a closed subset, and $\mathbf{A}_{X'}\cong \mathbf{A}_{X}$ $\Rightarrow$ $X$ and $X'$ are isomorphic.
+\end{proof}
+\begin{lemma}
+	$X,Y$ are affine sets, there is a connected isomophism $\mathbf{A}_{X\times Y}\cong \mathbf{A}_{X} \otimes_k \mathbf{A}_{Y}$.
+\end{lemma}
+\[X\subseteq \mathbb{A}^m \longleftrightarrow I_X, \]
+\[Y\subseteq \mathbb{A}^n \longleftrightarrow I_Y, \]
+\[X\times Y\subseteq \mathbb{A}^{m+n} \longleftrightarrow (I_X,I_Y)\subseteq k[x_1,\cdots,x_m;y_1,\cdots,y_n],\]
+\[ \mathbf{A}_{X\times Y} = k[x_1,\cdots,x_m;y_1,\cdots,y_n]/(I_X,I_Y)\]
+\begin{proof}
+	Define $\lambda \colon \mathbf{A}_{X} \otimes_k \mathbf{A}_{Y} \longrightarrow \mathbf{A}_{X\times Y}$, $\sum f_i\otimes g_j \mapsto \sum f_ig_j$, $\lambda$ is well-defined and surjective. We only need to show it is injective.\\
+	Assume $\sum f_ig_j=0$, we can assume that $\{f_i\}$ is $k$-linear independent. For any $p\in Y(k)$, $\sum f_ig_j(p)=0$ $\Rightarrow$ $g_j(p)=0$ for all $j$. Hence $g_j=0$ by Hilbert Nullstellensatz and $\sum f_i\otimes g_j =0.$
+\end{proof}
+应用之一是若 $\mathbf{A}_X,\mathbf{A}_Y$是整环，则$\mathbf{A}_X\otimes \mathbf{A}_Y$也是整环，因为$\mathbf{A}_{X\times Y}$是整环。
+\begin{corollary}
+	For an affine algebraic group $G$, the coordinate ring $\mathbf{A}_G$ has the following structure:\\
+	\begin{align*}
+		\mbox{multiplication } m\colon G\times G\longrightarrow G & \longleftrightarrow \mbox{comultiplication } \Delta: \mathbf{A}_G \longrightarrow \mathbf{A}_G \otimes_k \mathbf{A}_G \cong \mathbf{A}_{G\times G}\\
+		\mbox{unit } e\in G & \longleftrightarrow \mbox{counit } e \colon \mathbf{A}_G \longrightarrow k\\
+		\mbox{inverse } i\colon G\longrightarrow G & \longleftrightarrow  \mbox{coinverse } \iota \colon \mathbf{A}_G \longrightarrow \mathbf{A}_G
+	\end{align*}
+	And they satisfy the following commutative diagrams:
+	\[\begin{tikzcd}
+  G\times G\times G \ar[r, "\id\times m"] \ar[d, "m\times \id"] 
+    & G\times G \ar[d, "m"] \\ 
+  G\times G \ar[r, "m"] 
+    & G .
+\end{tikzcd}\]
+	\[\begin{tikzcd}
+  G \ar[r, "\id\times e"] \ar[d, "e\times \id"] \ar[rd, "\id"]
+    & G\times G \ar[d, "m"] \\ 
+  G\times G \ar[r, "m"] 
+    & G .
+\end{tikzcd}\]
+	\[\begin{tikzcd}
+  G \ar[r, "\id \times i"] \ar[d, "i \times \id"] \ar[rd, "e"]
+    & G\times G \ar[d, "m"] \\ 
+  G\times G \ar[r, "m"] 
+    & G .
+\end{tikzcd}\]
+
+
+\[\begin{tikzcd}
+  \mathbf{A}_G \ar[r, "\Delta"] \ar[d, "\Delta"] 
+    & \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[d, "\id\otimes \Delta"] \\
+  \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[r, "\Delta\otimes \id"] 
+    & \mathbf{A}_G\otimes_k \mathbf{A}_G\otimes_k \mathbf{A}_G .
+\end{tikzcd}\]
+
+\[\begin{tikzcd}
+  \mathbf{A}_G \ar[r, "\Delta"] \ar[d, "\Delta"] \ar[rd, "\id"]
+    & \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[d, "e\otimes \id"] \\
+  \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[r, "\id\otimes e"] 
+    & \mathbf{A}_G.
+\end{tikzcd}\]
+\[\begin{tikzcd}
+  \mathbf{A}_G \ar[r, "\Delta"] \ar[d, "\Delta"] \ar[rd, "r"]
+    & \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[d, "\iota \otimes \id"] \\
+  \mathbf{A}_G\otimes_k \mathbf{A}_G \ar[r, "\id\otimes \iota "] 
+    & \mathbf{A}_G.
+\end{tikzcd}\]
+where $r\colon \mathbf{A}_G \overset{e}\longrightarrow k \longrightarrow \mathbf{A}_G$
+\end{corollary}
+\begin{definition}
+	A $k$-algebra equipped with the above structure is called a {\em Hopf algebra}\index{Hopf algebra}.
+\end{definition}
+\begin{corollary}
+	$G\longrightarrow \mathbf{A}_G$, $\phi \longrightarrow \phi^*$ induce an anti-equivalence between the category of affine algebraic groups and the category of finitely generated reduced Hopf algebra.
+\end{corollary}
+注：特征$0$时Hopf algebra 自然是reduced，特征$p$时不一定，考虑$k[x]/(x^p) $.
+\begin{example}
+	\begin{itemize}
+		\item[1] The Hopf algebra structure on $\mathbf{A}_{\Ga}=k[x]$ is given by
+		\begin{align*}
+			\Delta(x)=x\otimes 1 +1\otimes x \\
+			e(x)=0\\
+			\iota(x)=-x.
+		\end{align*}
+		\item[2] The Hopf algebra structure on $\mathbf{A}_{\Gm}=k[x,x^{-1}]\cong k[x,y]/(xy-1)$ is given by
+		\begin{align*}
+			\Delta(x)=x\otimes x \\
+			e(x)=1\\
+			\iota(x)=x^{-1}.
+		\end{align*}
+		\item[3] The Hopf algebra structure on $\mathbf{A}_{\GL_n}=k[x_{11},x_{12},\cdots,x_{nn},\det(x_{ij})^{-1}]$ is given by
+		\begin{align*}
+			\Delta(x_{ij})=\sum_{l=1}^n x_{il}\otimes x_{lj} \\
+			e(x_{ij})=\delta_{ij} \ \mbox{Kronecker symbol}\\
+			\iota(x_{ij})=y_{ij}, \ [y_{ij}]=[x_{ij}]^{-1}.
+		\end{align*}
+	\end{itemize}
+\end{example}
+\paragraph{2015.10.20}
+\begin{theorem}\label{closedsubgp}
+	Each affine algebraic group is isomorphic to a closed subgroup of $\GL_n = \{g\in M_n(k)|\det(g)\neq 0\}$ $(\subset \SL_{n+1})$
+\end{theorem}
+Consider $G$ is a finite group, 
+$$k[G]=\bigoplus_{p\in G(k)}k_p,$$ 
+$k[G]$ is of finite dimension. $G$ acts on $k[G]$, we have a homomorphism $G\longrightarrow \GL_n(k[G]), n=\dim (k[G])$, we have to show that this homomorphism is a injection.
+
+If $G$ is not finite, we have 
+\[k[G] \longleftrightarrow \mathbf{A}_G.\]
+
+For example, if $G=\Ga, \mathbf{A}_G=k[x]\cong k\oplus kx \oplus kx^2\oplus \cdots $ is infinite. We obtian $G\longrightarrow \GL(\mathbf{A}_G)$, the latter is infinite, not satisfies our purpose.
+
+Goal: Find a subspace $V\subset \mathbf{A}_G$ which is $G$-invariant and of finite dimension.
+
+$G$ acts on $\mathbf{A}_G$, $g\in G$, the right multipication
+\[G\longrightarrow G \quad \Longleftrightarrow \mathbf{A}_G\longleftarrow \mathbf{A}_G\]
+\[h\mapsto hg \quad f\circ g \mapsfrom f \]
+where $f: G\longrightarrow k$, $p\mapsto f(p)$. Denote $\rho_g(f)=f\circ g \colon p\mapsto f(pg).$
+
+一个子空间不变要满足什么性质？
+\begin{lemma}
+	Let $V\subset \mathbf{A}_G$ be a vectoe space\\
+	(1) $\rho_g(V)\subset V$ for all $g\in G$ if and only if $\Delta(V) \subset V\otimes_k \mathbf{A}_G$,\\
+	(2) If $V$ is a finite dimensional space, there is a finite dimensional $k$-space $W\subset \mathbf{A}_G$ containing $V$ with $\rho_g(W)\subset W$ for $g\in G$.
+
+	In fact, $\langle \rho_g(V)| g\in G \rangle$ is a finite dimensional space.
+\end{lemma}
+We omit the proof, only give some examples.
+\begin{example}
+	\begin{itemize}
+		\item[1.] $\Ga =k[x]$, we choose a finite $k$-subspace $W=\langle x \rangle \subset k[x]$ which can generate $k[x]$ as $k$-algebra,
+		\[\rho_g(1)=1, \ g\in k\]
+		\[\rho_g(x)=x+g, \ g\in k\]
+		Let $V=\langle 1,x \rangle \subset \mathbf{A}_G$  
+		\[\Ga \longrightarrow \GL(V)=\GL_2(k)\]
+		\[g\mapsto \begin{pmatrix}1 &g \\0 &1\end{pmatrix}\]
+		\item[2.] $\Ga =k[x]$, we choose another finite $k$-subspace $W=\langle x,x^2 \rangle \subset k[x]$ which can generate $k[x]$ as $k$-algebra,
+		\[\rho_g(1)=1, \ g\in k\]
+		\[\rho_g(x)=x+g, \ g\in k\]
+		\[\rho_g(x^2)=\rho_g(x)^2=(x+g)^2=x^2+2gx+g^2, \ g\in k\]
+		Let $V=\langle 1,x,x^2 \rangle \subset \mathbf{A}_G$  
+		\[\Ga \longrightarrow \GL(V)=\GL_3(k)\]
+		\[g\mapsto \begin{pmatrix}1 &g&g^2 \\0 &1 &2g \\0&0&1\end{pmatrix}\]
+	\end{itemize}
+\end{example}
+\begin{remark}
+	$X\longrightarrow Y$ (affine algebraic groups) is a closed immersion $\Longleftrightarrow$ $\mathbf{A}_Y\longrightarrow \mathbf{A}_X$ is surjective. We also note that the image of any homomorphism between algebraic groups is closed.
+\end{remark}
+We now discuss the ``quotient group''\index{quotient group}.
+\begin{corollary}
+	Let $G$ be an affine algebraic group, $H$ be a closed subgroup. Then there is a closed embedding $G\subset \GL(V)$ for a finite dimensional space $V$ such that $H$ equals to the stablizer\index{stablizer} of a subspace $V_H\subset V$. (Stablizer $=\{g\in G|gV\subset V\}=\{g\in G|gV= V\}$)
+\end{corollary}
+\begin{lemma}(Chevalley)
+	$G,H$ as above, then there is a morphism of algebraic group $G\longrightarrow \GL(V)$ for some $V$ finite dimensional such that $H$ is a stablizer of a $1$-dim subspace $L\subset V$.
+\end{lemma}
+The trick is replace $V$ by $\wedge^d V$, where $d=\dim V_H$.
+
+\paragraph{2015.10.22}
+Review:
+\begin{itemize} \item $G$: affine algebraic group, then $G\hookrightarrow \GL_n$. 从证明中可以看出这个定理对于任何域都成立。
+\item Chevalley's lemma.
+\end{itemize}
+\begin{theorem}
+	If $H\subset G$ is a normal closed subgroup, $G$ a linear algebraic group, then there exists a finite dimensional k-vector space $W$ such that 
+	\[\rho \colon G\longrightarrow \GL(W)\]
+	with kernel $H$.
+\end{theorem}
+\begin{remark}
+	If $G$ acts on $V$, there is a standard action $G$ on $\End(V)$: $\lambda \in \Hom_k(V,V),$
+	\begin{align*}
+		g(\lambda)=g\circ \lambda \circ g^{-1} \colon  &V \overset{g^{-1}}\longrightarrow V \overset{\lambda}\longrightarrow V \overset{g}\longrightarrow V \\
+		 & v\mapsto g^{-1}v \mapsto \lambda(g^{-1}v)\mapsto g\lambda(g^{-1}v)
+	\end{align*}
+\end{remark}
+
+\subsection*{Jordan decomposition}
+In linear algebra, for any $M\in M_n(k)$, $k=\bar{k}$, we have 
+\[M \sim J = \begin{pmatrix}
+	J_1 & & \\
+	& \ddots & \\
+	 & & J_m
+\end{pmatrix}\quad J_i=\begin{pmatrix}
+	\lambda_i & 1 & & \\
+	 & \ddots &\ddots & \\
+	  & & \ddots &1 \\
+	  & & & \lambda_i
+\end{pmatrix}\]
+\begin{definition}
+	Let $V$ be a finite dimensional $k$-space, $g\in M_n(k)$, $g$ is semisimple (diagonalizable)\index{semisimple, diagonalizable} if $V$ has a basis of eigenvectors of $g$ such that $g\sim  \begin{pmatrix}
+	a_1 & & \\
+	& \ddots & \\
+	 & & a_n
+\end{pmatrix}$\\
+$g$ is nilpotent\index{nilpotent} if $g^m=0$ for some $m>0$, $g\sim  \begin{pmatrix}
+	0 &*&*\\
+	& \ddots &*\\
+	 & & 0
+\end{pmatrix}.$\\
+
+\end{definition}
+By linear algebra, $g$ is semisimple $\Longleftrightarrow$ the minimal polynomial $p(t)$ of $g$ has distinct roots.
+
+If $g\in \End(V)$ is semisimple, then for any $g$-invariant subspace $W\subset V$, $g|_W \in\End(W)$ is also semisimple.
+
+\begin{prop}
+	(1) If $g \in \End(V)$, then there exist elements $g_s,g_n\in \End(V)$ with $g_s$ semisimple, $g_n$ nilpotent such that $g=g_s+g_n$ and $g_sg_n=g_ng_s$.\\
+	(2) The elements $g_s,g_n\in \End(V)$ is unique.\\
+	(3) There exist polynomials $P,Q\in k[T]$ with $P(0)=Q(0)=0$ such that $g_s=P(g)$ and $g_n=Q(g)$.\\
+	(4) If $W\subset V$ is a $g$-invariant subspace, it is also $g_s$-invariant and $g_n$-invariant. Moreover, $(g|_W)_s=g_s|_W$, $(g|_W)_n=g_n|_W$.
+\end{prop}
+第(3)点是说$P,Q$的常数项为$0$，同时也说明了$g_s,g_n$可以交换。第(4)点经常用。
+\begin{proof}
+	By LINEAR ALGEBRA.
+\end{proof}
+\begin{definition}
+	An endomorphism $h\in \End(V)$ is unipotent\index{unipotent} if $h-1$ is nilpotent, equivalently, all eigenvalues of $h$ are $1$.
+	\[h\sim  \begin{pmatrix}
+	1 &*&*\\
+	& \ddots &*\\
+	 & & 1
+\end{pmatrix}\Rightarrow h-1\sim  \begin{pmatrix}
+	0 &*&*\\
+	& \ddots &*\\
+	 & & 0
+\end{pmatrix}.\]
+\end{definition}
+\begin{corollary}[multipicative Jordan decomposition]
+	Let $V$ be a finite dimensional space, $g\in \GL(V)$,\\
+	(1) There exist uniquely determinned elements $g_s,g_u \in \GL(V)$ with $g_s$ semisimple, $g_u$ unipotent, $g=g_sg_u$ and $g_sg_u=g_ug_s$.\\
+	(2) There exist polynomials $P(T),Q(T)\in k[T]$ with $P(0)=Q(0)=0$ such that $g_s=P(g)$ and $g_u=Q(g)$.\\
+	(3) If $W\subset V$ is a $g$-invariant subspace, it is also $g_s$-invariant and $g_u$-invariant. Moreover, $(g|_W)_s=g_s|_W$, $(g|_W)_u=g_u|_W$.
+\end{corollary}
+\begin{proof}
+	Choose $g_u=g_s^{-1}g=1+g_s^{-1}g_n$
+\end{proof}

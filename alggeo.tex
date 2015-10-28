@@ -1,0 +1,104 @@
+\chapter{代数几何}
+\section{Cheatsheet for Sheaves}
+\paragraph{回顾}
+首先从presheaves(预层)开始介绍，预层实际上是从$\mathfrak{Top}(X)$到$\mathfrak{Ab}$的反变函子，从而预层之间的态射就是一个自然变换。
+
+接着是介绍层和层之间的态射(自然变换)，层实际上就是预层满足一个正合列
+\[0\longrightarrow \mathcal{F}(U) \longrightarrow \prod_i \mathcal{F}(U_i) \longrightarrow \prod_{i,j} \mathcal{F}(U_i \cap U_j) \]
+
+紧接着介绍stalks, germs，a stalk是一个正极限（colimit），它的重要作用是说明层之间的同构等价于stalks之间的同构。
+
+接下来定义层之间态射的核kernels，余核cokernels，像images，这个在后面是要说明层可以作成一个Abel范畴。首先预层态射的kernels, cokernels, images是容易定义的，可以证明预层的kernels是一个层，另外两个不是，于是引入了层化``sheafification''，并且还需要说明(sheafification, forgetful) 是伴随函子，并且预层在一点的stalk和层化后是一样的。介绍Quotient sheaf并介绍单射，满射和如何判定（local pointview）。
+
+上面都是在同一个拓扑空间$X$上讨论的，最后用两个拓扑空间之间的连续映射定义了direct image, inverse image, restriction.
+
+
+\subsection*{Definitions} 
+	\begin{itemize}
+	\item Presheaves $\mathcal{F}$, sections, $\mathcal{F}(U)=\Gamma(U,\mathcal{F})$, morphisms(natural transformations), isomorphisms
+	
+	Sheaves, morphisms, isomorphisms 
+	\item Stalks {\color{red} $\mathcal{F}_P =\varinjlim_{P\in U}\mathcal{F}(U)$}, germs of sections of $\mathcal{F}$ at the point $P$(i.e. elements of the stalk)
+	\item Kernels, cokernels, images of morphisms of presheaves $\phi \colon \mathcal{F} \longrightarrow \mathcal{G}$
+
+    Kernels, cokernels, images of morphisms of sheaves (SHEAFIFICATION, {\color{red}kernels自然是层}，后两者需要层化) 
+	\item Subsheaves 是$X$不变，$\mathcal{F}(U)$变成子集，与下文的restriction区别。Quotient sheaves (预层层化后), {\color{red}$(\mathcal{F}/\mathcal{F'})_P=\mathcal{F}_P/\mathcal{F'}_P$} 
+	\item Injective $\ker(\phi)=0$; Surjective $\ima(\phi)=\mathcal{G}$; exact sequences 
+	\item $$f\colon X\longrightarrow Y$$
+\[f_*\colon \mathrm{Sh}(X)\longrightarrow \mathrm{Sh}(Y)\]
+$\mathcal{F}$: a sheaf on $X$, the direct image sheaf $f_*(\mathcal{F})$ on $Y$: {\color{red}$f_*(\mathcal{F})(V) = \mathcal{F}(f^{-1}(V))$} for any open set $V \subseteq Y$. 
+
+\[f^{-1}\colon \mathrm{Sh}(Y)\longrightarrow \mathrm{Sh}(X)\]
+$\mathcal{F}$: a sheaf on $Y$, the inverse image sheaf $f^{-1}(\mathcal{G})$ on $X$: the sheafification of the presheaf {\color{red}$U\mapsto \varinjlim_{V\supseteq f(U)}\mathcal{G}(V)$}.
+
+
+$i\colon Z\longrightarrow X$ inclusion, $Z$ is a subset of $X$, $i^{-1}\mathcal{F}$ is called the restriction of $\mathcal{F}$ to $Z$, often denoted by $\mathcal{F}|_Z$. Note that $(\mathcal{F}|_Z)_P =\mathcal{F}|_P.$
+\end{itemize}
+
+\subsection*{Examples} 
+\begin{itemize}
+	\item $\mathcal{O}$: the sheaf of regular functions on $X$. The stalk $\mathcal{O}_P$ is the {\color{red}local ring} of $P$ on $X$.
+	\item the sheaf of continuous real-valued functions on any topological space
+
+the sheaf of differentiable functions on a differentiable manifold
+
+the sheaf of holomorphic functions on a complex manifold
+	\item constant sheaf $\mathcal{A}$, $\mathcal{A}(U)=\{\mbox{continuous maps of $U$ into $A$}\}$ ({\color{red}For every connected open set $U$, $\mathcal{A}(U)\cong A$}.)
+\end{itemize}
+
+
+
+
+
+
+\subsection*{Propostions} 
+\begin{itemize}
+	\item ``{\color{red}$+$ $\dashv$ $pre$}'': $\Hom_{Sh}(\mathcal{F}^+,\mathcal{G}) \cong \Hom_{PreSh}(\mathcal{F},pre(\mathcal{G}))$. Note that for any point $P$, $\mathcal{F}^+_P\cong \mathcal{F}_P$, and if $\mathcal{F}$ was a sheaf then $\mathcal{F}^+$ is isomorphic to $\mathcal{F}$.
+	\item $\phi \colon \mathcal{F} \longrightarrow \mathcal{G}$ is an isomorphism $\Longleftrightarrow$ ${\color{red}\phi_P} \colon \mathcal{F}_P \longrightarrow \mathcal{G}_P$ is an isomorphism for every $P\in X$. 
+	\item $\ker(\phi)$ is a subsheaf of $\mathcal{F}$. $\ima(\phi)$ can be identified with a subsheaf of $\mathcal{G}$.
+	\item $\phi$ is injective $\Longleftrightarrow$ {\color{red}$\phi(U)$ is injective} for every open set of $X$.(Caution: {\color{red}Not true for surjective})
+
+$\phi$ is surjective $\Longleftrightarrow$ {\color{red}$\phi_P$ on stalks are surjective} for each $P$. 
+	\item 
+$\cdots \longrightarrow \mathcal{F}^{i-1} \longrightarrow \mathcal{F}^{i} \longrightarrow \mathcal{F}^{i+1} \longrightarrow \cdots$ is exact $\Longleftrightarrow$ $\cdots \longrightarrow \mathcal{F}_{\color{red}P}^{i-1} \longrightarrow \mathcal{F}_{\color{red}P}^{i} \longrightarrow \mathcal{F}_{\color{red}P}^{i+1} \longrightarrow \cdots$ is exact for every $P$.
+	\item $\mathrm{Sh(X)}$ is actually an abelian category, so many results in homological algebra like
+the long exact (co)homology sequence, the snake lemma, the five lemma etc. work for
+sheaves. \\
+	 a kernel of a sheaf morphism is a sheaf, arbitrary product of sheaves is also a sheaf,  finite direct sum of sheaves is a sheaf, zero presheaf is a sheaf.
+
+	 $\mathrm{Sh(X)}$ is closed under arbitrary products and kernels, therefore $\mathrm{Sh(X)}$ is a complete category; it is also cocomplete and additive
+\end{itemize}
+
+\subsection*{Exercises}
+First, we give some useful results.
+\begin{lemma*}
+	1. Left adjoint functors are right exact and commute with(preserve) colimits(cocontinuous).\\
+	2. Right adjoint functors are left exact and commute with(preserve) limits(continuous).\\
+	3. Finite limits commute with filtered colimits in the category of sets.\\
+	4. Arbitrary limits commute.
+\end{lemma*}
+\begin{example}
+	1. left adjoint functors: ``sheafification'', $\otimes$, $f^{-1}$, they are right exact.\\
+	2. right adjoint functors: ``forgetful functor'', $\Hom$, $f_*$, they are left exact.\\
+	3. adjoint pairs: (sheafification,forgetful functor), $(\otimes,\Hom)$, $(f^{-1},f_*)$\\
+	4. colimits: $\varinjlim$(like stalks), $\coker$, pushout, coproduct(like $\oplus$)\\
+	5. limits: $\varprojlim$, $\ker$, pullback, product(like $\prod$ or $\times$)
+\end{example}
+\begin{corollary}
+	1. Sheafification preserves stalks, surjections, colimts, $\oplus$. It is cocontinuous, that is, preserves colimits.\\
+	2. The Forgetful functor preserves injections(kernels), limits, $\prod$.
+\end{corollary}
+\begin{remark*}
+	In fact, the sheafification functor is exact. We will prove it in Exercise 1.4. It also preserves finite limits because it preserves finite products and kernels.
+
+	We summarize all the facts about sheafification here:\\
+   The sheafification is a exact functor (see \url{http://stacks.math.columbia.edu/tag/00WJ}), it preserves colimts(stalks, coker, sujections, coproduct $\oplus$) and finite limits(ker, injections, finite product).
+\end{remark*}
+
+Now we can go through the exercises
+\begin{itemize}
+	\item 1 
+\end{itemize}
+
+
+

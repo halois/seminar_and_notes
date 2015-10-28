@@ -1,0 +1,81 @@
+% \begin{document}
+%  \begin{titlepage}
+% \author{\kaishu \zihao{4}中国科学院大学 ~张浩\thanks{E-mail:529666596@qq.com}}
+% \title{\heiti\zihao{-2}$K$理论形成历史与经典$K$ 理论简介}
+% \date{\kaishu \zihao{-4}2014.9}
+% \maketitle
+% \centerline{\Large 由厦门大学基础数学暑期学校上的报告整理而成}
+% \thispagestyle{empty}
+% \end{titlepage}
+% \pagebreak
+%以上是单独作为文章时使用的，注意使用format文件
+
+%--------开始正文------------
+\chapter{$K$理论简介}
+\section{释题}
+初见题目，大概最先问的问题就是“$K$理论”中的“$K$” 是什么含义，因而我们从释题开始：
+\paragraph{“$K$”}
+“$K$”源于德文“klassen”，中文意为“分类”。从而简略地说，“$K$理论”就是分类的理论。1957年Grothendieck\footnote{1928.3.28-2014.11.13,1966 Fields Medal}在Riemman-Roch定理的工作中引入了函子$K(\mathcal {A})$,这就是$K$ 理论的开端。他之所以用$K$而不用$C$(英语“class”的首字母)是由于Grothendieck在泛函分析中做的许多工作里$C(X)$通常表示连续函数空间，因此用他的母语---德语“分类”的首字母。
+
+对于历史感兴趣的读者请参考C.Weibel《The development of algebraic  $K$-theory before 1980》。
+
+\paragraph{分类}
+对于分类的思想，在数学中并不陌生，下表举了一些例子：\\
+\begin{tabular}{c|c|c}
+ &例子 &备注\\
+ \hline
+ 表示论&有限群的不可约表示分类 & Brauer群，Voevodsky \\
+\hline
+代数几何	&代数簇分类&Riemann-Roch-Hirzebruch-Grothendieck\\
+\hline
+代数拓扑 &向量丛、拓扑空间的分类 &拓扑$K$-理论，Atiyah-Singer指标定理\\
+\hline
+泛函分析 &$C^*$代数分类&算子$K$-理论 \\
+\hline
+代数数论 &理想类群 &Picard群，Dedekind环\\
+\hline
+几何拓扑 &CW复形 &Whitehead挠元\\
+\hline
+其它联系&  非交换几何，上同调，谱序列等等\\
+
+\end{tabular}
+\section{历史}
+粗略地讲，$K$-理论是研究一系列函子：
+\[K_n: \mbox{好的范畴} \longrightarrow \mbox{交换群范畴},n\in \mathbb{Z}\]
+\[\mathcal{C}\longrightarrow K_n(\mathcal{C})\]
+\begin{itemize}
+	\item  $n<0$  :负$K$-理论
+	\item  $n=0,1,2$ :经典（低阶）$K$-理论
+	\item  $n\geq 3$ :高阶$K$-理论
+\end{itemize}
+\paragraph{想法}
+构造环$R$的代数不变量$K_i(R)$，称之为$K$-群，这可以看作是环上的“线性代数”，更一般的看成某个空间的同伦群。构造高阶$K$-群时有不同的构造方式，另外从广义上同调理论看，可以构造代数$K$-理论谱(Spectrum)，使得它的同伦群就是$K$-群。
+
+代数学分支中很多学科都可以看作线性代数的推广，如同调代数，表示论，李群李代数，矩阵分析，泛函分析等等，这里代数$K$-理论某种意义上也是一门线性代数。
+
+
+
+
+\section{讲了几章Srinivas书后的想法}
+想把$K$理论推广到高阶$K$理论，并且还有类似于经典$K$理论的性质，比如正合列，MV序列，还有基本定理。首先想得到一个长正合列，从代数上考虑是同调函子可以将复形的短正合列变成一个长正合列。换个角度思考，拓扑上得到一个长正合列除了同调函子还有一个重要的函子是同伦函子，一个Serre纤维化序列可以得到一个同伦群的长正合列。这是得到长正合列的方法。Quillen了不起的想法是对于环$R$，构造一个空间，使得这个空间的同伦群就是$K$群。于是他得到了两种定义高阶$K$理论的方法，俗称为“$+$”构造和“$Q$”构造。
+首先加法构造是对环$R$的一般线性群$GL(R)$做分类空间$BGL(R)$，对于任意群都可以找到这样一个相应的拓扑空间叫做分类空间，使得群的同调就是这个拓扑空间的同调。现在有了分类空间还不够，Quillen发明了加法构造在分类空间的基础上增加相同数目的2-胞腔和3-胞腔得到了$BGL(R)^+$，从这个空间出发求其同伦群就得到了$K$群。为什么说就是$K$群呢？通过计算可以得到，$K_1,K_2$的结果正是经典$K$理论里的两个函子，从而这样一次性定义的$K$群就是经典$K$理论的推广。
+接着Quillen在1972年的著名论文中给出了$Q$构造，并且这时普遍适用与一大类范畴---正合范畴。对于正合范畴$\mathcal{C}$，通过做$Q$构造得到$Q\mathcal{C}$，然后做分类空间得到$BQ\mathcal{C}$，再然后算$n$阶同伦群也得到了新的函子。可以证明这个函子和经典$K$群是一致的！唯一有些区别在于足标，$n+1$阶同伦群得到的是$n$阶$K$群，于是我们对$BQ\mathcal{C}\mathcal{C}$取其loop space $\Omega BQ\mathcal{C}$后，$n$阶同伦群就是$n$阶$K$群了。
+
+那这样两个定义是否一致呢？著名的“$+ = Q$”定理说对于环$R$和正合范畴$\mathcal{P}(R)$分别用加法构造和$Q$构造得到的两个拓扑空间是同伦等价的，于是它们取同伦群是一样的！
+
+有了$Q$构造后，高阶K群自然而然想推广经典$K$理论中的结论，而恰就是这么巧，很多定理都可以推广，但都不见得是平凡的。高阶K群的计算首先就是非常难的一部分，Quillen在论文里得到了四大定理：加法定理，分解定理，反旋定理和局部化序列，英文分别叫做Additivity，Resolution，Devissage，Localization。这四大定理再加上推论可以得到一些有趣的结果。首先看加法定理是说正合函子也有类似于Euler characteristic的性质，即一个正合函子的短正合列，中间函子诱导的K群的映射等于两边函子诱导的映射之和，很容易可以把短正合列推广成长正合列，并且还可以推广到有一个filtration。
+对于分解定理和Devissage，都是通过更简单的满子范畴来替换要研究的正合范畴，并且K群不变。
+局部化序列当然是利用长正合序列从已知来得到未知的信息。
+
+有了这些准备，对于诺特环的$K$理论就会有一个比较深刻的定理，也叫做诺特环的$G$理论，$G$理论是说只研究环R上的有限生成模的范畴，将$K$理论中投射的要求去掉。对于诺特环的$G$理论，有著名的homotopy invariance \[G_n(A[t])=G_n(A),G_n(A[t,t^{-1}])=G_n(A)\oplus G_{n-1}(A)\]
+对其进行更细致的研究和推广可以得到对于任意环的$K$理论基本定理
+\[K_n(A[t,t^{-1}])=K_n(A)\oplus K_{n-1}(A) \oplus NK_n(A) \oplus NK_n(A).\]
+对于诺特环$G$理论基本定理的证明就是利用局部化序列，并且反复应用四大定理来得到，并且还详细研究了分次环和分次模的一些性质。Srinivas的书无疑是很好的教材，Quillen的原文也是值得一看的。
+
+\paragraph{参考}
+\begin{enumerate}
+  \item David Eisenbud，commutative algebra with a view toward algebraic geometry.
+ 
+\end{enumerate}
+
+% \end{document}

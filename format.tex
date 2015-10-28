@@ -1,0 +1,121 @@
+% !mode::"TeX:UTF-8"
+% !TEX program = xelatex
+% +-----------------------------------------------------------------------------
+% | File: 格式文档
+% | 
+% |
+% | 
+% | 
+% | Description:
+% |   主要是为了方便而设立。  
+% |   使用\include{format} 加载本文档
+% | 
+% | 
+% +-----------------------------------------------------------------------------
+\documentclass[openany,leqno,11pt]{book}  %ctexart,article
+
+\usepackage{imakeidx}
+\usepackage{multicol,multirow} % used for the two-column index 多行多列, 在表格中会用到
+\usepackage[bottom]{footmisc}
+\usepackage{url}  %这个是加超链接
+\usepackage{indentfirst} %首行缩进
+\usepackage{bm,amscd,xy,amssymb,amsmath,amsthm,nicefrac,amsfonts,pifont,mathtools,xltxtra}
+\usepackage{ctex}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{tikz}
+	\usetikzlibrary{cd}
+\usepackage{tikz-cd} %xymatrix包文中用过几处, 后来都是在用tikz-cd来画交换图
+\xyoption{all}
+\newdir{ >}{{}*!/-5pt/@{>}}
+% \usepackage{microtype} %microtype 宏包可以改善了单词、字母的间距。它可能做了很多, 但是大部分人察觉不到使用它之后文档的变化。但至少, 加载了 microtype 之后, 文档看起来更好, 也更容易阅读。注意：如果有使用到字体宏包, 需要将 microtype 宏包放在它们的后面, 因为这个宏包对单词、字母的调整和字体是有关的。
+
+\renewcommand\bibname{References} %修改bib的名称
+
+%improving spacing in tables (space above and below characters in a row)
+\newcommand{\tfix}{\rule{0pt}{2.6ex}}
+\newcommand{\bfix}{\rule[-1.2ex]{0pt}{0pt}}
+
+%--一些数学符号, 常用的有\Hom \End \iso(向右箭头上有同构) \id \ker \ima \coker \tor \ext \N \Z \Q \R \mathbb{C}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}} %这个常用
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Nil}{\mathrm{Nil}}
+\newcommand{\id}{\mathrm{id}} %这个常用
+\newcommand{\coker}{\mathrm{coker}}
+%\newcommand{\ker}{\mathrm{ker}} %\ker直接输入就好
+\newcommand{\tor}{\mathrm{Tor}}
+\newcommand{\ext}{\mathrm{Ext}}
+\newcommand{\ima}{\mathrm{Im}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zn}[1]{\Z/{#1}\Z}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+% \newcommand{\C}{\mathbb{C}}  %注销这个的原因是\C 和hyperref宏包冲突。后放弃hyperref，还是有很多冲突，比如页码不对
+\newcommand{\F}{\mathbb{F}}
+
+%范畴学常用
+\newcommand{\J}{\mathcal{J}}  
+\newcommand{\cC}{\mathcal{C}} 
+\renewcommand{\top}{\rm top}
+\newcommand{\ab}{\mathfrak{Ab}}
+\newcommand{\Grp}{\mathfrak{Grp}}
+\renewcommand{\mod}{{\rm Mod}}
+\newcommand{\Obj}{\mathop{\mathrm{Obj}}}
+\newcommand{\sets}{\mathrm{Sets}}
+\newcommand*{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\coeq}{\mathrm{coeq}}
+\newcommand{\coli}{\colim}
+
+%一些箭头
+\newcommand{\iso}{\overset{\cong}{\to}} %isomorphic 这个\to 可以换成\longrightarrow 变长
+\newcommand{\weq}{\overset{\sim}{\to}} %表示weak equivalence
+\newcommand{\cofi}{\rightarrowtail} %带尾巴的箭头, 单射或者余纤维cofibration
+\newcommand{\fib}{\twoheadrightarrow} %满射 或者纤维化fibration
+\newcommand{\defo}{\overset{\sim}{\fib}} %这个没用过
+\newcommand{\DA}{\Delta} %一般也不用
+
+\def\idem{\mathrm{Idem}}
+\renewcommand{\inf}{\rm inf}
+\newcommand{\nil}{\rm nil}
+\newcommand{\ass}{\mathfrak{Ass}}
+\newcommand{\der}{\mathrm{Der}}
+
+%Here are some user-defined operators
+\newcommand{\Tr}{\operatorname {Tr}}
+\newcommand{\GL}{\operatorname {GL}}
+\newcommand{\SL}{\operatorname {SL}}
+
+%------这个部分包含了计数器，使得定理，引理等按照同一顺序编号
+\newtheorem{theorem}{Theorem}[chapter]
+\renewcommand\thetheorem{\arabic{chapter}.\arabic{theorem}} 
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand\thelemma{\arabic{chapter}.\arabic{lemma}} 
+\newtheorem{prop}[theorem]{Proposition}
+\renewcommand\theprop{\arabic{chapter}.\arabic{prop}} 
+\newtheorem{corollary}[theorem]{Corollary}
+\renewcommand\thecorollary{\arabic{chapter}.\arabic{corollary}} 
+\renewcommand\theequation{\thetheorem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{lemma*}{Lemma}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{remark*}{Remark}
+\renewcommand\theexample{\arabic{chapter}.\arabic{example}} 
+
+\makeindex
+\setlength{\textwidth}{15cm} \setlength{\textheight}{22cm}
+\setlength{\oddsidemargin}{0.5cm} \setlength{\topmargin}{0cm}
+\setlength{\evensidemargin}{0.5cm} \setlength{\topmargin}{0cm}
+% \usepackage[text={150mm,195mm},centering]{geometry}

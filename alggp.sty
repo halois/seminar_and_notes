@@ -1,0 +1,163 @@
+% !TEX root = alggp.tex
+
+% special characters
+% \newcommand{\cC}{\mathcal{C}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+
+\newcommand{\dA}{\mathbf{A}}
+\newcommand{\dalpha}{\bm{\alpha}}
+\newcommand{\dC}{\mathbf{C}}
+\newcommand{\dF}{\mathbf{F}}
+\newcommand{\dH}{\mathbf{H}}
+\newcommand{\dmu}{\bm{\mu}}
+\newcommand{\dN}{\mathbf{N}}
+\newcommand{\dP}{\mathbf{P}}
+\newcommand{\dR}{\mathbf{R}}
+\newcommand{\dQ}{\mathbf{Q}}
+\newcommand{\dS}{\mathbf{S}}
+\newcommand{\dV}{\mathbf{V}}
+\newcommand{\dZ}{\mathbf{Z}}
+
+\newcommand{\eR}{\mathrm{R}}
+
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\ff}{\mathfrak{f}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fh}{\mathfrak{h}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\ft}{\mathfrak{t}}
+
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sV}{\mathscr{V}}
+
+% algebraic groups 
+\newcommand{\typeA}{\mathrm{A}}
+\newcommand{\typeB}{\mathrm{B}}
+\newcommand{\typeC}{\mathrm{C}}
+\newcommand{\typeD}{\mathrm{D}}
+\newcommand{\typeE}{\mathrm{E}}
+\newcommand{\typeF}{\mathrm{F}}
+\newcommand{\typeG}{\mathrm{G}}
+
+\newcommand{\Ga}{\mathbf{G}_\mathrm{a}}
+% \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\GSp}{GSp}
+\newcommand{\Gm}{\mathbf{G}_\mathrm{m}}
+\DeclareMathOperator{\HSpin}{HSpin}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\Or}{O}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Pin}{Pin}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\Sim}{Sim}
+% \DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\SU}{SU}
+
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\Sl}{\mathfrak{sl}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\fsp}{\mathfrak{sp}}
+
+% special operators
+\DeclareMathOperator{\adjoint}{ad}
+\DeclareMathOperator{\automorphisms}{Aut}
+\DeclareMathOperator{\centralizer}{C}
+\DeclareMathOperator{\characters}{X}
+\DeclareMathOperator{\clifford}{Cl}
+\DeclareMathOperator{\derivations}{Der}
+\DeclareMathOperator{\diag}{D} % diagonalizable group
+\DeclareMathOperator{\diagonal}{diag} % diagonal matrix
+\DeclareMathOperator{\dgalois}{DGal} % differential Galois group
+\DeclareMathOperator{\dynkin}{Dyn}
+% \DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\filtration}{fil}
+\DeclareMathOperator{\flag}{Fl}
+\DeclareMathOperator{\galois}{Gal}
+\DeclareMathOperator{\graded}{gr}
+\DeclareMathOperator{\grassmannian}{Gr}
+\DeclareMathOperator{\h}{H}
+\DeclareMathOperator{\image}{im}
+\DeclareMathOperator{\induce}{ind}
+\DeclareMathOperator{\inner}{Inn}
+\DeclareMathOperator{\lie}{Lie}
+\DeclareMathOperator{\lierad}{rad}
+\DeclareMathOperator{\matrices}{M}
+\DeclareMathOperator{\norm}{N}
+\DeclareMathOperator{\normalizer}{N}
+\DeclareMathOperator{\permutations}{Perm}
+\DeclareMathOperator{\picard}{Pic}
+\DeclareMathOperator{\proj}{Proj}
+\DeclareMathOperator{\rank}{rk}
+\DeclareMathOperator{\restrict}{res}
+\DeclareMathOperator{\roots}{R} % root datum
+\DeclareMathOperator{\spectrum}{Spec}
+\DeclareMathOperator{\stabilizer}{Stab}
+\DeclareMathOperator{\stricttransporter}{stTransp}
+\DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\transporter}{Transp}
+\DeclareMathOperator{\volume}{vol}
+\DeclareMathOperator{\weil}{R} % Weil restriction
+\DeclareMathOperator{\weyl}{W}
+\DeclareMathOperator{\zentrum}{Z} % center
+
+% categories
+\newcommand{\affine}[1]{\mathsf{Aff}_{#1}}
+\newcommand{\algebras}[1]{\mathsf{Alg}_{#1}}
+\newcommand{\groups}{\mathsf{Grp}}
+\newcommand{\modules}{\mathsf{Mod}}
+\newcommand{\reductivegroups}{\mathsf{RdGp}}
+\newcommand{\rep}{\mathsf{Rep}}
+\newcommand{\rootdata}{\mathsf{RtDt}}
+\newcommand{\schemes}[1]{\mathsf{Sch}_{#1}}
+% \newcommand{\sets}{\mathsf{Set}}
+\DeclareMathOperator{\sheaves}{Sh}
+
+% miscellaneous commands
+\newcommand{\derived}{\mathcal{D}}
+\newcommand{\epic}{\twoheadrightarrow}
+\newcommand{\etale}{\textnormal{\'et}}
+\newcommand{\fppf}{\mathrm{fppf}}
+% \newcommand{\id}{\mathrm{id}}
+% \newcommand{\iso}{\xrightarrow\sim}
+\newcommand{\jet}{\mathrm{J}}
+\newcommand{\mat}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix}}
+\newcommand{\monic}{\hookrightarrow}
+\newcommand{\nilpotent}{\mathrm{n}}
+\newcommand{\rad}{\mathcal{R}}
+\newcommand{\semisimple}{\mathrm{ss}}
+\newcommand{\separable}{\mathrm{sep}}
+\newcommand{\tangent}{\mathrm{T}}
+\newcommand{\torsion}[2]{\prescript{}{#1}{#2}}
+\newcommand{\transpose}[1]{\prescript{\mathrm{t}}{}{#1}}
+\newcommand{\unipotent}{\mathrm{u}}
+\newcommand{\urad}{\mathcal{R}_\mathrm{u}}
+\newcommand{\zariski}{\mathrm{zar}}
+
+% theorem environments
+% \newtheorem{conjecture}[subsubsection]{Conjecture}
+% \newtheorem{corollary}[subsubsection]{Corollary}
+% \newtheorem{lemma}[subsubsection]{Lemma}
+% \newtheorem{theorem}[subsubsection]{Theorem}
+% \newtheorem{definition}[subsubsection]{Definition}
+% \theoremstyle{definition} % contents are not italic
+% \declaretheorem[sibling=subsubsection, qed=$\triangleright$]{example}
+
+% \newenvironment{hard}{$\star$}{$\star$}
