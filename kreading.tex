@@ -1,0 +1,42 @@
+\chapter{阅读的一些讲义} % (fold)
+\label{cha:readnotes}
+\paragraph{A construction of the $K$-theory spectrum of a ring} % (fold)
+\label{par:a_construction_of_the_}
+作者是Bruno Stonek, 首先他有个人主页\href{bruno.stonek.com},其次他的master thesis之前看过，主要是讲Grayson那篇用bicomplex来构造$K$群
+
+这篇文章的主要目的是介绍$K$-theory spectrum, 并且这里是$\Omega$-spectrum. 需要注意的一点是本文的'space'是(pointed) CW-complex.因此connected = path connected.
+
+第一节比较简单. $KR$ is an infinite loop space, thus fitting into the $0$-stage of an $\Omega$-spectum.
+
+第二节讲的是perfect and quasi-perfect groups. Quasi-perfect的定义就是说一个群的交换子是perfect，这里最最重要的例子也就是本文的核心就是$GL(R)$ 是quasi-perfect的. 主要就是用于下面的
+
+第三节，$+$-construction, 这里关键的一句话是"There is a universal way to {\color{red}modify} a connected space so as to kill a chosen perfect normal subgroup of its fundamental group, without altering its homology." 想法是变同伦群但不变同调群。虽然同调群不变，但进行$+$构造后，同伦群可以变得很复杂。 尽管说$+$-construction仅仅是对原来的空间加了一些$2$-cells和相同数量的$3$-cells，但是实际上很有可能所有的同伦群都会变得很复杂。
+
+第四节时呼应第三节里面的“空间的基本群”，从一个群$G$（实际上我们要的是$G$ quasi-perfect，例子就是$GL(R)$）出发,如何得到一个有用的空间，这里就是classifying space $BG$，这个东西在拓扑里非常拥有。它的性质就是基本群就是$G$,并且没有其他的同伦群，也就是Eilenberg-MacLane空间$K(G,1)$。一般地，若$X$是$K(G,n)$就是由性质$\pi_n(X)=G,\pi_i(G)=0, \forall i\neq n$所界定的，也就是任意一个满足这样性质的空间都是一个$K(G,n)$,这当然是不唯一的，其中每一个我们可以称作是一个model. 在这一节里有一个重要的性质是$G$ quasi-perfect，$N$是交换子群，那么有$BN^+ \longrightarrow BG^+$是universal covering map. 那还是回到例子，就是说$BE(R)^+=\widetilde{BGL(R)^+}$. 这个结论在Srinivas的书上有比较详细的说明。
+
+第五节就是说$K_i(R)=\pi_i K(R)=\pi_i BGL(R)^+$这样的定义在$i=1,2$时是和之前的clasical definition是一致的。
+注意这里的关键是$R\mapsto K(R)$这个对应是函子性的，并且还可以推广到non-unital rings上（同样是 functorially）.
+另外可以定义$K(R)=K_0(R)\times BGL(R)^+$,这样的话在$\pi_0$处就是$K_0$了。但是 this is not right in the categorical sense: ``the problem is that one cannot write $K(R)$ functorially as a product of $K_0(R)$ and $BGL	(R)^+$''. 详见Marco Schlichting, {\em Higher algebraic $K$-theory}.
+
+第六节开始构造$K$-theory spectrum，第一步是构造cone 和 suspension，这一部分在Weibel $K$-book chapter 3 4.4中提到过，另外是Gersten 的On the spectrum of algebraic $K$-theory上也有一些。关键是 
+\[K_1(\Sigma R)\cong K_0(R)\]
+
+第七节，实际上这样构造的是nonconnected spectrum,而它的negative part就是Bass定义的负$K$理论。关于负$K$理论这一部分可以参考Weibel的$K$-book第三章，写得比较详细。
+
+我们现在把重心放在第七部分
+\[\Omega X= (X,x_0)^{(S^1,1)}=\hom((S^1,1),(X,x_0))=\{\gamma\colon [0,1]\longrightarrow X| \gamma(0)=\gamma(1)=x_0\in X\}\]
+有关fibration,covering space等的相关背景知识，可以参考下面几个文档
+\begin{itemize}
+	\item fibrations \href{http://www.math.washington.edu/~palmieri/Courses/2002/Math583/fibrations.pdf},非常简略，仅仅介绍了几个简单的性质
+	\item Notes on Serre fibrations \href{http://www.math.washington.edu/~mitchell/Notes/serre.pdf},比较详细
+	\item classification on bundles \href{http://www3.nd.edu/~stolz/Math70330(F2008)/cohen.pdf},这个还介绍了一些其他的东西，分类空间，$K$-theory等,这本书全文是\href{The Topology of Fiber Bundles Lecture Notes},可以打出来看看。
+\end{itemize}
+% paragraph a_construction_of_the_ (end)
+
+\paragrph{others} % (fold)
+\label{cha:others}
+找到一些比较不错的讲义，来自于Steve Mitchell的主页\href{http://www.math.washington.edu/~mitchell/},如有how I became a  mathematician(他自己的自传)，great mathematical moments at movies,当然还有专业上的比如$G$-sets \href{http://www.math.washington.edu/~mitchell/Algf/gset.pdf},这里面的很多讲义，比较适合讲课或者初学时参考。学代数学基础（如有限群表示论之类）可以来看。同样他还有一篇note the $K$-theory of finite fields.
+
+% paragrph others (end)
+
+% chapter _ (end)
