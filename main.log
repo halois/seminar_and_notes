@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2015.9.2)  28 OCT 2015 20:32
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/W32TeX) (preloaded format=xelatex 2015.9.2)  15 NOV 2015 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1764,14 +1764,14 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+Package: pgfrcs 2015/08/07 v3.0.1 (rcs-revision 1.31)
 ))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+Package: pgf 2015/08/07 v3.0.1 (rcs-revision 1.15)
 
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+Package: pgfsys 2014/07/09 v3.0.1 (rcs-revision 1.48)
 
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks42
@@ -1838,7 +1838,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+Package: pgfcore 2010/04/11 v3.0.1 (rcs-revision 1.7)
 
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
@@ -1964,20 +1964,20 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
 y
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen306
 \pgf@nodesepend=\dimen307
 )
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
 y
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1 (rcs-revision 1.1)
 )) (e:/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (e:/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
 
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen308
@@ -1986,11 +1986,11 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 \pgffor@toks=\toks52
 ))
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+Package: tikz 2015/08/07 v3.0.1 (rcs-revision 1.151)
 
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count186
 \pgfplotmarksize=\dimen310
 )
@@ -2019,28 +2019,28 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1 (rcs-revision 1.2)
 )))
-(e:/texlive/2015/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(e:/texlive/2015/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
+
+(e:/texlive/2015/texmf-dist/tex/latex/tikz-cd/tikzlibrarycd.code.tex
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1 (rcs-revision 1.4)
 )
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
+File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1 (rcs-revision 1.4)
 )
 (e:/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
 e.tex
-File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
+File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1 (rcs-revision 1.13)
 \pgfarrowinset=\dimen317
 \pgfarrowlength=\dimen318
 \pgfarrowwidth=\dimen319
 \pgfarrowlinewidth=\dimen320
-)) (e:/texlive/2015/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
-)
-(e:/texlive/2015/texmf-dist/tex/generic/xypic/xyall.tex
+))) (e:/texlive/2015/texmf-dist/tex/generic/xypic/xyall.tex
  Xy-pic option: All features v.3.8
 (e:/texlive/2015/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
@@ -2221,25 +2221,112 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 23.
 
  (./wittring.tex
 Chapter 1.
+File: Witt.jpeg Graphic file (type QTm)
+<use  "Witt.jpeg" >
+\g__fontspec_family_FangSong_int=\count202
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FangSong/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FangSong/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FangSong/I (it probably doesn't exist).
+.................................................
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 19.
+
+ (e:/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FangSong(0)' created for font 'FangSong' with options
+. [Script={CJK},AutoFakeBold={4}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"FangSong/OT:script=hani;language=DFLT;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. <->"FangSong/OT:script=hani;language=DFLT;embolden=4;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+
 [3
 
 
-] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+] [4] [5] [6]
+Overfull \hbox (35.8598pt too wide) in paragraph at lines 165--174
+[]\EU1/lmr/m/n/10.95 The first formula: put $\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 r\OT1/cmr/m
+/n/10.95 (\OML/cmm/m/it/10.95 y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  r\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 xy\OT1/cmr/m/n/10.95 )$ \EU1/lmr/m/n/10.95 
+to $\OML/cmm/m/it/10.95 R[]$\EU1/lmr/m/n/10.95 , we get $\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 x; x[]; []  ; x[]; [] \OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.9
+5 y; y[]; []  ; y[]; [] \OT1/cmr/m/n/10.95 )$
+ []
+
+[7] [8] [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
-) [5]
+[11] [12]
+Overfull \hbox (3.51375pt too wide) in paragraph at lines 366--376
+\EU1/lmr/m/n/10.95 Note that $\OML/cmm/m/it/10.95 ^^_[] [] [] \OT1/cmr/m/n/10.9
+5 = [] [] = 1 \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 aT[]$\EU1/lmr/m/n/10.
+95 , $\OML/cmm/m/it/10.95 ^^_[] [] [] \OT1/cmr/m/n/10.95 = [] [] =
+ []
+
+
+Underfull \vbox (badness 2126) has occurred while \output is active []
+
+ [13]
+Overfull \hbox (8.78795pt too wide) in paragraph at lines 396--404
+\EU1/lmr/m/n/10.95 if a polynomial is $\OT1/cmr/m/n/10.95 1 + \OML/cmm/m/it/10.
+95 a[]T \OT1/cmr/m/n/10.95 + [] + \OML/cmm/m/it/10.95 a[]T[] \OMS/cmsy/m/n/10.9
+5 2 \OML/cmm/m/it/10.95 W\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/
+10.95 )$\EU1/lmr/m/n/10.95 , we can write $\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/1
+0.95 = [] \OMS/cmsy/m/n/10.95 2
+ []
+
+[14]
+Overfull \hbox (44.73822pt too wide) detected at line 437
+[]
+ []
+
+[15] [16] [17] [18] [19]) [20]
 runsystem(makeindex main.idx)...executed safely (allowed).
 
- (./main.ind) (./main.aux (./wittring.aux)) ) 
-Here is how much of TeX's memory you used:
- 36253 strings out of 493708
- 734725 string characters out of 6149020
- 752430 words of memory out of 5000000
- 38968 multiletter control sequences out of 15000+600000
- 32453 words of font info for 159 fonts, out of 8000000 for 9000
- 1328 hyphenation exceptions out of 8191
- 61i,13n,82p,10535b,900s stack positions out of 5000i,500n,10000p,200000b,80000s
+ (./main.ind) [21
 
-Output written on main.pdf (5 pages).
+
+
+] (./main.aux (./wittring.aux)) ) 
+Here is how much of TeX's memory you used:
+ 36562 strings out of 493708
+ 741884 string characters out of 6149020
+ 761842 words of memory out of 5000000
+ 39243 multiletter control sequences out of 15000+600000
+ 37273 words of font info for 185 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 61i,16n,84p,10535b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.pdf (21 pages).
