@@ -182,7 +182,7 @@ It suffices to check this when $R$ is perfect. Note that a ring $R$ of character
 % section p_witt_vectors (end)
 \section{Big Witt vectors} % (fold)
 \label{sec:big_witt_vectors}
-Now we turn to the \texttt{big} Witt vectors\index{big Witt vectors}. J.\,P,\ May once said ``This(the theory of Witt vectors) is a strange and beautiful piece of mathematics that every well-educated mathematician should see at least once''.
+Now we turn to the \texttt{big}(universal) Witt vectors\index{big Witt vectors}. J.\,P,\ May once said ``This(the theory of Witt vectors) is a strange and beautiful piece of mathematics that every well-educated mathematician should see at least once''.
 
 Take the ring of all big vectors of a commutative ring is a functor 
 \begin{align*}
@@ -193,10 +193,14 @@ In this section, $R$ is a commutative ring with unit.
 \begin{definition}
 The ring of all big Witt vectors in $R$ which also denoted by $W(R)$ is defined as follows,\\
 as a set: $W(R)=\{a(T)\in R[[T]]| a(T)=1+a_1T+a_2T^2+\cdots\}=1+TR[[T]]$; (we note that as a set $W(R)$ is the kernel of the map $A[[T]]^*\overset{T\mapsto 0}\longrightarrow A^*$)\\
-addition in $W(R)$: usual multiplication of power series, sum $a(T)b(T)$, difference $\frac{a(T)}{b(T)}$;\\
-multiplication in $W(R)$: denoted by $*$, this is a little mysterious, we talk the details later. For the present purposes we only define $*$ as the unique continuous functorial operation for which $(1-aT)*(1-bT)=(1-abT)$.\\
-'zero'(additive identity) of $W(R)$: $1$.
-'one'(multiplicative identity) of $W(R)$: $1-T$.
+addition in $W(R)$: usual multiplication of formal power series, sum $a(T)b(T)$, difference $\frac{a(T)}{b(T)}$;($(W(R),+)\cong (1+TR[[T]],\times)$ which is a subgroup of the group of units $R[[T]]^{\times}$ of the ring $R[[T]]$)\\
+multiplication in $W(R)$: denoted by $*$, this is a little mysterious, we will talk the details later. For the present purposes we only define $*$ as the unique continuous functorial operation for which $(1-aT)*(1-bT)=(1-abT)$.\\
+'zero'(additive identity) of $W(R)$: $1$.\\
+'one'(multiplicative identity) of $W(R)$: $[1]=1-T$. Note that $[1]$ is the image of $1\in R$ under the multiplicative (Teichmuller) map 
+\[R\longrightarrow W(R)\]
+\[a \mapsto [a]=1-aT\]
+functoriality: any homomorphism $f\colon R \longrightarrow S$ induces a ring homomorphism 
+$W(f)\colon W(R) \longrightarrow W(S)$.
 \end{definition}
 A quick way to check multiplicative formulas in $W(R)$ is to use the \texttt{ghost} map\index{ghost map} (indeed a ring homomorphism)
 \[gh\colon W(R)\longrightarrow R^\N =\prod_i^\infty R. \]
