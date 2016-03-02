@@ -12,4 +12,7 @@
 *.idx
 *.ilg
 *.ind
+*.toc
+*.fls
+*.fdb_latexmk
 
