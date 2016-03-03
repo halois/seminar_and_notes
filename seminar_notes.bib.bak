@@ -1,0 +1,37 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF8
+
+
+@InCollection{MR96j:16008,
+  Title                    = {Module structures on the {H}ochschild and cyclic homology of graded rings},
+  Author                   = {Dayton, B. H. and Weibel, C. A.},
+  Booktitle                = {Algebraic $K$-theory and algebraic topology (Lake Louise, AB, 1991)},
+  Publisher                = {Kluwer Acad. Publ.},
+  Year                     = {1993},
+
+  Address                  = {Dordrecht},
+  Pages                    = {63--90},
+
+  Mrclass                  = {16E40 (13D03 13K05 19D55)},
+  Mrnumber                 = {96j:16008},
+  Mrreviewer               = {Thierry Lambre},
+  Owner                    = {mosbic},
+  Timestamp                = {2016.03.02}
+}
+
+@Article{weibel2009nk0,
+  Title                    = {${NK_0}$ and ${NK_1}$ of the groups ${C_4}$ and ${D_4}$},
+  Author                   = {Weibel, Charles},
+  Journal                  = {Comment. Math. Helv},
+  Year                     = {2009},
+  Pages                    = {339--349},
+  Volume                   = {84}
+}
+
+@Book{weibel2013k,
+  Title                    = {The ${K}$-book: An introduction to algebraic ${K}$-theory},
+  Author                   = {Weibel, Charles A},
+  Publisher                = {American Mathematical Society Providence (RI)},
+  Year                     = {2013}
+}
+

@@ -1,4 +1,6 @@
-\chapter{Notes on $NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
+%!TEX root = ./main.tex
+\chapter{Notes on \texorpdfstring{$NK_0$}{NK0} and \texorpdfstring{$NK_1$}{NK1} of the groups \texorpdfstring{$C_4$}{C4} and \texorpdfstring{$D_4$}{D4}}
+This note is based on the paper \cite{weibel2009nk0}.
 \section{Outline}
 \begin{definition}[Bass $Nil$-groups]
 $NK_n(\mathbb{Z}G)=\ker(K_n(\mathbb{Z}G[x])\overset{x\mapsto 0}\longrightarrow K_n(\mathbb{Z}G))$
@@ -19,26 +21,40 @@ $NK_n(\mathbb{Z}G)=\ker(K_n(\mathbb{Z}G[x])\overset{x\mapsto 0}\longrightarrow K
 
 Note that $D_4=\langle \sigma, \tau|\sigma^4=1,\tau^2=1,\tau \sigma \tau=\sigma^{-1} \rangle$.\\
 $V=x \mathbb{F}_2[x]=\oplus_{i=1}^\infty \mathbb{F}_2 x^i = \oplus_{i=1}^\infty \mathbb{Z}/2 x^i$: continuous $W(\mathbb{F}_2)$-module. As an abelian group, it is countable direct sum of copies of $\mathbb{F}_2=\mathbb{Z}/2$ on generators $x^i,i>0$.\\
-$\Omega_{\mathbb{F}_2[x]}= \mathbb{F}_2[x]\,dx = \oplus_{i=1}^\infty \mathbb{F}_2 e^i $, often write $e^i$ stands for $x^{i-1}\, dx$. As an abelian group, $\Omega_{\mathbb{F}_2[x]}\cong V$. But it has different $W(\mathbb{F}_2)$-module structure.
+$\Omega_{\mathbb{F}_2[x]}= \mathbb{F}_2[x]\,dx = \oplus_{i=1}^\infty \mathbb{F}_2 e^i $, often write $e^i$ stands for $x^{i-1}\, dx$. As an abelian group, $\Omega_{\mathbb{F}_2[x]}\cong V$. But it has a different $W(\mathbb{F}_2)$-module structure.
 
 \section{Preliminaries}
+\subsection{Regular rings} % (fold)
+\label{sub:regular_rings}
+We list some useful notations here:
+
+$R$: ring with unit (usually commutative in this chapter)\\
+$R$-mod: the category of $R$-modules,\\
+$\mathbf{M}(R)$: the subcategory of finitely generated $R$-modules,\\
+$\mathbf{P}(R)$: the subcategory of finitely generated projective $R$-modules.\\
+
+
+Let $\mathbf{H}(R)\subset \mbox{$R$-mod} $ be the full subcategory contains all $M$ which has finte $\mathbf{P}(R)$-resolutions. $R$ is called {\em{regular}}\index{regular ring} if $\mathbf{M}(R)=\mathbf{P}(R)$.
+
+\begin{prop}
+	Let $R$ be a commutative ring with unit, $A$ an $R$-algebra and $S\subset R$ a multiplicative set, if $A$ is regular, then $S^{-1}A$ is also regular.
+\end{prop}
+
+% subsection regular_rings (end)
+\subsection{The ring of Witt vectors} % (fold)
+\label{sub:the_ring_of_witt_vectors}
 As additive group $W(\mathbb{Z})=(1+x \mathbb{Z}[[x]])^{\times}$, it is a module over the Cartier algebra consisting of row-and-column finite sums $\sum V_m [a_{mn}]F_n$, where $[a]$ are homothety operators for $a\in \mathbb{Z}$.
 
 \paragraph{additional structure}
 Verschiebung operators $V_m$, Frobenius operators $F_m$ (ring endomorphism), homothety operators $[a]$.
-
 \begin{align*}
 [a]\colon & \alpha(x) \mapsto \alpha(ax)\\
 V_m\colon & \alpha(x) \mapsto \alpha(x^m)\\
 F_m\colon & \alpha(x) \mapsto \sum_{\zeta^m=1} \alpha(\zeta x^{\frac{1}{m}})\\
 F_m\colon & 1-rx \mapsto 1-r^mx
 \end{align*}
-
-
-
-
 \begin{remark}
-	$W(R)\subset Cart(R)$, $\prod_{m=1}^\infty(1-r_mx^m)=\sum_{m=1}^\infty V_m[a_m]F_m$. See Dayton\& Weibel.
+	$W(R)\subset Cart(R)$, $\prod_{m=1}^\infty(1-r_mx^m)=\sum_{m=1}^\infty V_m[a_m]F_m$. See \cite{MR96j:16008}.
 \end{remark}
 \begin{prop}
 	$[1]=V_1=F_1$: multiplicative identity. There are some identities:
@@ -49,18 +65,51 @@ F_m\colon & 1-rx \mapsto 1-r^mx
 	 [a]V_m&=V_{m}[a^m]\\
 	 F_m[a]&=[a^m] F_m\\
 	 [a][b]&=[ab]\\
-	 \mbox{if } (k,m)=1,& V_mF_k=F_kV_m\\
+	 V_mF_k=F_kV_m,&\mbox{ if } (k,m)=1 \\
 	\end{align*}
 	
 \end{prop}
 
 We call a $W(R)$-module $M$ continuous if $\forall v \in M$, $\textrm{ann}_{W(R)}(v)$ is an open ideal in $W(R)$, that is $\exists k$ s.t. $(1-rx)^m *v =0$ for all $r\in R$ and $m\geqslant k$. Note that if $A$ is an $R$-module, $xA[x]$ is a continuous $W(R)$-module but that $xA[[x]]$ is not.
+% subsection the_ring_of_witt_vectors (end)
+\subsection{Double relative group} % (fold)
+\label{sub:double_relative_group}
+You can skip this subsection for first reading. We will use the results in \ref{sec:C2}.
 
-\section{$W(R)$-module structure} % (fold)
+Let $R$ be any ring (not necessarily commutative), if $I,J\subset R$ are ideals such that $I\cap J =0$, then there is an exact sequence
+\[K_3(R,I) \longrightarrow K_3(R/I,I+J/J)\longrightarrow I/I^2\otimes_{R^e}J/J^2\overset{\psi}{\longrightarrow}K_2(R,I)\longrightarrow K_2(R/I,I+J/J)\longrightarrow 0\]
+where $R^e= R\otimes_{\mathbb{Z}}R^{op}$, $\psi([a]\otimes [b])=\langle a, b\rangle$, see \cite{weibel2013k} 3.5.10 or \cite{friedlander1981algebraic} p.\,195.
+
+In the case $I\cap J =0$, $K_2(R,I,J)\cong I/I^2\otimes_{R^e}J/J^2$.
+
+我的疑问： if $R$ is commutative, whether $K_2(R,I,J)=I\otimes_R J$ or not?
+
+\begin{lemma}
+	Let $(R,I,J)$ satisfy the following Cartesian square
+		\[\begin{tikzcd}
+			R \ar[r] \ar[d]& R/I\ar[d]\\
+			R/J \ar[r] & R/I+J\\
+		\end{tikzcd}\]
+	suppose $f\colon (R,I)\longrightarrow (R/J,I+J/J)$ has a section $g$, then
+	\[0 \longrightarrow I/I^2\otimes_{R^e}J/J^2\longrightarrow K_2(R,I)\longrightarrow K_2(R/I,I+J/J)\longrightarrow 0\]
+	is split exact.
+\end{lemma}
+\paragraph{Relative group} % (fold)
+\label{par:relative_group}
+For relative $K$-group, there is an exact sequence
+\begin{align*}
+&K_3(R,I)\longrightarrow K_3(R)\longrightarrow K_3(R/I) \longrightarrow K_2(R,I)\longrightarrow K_2(R)\longrightarrow K_2(R/I)\longrightarrow\\
+\longrightarrow & K_1(R,I)\longrightarrow K_1(R)\longrightarrow K_1(R/I)
+\end{align*}
+
+
+% paragraph relative_group (end)
+% subsection double_relative_group (end)
+\section{\texorpdfstring{$W(R)$}{W(R)}-module structure} % (fold)
 \label{sec:module_structure}
 
-% section module_structure (end)
-\paragraph{$W(\mathbb{F}_2)$-module structure on $V=x \mathbb{F}_2[x]$} See Dayton\& Weibel example 2.6, 2.9.
+
+\paragraph{$W(\mathbb{F}_2)$-module structure on $V=x \mathbb{F}_2[x]$} See Dayton\& Weibel \cite{MR96j:16008} example 2.6, 2.9.
 
 \begin{align*}
  V_m(x^n)&=x^{mn}\\
@@ -70,7 +119,7 @@ We call a $W(R)$-module $M$ continuous if $\forall v \in M$, $\textrm{ann}_{W(R)
  \end{cases}\\
  [a]x^n&=a^nx^n
  \end{align*}
-\paragraph{$W(\mathbb{F}_2)$-module structure on $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]\,dx = \oplus_{i=1}^\infty \mathbb{F}_2 e^i$} Dayton\& Weibel example 2.10
+\paragraph{$W(\mathbb{F}_2)$-module structure on $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]\,dx = \oplus_{i=1}^\infty \mathbb{F}_2 e^i$} Dayton\& Weibel \cite{MR96j:16008}example 2.10
 \begin{align*}
  V_m(x^{n-1}\,dx)&=mx^{mn-1}\,dx\\
  F_d(x^{n-1}\,dx)&=\begin{cases}
@@ -82,3 +131,45 @@ We call a $W(R)$-module $M$ continuous if $\forall v \in M$, $\textrm{ann}_{W(R)
  \begin{remark}
  	$\Omega_{\mathbb{F}_2[x]}$ is {\color{red}not} finitely generated as a module over the $\mathbb{F}_2$-Cartier algebra or over the subalgebra $W(\mathbb{F}_2)$.
  \end{remark}
+
+ In general, for any map $R\longrightarrow S$ of communicative rings, the $S$-module $\Omega_{S/R}^1$(relative K{\"{a}}hler differential module $\Omega_{S/R}$) is defined by \\
+ generators: $ds$, $s\in S$,\\
+ relations: $d(s+s')=ds+ds'$, $d(ss')=sds'+s'ds$, and if $r\in R$, $dr=0$.\\
+
+\begin{remark}
+	If $R=\mathbb{Z}$, we often omit it. In the previous section, $\Omega_{\mathbb{F}_2[x]}=\Omega_{\mathbb{F}_2[x]/\mathbb{Z}}^1$.
+\end{remark}
+
+As abelian groups, $x \mathbb{F}_2[x] \overset{\sim}\longrightarrow \Omega_{\mathbb{F}_2[x]}$, $x^i \mapsto x^{i-1}dx$. However, as $W(\mathbb{F}_2)$-modules,
+\begin{align*}
+V_m(x^i)&=x^{im},\\
+V_m(x^{i-1}dx)&=mx^{im-1}dx
+\end{align*}
+$x^{im}$ is corresponding to $x^{im-1}dx$ but not to $mx^{im-1}dx$. So they have different $W(\mathbb{F}_2)$-module structure.
+
+\begin{remark}
+	一个不知道有没有用的结论, see \cite{weibel2009nk0} 
+
+	There is a $W(\mathbb{F}_2)$-module homomorphism called de Rham differential
+	\begin{align*}
+	D\colon x \mathbb{F}_2[x] &\longrightarrow \Omega_{\mathbb{F}_2[x]}\\
+	x^i &\mapsto ix^{i-1}dx
+	\end{align*}
+	Then $\ker D = H_{dR}^0(\mathbb{F}_2[x]/\mathbb{F}_2)$ is the de Rham cohomology group and $\coker D = HC_1^{\mathbb{F}_2}(\mathbb{F}_2[x])$ is the cyclic homology group. Note that $HC_1(\mathbb{F}_2[x])= \sum_{l=1}^{\infty}\mathbb{F}_2 e_{2l}$ where $e_{2l}=x^{2l-1}dx$, and $H_{dR}^0(\mathbb{F}_2[x])=x^2 \mathbb{F}_2[x^2]$.
+\end{remark}
+% section module_structure (end)
+\section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$C_2$}{C2}}
+\label{sec:C2}
+First, consider the simplest example $G=C_2=\langle \sigma \rangle=\{1,\sigma\}$. There is a Rim square
+	\[\begin{tikzcd}
+		\mathbb{Z}[C_2] \ar[r,"\sigma\mapsto 1"] \ar[d,"\sigma\mapsto -1"']& \mathbb{Z}\ar[d,"q"]\\
+		 \mathbb{Z}\ar[r,"q"] & \mathbb{F}_2\\
+	\end{tikzcd}\]
+Since $\mathbb{F}_2$ (field) and $\mathbb{Z}$ (PID) are regular rings, $NK_i(\mathbb{F}_2)=0=NK_i(\mathbb{Z})$ for all $i$.
+
+By Mayer–Vietoris sequence, one can get $NK_1(\mathbb{Z}[C_2])=0$, $NK_0(\mathbb{Z}[C_2])=0$. Note that the similar results are true for any cyclic group of prime order.
+
+\section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$C_4$}{C4}}
+\label{sec:C4}
+\section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$D_4$}{D4}}
+\label{sec:D4}

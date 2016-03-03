@@ -25,7 +25,20 @@
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{calrsfs} %代数几何中mathcal字体转换 
+\usepackage{stmaryrd}% 打\mapsfrom
+% \usepackage{alggp} %代数群文档专用，其中有一些命令由于冲突注销了，如果单独使用，请取消注销
 
+\usepackage{cite} %引用参考文献
+
+%----和后文制作封面一起使用的，如果不通过编译，还是置于后面
+%----举火是要放在tikz宏包前面
+\usepackage[svgnames]{xcolor} % Required to specify font color
+
+% \newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo %logo 没啥意思
+
+\usepackage{graphicx} % Required for box manipulation
+%----
 \usepackage{tikz}
 	% \usetikzlibrary{cd}
 \usepackage{tikz-cd} %xymatrix包文中用过几处, 后来都是在用tikz-cd来画交换图
@@ -33,6 +46,8 @@
 \newdir{ >}{{}*!/-5pt/@{>}}
 % \usepackage{microtype} %microtype 宏包可以改善了单词、字母的间距。它可能做了很多, 但是大部分人察觉不到使用它之后文档的变化。但至少, 加载了 microtype 之后, 文档看起来更好, 也更容易阅读。注意：如果有使用到字体宏包, 需要将 microtype 宏包放在它们的后面, 因为这个宏包对单词、字母的调整和字体是有关的。
 
+\usepackage[pdfencoding=auto,psdextra]{hyperref} % hyperref还是有些小问题，比如section的名字里不能有数学符号，需要用特殊的命令处理掉它。
+\usepackage{bookmark}
 \renewcommand\bibname{References} %修改bib的名称
 
 %improving spacing in tables (space above and below characters in a row)
@@ -121,3 +136,37 @@
 \setlength{\oddsidemargin}{0.5cm} \setlength{\topmargin}{0cm}
 \setlength{\evensidemargin}{0.5cm} \setlength{\topmargin}{0cm}
 % \usepackage[text={150mm,195mm},centering]{geometry}
+
+% 制作封面
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
+\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
+
+\newcommand*{\titleBC}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\def\CP{\textit{\Huge 代数$K$理论讨论班笔记}} % Title
+\settowidth{\unitlength}{\CP} % Set the width of the curly brackets to the width of the title
+{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
+\textcolor{Sienna}{\CP} \\[\baselineskip] % Print title
+
+{\color{RosyBrown}\Large 中国科学院大学~~数学科学学院} \\ % Tagline or further description
+{\color{RosyBrown}\Large \kaishu{张浩}}\\
+{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
+\vfill % Whitespace between the title and the author name
+
+\begin{center}
+\frame{\includegraphics[width=90mm]{seminar}}\\
+
+{\large 从左至右依次为\\
+Quillen~~Milnor~~Grothendieck}\\
+\vfill
+% \plogo\\[0.5\baselineskip]
+\today
+\end{center}
+\endgroup}

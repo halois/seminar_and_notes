@@ -13,14 +13,15 @@
 % | 
 % +-----------------------------------------------------------------------------
 \include{format}
-\usepackage{calrsfs} %代数几何中mathcal字体转换 
-\usepackage{stmaryrd}% 打\mapsfrom
-% \usepackage{alggp} %代数群文档专用，其中有一些命令由于冲突注销了，如果单独使用，请取消注销
+
 \begin{document}
-\title{内容集锦:讨论班、课程讲义}
-\author{张浩}
-\date{中国科学院大学}
-\maketitle
+\pagestyle{empty}
+\titleBC
+\clearpage
+% \title{讨论班笔记}
+% \author{张浩}
+% \date{中国科学院大学}
+% \maketitle
 \tableofcontents
 
 % \include{Kintro} %厦大报告
@@ -42,7 +43,8 @@
 % \include{}
 % \include{}
 % \include{}
-
+\bibliographystyle{plain} %参考文献格式
+\bibliography{seminar_notes} 
 % \indexprologue{{\em }}
 \printindex
 \end{document}
