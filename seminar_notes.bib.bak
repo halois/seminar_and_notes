@@ -19,6 +19,107 @@
   Timestamp                = {2016.03.02}
 }
 
+@Article{Dress1973Contributions,
+  Title                    = {Contributions to the theory of induced representations},
+  Author                   = {Dress, Andreas W. M.},
+  Journal                  = {Lecture Notes in Mathematics},
+  Year                     = {1973},
+  Pages                    = {181-240},
+  Volume                   = {342}
+}
+
+@Book{friedlander1981algebraic,
+  Title                    = {Algebraic K-theory. Proc. conf. Evanston, 1980},
+  Author                   = {Friedlander, Eric and Stein, MR},
+  Publisher                = {Springer},
+  Year                     = {1981}
+}
+
+@Article{Green197141,
+  Title                    = {Axiomatic representation theory for finite groups },
+  Author                   = {J.A. Green},
+  Journal                  = {Journal of Pure and Applied Algebra },
+  Year                     = {1971},
+  Number                   = {1},
+  Pages                    = {41 - 77},
+  Volume                   = {1},
+
+  Doi                      = {http://dx.doi.org/10.1016/0022-4049(71)90011-9},
+  ISSN                     = {0022-4049},
+  Owner                    = {mosbic},
+  Timestamp                = {2016.03.05},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/0022404971900119}
+}
+
+@InProceedings{li-2015,
+  Title                    = {Box product of mackey functors in terms of modules},
+  Author                   = {Zhulin Li},
+  Year                     = {2015},
+
+  Abstract                 = {The box product of Mackey functors has been studied extensively
+in Lewis’s notes. As shown in Thevenaz and Webb’s paper, a Mackey functor
+may be identified with a module over a certain algebra, called the Mackey
+algebra. We aim at describing the box product, in the sense of Mackey algebra
+modules. For a cyclic p-group G, we recover a result from Mazur’s thesis. We
+generalize it to a general finite group G in this article.
+},
+  File                     = {:E\:\\代数及专业\\19 K理论\\论文\\硕博论文\\Foreign\\BOX PRODUCT OF MACKEY FUNCTORS IN TERMS OF MODULES.pdf:PDF},
+  Review                   = {BOX PRODUCT OF MACKEY FUNCTORS
+
+IN TERMS OF MODULES
+
+ZHULIN LI
+
+Abstract. The box product of Mackey functors has been studied extensively
+in Lewis’s notes. As shown in Thevenaz and Webb’s paper, a Mackey functor
+may be identified with a module over a certain algebra, called the Mackey
+algebra. We aim at describing the box product, in the sense of Mackey algebra
+modules. For a cyclic p-group G, we recover a result from Mazur’s thesis. We
+generalize it to a general finite group G in this article.
+
+Introduction
+
+A Mackey functor is an algebraic structure, related to many natural construc-
+tions from finite groups, such as group cohomology and the algebraic K-theory of
+group rings. The study of Mackey functor in abstract began in 1980s. Dress[2] and
+Green[1] first gave the axiomatic formulation of Mackey functors. Several equiv-
+alent descriptions of Mackey functors were given by Dress[2], Lindner[3], Lewis[4]
+and Thevenaz[5]. Specifically, Lewis[4] introduces box product and Thevenaz[5]
+describes a Mackey functor as a module over the Mackey algebra µR(G).
+
+In this article, we give an inductive description of the box product of two left
+µR(G)-modules. The main goal is to construct this box product explicitly and to
+prove that it is equivalent with the box product of two Mackey functors. When G
+is a cyclic p-group, we recover the formula of Mazur[7].
+
+Acknowledgement
+
+This work was made possible in part by support from 2015 Spring MIT Un-
+dergraduate Research Opportunities Program (UROP). I would like to thank my
+supervisor Dr. Emanuele Dotto at MIT for proposing this interesting topic and for
+his comments that greatly improved the manuscript. I also wish to thank Dr. Zhiyi
+Huang at HKU for helpful discussions, which provide lots of insight.
+
+Contents
+
+Introduction 1
+Acknowledgement 1
+1. Mackey functors 2
+1.1. The category ΩR(G) 2
+1.2. The Mackey algebra µR(G) 3
+1.3. Definition of Mackey functors 4
+2. The Box product in MackR(G) 4
+3. The Box Product in µR(G)-mod 5
+
+Date: September 24, 2015.
+
+1
+
+arXiv:1509.07051v1 [math.AT] 23 Sep 2015
+
+}
+}
+
 @Article{weibel2009nk0,
   Title                    = {${NK_0}$ and ${NK_1}$ of the groups ${C_4}$ and ${D_4}$},
   Author                   = {Weibel, Charles},

@@ -32,7 +32,7 @@
 \usepackage{cite} %引用参考文献
 
 %----和后文制作封面一起使用的，如果不通过编译，还是置于后面
-%----举火是要放在tikz宏包前面
+%----据说是要放在tikz宏包前面
 \usepackage[svgnames]{xcolor} % Required to specify font color
 
 % \newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo %logo 没啥意思
@@ -137,36 +137,14 @@
 \setlength{\evensidemargin}{0.5cm} \setlength{\topmargin}{0cm}
 % \usepackage[text={150mm,195mm},centering]{geometry}
 
-% 制作封面
+% 修改列表环境下行间距 2016.3.11
+\usepackage{paralist}
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
 
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-
-\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
-\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
-
-\newcommand*{\titleBC}{\begingroup % Create the command for including the title page in the document
-\centering % Center all text
-\def\CP{\textit{\Huge 代数$K$理论讨论班笔记}} % Title
-\settowidth{\unitlength}{\CP} % Set the width of the curly brackets to the width of the title
-{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
-\textcolor{Sienna}{\CP} \\[\baselineskip] % Print title
-
-{\color{RosyBrown}\Large 中国科学院大学~~数学科学学院} \\ % Tagline or further description
-{\color{RosyBrown}\Large \kaishu{张浩}}\\
-{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
-\vfill % Whitespace between the title and the author name
-
-\begin{center}
-\frame{\includegraphics[width=90mm]{seminar}}\\
-
-{\large 从左至右依次为\\
-Quillen~~Milnor~~Grothendieck}\\
-\vfill
-% \plogo\\[0.5\baselineskip]
-\today
-\end{center}
-\endgroup}
+% \setlength{\pltopsep}{7pt}
+% \setlength{\pltopsep}{10pt}
