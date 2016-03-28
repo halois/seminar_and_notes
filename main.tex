@@ -12,26 +12,23 @@
 % | 
 % | 
 % +-----------------------------------------------------------------------------
-\include{format}
-\include{titlepage} %封面代码
+\input{styles/format}
+\input{styles/titlepage}%封面代码
 \begin{document}
 \pagestyle{empty}
+\pdfbookmark[0]{封面}{title}
 \titleBC
 \clearpage
-% \title{讨论班笔记}
-% \author{张浩}
-% \date{中国科学院大学}
-% \maketitle
+\pdfbookmark[0]{目录}{contents}
 \tableofcontents
 
-% \include{Kintro} %厦大报告
-% \include{hikofvc} %higher k-theory of virtually cyclic groups论文笔记
-% \include{wittring} %Witt rings and NK_* groups
-\include{weibelnk} % Notes on \textit{$NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
-% \include{alggp} %代数群课程讲义
-% \include{alggeo} %GTM52 第二章笔记
-% \include{mackeyfunctor} %mackey functor笔记
 
+\include{tex/Kintro} %厦大报告
+\include{tex/hikofvc} %higher k-theory of virtually cyclic groups论文笔记
+\include{tex/wittring} %Witt rings and NK_* groups
+\include{tex/weibelnk} % Notes on \textit{$NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
+
+\include{tex/paperreading}
 % \include{}
 % \include{}
 % \include{}
@@ -41,11 +38,19 @@
 % \include{}
 % \include{}
 % \include{}
-% \include{}
+
+%lecture notes
+\include{tex/alggp} %代数群课程讲义
+\include{tex/alggeo} %GTM52 第二章笔记
+\include{tex/mackeyfunctor} %mackey functor笔记
+
 \bibliographystyle{plain} %参考文献格式
-\bibliography{seminar_notes} 
-% \indexprologue{{\em }}
+\pdfbookmark[0]{参考文献}{references}
+\bibliography{bib/seminar_notes} 
+
+\indexprologue{{\em 部分名词与专业用语索引如下}}
 \printindex
+\pdfbookmark[0]{索引}{index}
 \end{document}
 
 
