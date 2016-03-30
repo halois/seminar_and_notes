@@ -1,4 +1,4 @@
-%!TEX root = ./main.tex
+%!TEX root = ../main.tex
 \chapter{Notes on \texorpdfstring{$NK_0$}{NK0} and \texorpdfstring{$NK_1$}{NK1} of the groups \texorpdfstring{$C_4$}{C4} and \texorpdfstring{$D_4$}{D4}}
 This note is based on the paper \cite{weibel2009nk0}.
 \section{Outline}
@@ -177,6 +177,13 @@ Note that $\langle r,1\rangle=0$ for any $r\in R$ and $\langle r,s \rangle_{vers
 \label{sub:relative_group}
 You can skip this subsection for first reading. We will use the results in \ref{sec:C2Cp}.
 
+excision失效就是说if $A \longrightarrow B$ is a morphism of rings and $I$ is an ideal of $A$ mapped isomorphically to an ideal of $B$,
+then $K_n(A, I) \longrightarrow K_n(B, I)$ need not be an isomorphism. 由于这个不是同构，没法有Mayer-Vietoris序列
+	\[\begin{tikzcd}
+	\cdots \ar[r]&K_{i+1}(A/I) \ar[r] \ar[d]&	K_i(A,I) \ar[r,green] \ar[d]& K_i(A)\ar[r]\ar[d] & K_i(A/I)\ar[r] \ar[d] & \cdots\\
+ \cdots \ar[r]&K_{i+1}(B/I) \ar[r,green] &	K_i(B,I) \ar[r] \ar[u, dashrightarrow, red, xshift=1ex] & K_i(B)\ar[r] & K_i(B/I)\ar[r] & \cdots
+	\end{tikzcd}\]
+要连接$K_n(A, I) \longrightarrow K_n(B, I)$就要考虑birelative $K$-groups（也称double relative $K$-groups）,$K(A,B,I)$定义为homotpy fiber of the map $K(A, I) \longrightarrow K(B, I)$。以下是详细的定义和性质。
 \paragraph{Relative groups} % (fold)
 \label{par:relative_groups}
 \index{relative groups}
