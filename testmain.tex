@@ -16,28 +16,32 @@
 \input{styles/format}
 \input{styles/titlepage}%封面
 
-
+	% 给老师看时设置页边距
+	\usepackage[top=1.5cm, bottom=1.5cm, left=1.25cm, right=1.25cm]{geometry}
 \begin{document}
+
+	% 给老师看时加大字体，自己看请注销
+	\zihao{4}
 	%封面
-		\pagestyle{empty}
-		\pdfbookmark[0]{封面}{title}
-		\titleBC
+		% \pagestyle{empty}
+		% \pdfbookmark[0]{封面}{title}
+		% \titleBC
 	%目录
-		\clearpage
-		\pdfbookmark[0]{目录}{contents}
-		\tableofcontents
+		% \clearpage
+		% \pdfbookmark[0]{目录}{contents}
+		% \tableofcontents
 
 	%章节 
-		\include{tex/Kintro} %厦大报告
-		\include{tex/hikofvc} %higher k-theory of virtually cyclic groups论文笔记
-		\include{tex/wittring} %Witt rings and NK_* groups
-		\include{tex/weibelnk} % Notes on \textit{$NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
-		\include{tex/Lowerbounds}
-		\include{tex/ResultsofGroupring}
-		\include{tex/NKFinAlg}
+		% \include{tex/Kintro} %厦大报告
+		% \include{tex/hikofvc} %higher k-theory of virtually cyclic groups论文笔记
+		% \include{tex/wittring} %Witt rings and NK_* groups
+		% \include{tex/weibelnk} % Notes on \textit{$NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
+		% \include{tex/Lowerbounds}
+		% \include{tex/ResultsofGroupring}
+		\include{tex/NK2F2C4}
 		\include{tex/K2F2C4C4}
-		\include{tex/NKiFG}
-		\include{tex/finitefields}
+		% \include{tex/NKiFG}
+		% \include{tex/finitefields}
 		% \include{}
 		% \include{}
 		% \include{}

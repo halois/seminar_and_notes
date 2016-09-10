@@ -15,7 +15,7 @@ $NK_n(\mathbb{Z}G)=\ker(K_n(\mathbb{Z}G[x])\overset{x\mapsto 0}\longrightarrow K
 	\hline
 	C_4 & V&\Omega_{\mathbb{F}_2[x]} & \\
 	\hline
-	D_4=C_4\rtimes C_2& \\
+	D_4=C_4\rtimes C_2&  &\\
 	\end{array}
 \end{equation*}
 
@@ -43,7 +43,7 @@ Let $\mathbf{H}(R)\subset \mbox{$R$-mod} $ be the full subcategory contains all 
 % subsection regular_rings (end)
 \subsection{The ring of Witt vectors} % (fold)
 \label{sub:the_ring_of_witt_vectors}
-As additive group $W(\mathbb{Z})=(1+x \mathbb{Z}[[x]])^{\times}$, it is a module over the Cartier algebra consisting of row-and-column finite sums $\sum V_m [a_{mn}]F_n$, where $[a]$ are homothety operators for $a\in \mathbb{Z}$.
+As additive group $W(\mathbb{Z})=(1+x \mathbb{Z}\llbracket x\rrbracket )^{\times}$, it is a module over the Cartier algebra consisting of row-and-column finite sums $\sum V_m [a_{mn}]F_n$, where $[a]$ are homothety operators for $a\in \mathbb{Z}$.
 
 \paragraph{additional structure}
 Verschiebung operators $V_m$, Frobenius operators $F_m$ (ring endomorphism), homothety operators $[a]$.
@@ -70,7 +70,7 @@ F_m\colon & 1-rx \mapsto 1-r^mx
 	
 \end{prop}
 
-We call a $W(R)$-module $M$ continuous if $\forall v \in M$, $\textrm{ann}_{W(R)}(v)$ is an open ideal in $W(R)$, that is $\exists k$ s.t. $(1-rx)^m *v =0$ for all $r\in R$ and $m\geqslant k$. Note that if $A$ is an $R$-module, $xA[x]$ is a continuous $W(R)$-module but that $xA[[x]]$ is not.
+We call a $W(R)$-module $M$ continuous if $\forall v \in M$, $\textrm{ann}_{W(R)}(v)$ is an open ideal in $W(R)$, that is $\exists k$ s.t. $(1-rx)^m *v =0$ for all $r\in R$ and $m\geqslant k$. Note that if $A$ is an $R$-module, $xA[x]$ is a continuous $W(R)$-module but that $xA\llbracket x\rrbracket $ is not.
 % subsection the_ring_of_witt_vectors (end)
 
 \subsection{Dennis-Stein symbol} % (fold)
@@ -438,7 +438,7 @@ finally $NK_2(\mathbb{Z}[C_p]) = K_2(\mathbb{Z}[C_p][x])/K_2(\mathbb{Z}[C_p]) \c
 \end{example}
 \section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$D_2$}{D2}}
 \label{sec:D2}
-Now let us consider $G=D_2=C_2\times C_2$. Let $\Phi (V)$ be the subgroup (also a Cartier submodule) $x^2 \mathbb{F}_2[x^2]$ of $V=x \mathbb{F}_2[x]$. Recall $\Omega_R$ is the K\"{a}hler differentials of $R$, $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]dx$. And we simply write $F_2[\epsilon]$ stands for the $2$-dimensional $\mathbb{F}_2$-algebra $\mathbb{F}_2[x]/(x^2)$.
+Now let us consider $G=D_2=C_2\times C_2$. Let $\Phi (V)$ be the subgroup (also a Cartier submodule) $x^2 \mathbb{F}_2[x^2]$ of $V=x \mathbb{F}_2[x]$. Recall $\Omega_R$ is the K\"{a}hler differentials of $R$, $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]dx$. And we simply write $\mathbf{F}_2[\epsilon]$ stands for the $2$-dimensional $\mathbb{F}_2$-algebra $\mathbb{F}_2[x]/(x^2)$.
 
 Note that 
 \begin{align*}
@@ -447,6 +447,7 @@ Note that
 \end{align*}
 
 \begin{lemma}
+\label{lem:omega}
 	The map $q \colon \mathbb{Z}[C_2] \longrightarrow \mathbb{F}_2[C_2] \cong \mathbb{F}_2[\epsilon]$ in \ref{rimsqC2} induces an exact sequence
 	\[0\longrightarrow \Phi(V) \longrightarrow NK_2(\mathbb{Z}[C_2])\overset{q}\longrightarrow NK_2(\mathbb{F}_2[\epsilon])\overset{D}\longrightarrow \Omega_{\mathbb{F}_2[x]}\longrightarrow 0.\]
 \end{lemma}
@@ -454,17 +455,81 @@ Note that
 	See \cite{weibel2009nk0} Lemma 1.2.
 \end{proof}
 \begin{theorem}
-	$NK_1(\mathbb{Z}[D_2]) \cong \Omega_{\mathbb{F}_2[x]}$, $NK_0(\mathbb{Z}[D_2])\cong V$,
+	\[NK_1(\mathbb{Z}[D_2]) \cong \Omega_{\mathbb{F}_2[x]},\] 
+	\[NK_0(\mathbb{Z}[D_2])\cong V,\]
 	\[NK_2(\mathbb{Z}[D_2]) \longrightarrow NK_2(\mathbb{Z}[C_2])\cong V^2\]
 	the image of the above map is $\Phi(V) \times V$.
 \end{theorem}
 觉得最后一个论断有些问题。
 \begin{proof}
-	We tensor \ref{rimsqC2} with $\mathbb{Z}[C_2]$
+	We tensor \ref{rimsqC2} with $\mathbb{Z}[C_2]$. Note that $R[G_1\times G_2]=R[G_1][G_2]$, for commutative $R$, $R[G_1\times G_2]=R[G_1]\otimes R[G_2]$, $\sum_{g,h}c_gc_h g\otimes h \mapsfrom \sum_{g,h}c_g g\otimes c_h h$. As for infinite product, see \href{http://mathoverflow.net/questions/46950/group-rings-of-infinite-products-of-groups}{MO 46950}.
 
+	\begin{equation}
+\label{rimsqD2}
+	\begin{tikzcd}
+		\mathbb{Z}[D_2]=\mathbb{Z}[C_2] \otimes \mathbb{Z}[C_2] \ar[r] \ar[d]& \mathbb{Z}[C_2]\ar[two heads, d,"q"]\\
+		 \mathbb{Z}[C_2]\ar[two heads, r,"q"] & \mathbb{F}_2[C_2]\\
+	\end{tikzcd}
+\end{equation}
+	Recall that $\mathbb{F}_2[C_2]\cong \mathbb{F}_2[\varepsilon]/(\epsilon^2)$. By \cite{weibel2013k} chapter 2 Ex 7.4.5,
+	\begin{align*}
+	NK_1(\mathbb{F}_2[C_2])=NK_1(\mathbb{F}_2[\varepsilon]/(\epsilon^2)) & = (1+\varepsilon x\mathbb{F}_2[\varepsilon]/(\epsilon^2)[x])^{\times} =(1+\varepsilon x\mathbb{F}_2[x])^{\times} \cong V =x \mathbb{F}_2[x]\\
+	[(P,\nu)] &\mapsto \det(1-\nu x)
+	\end{align*}
+
+\begin{remark}
+	$(1+\varepsilon x\mathbb{F}_2[x])^{\times} \cong x \mathbb{F}_2[x]$, $1+\varepsilon x \sum a_i x^i \mapsto x \sum a_i x^i$的原因，左边是乘法群，右边的乘法是普通的多项式相加，
+	左边$(1+\varepsilon x \sum a_i x^i)(1+\varepsilon x \sum b_j x^j)=1+\varepsilon x \sum a_i x^i+\varepsilon x \sum b_j x^j + (\varepsilon x \sum a_i x^i)(\varepsilon x \sum b_j x^j)= 1+\varepsilon x (\sum a_i x^i+\sum b_j x^j)$, 右边$x \sum a_i x^i + x \sum b_j x^j = x (\sum a_i x^i+\sum b_j x^j)$.
+
+\end{remark}
+
+	As $W(\mathbb{F}_2)$-modules, 
+	\[1+\varepsilon x (a_0+a_1 x+\cdots+a_n x^n)\mapsto a_0 x +a_1 x^2+\cdots +a_n x^{n+1}\]
+	and we can easily check that
+	\[V_m(1+\varepsilon x (a_0+a_1 x+\cdots+a_n x^n))=1+\varepsilon x^m (a_0+a_1 x^m+\cdots+a_n x^{mn})\]
+	\[ [a](1+\varepsilon x (a_0+a_1 x+\cdots+a_n x^n))=1+\varepsilon ax (a_0+a_1 ax+\cdots+a_n a^nx^n)\]
+    hence the module structure of $(1+\varepsilon x\mathbb{F}_2[x])^{\times}$ are the same as $V$.
+
+    By Mayer–Vietoris sequence for the $NK$-functor, one has
+    \[\begin{tikzcd}[column sep=small]
+		 NK_2(\mathbb{Z}[D_2]) \ar[r] & NK_2 \mathbb{Z}[C_2] \oplus NK_2 \mathbb{Z}[C_2] \ar[r,"q\times q"] & NK_2(\mathbb{F}_2[C_2]) \ar[out=0, in=180, looseness=2, overlay]{dll}   \\
+		  NK_1(\mathbb{Z}[D_2]) \ar[r]  & NK_1 \mathbb{Z}[C_2] \oplus NK_1 \mathbb{Z}[C_2]=0 \ar[r]& NK_1(\mathbb{F}_2[C_2])  \ar[out=0, in=180, looseness=2, overlay,"\cong"']{dll}   \\
+		 NK_0(\mathbb{Z}[D_2]) \ar[r]  & NK_0 \mathbb{Z}[C_2] \oplus NK_0 \mathbb{Z}[C_2] =0 \\
+	\end{tikzcd}\]
+
+	Hence $NK_0(\mathbb{Z}[D_2])\cong V$, $NK_1(\mathbb{Z}[D_2])\cong NK_2(\mathbb{F}_2[C_2])/\ima(q\times q) \cong NK_2(\mathbb{F}_2[C_2])/\ima q\cong \Omega_{\mathbb{F}_2[x]}$ since $\ima(q\times q)=\ima q$.
 \end{proof}
+最后一个论断，若对则有$(q\times q)(\Phi(V)\times V)=0$，然而这个等式是不成立的。
+
+\subsection{A result from the $K$-book}
+For the convenience of the reader we copy \cite{weibel2013k} chapter 2 Ex 7.4.5 as follows.
+
+Let $R$ ba a commutative regular ring, $A=R[x]/(x^N)$, we claim that
+\[\Nil_0(A) \rightarrowtail \End_0(A)\]
+is an injection, and 
+\begin{align*}
+\Nil_0(A)&\cong (1+xtA[t])^{\times}\\
+[(A,x)] &\mapsto 1-xt \\
+[(P,\nu)] & \mapsto \det(1-\nu t)
+\end{align*}
+the isomorphism $NK_1(A)\cong \Nil_0(A)\cong (1+xtA[t])^{\times}$ is universal in the following sense:
+
+Let $B$ be a $R$-algebra, $(P,\nu) \in \mathbf{Nil}(B)$ with $\nu^N=0$, regard $P$ as an $A$-$B$-bimodule
+\begin{align*}
+\Nil_0(A) &\longrightarrow \Nil_0(B)\\
+(A,x) & \mapsto (P,\nu)
+\end{align*}
+there is an $\End_0(R)$-module homomorphism
+\begin{align*}
+(1+xtA[t])^{\times}&\longrightarrow \Nil_0(B) \\
+ 1-xt&\mapsto [(P,\nu)].
+\end{align*}
 
 
+\subsection{About the lemma}
+In this subsection, we concentrate on the lemma \ref{lem:omega}.
+
+For a complete proof, see \cite{MR86f:18017}.
 
 \section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$C_4$}{C4}}
 \label{sec:C4}

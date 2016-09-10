@@ -1,0 +1,130 @@
+%!TEX root = ../main.tex
+\chapter{Some Results of Grouprings}
+
+从相关的教材和书籍中摘录与群环相关的$K$-理论结果。
+
+\paragraph{On the K-theory of truncated polynomial rings
+in non-commuting variables 中的有关结果} % (fold)
+\label{par:on_the_k_theory_of_truncated_polynomial_rings_in_non_commuting_variables_中的有关结果}
+Vigleik Angeltveit的文章On the $K$-theory of truncated polynomial rings in non-commuting variables, Bull. London Math. Soc. 47 (2015) 731–742.
+
+Hesselholt and Madsen computed the algebraic $K$-theory of $k[x]/(x^a)$ when k is a perfect field of positive characteristic in terms of big Witt vectors in [L. Hesselholt and I. Madsen, ‘Cyclic polytopes and the K-theory of truncated polynomial algebras’, Invent. Math. 130 (1997) 73–97.], but see [L. Hesselholt and I. Madsen, ‘On the K-theory of finite algebras over Witt vectors of perfect fields’, Topology 36 (1997) 29–101.] as well. They found that
+\[K_{2q-1}(k[x]/(x^a), (x)) \cong \coker(V_a \colon \mathbb{W}_q(k) \longrightarrow \mathbb{W}_{aq}(k)),\]
+while
+\[K_{2q}(k[x]/(x^a), (x)) = 0.\]
+Here $\mathbb{W}_n(k)$ denotes the Witt vectors on the truncation set $\{1, 2, \cdots , n\}$.
+一个例子比如
+$K_{2}(\mathbb{F}_q[x]/(x^a), (x)) = 0$
+
+[V. Angeltveit, T. Gerhardt, M. A. Hill and A. Lindenstrauss, ‘On the algebraic K-theory of truncated polynomial algebras in several variables’, J. K-Theory 13 (2014) 57–81.] 
+
+这篇文章中把上面的结果推广成
+$A=k[x_1,\cdots,x_n]/(x_1^{a_1},\cdots,x_n^{a_n})$, with the big Witt vectors replaced by certain generalized Witt vectors built from truncation sets in $\mathbb{N}^n$ instead
+of $\mathbb{N}$, and the cokernel of $V_a$ replaced by the iterated homotopy cofiber of an $n$-cube of spectra.
+
+These calculations both use the cyclotomic trace map from algebraic $K$-theory to topological cyclic homology. The underlying reason for the appearance of Witt vectors is that if $k$ is a perfect field of positive characteristic, then
+\[\lim_{R,m \leq n} \pi_* THH(k)^{C_m} \cong \mathbb{W}_n(k)[\mu_0],\]
+where $\mu_0$ is a polynomial generator in degree 2.
+% paragraph on_the_k_theory_of_truncated_polynomial_rings_in_non_commuting_variables_中的有关结果 (end)
+
+\section{Relative K-theory and topological cyclic homology} % (fold)
+\label{sec:relative_k_theory_and_topological_cyclic_homology}
+BJORN IAN DUNDAS
+
+Let $f: A\rightarrow B$ be a map of rings up to homotopy. When is it possible to give a good description of the relative algebraic $K$-theory? Generally, $K$-theory is hard to calculate, so it is of special importance to be able to measure the effect of a change of input.
+
+Special instances of the case where $f$ induces an epimorphism $\pi_0(A)\rightarrow \pi_0(B)$ with
+nilpotent kernel have been studied by several authors. 
+\begin{itemize}
+	\item  The first general result in this direction was Goodwillie's theorem [GOODWILLIE, T. G., Relative algebraic K-theory and cyclic homology. Ann. of Math.,124 (1986), 347-402.], that in the case of simplicial rings, relative $K$-theory is rationally given by the corresponding relative negative cyclic homology.
+	\item McCarthy has complemented this by giving a short and beautiful proof [MCCARTHY, R., Relative algebraic K-theory and topological cyclic homology. Acta Math., 179 (1997), 197-222.]showing that at a given prime $p$, the relative $K$-theory is given by the corresponding relative topological cyclic homology.
+\end{itemize}
+This paper stemmed from a desire to understand the linearization 
+\[A(BG) \longrightarrow K(\mathbb{Z} [G])\]
+ that is, the connection between the algebraic $K$-theory of spaces and the algebraic $K$-theory of rings, each of which has theorems of the desired sort. Waldhausen has shown that this map is a rational equivalence, but torsion information has so far been out of reach.
+
+
+与$K,TC,THH$有关的书GOODWILL Notes on the cyclotomic trace, \\HESSELHOLT, L.  MADSEN, I., On the $K$-theory of finite algebras over Witt vectors of perfect fields. Topology, 36 (1997), 29-101.,\\
+BOKSTEDT,M., HSIANG, W.C. , MADSEN, I., The cyclotomic trace and algebraic $K$-theory of spaces. Invent. Math., 111 (1993), 463-539.\\
+MADSEN, I., Algebraic K-theory and traces, in Current Developments in Mathematics (R. Bott, A. Jaffe and S. T. Yan, eds.), pp. 191-323. International Press, 1995. 这个是overview，大致扫过一眼
+% section relative_k_theory_and_topological_cyclic_homology (end)
+
+
+\section{Cyclic polytopes and the $K$-theory of truncated polynomial algebras} % (fold)
+\label{sec:cyclic_polytopes_and_the_k_theory_of_truncated_polynomial_algebras}
+
+这篇文章结论比较重要。
+
+$k$: perfect field of positive characteristic $p$. 比如$\mathbb{F}_p$, 甚至$\mathbb{F}_{p^n}$.
+
+主要计算了$K_*(k[x]/(x^n),(x))$,  relative algebraic $K$ -theory of a truncated polynomial algebra over a perfect field $k$ of positive characteristic $p$.
+
+几个观察 $(x)$这个理想是nilpotent, 因而可以用McCarthy's theorem: {\color{green}  the relative algebraic $K$ -theory is isomorphic to the relative topological cyclic homology}, 后者是可以算的。
+
+最后的结果是说这个群可以用big Witt Vectors来表示，简单回顾Witt vectors的知识\\
+Let $W_m(k)$ denote
+the big Witt vectors in $k$ of length $m$, i.e. the multiplicative group
+\[W_m(k) = (1 + xk\llbracket x\rrbracket )^{\times}/(1 + x^{m+1}k\llbracket x\rrbracket )^{\times},\]
+the Verschiebung map
+\begin{align*}
+V_n \colon & W_m(k) \longrightarrow W_{mn}(k)\\
+& f(x)\mapsto f(x^n)
+\end{align*}
+
+The relative $K$-theory $K (k[x]/(x^n),(x))$ is given by the fibration sequence
+\[K (k[x]/(x^n), (x)) \longrightarrow K (k[x]/(x^n)) \longrightarrow K (k),\]
+with a corresponding exact sequence of homotopy groups
+\[0\longrightarrow K_*(k[x]/(x^n), (x)) \longrightarrow K_*(k[x]/(x^n)) \longrightarrow K_*(k)\longrightarrow 0.\]
+
+当$k$是有限域时，Quillen算了$K_*(k)$. D. Quillen, On the cohomology and K-theory of the general linear groups over a finite
+field, Ann. Math. 96 (1972), 552-586\\
+For a general perfect field of characteristic $p > 0$ one knows that the $p$-adic $K$-groups of $k$ vanish in positive degrees by [C. Kratzer, λ-structure en K -theorie algebrique, Comment. Math. Helv. ´ 55 (1980), 233-254].
+
+计算结果就是下面的定理
+\begin{theorem}
+	Let $k$ be a perfect field of positive characteristic. Then
+	\[K_{2m-1}(k[x]/(x^n), (x)) \cong W_{mn}(k)/V_nW_m(k)\]
+and the groups in even degrees are zero.
+\end{theorem}
+The result extends calculations by Aisbett and Stienstra of $K_{3}(k[x]/(x^n), (x))$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% section cyclic_polytopes_and_the_k_theory_of_truncated_polynomial_algebras (end)

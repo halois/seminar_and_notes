@@ -1,0 +1,874 @@
+%!TEX root = ../testmain.tex
+\chapter{$NK_2(\mathbb{F}_2[C_4])$}
+
+$NK_i(R)=\ker(NK_i(R[x])\overset{x\mapsto 0}\longrightarrow K_i(R)).$
+
+\paragraph{目标} % (fold)
+\label{par:目标}
+\begin{enumerate}
+	\item 证明 $NK_2(\mathbb{F}_2[C_4])$ 中有四阶元，
+	\item 确定它的结构和生成元。
+	\item 推广到$NK_2(\mathbb{F}_{2^f}[C_{2^n}])$和$NK_p(\mathbb{F}_{p^f}[C_{p^n}])$。
+	\item 未来推广到$NK_2(\mathbb{F}_{p^f}[G])$，其中$G$是有限交换群，$G=C_{p^n} \times H$。
+\end{enumerate}
+% paragraph 目标 (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+\section{思路}
+已经有$NK_2(\mathbb{F}_2[C_2])$和$NK_2(\mathbb{F}_p[C_p])$的结果\cite{Guin-Waléry1981}。 这种方法详细见下文\ref{sec:C2Cp}。
+
+考虑$\mathbb{F}_{p^f}[C_{p^n}]$时，可以将它{\color{blue}写成截断多项式${F}_{p^f}[t_1]/(t_1^{p^n})\cong \mathbb{F}_{p^f}[C_{p^n}]$}。
+
+考虑它的$NK_2$时，可以{\color{blue}转化成相对$K_2$群}：
+\[NK_2(\mathbb{F}_{p^f}[C_{p^n}]) \cong K_2(\mathbb{F}_{p^f}[t_1,t_2]/(t_1^{p^n}),(t_1))\cong K_2(\mathbb{F}_{p^f}[t_1,t_2]/(t_1^{p^n})).\]
+
+利用van der Kallen\cite{MR86f:18017}中的方法对于这种情形的相对$K_2$群，有这样的结论(符号说明见后文):
+\begin{theorem*}
+	$\Gamma_{\alpha,i}$诱导了{\color{red}同构}
+\[ K_2(A,M)\cong \bigoplus_{(\alpha,i)\in\Lambda^{00}}(1+xk[x]/(x^{[\alpha,i]}))^{\times}.\]
+\end{theorem*}
+
+接下来的任务就是确定两件事情：
+\begin{itemize}
+	\item 确定集合{\color{blue} $\Lambda^{00}$}，确定数值{\color{blue} $[\alpha,i]$}。
+	\item 确定右边这个{\color{blue}乘法群}的结构。
+\end{itemize}
+实际上对于第一件事情，我们只需要考虑这个集合的一部分，因为$(1+xk[x]/(x))^{\times}$是平凡的，所以只要考虑$[\alpha,i]>1$所对应的$(\alpha,i)$全体（后文详细解释）。
+
+对于第二件事情，有一些例子是可以直接计算的，如$(1+x\mathbb{F}_2[x]/(x^{4}))^{\times}\cong \mathbb{Z}/4 \mathbb{Z} \oplus\mathbb{Z}/2 \mathbb{Z}$。对于一般的情况引入big Witt vectors，
+\[BigWitt_n(\mathbb{F}_q):=(1+x \mathbb{F}_q\llbracket x\rrbracket )^{\times}/(1+x^{n+1} \mathbb{F}_q\llbracket x\rrbracket )^{\times} \cong (1+x\mathbb{F}_q[x]/(x^{n+1}))^{\times}\]
+由big Witt vectors{\color{blue} 分解成typical Witt vectors}有
+\begin{align*}
+(1+x\mathbb{F}_{p^f}[x]/(x^{n+1}))^{\times}&\cong BigWitt_n(\mathbb{F}_{p^f}) \\
+&\cong \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}}W_{1+ \left \lfloor\log_p \frac{n}{m}  \right \rfloor}(\mathbb{F}_{p^f}) \\
+& = \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}}(\mathbb{Z}/p^{1+ \left \lfloor\log_p \frac{n}{m}  \right \rfloor}\mathbb{Z})^f,
+\end{align*}
+其中$ \left \lfloor x \right \rfloor$表示不超过$x$的最大整数。
+
+结合这个同构\ref{K2(A,M)}就可以得到结论。
+
+\paragraph{结论} % (fold)
+\label{par:结论}
+已知的结果{\color{gray}
+\begin{theorem*}
+	(1)$NK_2(\mathbb{F}_2[C_2])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}$，\\
+	(2)$NK_2(\mathbb{F}_2[C_2])\cong K_2(\mathbb{F}_2[t,x]/(t^2),(t))$是由Dennis-Stein符号$\{\langle tx^i,x \rangle \mid i\geq 0\}$与$\{\langle tx^i,t \rangle \mid i\geq 1\text{为奇数}\}$生成的，这样的符号均为$2$阶元。
+\end{theorem*}
+}
+$NK_2(\mathbb{F}_2[C_4])$的结果
+{\color{red}\begin{theorem*}
+	(1)$NK_2(\mathbb{F}_2[C_4])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}\oplus \bigoplus_{\infty}\mathbb{Z}/4 \mathbb{Z}$，\\
+	(2)$NK_2(\mathbb{F}_2[C_4])$是由Dennis-Stein符号
+	\[\{\langle tx^{i-1},x \rangle \mid i\geq 1\},\{\langle tx^i,t \rangle \mid i\geq 1\text{为奇数}\},\{\langle t^3x^{i-1},x \rangle \mid i\geq 1\},%\{\langle t^3x^{i-1},x \rangle \mid i\geq 1,gcd(i,3)=1\},
+	\{\langle t^3x^i,t \rangle \mid i\geq 1\text{为奇数}\}\]
+	生成的。
+\end{theorem*}}
+
+$NK_2(\mathbb{F}_q[C_{2^n}])$的结果
+{\color{red}\[NK_2(\mathbb{F}_q[C_{2^n}])\cong \bigoplus_\infty \bigoplus_{k=1}^n \mathbb{Z}/2^k\mathbb{Z}.\]}
+
+% paragraph 结论 (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{预备知识和引理}
+这一节主要是介绍前文提到的{\color{blue} 如何将$NK_2$转化成相对$K_2$群，\cite{MR86f:18017}中符号说明与相对$K_2$群，以及Witt向量的分解}。
+
+
+
+
+
+
+
+
+%粘贴自NKFinAlg.tex
+令$k$是特征为$p>0$的有限域，考虑两个变元的多项式环$k[t_1,t_2]$，令$I$是$k[t_1,t_2]$的一个真理想，满足以下条件
+\begin{enumerate}
+	\item $I$是由$k[t_1]$中的单项式生成的，
+	\item 对于某个$n$，$t_1^n\in I$. 
+\end{enumerate}
+
+实际上这样的$I$具有形式$(t_1^n)$,
+令
+\[A=k[t_1,t_2]/I,\]
+$M$是$A$的nil根(小根)，即$M=(t_1)$，那么有$A/M=k[t_2]$.
+\begin{prop}
+	$K_2(k[t_1,t_2]/(t_1^n),(t_1,t_2))\cong K_2(A,M)=K_2(k[t_1,t_2]/(t_1^n),(t_1))$.
+\end{prop}
+\begin{proof}
+	首先有下面两个相对$K$群的正合列
+	\[
+	0\longrightarrow K_2(k[t_1,t_2]/(t_1^n),(t_1)) \longrightarrow K_2(k[t_1,t_2]/(t_1^n)) \longrightarrow K_2(k[t_2]) \longrightarrow 0
+	\]
+	\[
+	0\longrightarrow K_2(k[t_1,t_2]/(t_1^n),(t_1,t_2)) \longrightarrow K_2(k[t_1,t_2]/(t_1^n)) \longrightarrow K_2(k) \longrightarrow 0
+	\]
+
+	由于$k$是有限域，它是正则环，于是有$K_2(k)=0$, $K_2(k[t_2])=K_2(k)\oplus NK_2(k)=0$. 从而可以得到
+	\[K_2(k[t_1,t_2]/(t_1^n),(t_1))\cong K_2(k[t_1,t_2]/(t_1^n)) \cong K_2(k[t_1,t_2]/(t_1^n),(t_1,t_2)).\]
+\end{proof}
+
+当$k=\mathbb{F}_{p^f}$时，$k[t_1]/(t_1^{p^n})\cong \mathbb{F}_{p^f}[C_{p^n}]$，其中$C_{p^n}$是$p^n$阶循环群。有以下可裂正合列
+\[0\longrightarrow NK_2(\mathbb{F}_{p^f}[C_{p^n}]) \longrightarrow K_2(\mathbb{F}_{p^f}[C_{p^n}][x])\longrightarrow K_2(\mathbb{F}_{p^f}[C_{p^n}]) \longrightarrow 0,\]
+由于$K_2(\mathbb{F}_{p^f}[C_{p^n}][x])=K_2(\mathbb{F}_{p^f}[t_1,t_2]/(t_1^{p^n}))$，并且$K_2(\mathbb{F}_{p^f}[C_{p^n}])=0$，从而
+\[NK_2(\mathbb{F}_{p^f}[C_{p^n}])\cong K_2(\mathbb{F}_{p^f}[t_1,t_2]/(t_1^{p^n})) \cong K_2(\mathbb{F}_{p^f}[t_1,t_2]/(t_1^{p^n}),(t_1)).\]
+
+
+\subsection{Dennis-Stein符号}
+\label{sub:dennis_stein_symbols}
+回到一般情形，$K_2(A,M)=K_2(k[t_1,t_2]/(t_1^n),(t_1))$可以用Dennis-Stein符号表示
+
+\begin{itemize}
+	\item[生成元]   $\langle a,b \rangle $, $(a,b)\in A\times M \cup M \times A$;
+	\item[关系] $\langle a,b\rangle = -\langle b,a \rangle$, \\
+	$\langle a,b\rangle +\langle c,b \rangle=\langle a+c-abc,b\rangle$, \\
+	 $\langle a,bc\rangle =\langle ab,c\rangle +\langle ac,b\rangle$ 其中$(a,b,c)\in A\times M \times A \cup M\times A\times M$.
+\end{itemize}
+
+\begin{prop}
+	对任意环$R$，$q\geq 1$，$K_2(R[t]/(t^q),(t))$由Dennis-Stein符号$\langle at^i,t\rangle$和$\langle at^i,b\rangle$生成，其中$a,b\in R, 1\leq i<q$。
+\end{prop}
+\begin{proof}
+	参见文献\cite{MR82k:13016}。
+\end{proof}
+
+\subsection{符号说明} % (fold)
+\label{subsec:符号}
+为了表述方便，遵从\cite{MR86f:18017}的符号详述如下\\
+\begin{itemize}
+	\item $\mathbb{Z}_+$: 非负整数全体， 
+	\item $\epsilon^1 = (1,0)\in \mathbb{Z}_+^2$, $\epsilon^2 = (0,1)\in \mathbb{Z}_+^2$,
+	\item 对于$\alpha \in \mathbb{Z}_+^2$, 记$t^{\alpha}=t_1^{\alpha_1}t_2^{\alpha_2}$, 于是有$t^{\epsilon^1}=t_1$, $t^{\epsilon^2}=t_2$,
+	\item $\Delta=\{\alpha\in\mathbb{Z}_+^2\mid  t^{\alpha}\in I\}$,
+	\item $\Lambda=\{(\alpha,i)\in\mathbb{Z}_+^2 \times \{1,2\}\mid  \alpha_i\geq 1, t^{\alpha}\in M\}$, 若$\delta \in \Delta$, 则有$\delta+\epsilon^i \in \Delta, I=1,2$,
+	\item 对于$(\alpha,i)\in\Lambda$, 令{\color{blue}$[\alpha,i]=\min\{m\in \mathbb{Z}\mid m\alpha - \epsilon^i\in \Delta\}$}, 
+	若$(\alpha,i),(\alpha,j)\in \Lambda$, 有$[\alpha,i]\leq [\alpha,j]+1$,
+	\item 若$gcd(p,\alpha_1,\alpha_2)=1$, 令$[\alpha]=\max\{[\alpha,i]\mid  \alpha_i  \not\equiv 0 \bmod p\}$
+	\item {\color{blue} $\Lambda^{00}= \big\{(\alpha,i)\in \Lambda\mid  gcd(\alpha_1,\alpha_2)=1, i\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod p, [\alpha,j]=[\alpha]\} \big\}$}.
+\end{itemize}
+% subsection 符号 (end)
+若$(\alpha,i)\in \Lambda$, $f(x)\in k[x]$, 令
+\[\Gamma_{\alpha,i}(1-xf(x))= \langle f(t^\alpha)t^{\alpha-\epsilon^i},t_i \rangle,\]
+若$g(t_1,t_2)=t_ih(t_1,t_2)\in \sqrt{I}=(t_1)$, 令
+\[\Gamma_i(1-g(t_1,t_2))=\langle h(t_1,t_2),t_i \rangle,\]
+且有
+\[\Gamma_{\alpha,i}(1-xf(x))=\Gamma_i(1-t^{\alpha} f(t^{\alpha})).\]
+
+由于$t_1\in \sqrt{I}$, $\Gamma_1$诱导了同态
+\begin{align*}
+(1+t_1k[t_1,t_2]/t_1 I)^{\times} &\longrightarrow K_2(A,M)\\
+1-g(t_1,t_2) & \mapsto \langle h(t_1,t_2),t_1 \rangle
+\end{align*}
+$\Gamma_2$诱导了同态
+\begin{align*}
+(1+t_2\sqrt{I}/t_2 I)^{\times} &\longrightarrow K_2(A,M)\\
+1-g(t_1,t_2) & \mapsto \langle h(t_1,t_2),t_2 \rangle
+\end{align*}
+若$(\alpha,i)\in\Lambda$, $\Gamma_{\alpha,i}$诱导了同态
+\[(1+xk[x]/(x^{[\alpha,i]}))^{\times} \longrightarrow K_2(A,M).\]
+\begin{theorem}
+\label{K2(A,M)}
+	$\Gamma_{\alpha,i}$诱导了{\color{red}同构}
+\[ K_2(A,M)\cong \bigoplus_{(\alpha,i)\in\Lambda^{00}}(1+xk[x]/(x^{[\alpha,i]}))^{\times}.\]
+\end{theorem}
+\begin{proof}
+	参见文献\cite{MR86f:18017}。
+\end{proof}
+
+\subsection{Witt向量}
+令$R$是一个交换环，big Witt环(the ring of universal/big Witt vectors over $R$,泛Witt环)$BigWitt(R)$作为Abel群同构于$(1+xR\llbracket x\rrbracket )^{\times}$，即常数项为$1$的形式幂级数全体在乘法运算下形成的交换群，
+\begin{align*}
+BigWitt(R) &\longrightarrow (1+xR\llbracket x\rrbracket )^{\times}\\
+(r_1,r_2,\cdots) & \mapsto \prod_i(1-r_i x^i)^{-1}.
+\end{align*}
+
+
+
+考虑子群$(1+x^{n+1}R\llbracket x\rrbracket )^{\times}$，定义$BigWitt_n(R)=(1+xR\llbracket x\rrbracket )^{\times}/(1+x^{n+1}R\llbracket x\rrbracket )^{\times}$。 显然$BigWitt_1(R)=R$， 并且当$n\geq 3$时，$BigWitt_n(\mathbb{F}_2)$不是循环群。
+
+% 
+% 下方有修改，				|^^^^|				请对比来选择。
+% 下方有修改，				|^^^^|				请对比来选择。
+% 下方有修改，				|^^^|				请对比来选择。
+% 下方有修改，				|^^^|				请对比来选择。
+% 下方有修改，				|^^^|				请对比来选择。
+% 下方有修  				|^^|				 对比来选择。
+% 下方有修  				|^^|				 对比来选择。
+% 下方有修  				|^^|				 对比来选择。
+% 下方有修  				|^^|				 对比来选择
+% 下方有修  				|^|					 对比来选择
+% 下方有     				|^|					  比来选泽
+% 下方有    				||					   比来选 
+% 							
+% 									
+%   修改 				    口					    修改
+%   修改 				    口					    修改
+%
+{\color{blue}\begin{lemma}
+	 $BigWitt_n(\mathbb{F}_q)\cong (1+x\mathbb{F}_q[x]/(x^{n+1}))^{\times}$.
+\end{lemma}}
+\begin{proof}
+	由定义$BigWitt_n(\mathbb{F}_q):=(1+x \mathbb{F}_q\llbracket x\rrbracket )^{\times}/(1+x^{n+1} \mathbb{F}_q\llbracket x\rrbracket )^{\times}$，且有同态
+\begin{align*}
+(1+x \mathbb{F}_q\llbracket x\rrbracket )^{\times} &\longrightarrow (1+x \mathbb{F}_q[x]/(x^{n+1}))^{\times}\\
+1+\sum_{i\geq 1}a_i x^i &\mapsto 1+\sum_{i = 1}^{n}a_i x^i
+\end{align*}
+容易看出核是$(1+x^{n+1} \mathbb{F}_2\llbracket x\rrbracket )^{\times}$，
+从而$BigWitt_n(\mathbb{F}_q)\cong (1+x\mathbb{F}_q[x]/(x^{n+1}))^{\times}$。
+\end{proof}
+
+
+% 上面为新加
+\begin{example} 
+\label{ex:W3(F2)}
+	$BigWitt_3(\mathbb{F}_2)\cong (1+x\mathbb{F}_2[x]/(x^{4}))^{\times}\cong \mathbb{Z}/4 \mathbb{Z} \oplus\mathbb{Z}/2 \mathbb{Z}$
+\end{example}
+\begin{proof}
+	考虑$1+x\in (1+x \mathbb{F}_2[x]/(x^4))^{\times}$是$4$阶元，由它生成的子群$\langle 1+x \rangle = \{1,1+x,1+x^2,1+x+x^2+x^3\}$, 且$1+x^3$是二阶元，令$\sigma,\tau$分别是$\mathbb{Z}/4 \mathbb{Z}$和$\mathbb{Z}/2 \mathbb{Z}$的生成元，则有同构
+		\begin{align*}
+		\mathbb{Z}/4 \mathbb{Z} \oplus \mathbb{Z}/2 \mathbb{Z} &\longrightarrow BigWitt_4(\mathbb{F}_2) \\
+		(\sigma,\tau) & \mapsto (1+x)(1+x^3)=1+x+x^3. 
+		\end{align*}
+\end{proof}
+
+\begin{example}
+	$BigWitt_4(\mathbb{F}_2) \cong \mathbb{Z}/8 \mathbb{Z} \oplus \mathbb{Z}/2 \mathbb{Z}.$
+\end{example}
+\begin{proof}
+	考虑$1+x \in BigWitt_5(\mathbb{F}_2)$, 它是$8$阶元，由它生成的子群$\langle 1+x \rangle = \{1,1+x,1+x^2,1+x+x^2+x^3,1+x^4,1+x+x^4,1+x^2+x^4,1+x+x^2+x^3+x^4\}$，另外$1+x^3$是二阶元，令$\sigma,\tau$分别是$\mathbb{Z}/8 \mathbb{Z}$和$\mathbb{Z}/2 \mathbb{Z}$的生成元，则有同构
+	\begin{align*}
+	\mathbb{Z}/8 \mathbb{Z} \oplus \mathbb{Z}/2 \mathbb{Z} &\longrightarrow BigWitt_4(\mathbb{F}_2) \\
+	(\sigma,\tau) & \mapsto (1+x)(1+x^3)=1+x+x^3+x^4 
+	\end{align*}
+	于是$(\sigma^i,\tau^j), 0\leq i <8, 0\leq j<2$对应于$(1+x)^i(1+x^3)^j$, 详细的对应如下
+	\begin{align*}
+	(1,\tau) & \mapsto 1+x^3,& (\sigma,\tau) & \mapsto 1+x+x^3+x^4, \\
+	 (\sigma^2,\tau) & \mapsto 1+x^2+x^3,& (\sigma^3,\tau) & \mapsto 1+x+x^2+x^4, \\
+	(\sigma^4,\tau) & \mapsto 1+x^3+x^4, & (\sigma^5,\tau) & \mapsto 1+x+x^3, \\
+	 (\sigma^6,\tau) & \mapsto 1+x^2+x^3+x^4, & (\sigma^7,\tau) & \mapsto 1+x+x^2, \\
+	(1,1)& \mapsto 1,& (\sigma,1) & \mapsto 1+x, \\
+	(\sigma^2,1) & \mapsto 1+x^2, & (\sigma^3,1) & \mapsto 1+x+x^2+x^3, \\
+	(\sigma^4,1) & \mapsto 1+x^4, &
+	(\sigma^5,1) & \mapsto 1+x+x^4, \\
+	(\sigma^6,1) & \mapsto 1+x^2+x^4, & (\sigma^7,1) & \mapsto 1+x+x^2+x^3+x^4. 
+	\end{align*}
+
+\end{proof}
+
+
+
+固定素数$p$，考虑局部环$\mathbb{Z}_{(p)}=\mathbb{Z}[1/\ell \mid \text{所有素数}\ell\neq p]$，即$\mathbb{Z}$在素理想$(p)=p \mathbb{Z}$的局部化，于是一个$\mathbb{Z}_{(p)}$-代数$R$就是除$p$外的素数均可逆的交换环，如$\mathbb{F}_{p^n}$是$\mathbb{Z}_{(p)}$-代数。
+
+考虑$p$-Witt环$W(A)$与截断$p$-Witt环$W_n(A)$，$p$-Witt向量为$(a_0,a_1,\cdots)$，加法用Witt多项式定义，以下仅考虑用加法定义的Abel群结构，例如$W(\mathbb{F}_p)=\mathbb{Z}_{p}$，作为Abel群$W_n(\mathbb{F}_{p^f})$同构于$(\mathbb{Z}/p^n\mathbb{Z})^f$。%这里可以加上Galois环
+
+Artin-Hasse级数定义为
+\[AH(x)= \exp(-\sum_{n\geq 0}\frac{x^{p^n}}{p^n})=1-x+\cdots \in 1+x \mathbb{Q}\llbracket x\rrbracket ,\]
+实际上$AH(x)\in 1+x \mathbb{Z}_{(p)}\llbracket x\rrbracket $。对于$BigWitt(R)=1+xR\llbracket x\rrbracket $中的任一元素$\alpha$存在以下写成无穷乘积的表法
+\[\alpha = \prod_{n\geq 1}(1-r_nx^n),\ r_n\in R,\]
+若$A$是$\mathbb{Z}_{(p)}$-代数，$BigWitt(A)=1+xA\llbracket x\rrbracket $中的任一元素$\alpha$还有如下表法
+\[\alpha = \prod_{n\geq 1}AH(a_n x^n),\ a_n\in A.\]
+将整数$n$写成$n=mp^a$，使得$gcd(m,p)=1, a\geq 0$，由于$A$是$\mathbb{Z}_{(p)}$-代数，$m$可逆，从而$[x\mapsto x^{1/m}]\in \End(BigWitt(A))$是双射，于是我们可以将$\alpha\in BigWitt(A)$以如下的形式表出
+\[\prod_{\scriptsize\substack{m\geq 1 \\ gcd(m,p)=1  \\ a\geq 0}}AH(a_{mp^a} x^{mp^a})^{1/m}.\]
+
+另一方面对于$\mathbb{Z}_{(p)}$-代数$A$，下列映射是群同态
+\begin{align*}
+W(A)&\longrightarrow BigWitt(A)\\
+(a_0,a_1,\cdots) &\mapsto \prod_{i\geq 0}AH(a_i x^i).
+\end{align*}
+
+$BigWitt_n(A)$可以分解为$p$-Witt环的直和，实际上有以下同构
+\[
+BigWitt(A) \cong \prod_{\scriptsize\substack{m\geq 1 \\ gcd(m,p)=1}} W(A),
+\]
+元素$\prod\limits_{\scriptsize\substack{m\geq 1 \\ gcd(m,p)=1  \\ a\geq 0}}AH(a_{mp^a} x^{mp^a})^{1/m}$对应于一个$m$-分量为$(a_m,a_{mp},a_{mp^2},\cdots)\in W(A)$的Witt向量。
+对于截断的Witt环，有同构\[
+BigWitt_n(A) \cong \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}} W_{\ell(m,n)}(A),
+\]
+其中$\ell(m,n)$是一个整数，定义为
+\[\ell(m,n)=1+\text{使得$mp^k\leq n$成立的最大整数$k$}.\]
+
+{\color{blue}考虑特征为$p$的有限域$\mathbb{F}_q$，有同构\cite{Lauter1999A}
+\[BigWitt_n(\mathbb{F}_{q}) \cong \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}} W_{\ell(m,n)}(\mathbb{F}_{q}),\]}
+注意到两边都是$q^n$阶的群，因为$\sum\limits_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}} \ell(m,n) = n$。
+\begin{corollary}
+\label{cor:BW}
+	若有限域$\mathbb{F}_{p^f}$的特征$ch(\mathbb{F}_{p^f})=p$，则作为Abel群有
+	\[
+	BigWitt_n(\mathbb{F}_{p^f})\cong \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}}W_{1+ \left \lfloor\log_p \frac{n}{m}  \right \rfloor}(\mathbb{F}_{p^f}) = \bigoplus_{\scriptsize\substack{1\leq m\leq n \\ gcd(m,p)=1}}(\mathbb{Z}/p^{1+ \left \lfloor\log_p \frac{n}{m}  \right \rfloor}\mathbb{Z})^f,
+	\]
+	其中$ \left \lfloor x \right \rfloor$表示不超过$x$
+	的最大整数。
+\end{corollary}
+\begin{example}
+	$BigWitt_3(\mathbb{F}_2)= W_{\ell(1,3)}(\mathbb{F}_2)\oplus W_{\ell(3,3)}(\mathbb{F}_2)=W_2(\mathbb{F}_2)\oplus W_1(\mathbb{F}_2)=\mathbb{Z}/4 \mathbb{Z}\oplus	\mathbb{Z}/2 \mathbb{Z}$，
+
+	$BigWitt_4(\mathbb{F}_2)= W_{\ell(1,4)}(\mathbb{F}_2)\oplus W_{\ell(3,4)}(\mathbb{F}_2)=W_3(\mathbb{F}_2)\oplus W_1(\mathbb{F}_2)=\mathbb{Z}/8 \mathbb{Z}\oplus	\mathbb{Z}/2 \mathbb{Z}$，
+
+	$BigWitt_2(\mathbb{F}_3)= W_{\ell(1,2)}(\mathbb{F}_3)\oplus W_{\ell(2,2)}(\mathbb{F}_3)=W_1(\mathbb{F}_3)\oplus W_1(\mathbb{F}_3)=\mathbb{Z}/3 \mathbb{Z}\oplus	\mathbb{Z}/3 \mathbb{Z}$。
+
+\end{example}
+%粘贴自NKFinAlg.tex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{$NK_2(\mathbb{F}_2[C_2])$的计算}
+方法一是在讲Weibel文章\cite{weibel2009nk0}时讲过的。方法二是基于上面的思路给出来的详细证明。
+{\normalsize \color{gray}\subsection{方法一}
+% 粘贴自weibelnk.tex
+\label{sec:C2Cp}
+First, consider the simplest example $G=C_2=\langle \sigma \rangle=\{1,\sigma\}$. There is a Rim square
+\begin{equation}
+\label{rimsqC2}
+	\begin{tikzcd}
+		\mathbb{Z}[C_2] \ar[r,"\sigma\mapsto 1"] \ar[d,"\sigma\mapsto -1"']& \mathbb{Z}\ar[d,"q"]\\
+		 \mathbb{Z}\ar[r,"q"] & \mathbb{F}_2\\
+	\end{tikzcd}
+\end{equation}
+	
+Since $\mathbb{F}_2$ (field) and $\mathbb{Z}$ (PID) are regular rings, $NK_i(\mathbb{F}_2)=0=NK_i(\mathbb{Z})$ for all $i$.
+
+By Mayer–Vietoris sequence, one can get $NK_1(\mathbb{Z}[C_2])=0$, $NK_0(\mathbb{Z}[C_2])=0$. Note that the similar results are true for any cyclic group of prime order.
+	\[\begin{tikzcd}[column sep=small]
+		NK_2 \mathbb{F}_2 \ar[r] \ar[d,equal]& NK_1 \mathbb{Z}[C_2] \ar[r] & NK_1 \mathbb{Z} \oplus NK_1 \mathbb{Z} \ar[r] \ar[d,equal]& NK_1 \mathbb{F}_2 \ar[r] \ar[d,equal] & NK_0 \mathbb{Z}[C_2] \ar[r]&NK_0 \mathbb{Z} \oplus NK_0 \mathbb{Z}  \ar[d,equal] \\
+		0 & & 0 &0 & & 0\\
+	\end{tikzcd}\]
+
+\[\ker(\mathbb{Z}[C_2]\overset{\sigma \mapsto -1}\longrightarrow \mathbb{Z}) =(\sigma +1)\]
+By relative exact sequence,
+\[0=NK_3(\mathbb{Z})\longrightarrow NK_2(\mathbb{Z}[C_2],(\sigma+1))\overset{\cong}\longrightarrow NK_2(\mathbb{Z}[C_2])\longrightarrow NK_2(\mathbb{Z})=0.\]
+And from $(\mathbb{Z}[C_2],(\sigma+1))\longrightarrow (\mathbb{Z}[C_2]/(\sigma-1),(\sigma+1)+(\sigma-1)/(\sigma-1))=(\mathbb{Z},(2))$ one has double relative exact sequence
+\[0=NK_3(\mathbb{Z},(2))\longrightarrow NK_2(\mathbb{Z}[C_2];(\sigma+1),(\sigma-1))\overset{\cong}\longrightarrow NK_2(\mathbb{Z}[C_2],(\sigma+1))\longrightarrow NK_2(\mathbb{Z},(2))=0.\]
+Note that $0=NK_{i+1}(\mathbb{Z}/2)\longrightarrow NK_i(\mathbb{Z},(2))\longrightarrow NK_i(\mathbb{Z})=0$.
+
+\[\begin{tikzcd}
+	 & NK_3(\mathbb{Z},(2))=0 \ar[d,red] & & & \\
+	 & NK_2(\mathbb{Z}[C_2];(\sigma+1),(\sigma-1)) \ar[d,red,"\cong",red] \\
+0=NK_3(\mathbb{Z})	\ar[r,blue] & NK_2(\mathbb{Z}[C_2],(\sigma+1)) \ar[r,blue,"\cong",blue] \ar[d,red] & NK_2(\mathbb{Z}[C_2]) \ar[r,blue] &NK_2(\mathbb{Z})=0\\
+	& NK_2(\mathbb{Z},(2))=0 \\
+\end{tikzcd}
+\]
+We obtain $NK_2(\mathbb{Z}[C_2])\cong NK_2(\mathbb{Z}[C_2],(\sigma+1),(\sigma-1))$, from Guin-Loday-Keune\cite{Guin-Waléry1981}, $NK_2(\mathbb{Z}[C_2];(\sigma+1),(\sigma-1))$ is isomorphic to $V=x \mathbb{F}_2[x]$, with the Dennis-Stein symbol $\langle x^n(\sigma-1),\sigma+1 \rangle$ corresponding to $x^n\in V$. Note that $1-x^n(\sigma-1)(\sigma+1)=1$ is invertible in $\mathbb{Z}[C_2][x]$ and $\sigma+1 \in (\sigma+1), x^n(\sigma-1) \in (\sigma-1)$.
+
+\begin{theorem}
+	$NK_2(\mathbb{Z}[C_2])\cong V$, $NK_1(\mathbb{Z}[C_2])=0$, $NK_0(\mathbb{Z}[C_2])=0$.
+\end{theorem}
+
+In fact, when $p$ is a prime number, we have $NK_2(\mathbb{Z}[C_p])\cong x \mathbb{F}_p[x]$, $NK_1(\mathbb{Z}[C_p])=0$, $NK_0(\mathbb{Z}[C_p])=0$.
+
+\begin{example}[{$\mathbb{Z}[C_p]$}]
+	$R=\mathbb{Z}[C_p]$, $I=(\sigma-1)$, $J=(1+\sigma+\cdots+\sigma^{p-1})$ such that $I\cap J =0$. There is a Rim square
+		\[\begin{tikzcd}
+			\mathbb{Z}[C_p] \ar[r,"\sigma \mapsto \zeta"] \ar[d,"f","\sigma\mapsto 1"']& \mathbb{Z}[\zeta]\ar[d,"g"]\\
+			\mathbb{Z} \ar[r] & \mathbb{F}_p\\
+		\end{tikzcd}\]
+$I/I^2\otimes_{\mathbb{Z}[C_p]^{op}}J/J^2 \cong \mathbb{Z}_p$ is cyclic of order $p$ and generated by $(\sigma-1)\otimes(1+\sigma+\cdots+\sigma^{p-1})$. Note that $p(\sigma-1)\otimes(1+\sigma+\cdots+\sigma^{p-1})=0$ since $(1+\sigma+\cdots+\sigma^{p-1})^2=p(1+\sigma+\cdots+\sigma^{p-1})$.
+
+And the map 
+\begin{align*}
+I/I^2\otimes_{\mathbb{Z}[C_p]^{op}}J/J^2 &\longrightarrow K_2(R,I)\\
+(\sigma-1)\otimes(1+\sigma+\cdots+\sigma^{p-1}) & \mapsto \langle \sigma-1,1+\sigma+\cdots+\sigma^{p-1} \rangle =\langle \sigma-1,1\rangle^p=1
+\end{align*}
+Also see \cite{STEIN1980213}.
+
+\end{example}
+\begin{example}[{$\mathbb{Z}[C_p][x]$}]
+	There is a Rim square
+		\[\begin{tikzcd}
+			\mathbb{Z}[C_p][x] \ar[r] \ar[d]& \mathbb{Z}[\zeta][x]\ar[d]\\
+			\mathbb{Z}[x] \ar[r] & \mathbb{F}_p[x]\\
+		\end{tikzcd}\]
+$K_2(\mathbb{Z}[C_p][x];I[x],J[x])\cong I[x]\otimes_{\mathbb{Z}[C_p][x]} J[x] =I\otimes_{\mathbb{Z}[C_p]} J[x]\cong \mathbb{Z}_p[x]$.
+
+Since $\Lambda=\mathbb{Z}, \mathbb{F}_p, \mathbb{Z}[\zeta]$ are regular, $K_i(\Lambda[x]) = K_i(\Lambda)$, i.e. $NK_i(\Lambda)=0$. Hence 
+\[K_2(\mathbb{Z}[C_p][x],I[x],J[x])/K_2(\mathbb{Z}[C_p],I,J)\cong K_2(\mathbb{Z}[C_p][x])/K_2(\mathbb{Z}[C_p]),\]
+finally $NK_2(\mathbb{Z}[C_p]) = K_2(\mathbb{Z}[C_p][x])/K_2(\mathbb{Z}[C_p]) \cong \mathbb{Z}/p[x]/\mathbb{Z}/p=x \mathbb{Z}/p [x]= x \mathbb{F}_p[x]$.
+\end{example}
+}
+% 粘贴自weibelnk.tex 结束
+
+
+
+
+
+
+
+
+
+\subsection{{\color{red}方法二}}
+
+% 粘贴自NKFinAlg.tex 
+计算$k=\mathbb{F}_2$, $p=2$, $n=2$的情形，即$NK_2(\mathbb{F}_2[C_2])\cong K_2(\mathbb{F}_2[t_1,t_2]/(t_1^2),(t_1))$.
+\begin{theorem}
+	(1)$NK_2(\mathbb{F}_2[C_2])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}$，\\
+	(2)$NK_2(\mathbb{F}_2[C_2])\cong K_2(\mathbb{F}_2[t,x]/(t^2),(t))$是由Dennis-Stein符号$\{\langle tx^i,x \rangle \mid i\geq 0\}$与$\{\langle tx^i,t \rangle \mid i\geq 1\text{为奇数}\}$生成的，这样的符号均为$2$阶元。
+\end{theorem}
+\begin{proof}
+	(1)令$A=\mathbb{F}_2[t_1,t_2]/(t_1^2)=\mathbb{F}_2[C_{2}][x]$, 此时$I=(t_1^2)$, $M=(t_1)$, $A/M=\mathbb{F}_2[x]$. 
+\begin{align*}
+\Delta &=\{(\alpha_1,\alpha_2)\in\mathbb{Z}_+^2\mid  t_1^{\alpha_1}t_2^{\alpha_2}\in (t_1^2)\}\\
+	&=\{(\alpha_1,\alpha_2)\mid \alpha_1\geq 2, \alpha_2 \geq 0\},
+\end{align*}
+
+\begin{align*}
+\Lambda &=\{((\alpha_1,\alpha_2),i)\in\mathbb{Z}_+^2 \times \{1,2\}\mid \alpha_i\geq 1, \text{且} t_1^{\alpha_1}t_2^{\alpha_2}\in (t_1)\} \\
+	&=\{((\alpha_1,\alpha_2),i)\in\mathbb{Z}_+^2 \times \{1,2\}\mid \alpha_i\geq 1, \alpha_1\geq 1, \alpha_2\geq 0\} \\
+	&=\{((\alpha_1,\alpha_2),1) \mid \alpha_1\geq 1, \alpha_2\geq 0\}\cup \{((\alpha_1,\alpha_2),2) \mid \alpha_1\geq 1, \alpha_2\geq 1\},
+\end{align*}
+
+若$(\alpha,i)\in \Lambda$, $[\alpha,i] = \min \{m\in \mathbb{Z}\mid m \alpha -\epsilon^i \in \Delta\}$, 于是有
+\begin{align*}
+[\alpha,1] & = \min \{m\in \mathbb{Z} \mid m \alpha -\epsilon^1 \in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid (m \alpha_1-1,m \alpha_2)\in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 3\}.
+\end{align*}
+\begin{align*}
+[\alpha,2] & = \min \{m\in \mathbb{Z} \mid m \alpha -\epsilon^2 \in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid (m \alpha_1,m \alpha_2-1)\in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 2\}.
+\end{align*}
+此时
+\begin{align*}
+[(1,\alpha_2),1] & = 3, \ \alpha_2\geq 0, \\
+[(2,\alpha_2),1] & = 2, \ \alpha_2\geq 0, \\
+[(\alpha_1,\alpha_2),1] & = 1, \ \alpha_1\geq 3, \alpha_2\geq 0, \\
+[(1,\alpha_2),2] & = 2, \ \alpha_2\geq 1, \\
+[(\alpha_1,\alpha_2),2] & = 1, \ \alpha_1\geq 2, \alpha_2\geq 1.
+\end{align*}
+
+
+
+若$gcd(2,\alpha_1,\alpha_2)=1$，即$\alpha_1,\alpha_2$中至少一个是奇数，令$[\alpha]=\max\{[\alpha,i]\mid  \alpha_i  \not\equiv 0 \bmod 2\}$, $\alpha=(\alpha_1,\alpha_2)$,若仅$\alpha_1$是奇数，$[\alpha]=[\alpha,1]$,若仅$\alpha_2$是奇数，$[\alpha]=[\alpha,2]$，若两者均为奇数，则$[\alpha]=\max\{[\alpha,1],[\alpha,2]\}$，有
+\begin{align*}
+[(1,\alpha_2)]&=\max\{[(1,\alpha_2),1],[(1,\alpha_2),2]\}=3, \text{$\alpha_2 \geq 1$是奇数}\\
+[(1,\alpha_2)]&=[(1,\alpha_2),1]=3, \text{$\alpha_2 \geq 0$是偶数}\\
+[(3,\alpha_2)]&=\max\{[(3,\alpha_2),1],[(3,\alpha_2),2]\}=1,\text{$\alpha_2\geq 1$是奇数}\\
+[(3,\alpha_2)]&=[(3,\alpha_2),1]=1,\text{$\alpha_2\geq 0$是偶数}\\
+[(2,1)]&=[(2,1),2]=1,\\
+[\alpha]&=1,\text{其它符合条件的$\alpha$.}
+\end{align*}
+为了方便我们把上面的计算结果列表如下
+\[\begin{array}{|c|c|c|c|}
+\hline
+(\alpha_1,\alpha_2) & [(\alpha_1,\alpha_2),1] &[(\alpha_1,\alpha_2),2] &[(\alpha_1,\alpha_2)]  \\
+\hline
+(1,\alpha_2)  & 3, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 3 \\
+\hline
+(2,\alpha_2)  & 2, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1, \text{当$\alpha_2$是奇数时} \\
+\hline
+(3,\alpha_2)  & 1, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1 \\
+\hline
+(\alpha_1,0),\alpha_1 \geq 3 & 1 & \text{无定义} &1, \text{当$\alpha_1$是奇数时} \\
+\hline
+(\alpha_1,\alpha_2),\alpha_1 \geq 3, \alpha_2 \geq 1& 1 & 1& 1, \text{当$(\alpha_1,\alpha_2)=1$时} \\
+\hline
+\end{array}\]
+
+
+下面我们计算$\Lambda^{00}=\big\{(\alpha,i)\in \Lambda\mid  gcd(\alpha_1,\alpha_2)=1, i\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[\alpha,j]=[\alpha]\} \big\}$，
+
+分情况来讨论
+\begin{enumerate}
+	\item 对于任何的$\alpha_2\geq 0$， $((1,\alpha_2),1) \not \in \Lambda^{00}$，这是因为$1\not\equiv 0 \bmod 2$且$[(1,\alpha_2),1]=3=[(1,\alpha_2)]$，从而$\min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[(1,\alpha_2),j]=[(1,\alpha_2)]\}=1$；
+	\item 对于任何的奇数$\alpha_2\geq 0$，$((2,\alpha_2),1) \in \Lambda^{00}$，偶数$\alpha_2\geq 0$，$((2,\alpha_2),1) \not \in \Lambda^{00}$， 因为$\alpha_2\not\equiv 0 \bmod 2$并且$[(2,\alpha_2),2]=1=[(2,\alpha_2)]$，故$\{j\mid \alpha_j\not\equiv 0 \bmod 2,[(2,\alpha_2),j]=[(2,\alpha_2)]\}=2\neq 1$，此时$[(2,\alpha_2),1]=2$；
+	\item 对于偶数$\alpha_1\geq 3$和奇数$\alpha_2\geq 1$，$((\alpha_1,\alpha_2),1)  \in \Lambda^{00}$，其余情况当$\alpha_1\geq 3$为奇数或$\alpha_1,\alpha_2$均为偶数时$((\alpha_1,\alpha_2),1) \not  \in \Lambda^{00}$。由于要求$1\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[(\alpha_1,\alpha_2),j]=[(\alpha_1,\alpha_2)]\}$，当$\alpha_1\geq 3$为奇数时上式不成立，$2= \min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[(\alpha_1,\alpha_2),j]=[(\alpha_1,\alpha_2)]\}$当且仅当$\alpha_1\geq 3$为偶数且$\alpha_2\geq 1$为奇数，此时$[(\alpha_1,\alpha_2),1]=1$；
+	\item 对于任何的$\alpha_2\geq 1$， $((1,\alpha_2),2) \in \Lambda^{00}$，由于此时$[(1,\alpha_2),1]=3=[(1,\alpha_2)]$，$\min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[\alpha,j]=[\alpha]\}=1$，此时$[(1,\alpha_2),2]=2$；
+	\item 对于任何的奇数$\alpha_2\geq 1$， $((2,\alpha_2),2) \not \in \Lambda^{00}$，由于$[(2,\alpha_2),2]=1=[(2,\alpha_2)]$，与$2\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[\alpha,j]=[\alpha]\}$矛盾；
+	\item 对于奇数$\alpha_1\geq 3$和任意$\alpha_2\geq 1 $，$((\alpha_1,\alpha_2),2)  \in \Lambda^{00}$，其余情况只要当$\alpha_1\geq 3$为偶数时$((\alpha_1,\alpha_2),2) \not  \in \Lambda^{00}$。要求$2\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2,[(\alpha_1,\alpha_2),j]=[(\alpha_1,\alpha_2)]\}$，当$\alpha_1$为偶数时上式不成立，而当$\alpha_1$为奇数时，任意$\alpha_2\geq 1$，$[(\alpha_1,\alpha_2),1]=1=[(\alpha_1,\alpha_2)]$，此时$[(\alpha_1,\alpha_2),2]=1$。
+\end{enumerate}
+
+
+
+从而
+\begin{align*}
+\Lambda^{00}=&\{((2,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\} \\
+	&\cup \{((1,\alpha_2),2)\mid  \alpha_2\geq 1\} \\
+	&\cup \{((\alpha_1,\alpha_2),1) | \alpha_1\geq 3\text{为偶数},\alpha_2\geq 1\text{为奇数}\} \\
+	&\cup \{((\alpha_1,\alpha_2),2) | \alpha_1\geq 3\text{为奇数},\alpha_2\geq 1\}.
+\end{align*}
+记$\Lambda^{00}_1=\{(\alpha,i)\in \Lambda^{00}| [(\alpha,i)]=1\}$，$\Lambda^{00}_2=\{(\alpha,i)\in \Lambda^{00}| [(\alpha,i)]=2\}$，我们有
+\[\Lambda^{00}_1= \{((\alpha_1,\alpha_2),1) | \alpha_1\geq 3\text{为偶数},\alpha_2\geq 1\text{为奇数}\} \cup \{((\alpha_1,\alpha_2),2) | \alpha_1\geq 3\text{为奇数},\alpha_2\geq 1\}\]
+{\color{blue}\[\Lambda^{00}_2=\{((2,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\} \cup \{((1,\alpha_2),2)\mid  \alpha_2\geq 1\}\]}
+\[\Lambda^{00}=\Lambda^{00}_1 \sqcup \Lambda^{00}_2.\]
+
+
+若$[\alpha,i]=1$时，$(1+x\mathbb{F}_{2}[x]/(x))^{\times}$是平凡的，$[\alpha,i]=2$时，$(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times}\cong \mathbb{Z}/2 \mathbb{Z}$，从而由定理\ref{K2(A,M)}得
+
+\begin{align*}
+NK_2(\mathbb{F}_2[C_2])\cong K_2(A,M) &\cong \bigoplus_{(\alpha,i)\in\Lambda^{00}}(1+x\mathbb{F}_{2}[x]/(x^{[\alpha,i]}))^{\times}\\
+& = \bigoplus_{(\alpha,i)\in \Lambda^{00}_2}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times}\\
+& = \bigoplus_{\scriptsize\substack{((1,\alpha_2),2) \\ \alpha_2 \geq 1}}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times} \oplus \bigoplus_{\scriptsize\substack{((2,\alpha_2),1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times} \\
+& = \bigoplus_{\alpha_2 \geq 1}\mathbb{Z}/2 \mathbb{Z} \oplus \bigoplus_{\alpha_2\geq 1\text{为奇数}}\mathbb{Z}/2 \mathbb{Z},
+\end{align*}
+作为Abel群，
+\[NK_2(\mathbb{F}_2[C_2]) \cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}.\]
+% 
+% 定理第二部分
+% 
+% 
+
+	(2)由\ref{K2(A,M)}，对于任意$(\alpha,i)\in \Lambda^{00}$，$\Gamma_{\alpha,i}$诱导了同态
+ \begin{align*}
+ \Gamma_{\alpha,i} \colon (1+xk[x]/(x^{[\alpha,i]}))^{\times} &\longrightarrow K_2(A,M)\\
+ 1-xf(x) &\mapsto \langle f(t^\alpha)t^{\alpha-\epsilon^i},t_i \rangle.
+ \end{align*}
+ 此时只需考虑$\Lambda^{00}_2=\{((2,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\} \cup \{((1,\alpha_2),2)\mid  \alpha_2\geq 1\}$，对于任意$(\alpha,i)\in \Lambda^{00}_2$，$\Gamma_{\alpha,i}$均诱导了单射，对任意$\alpha_2\geq 1$，
+  \begin{align*}
+ \Gamma_{(1,\alpha_2),2} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+x &\mapsto 
+ \langle t_1t_2^{\alpha_2-1},t_2 \rangle,
+ \end{align*}
+对任意$\alpha_2\geq 1$为奇数，
+ \begin{align*}
+ \Gamma_{(2,\alpha_2),1} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+x &\mapsto \langle t_1t_2^{\alpha_2},t_1 \rangle,
+ \end{align*}
+
+我们作简单的替换令$t=t_1, x=t_2$，于是$\langle t_1t_2^{\alpha_2-1},t_2 \rangle = \langle tx^{\alpha_2-1},x \rangle$，$\langle t_1t_2^{\alpha_2},t_1 \rangle=\langle t x^{\alpha_2},t  \rangle$。由同构\ref{K2(A,M)}可知$NK_2(\mathbb{F}_2[C_2])$是由Dennis-Stein符号$\{\langle tx^i,x \rangle \mid i\geq 0\}$与$\{\langle tx^i,t \rangle \mid i\geq 1\text{为奇数}\}$生成的，由于$t^2=0$故$\langle tx^i,x \rangle+\langle tx^i,x \rangle=\langle tx^i+tx^i-t^2x^{2i+1},x \rangle=0$，$\langle tx^i,t \rangle+\langle tx^i,t \rangle=\langle tx^i+tx^i-t^3x^{2i},t \rangle=0$。
+\end{proof}
+\begin{remark}
+	对于$i\geq 1\text{为偶数}$，$\langle tx^i,t \rangle=\langle x^{i/2},t \rangle+\langle x^{i/2},t \rangle=\langle x^{i/2}+x^{i/2}+tx^i,t \rangle=0$。
+\end{remark}
+
+Weibel在文献\cite{weibel2009nk0}中给出了以下可裂正合列
+	\[0\longrightarrow V/\Phi(V) \overset{F}\longrightarrow NK_2(\mathbb{F}_2[C_2])\overset{D}\longrightarrow \Omega_{\mathbb{F}_2[x]}\longrightarrow 0,\]
+其中$V=x \mathbb{F}_2[x]$，$\Phi(V)=x^2 \mathbb{F}_2[x^2]$是$V$的子群，$\Omega_{\mathbb{F}_2[x]}\cong \mathbb{F}_2[x]\,d x$是绝对K\"{a}hler微分模，$F(x^n)=\langle tx^n,t \rangle$，$D(\langle ft,g+g't \rangle)=f\,dg$。显然$D(\langle tx^i,t \rangle)=0$，$D(\langle tx^i,x \rangle)=x^i\, dx$，可以看出$NK_2(\mathbb{F}_2[C_2])$的直和项$\bigoplus_{((2,\alpha_2),1), \alpha_2\geq 1\text{为奇数}} \mathbb{Z}/2\mathbb{Z} \cong V/\Phi(V)$，直和项$\bigoplus_{((1,\alpha_2),2), \alpha_2\geq 1} \mathbb{Z}/2\mathbb{Z} \cong \mathbb{F}_2[x]\,d x$。
+
+$V$和$\Omega_{\mathbb{F}_2[x]}$作为Abel群是同构的，但作为$W(\mathbb{F}_2)$-模是不同的。$V=x \mathbb{F}_2[x]$上的$W(\mathbb{F}_2)$-模结构(见\cite{MR96j:16008})为 
+\begin{align*}
+ V_m(x^n)&=x^{mn}, \\
+ F_d(x^n)&=\begin{cases}
+ 	dx^{n/d},& \mbox{ 若 $d|n$}\\
+ 	0,& \mbox{其它}
+ \end{cases}, \\
+ [a]x^n&=a^nx^n.
+ \end{align*}
+$\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]\,dx $上的$W(\mathbb{F}_2)$-模结构(见\cite{MR96j:16008})为
+\begin{align*}
+ V_m(x^{n-1}\,dx)&=mx^{mn-1}\,dx, \\
+ F_d(x^{n-1}\,dx)&=\begin{cases}
+ 	x^{n/d-1}\,dx,& \mbox{ 若 $d|n$}\\
+ 	0,& \mbox{其它}
+ \end{cases}, \\
+ [a]x^{n-1}\,dx&=a^nx^{n-1}\,dx.
+ \end{align*}
+结合两者我们可以得到$NK_2(\mathbb{F}_2[C_2])$的$W(\mathbb{F}_2)$-模结构为
+\begin{align*}
+ V_m(\langle tx^n,t \rangle)&=\begin{cases}
+ 	\langle tx^{mn},t \rangle,& \mbox{若$m$是奇数}\\
+ 	0,& \mbox{若$m$是偶数}
+ \end{cases},\quad \mbox{$n\geq 1$为奇数} \\
+  V_m(\langle tx^{n-1},x \rangle)&=\begin{cases}
+ 	\langle tx^{mn-1},x \rangle,& \mbox{若$m$是奇数}\\
+ 	0,& \mbox{若$m$是偶数}
+ \end{cases}
+ ,\quad \mbox{$n\geq 1$} \\
+ F_d(\langle tx^n,t \rangle)&=\begin{cases}
+ 	\langle tx^{n/d},t \rangle,& \mbox{ 若$d|n$}\\
+ 	0,& \mbox{其它}
+ \end{cases},\quad \mbox{$n\geq 1$为奇数} \\
+ F_d(\langle tx^{n-1},x \rangle)&=\begin{cases}
+ 	\langle tx^{n/d-1},x \rangle,& \mbox{若$d|n$}\\
+ 	0,& \mbox{其它}
+ \end{cases}
+ ,\quad \mbox{$n\geq 1$} \\
+ [1]\langle tx^n,t \rangle&=\langle tx^n,t \rangle,\quad \mbox{$n\geq 1$为奇数} \\
+ [1]\langle tx^{n-1},x \rangle&=\langle tx^{n-1},x \rangle,\quad \mbox{$n\geq 1$}.
+ \end{align*}
+
+
+
+% 粘贴自NKFinAlg.tex 结束
+
+
+
+
+
+
+
+
+
+
+
+
+\section{$NK_2(\mathbb{F}_2[C_4])$的结构}
+用同样的方法计算$NK_2(\mathbb{F}_2[C_{2^2}])$，继而对于任意$n$可以得到类似的结果。
+
+\begin{theorem}
+	$NK_2(\mathbb{F}_2[C_4])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}\oplus \bigoplus_{\infty}\mathbb{Z}/4 \mathbb{Z}$。
+\end{theorem}
+\begin{proof}
+	$\mathbb{F}_2[t_1,t_2]/(t_1^4)=\mathbb{F}_2[C_{4}][t_2]$，此时$I=(t_1^4)$，$M=(t_1)$不变，我们直接写出以下集合
+
+\begin{align*}
+\Delta &=\{(\alpha_1,\alpha_2)\mid \alpha_1\geq 4, \alpha_2 \geq 0\},\\
+\Lambda &=\{((\alpha_1,\alpha_2),1) \mid \alpha_1\geq 1\}\cup \{((\alpha_1,\alpha_2),2) \mid \alpha_1\geq 1, \alpha_2\geq 1\},
+\end{align*}
+用$\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}|m\geq x\}$表示不小于$x$的最小整数，
+\begin{align*}
+[\alpha,1] & =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 5\}=\left \lceil 5/\alpha_1 \right \rceil,\\
+[\alpha,2] & =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 4\}=\left \lceil 4/\alpha_1 \right \rceil.
+\end{align*}
+
+例如
+\begin{align*}
+[(1,\alpha_2),1] & = 5, \ \alpha_2\geq 0, \\
+[(2,\alpha_2),1] & = 3, \ \alpha_2\geq 0, \\
+[(3,\alpha_2),1] & = 2, \ \alpha_2\geq 0, \\
+[(4,\alpha_2),1] & = 2, \ \alpha_2\geq 0, \\
+[(\alpha_1,\alpha_2),1] & = 1, \ \alpha_1\geq 5, \alpha_2\geq 0, \\
+[(1,\alpha_2),2] & = 4, \ \alpha_2\geq 1, \\
+[(2,\alpha_2),2] & = 2, \ \alpha_2\geq 1, \\
+[(3,\alpha_2),2] & = 2, \ \alpha_2\geq 1, \\
+[(\alpha_1,\alpha_2),2] & = 1, \ \alpha_1\geq 4, \alpha_2\geq 1.
+\end{align*}
+
+
+\[\begin{array}{|c|c|c|c|}
+\hline
+(\alpha_1,\alpha_2) & [(\alpha_1,\alpha_2),1] &[(\alpha_1,\alpha_2),2] &[(\alpha_1,\alpha_2)]  \\
+\hline
+(1,\alpha_2)  & 5, \alpha_2 \geq 0& 4 , \alpha_2\geq 1 & 5 \\
+\hline
+(2,\alpha_2)  & 3, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 2, \text{当$\alpha_2$是奇数时} \\
+\hline
+(3,\alpha_2)  & 2, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 2 \\
+\hline
+(4,\alpha_2)  & 2, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1 \text{当$\alpha_2$是奇数时}\\
+\hline
+(\alpha_1,0),\alpha_1 \geq 5 & 1 & \text{无定义} &1, \text{当$\alpha_1$是奇数时} \\
+\hline
+(\alpha_1,\alpha_2),\alpha_1 \geq 5, \alpha_2 \geq 1& 1 & 1& 1, \text{当$(\alpha_1,\alpha_2)=1$时} \\
+\hline
+\end{array}\]
+
+
+记$\Lambda^{00}_d=\{(\alpha,i)\in \Lambda^{00}| [(\alpha,i)]=d\}$，$\Lambda^{00}_{>1}=\{(\alpha,i)\in \Lambda^{00}| [(\alpha,i)]>1\}$
+
+由于$(\alpha,i)\in \Lambda^{00}_1$均有$[(\alpha,i)]=1$，实际上要计算$(1+x\mathbb{F}_2[x]/(x^{[\alpha,i]}))^{\times}$只需确定$\Lambda^{00}_{>1}$。由同样的方法可得
+$\Lambda^{00}_4=\{((1,\alpha_2),2)\mid  \alpha_2\geq 1\}$，$\Lambda^{00}_3=\{((2,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\}$，$\Lambda^{00}_2=\{((3,\alpha_2),2)\mid  gcd(3,\alpha_2)=1,\alpha_2\geq 1\}\cup \{((4,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\}$，
+{\color{blue}\begin{align*}
+\Lambda^{00}_{>1}=& \{((1,\alpha_2),2)\mid  \alpha_2\geq 1\}\cup \{((3,\alpha_2),2)\mid gcd(3,\alpha_2)=1, \alpha_2\geq 1\}\\
+	& \cup \{((2,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\}  \cup \{((4,\alpha_2),1)\mid  \alpha_2\geq 1\text{为奇数}\}.
+\end{align*}}
+
+
+
+
+由定理\ref{K2(A,M)}，
+
+\begin{align*}
+NK_2(\mathbb{F}_2[C_4])\cong K_2(A,M) &\cong \bigoplus_{(\alpha,i)\in\Lambda^{00}}(1+x\mathbb{F}_2[x]/(x^{[\alpha,i]}))^{\times}\\
+& = \bigoplus_{(\alpha,i)\in \Lambda^{00}_{>1}}(1+x\mathbb{F}_2[x]/(x^{[\alpha,i]}))^{\times}\\
+& = \bigoplus_{\scriptsize\substack{((3,\alpha_2),2) \\ gcd(3,\alpha_2)=1 \\ \alpha_2\geq 1}}(1+x\mathbb{F}_2[x]/(x^{2}))^{\times}\oplus \bigoplus_{\scriptsize\substack{((4,\alpha_2),1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_2[x]/(x^{2}))^{\times} \\
+& \oplus \bigoplus_{\scriptsize\substack{((2,\alpha_2),1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_2[x]/(x^{3}))^{\times} \oplus \bigoplus_{\scriptsize\substack{((1,\alpha_2),2) \\ \alpha_2\geq 1}}(1+x\mathbb{F}_2[x]/(x^{4}))^{\times}.
+\end{align*}
+
+由\ref{ex:W3(F2)}有$(1+x\mathbb{F}_2[x]/(x^{4}))^{\times}\cong \mathbb{Z}/2 \mathbb{Z}\times {\color{red}\mathbb{Z}/4 \mathbb{Z}}$，$(1+x\mathbb{F}_2[x]/(x^{3}))^{\times}\cong {\color{red}\mathbb{Z}/4 \mathbb{Z}}$，于是$NK_2(\mathbb{F}_2[C_4])$作为Abel群有
+\[NK_2(\mathbb{F}_2[C_4]) \cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}\oplus \bigoplus_{\infty}{\color{red}\mathbb{Z}/4 \mathbb{Z}}.\]
+
+
+
+
+对于任意$(\alpha,i)\in \Lambda^{00}_{>1}$，$\Gamma_{\alpha,i}$均诱导了单射，对任意$\alpha_2\geq 1$，$gcd(3,\alpha_2)=1$
+  \begin{align*}
+ \Gamma_{(3,\alpha_2),2} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+x &\mapsto  \langle t_1^3t_2^{\alpha_2-1},t_2 \rangle,
+ \end{align*}
+对任意$\alpha_2\geq 1$，
+  \begin{align*}
+ \Gamma_{(1,\alpha_2),2} \colon (1+x \mathbb{F}_2[x]/(x^{4}))^{\times} &\rightarrowtail K_2(A,M)\\
+ {\color{red}1+x \text{(四阶元)}} &\mapsto {\color{red}\langle t_1t_2^{\alpha_2-1},t_2 \rangle},\\
+ 1+x^3 \text{(二阶元)} &\mapsto \langle t_1^3t_2^{3\alpha_2-1},t_2 \rangle,
+ \end{align*}
+
+对任意$\alpha_2\geq 1$为奇数，
+ \begin{align*}
+ \Gamma_{(4,\alpha_2),1} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+x &\mapsto \langle t_1^3t_2^{\alpha_2},t_1 \rangle,\\
+ \Gamma_{(2,\alpha_1),1} \colon (1+x \mathbb{F}_2[x]/(x^{3}))^{\times} &\rightarrowtail K_2(A,M)\\
+ {\color{red}1+x\text{(四阶元)} }&\mapsto {\color{red}\langle t_1t_2^{\alpha_2},t_1 \rangle}.
+ \end{align*}
+
+我们作简单的替换令$t=t_1, x=t_2$，由同构\ref{K2(A,M)}可知$NK_2(\mathbb{F}_2[C_4])$是由Dennis-Stein符号${\color{red}\{\langle tx^{i-1},x \rangle \mid i\geq 1\},\{\langle tx^i,t \rangle \mid i\geq 1\text{为奇数}\}},\{\langle t^3x^{3i-1},x \rangle \mid i\geq 1\},\{\langle t^3x^{i-1},x \rangle \mid i\geq 1,gcd(i,3)=1\},\{\langle t^3x^i,t \rangle \mid i\geq 1\text{为奇数}\}$生成的。
+
+\end{proof}
+
+\begin{remark}
+
+	$\langle t^3x^{2i},t \rangle =\langle tx^{i},t \rangle+\langle tx^{i},t \rangle$是二阶元。
+	根据\cite{MR80k:13005}，存在同态
+	\begin{align*}
+	\rho_1 \colon \mathbb{F}_2[x]dx &\longrightarrow NK_2(\mathbb{F}_2[C_4])\\
+				x^idx &\mapsto \langle t^3x^i,x\rangle \\
+	\rho_2 \colon x\mathbb{F}_2[x]/x^2\mathbb{F}_2[x^2] &\longrightarrow NK_2(\mathbb{F}_2[C_4])\\
+				x^i &\mapsto \langle t^3x^i,t\rangle 
+	\end{align*}
+
+	$\{\langle t^3x^{i-1},x \rangle \mid i\geq 1\}=\{\langle t^3x^{3i-1},x \rangle \mid i\geq 1\}\cup\{\langle t^3x^{i-1},x \rangle \mid i\geq 1,gcd(i,3)=1\}$，从而$\Omega_{\mathbb{F}_2[x]}\oplus x\mathbb{F}_2[x]/x^2\mathbb{F}_2[x^2]$是$NK_2(\mathbb{F}_2[C_4])$的直和项。
+\end{remark}
+
+
+
+
+\section{$NK_2(\mathbb{F}_q[C_{2^n}])$} % (fold)
+\label{sec:NK_2(F_q[C_{2^n}])}
+
+设$\mathbb{F}_q$是特征为$2$的有限域，$q=2^f$，$C_{2^n}$是$2^n$阶循环群，这一节计算$NK_2(\mathbb{F}_q[C_{2^n}])$。假设$A=\mathbb{F}_q[t_1,t_2]/(t_1^{2^n})=\mathbb{F}_q[C_{2^n}][x]$, 此时$I=(t_1^{2^n})$, $M=(t_1)$, $A/M=\mathbb{F}_q[x]$。
+
+\begin{lemma}
+	$\Delta =\{(\alpha_1,\alpha_2)\mid \alpha_1\geq 2^n, \alpha_2 \geq 0\}$，$\Lambda = \{((\alpha_1,\alpha_2),1) \mid \alpha_1\geq 1, \alpha_2\geq 0\}\cup \{((\alpha_1,\alpha_2),2) \mid \alpha_1\geq 1, \alpha_2\geq 1\}$，对任意$(\alpha,i)\in \Lambda$，$[\alpha,1]=\left \lceil (2^n+1)/\alpha_1 \right \rceil$，$[\alpha,2]=\left \lceil 2^n/\alpha_1 \right \rceil$，其中$\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}|m\geq x\}$表示不小于$x$的最小整数。
+\end{lemma}
+
+\begin{lemma}
+令$I_1 =\{((\alpha_1,\alpha_2),1)\mid gcd(\alpha_1,\alpha_2)=1, 1< \alpha_1\leq 2^n\text{为偶数}, \alpha_2\geq 1\text{为奇数}\}$，$I_2=\{((\alpha_1,\alpha_2),2)\mid gcd(\alpha_1,\alpha_2)=1, 1\leq \alpha_1<2^n\text{为奇数}, \alpha_2\geq 1\}$，则$\Lambda^{00}_{>1}=I_1\sqcup I_2$。
+\end{lemma}
+由定理\ref{K2(A,M)}，
+
+\begin{align*}
+NK_2(\mathbb{F}_q[C_{2^n}])\cong K_2(A,M) &\cong \bigoplus_{(\alpha,i)\in\Lambda^{00}}(1+x\mathbb{F}_q[x]/(x^{[\alpha,i]}))^{\times}\\
+& = \bigoplus_{(\alpha,i)\in \Lambda^{00}_{>1}}(1+x\mathbb{F}_q[x]/(x^{[\alpha,i]}))^{\times}\\
+& = \bigoplus_{(\alpha,1)\in I_1}(1+x\mathbb{F}_q[x]/(x^{\left \lceil (2^n+1)/\alpha_1 \right \rceil}))^{\times} \\
+& \oplus \bigoplus_{(\alpha,2)\in I_2}(1+x\mathbb{F}_q[x]/(x^{\left \lceil 2^n/\alpha_1 \right \rceil}))^{\times}.
+\end{align*}
+注意到$BigWitt_{k}(R)=(1+x R\llbracket x\rrbracket )^{\times}/(1+x^{k+1} R\llbracket x\rrbracket )^{\times} \cong (1+x R[x]/(x^{k+1}))^{\times}$，
+根据公式\ref{cor:BW}，
+
+\begin{align*}
+NK_2(\mathbb{F}_q[C_{2^n}])\cong & \bigoplus_{(\alpha,1)\in I_1}\bigoplus_{\scriptsize\substack{1\leq m\leq \left \lceil (2^n+1)/\alpha_1 \right \rceil-1 \\ gcd(m,2)=1}}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{\left \lceil (2^n+1)/\alpha_1 \right \rceil-1}{m}  \right \rfloor}\mathbb{Z})^f \\
+& \oplus \bigoplus_{(\alpha,2)\in I_2}\bigoplus_{\scriptsize\substack{ 1 \leq m\leq \left \lceil 2^n/\alpha_1 \right \rceil-1 \\ gcd(m,2)=1}}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{\left \lceil 2^n/\alpha_1 \right \rceil-1}{m}  \right \rfloor}\mathbb{Z})^f.
+\end{align*}
+
+接下来我们证明对于任意$1\leq k\leq n$，$\mathbb{Z}/2^k \mathbb{Z}$都在$NK_2(\mathbb{F}_q[C_{p^n}])$出现无限多次
+
+\begin{lemma}
+\label{lem:log2}
+	对于任意的$1\leq k < n$，$1+\left \lfloor \log_2(\frac{2^n-1}{2^k+1}) \right \rfloor = n-k$。
+\end{lemma}
+\begin{proof}
+	当$1\leq k < n$时，$2^k-1\geq 1 \geq \frac{1}{2^{n-k-1}}$，即
+	\[2^{n-1}-2^{n-k-1}\geq 1, \]
+	上式等价于$2^n-1\geq 2^{n-k-1}(2^k+1)$，且$2^n-1<2^{n-k}(2^k+1)$，于是
+	\[2^{n-k}> \frac{2^n-1}{2^k+1} \geq 2^{n-k-1},\]
+	取对数得$\left \lfloor \log_2(\frac{2^n-1}{2^k+1}) \right \rfloor = n-k-1$。
+\end{proof}
+考虑$((1,\alpha_2),2)\in I_2$，
+$$\bigoplus_{(\alpha,2)\in I_2}\bigoplus_{\scriptsize\substack{1\leq m\leq  2^n-1 \\ gcd(m,2)=1 }}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{2^n-1}{m}  \right \rfloor}\mathbb{Z})^f$$
+是$NK_2(\mathbb{F}_{2^f}[C_{2^n}])$的直和项，当$m=1$时$1+ \left \lfloor\log_2 (2^n-1)\right \rfloor=n$，当$m=2^k+1 (1\leq k < n)$为奇数时，由\ref{lem:log2}，$1+ \left \lfloor\log_2 \frac{2^n-1}{m}\right \rfloor=n-k$，{\color{blue}于是对于任何的$1\leq k\leq n$，$\mathbb{Z}/2^k\mathbb{Z}$均出现在直和项中，且对于任意$\alpha_2\geq 1$，这样的项总会出现}，于是
+\[NK_2(\mathbb{F}_q[C_{2^n}])\cong \bigoplus_\infty \bigoplus_{k=1}^n \mathbb{Z}/2^k\mathbb{Z}.\]
+
+接下来给出一些$NK_2(\mathbb{F}_q[C_{2^n}])$中的$2^k(1\leq k \leq n)$阶元素。
+
+对任意$\alpha_2\geq 1, a\in \mathbb{F}_q$，
+  \begin{align*}
+ \Gamma_{(1,\alpha_2),2} \colon (1+x \mathbb{F}_q[x]/(x^{2^n}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+ax \text{($2^n$阶元)} &\mapsto \langle atx^{\alpha_2-1},x \rangle,\\
+ 1+ax^3 \text{($2^{n-1}$阶元)} &\mapsto \langle at^3x^{3\alpha_2-1},x \rangle,\\
+ 1+ax^{2^k+1} \text{($2^{n-k}$阶元)} &\mapsto \langle at^{2k+1}x^{(2k+1)\alpha_2-1},x \rangle.
+ \end{align*}
+
+
+
+
+
+
+% 
+
+
+
+\section{其他问题和说明}
+
+$NK_2(\mathbb{F}_{p^m}[C_{p^n}])=?$
+
+$\mathbb{F}_2[C_2\times C_2] \cong\mathbb{F}_2[C_2]\otimes\mathbb{F}_2[C_2] \cong \mathbb{F}_2[x,y]/(x^2,y^2)$，可以用同样的方法得到一些结果。
+
+
+
+\[
+	0\longrightarrow K_2(k[t_1,t_2,t_3]/(t_1^n,t_2^n),(t_1,t_2)) \longrightarrow K_2(k[t_1,t_2,t_3]/(t_1^n,t_2^n)) \longrightarrow K_2(k[t_3]) \longrightarrow 0
+	\]
+对于有限域$k$来讲$K_2(k[t_3])=0$,
+\[0\longrightarrow NK_2(\mathbb{F}_2[C_{2}\times C_2]) \longrightarrow K_2(\mathbb{F}_2[C_{2}\times C_2][x])\longrightarrow K_2(\mathbb{F}_2[C_{2}\times C_2]) \longrightarrow 0,\]
+中间那项可以用这篇文章里的方法确定，又$K_2(\mathbb{F}_2[C_{2}\times C_2])=C_2^3$,于是可以得到$NK_2(\mathbb{F}_2[C_{2}\times C_2])$，是$\oplus_{\infty} \mathbb{Z}/2 \mathbb{Z}$.
+
+另外可以直接用这种方式重新计算$K_2(\mathbb{F}_2[C_4\times C_4])$，见下一篇笔记。
+
+
+一个关于模结构的问题，在Weibel的文章\cite{MR88f:18018}中5.5和5.7给出的模结构和本文上面的模结构并不一致，用$V_m$作用差一个$t^m$。
