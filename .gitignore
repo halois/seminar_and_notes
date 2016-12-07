@@ -15,4 +15,4 @@
 *.toc
 *.synctex.gz
 *.idx
-*.fdb_latexmk
+*.fls
