@@ -186,7 +186,7 @@ then $K_n(A, I) \longrightarrow K_n(B, I)$ need not be an isomorphism. 由于这
 要连接$K_n(A, I) \longrightarrow K_n(B, I)$就要考虑birelative $K$-groups（也称double relative $K$-groups）,$K(A,B,I)$定义为homotpy fiber of the map $K(A, I) \longrightarrow K(B, I)$。以下是详细的定义和性质。
 \paragraph{Relative groups} % (fold)
 \label{par:relative_groups}
-\index{relative groups}
+\index{relative group}
 Let $R$ be a ring (not necessarily commutative), $I\subset R$ a two-sided ideal, by definition $K_i(R)=\pi_i(BGL(R)^+)$, $i\geq 1$, there exists a map
 \[BGL(R)^+ \longrightarrow BGL(R/I)^+\]
 \begin{definition}
@@ -204,7 +204,7 @@ In particular,
 Let $R$ be any ring (not necessarily commutative), if $I,J\subset R$ are two-sided ideals, there is a map
 \[K(R,I)\longrightarrow K(R/J,I+J/J).\]
 
-If $I\cap J =0$, the following diagram is a Cartesian (pullback) square with all maps surjective,
+If $I\cap J =0$, then $I+J/J\cong J/I\cap J=J$, the following diagram is a Cartesian (pullback) square with all maps surjective,
 	\[\begin{tikzcd}
 		R \ar[r,"\alpha"] \ar[d,"\beta"]& R/I\ar[d,"g"]\\
 		R/J \ar[r,"f"] & R/I+J\\
@@ -214,13 +214,13 @@ Associated to the horizontal arrows of above diagram, we have, for $i \geq 0$, t
 \begin{equation}
 \label{cdrelativeladder}
 \begin{tikzcd}[column sep=small]
-		\cdots  \ar[r]& K_{i+1}(R)\ar[r,"\alpha_*"] \ar[d,"\beta_*"]& K_{i+1}(R/I) \ar[r,"\partial"] \ar[d,"g_*"] &K_{i}(R,I) \ar[r,"j"] \ar[d,"\epsilon_i"] &K_{i}(R) \ar[r,"\alpha_*"] \ar[d] & K_{i}(R/I) \ar[r] \ar[d] & \cdots\\
+		\cdots  \ar[r]& K_{i+1}(R)\ar[r,"\alpha_*"] \ar[d,"\beta_*"]& K_{i+1}(R/I) \ar[r,"\partial"] \ar[d,"g_*"] &K_{i}(R,I) \ar[r,"j"] \ar[d,"\varepsilon_i"] &K_{i}(R) \ar[r,"\alpha_*"] \ar[d] & K_{i}(R/I) \ar[r] \ar[d] & \cdots\\
 		\cdots  \ar[r]& K_{i+1}(R/J)\ar[r,"f_*"] & K_{i+1}(R/I+J) \ar[r,"\partial"]  &K_{i}(R/J,I+J/J) \ar[r,"j'"]  &K_{i}(R/J) \ar[r,"f_*"]  & K_{i}(R/I+J) \ar[r]  & \cdots\\
 	\end{tikzcd}
 \end{equation}
 
 	where the induced homomorphism 
-	\[\epsilon_i \colon K_i(R,I) \longrightarrow K_i(R/J,I+J/J)\]
+	\[\varepsilon_i \colon K_i(R,I) \longrightarrow K_i(R/J,I+J/J)\]
 is called the $i$-th excision homomorphism for the square; its kernel is called the $i$-th excision kernel.
 
 	Firstly we have the Mayer–Vietoris sequence
@@ -232,18 +232,18 @@ is called the $i$-th excision homomorphism for the square; its kernel is called 
 	Secondly, there is a generalized theorem
 	\begin{theorem}
 	\begin{enumerate}
-		\item  Suppose that the excision map $\epsilon_i$ in \ref{cdrelativeladder} is an isomorphism. Then there is a homomorphism $\delta_i \colon K_{i+1}(R/I+J)\longrightarrow K_i(R)$ making the sequence 
+		\item  Suppose that the excision map $\varepsilon_i$ in \ref{cdrelativeladder} is an isomorphism. Then there is a homomorphism $\delta_i \colon K_{i+1}(R/I+J)\longrightarrow K_i(R)$ making the sequence 
 		\begin{align*}
 		&K_{i+1}(R/I)\oplus K_{i+1}(R/J)\overset{\phi}\longrightarrow K_{i+1}(R/I+J)\overset{\delta} \longrightarrow \\
 	\longrightarrow K_i(R) \overset{\psi}\longrightarrow & K_i(R/I)\oplus K_i(R/J)\longrightarrow K_i(R/I+J)
 		\end{align*}	
 exact, where $\phi(x,y)=f_*(x)-g_*(y)$ and $\psi(z)=(\beta_*(z),\alpha_*(z))$. \\
-	\item If $\epsilon_i$ is an isomorphism, and in addition$\epsilon_{i+1}$ is surjective, the sequence in (1) remains exact with $K_{i+1}(R)\longrightarrow$  appended at the left, that is
+	\item If $\varepsilon_i$ is an isomorphism, and in addition $\varepsilon_{i+1}$ is surjective, the sequence in (1) remains exact with $K_{i+1}(R)\longrightarrow$  appended at the left, that is
 	\begin{align*}
 		&{\color{red} K_{i+1}(R) \longrightarrow} K_{i+1}(R/I)\oplus K_{i+1}(R/J)\overset{\phi}\longrightarrow K_{i+1}(R/I+J)\overset{\delta} \longrightarrow \\
 	\longrightarrow &K_i(R) \overset{\psi}\longrightarrow K_i(R/I)\oplus K_i(R/J)\longrightarrow K_i(R/I+J)
 		\end{align*} \\
-	\item Suppose instead  that $\epsilon_i$  is  surjective,  and  let  $L =  ker(\epsilon_i)$. If
+	\item Suppose instead  that $\varepsilon_i$  is  surjective,  and  let  $L =  ker(\varepsilon_i)$. If
 $K_{i+1}(R) \overset{\alpha_*}\longrightarrow K_{i+1}(R/I) $ is onto (e.g.  if $ R \longrightarrow  R/I$ is a split surjection), $L$ is mapped
 injectively to $K_i(R)$, and the sequence
 \begin{align*}
@@ -254,16 +254,17 @@ is exact.
 	\end{enumerate}
 	\end{theorem}
 \begin{proof}
-	Define  $\delta_i=j \epsilon_i^{-1}\partial'$. The proof is then an easy diagram chase.
+	Define  $\delta_i=j \varepsilon_i^{-1}\partial'$. The proof is then an easy diagram chase.
 \end{proof}
 
 \begin{remark}
-	It is known that $\epsilon_0$ and $\epsilon_1$ are isomorphism regardless of the specific rings. Moreover  Swan \cite{SWAN1971221} has shown  that  $\epsilon_2$  cannot be an isomorphism in general. For more discussion, see \cite{STEIN1980213}.
+	It is known that $\varepsilon_0$ and $\varepsilon_1$ are isomorphism regardless of the specific rings. Moreover  Swan \cite{SWAN1971221} has shown  that  $\varepsilon_2$  cannot be an isomorphism in general. For more discussion, see \cite{STEIN1980213}.
 \end{remark}
+For $R=\mathbb{Z}[C_n]$, $I=(\sigma-1)$, $J=(1+\sigma+\cdots +\sigma^{n-1})$, $I\cap J=0$, $I+J=(n,\sigma-1)$, $\varepsilon_2\colon K_2(R,I)\longrightarrow K_2(R/J,I+J/J)$ is isomophic.
 % paragraph relative_groups (end)
 \paragraph{Double relative groups} % (fold)
 \label{par:double_relative_groups}
-\index{double relative groups}
+\index{double relative group}
 
 
 
@@ -365,6 +366,8 @@ $x^{im}$ is corresponding to $x^{im-1}dx$ but not to $mx^{im-1}dx$. So they have
 	x^i &\mapsto ix^{i-1}dx
 	\end{align*}
 	Then $\ker D = H_{dR}^0(\mathbb{F}_2[x]/\mathbb{F}_2)$ is the de Rham cohomology group and $\coker D = HC_1^{\mathbb{F}_2}(\mathbb{F}_2[x])$ is the cyclic homology group. Note that $HC_1(\mathbb{F}_2[x])= \sum_{l=1}^{\infty}\mathbb{F}_2 e_{2l}$ where $e_{2l}=x^{2l-1}dx$, and $H_{dR}^0(\mathbb{F}_2[x])=x^2 \mathbb{F}_2[x^2]$.
+
+	暂时没用：$D_{1,R}=\langle d a\mid a\in \mathbb{F}_2[x]\rangle$. $a=\sum a_ix^i$, $d a=\sum ia_ix^{i-1}dx $
 \end{remark}
 % section module_structure (end)
 \section{\texorpdfstring{$NK_i$}{NKi} of the groups \texorpdfstring{$C_2$ and $C_p$}{C2 and Cp}}
@@ -432,24 +435,24 @@ Also see \cite{STEIN1980213}.
 		\end{tikzcd}\]
 $K_2(\mathbb{Z}[C_p][x];I[x],J[x])\cong I[x]\otimes_{\mathbb{Z}[C_p][x]} J[x] =I\otimes_{\mathbb{Z}[C_p]} J[x]\cong \mathbb{Z}_p[x]$.
 
-Since $\Lambda=\mathbb{Z}, \mathbb{F}_p, \mathbb{Z}[\zeta]$ are regular, $K_i(\Lambda[x]) = K_i(\Lambda)$, i.e. $NK_i(\Lambda)=0$. Hence 
+Since $\Lambda=\mathbb{Z}, \mathbb{F}_p, \mathbb{Z}[\zeta]$ are regular, $K_i(\Lambda[x]) = K_i(\Lambda)$, i.e.\ $NK_i(\Lambda)=0$. Hence 
 \[K_2(\mathbb{Z}[C_p][x],I[x],J[x])/K_2(\mathbb{Z}[C_p],I,J)\cong K_2(\mathbb{Z}[C_p][x])/K_2(\mathbb{Z}[C_p]),\]
 finally $NK_2(\mathbb{Z}[C_p]) = K_2(\mathbb{Z}[C_p][x])/K_2(\mathbb{Z}[C_p]) \cong \mathbb{Z}/p[x]/\mathbb{Z}/p=x \mathbb{Z}/p [x]= x \mathbb{F}_p[x]$.
 \end{example}
 \section{\texorpdfstring{$NK_i$}{NKi} of the group \texorpdfstring{$D_2$}{D2}}
 \label{sec:D2}
-Now let us consider $G=D_2=C_2\times C_2$. Let $\Phi (V)$ be the subgroup (also a Cartier submodule) $x^2 \mathbb{F}_2[x^2]$ of $V=x \mathbb{F}_2[x]$. Recall $\Omega_R$ is the K\"{a}hler differentials of $R$, $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]dx$. And we simply write $\mathbf{F}_2[\epsilon]$ stands for the $2$-dimensional $\mathbb{F}_2$-algebra $\mathbb{F}_2[x]/(x^2)$.
+Now let us consider $G=D_2=C_2\times C_2$. Let $\Phi (V)$ be the subgroup (also a Cartier submodule) $x^2 \mathbb{F}_2[x^2]$ of $V=x \mathbb{F}_2[x]$. Recall $\Omega_R$ is the K\"{a}hler differentials of $R$, $\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]dx$. And we simply write $\mathbf{F}_2[\varepsilon]$ stands for the $2$-dimensional $\mathbb{F}_2$-algebra $\mathbb{F}_2[x]/(x^2)$.
 
 Note that 
 \begin{align*}
-\mathbb{F}_2[C_2]&=&\mathbb{F}_2[x]/(x^2-1) &\cong& \mathbb{F}_2[x]/(x-1)^2 &\cong& \mathbb{F}_2[x-1]/(x-1)^2 &\cong& \mathbb{F}_2[x]/(x^2)&=& \mathbb{F}_2[\epsilon] \\
-\sigma \quad& \mapsto& x \qquad  & \mapsto& x \qquad & \mapsto& x \quad\qquad & \mapsto& 1+x \quad & \mapsto& 1+\epsilon
+\mathbb{F}_2[C_2]&=&\mathbb{F}_2[x]/(x^2-1) &\cong& \mathbb{F}_2[x]/(x-1)^2 &\cong& \mathbb{F}_2[x-1]/(x-1)^2 &\cong& \mathbb{F}_2[x]/(x^2)&=& \mathbb{F}_2[\varepsilon] \\
+\sigma \quad& \mapsto& x \qquad  & \mapsto& x \qquad & \mapsto& x \quad\qquad & \mapsto& 1+x \quad & \mapsto& 1+\varepsilon
 \end{align*}
 
 \begin{lemma}
 \label{lem:omega}
-	The map $q \colon \mathbb{Z}[C_2] \longrightarrow \mathbb{F}_2[C_2] \cong \mathbb{F}_2[\epsilon]$ in \ref{rimsqC2} induces an exact sequence
-	\[0\longrightarrow \Phi(V) \longrightarrow NK_2(\mathbb{Z}[C_2])\overset{q}\longrightarrow NK_2(\mathbb{F}_2[\epsilon])\overset{D}\longrightarrow \Omega_{\mathbb{F}_2[x]}\longrightarrow 0.\]
+	The map $q \colon \mathbb{Z}[C_2] \longrightarrow \mathbb{F}_2[C_2] \cong \mathbb{F}_2[\varepsilon]$ in \ref{rimsqC2} induces an exact sequence
+	\[0\longrightarrow \Phi(V) \longrightarrow NK_2(\mathbb{Z}[C_2])\overset{q}\longrightarrow NK_2(\mathbb{F}_2[\varepsilon])\overset{D}\longrightarrow \Omega_{\mathbb{F}_2[x]}\longrightarrow 0.\]
 \end{lemma}
 \begin{proof}
 	See \cite{weibel2009nk0} Lemma 1.2.
@@ -471,9 +474,9 @@ Note that
 		 \mathbb{Z}[C_2]\ar[two heads, r,"q"] & \mathbb{F}_2[C_2]\\
 	\end{tikzcd}
 \end{equation}
-	Recall that $\mathbb{F}_2[C_2]\cong \mathbb{F}_2[\varepsilon]/(\epsilon^2)$. By \cite{weibel2013k} chapter 2 Ex 7.4.5,
+	Recall that $\mathbb{F}_2[C_2]\cong \mathbb{F}_2[\varepsilon]/(\varepsilon^2)$. By \cite{weibel2013k} chapter 2 Ex 7.4.5,
 	\begin{align*}
-	NK_1(\mathbb{F}_2[C_2])=NK_1(\mathbb{F}_2[\varepsilon]/(\epsilon^2)) & = (1+\varepsilon x\mathbb{F}_2[\varepsilon]/(\epsilon^2)[x])^{\times} =(1+\varepsilon x\mathbb{F}_2[x])^{\times} \cong V =x \mathbb{F}_2[x]\\
+	NK_1(\mathbb{F}_2[C_2])=NK_1(\mathbb{F}_2[\varepsilon]/(\varepsilon^2)) & = (1+\varepsilon x\mathbb{F}_2[\varepsilon]/(\varepsilon^2)[x])^{\times} =(1+\varepsilon x\mathbb{F}_2[x])^{\times} \cong V =x \mathbb{F}_2[x]\\
 	[(P,\nu)] &\mapsto \det(1-\nu x)
 	\end{align*}
 

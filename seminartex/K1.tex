@@ -1,0 +1,307 @@
+%!TEX root = ../2017seminar.tex
+\chapter{环的$K_1$群}
+Kazuya Kato(斋藤和也)在他的讲义中曾经说道
+\begin{quote}
+	If you look on the street, you never meet a commutative ring; that's rather strange. They are rather shy I think. We need to ask them to come to this room. Rings, rings, please come! Rings, rings, please come! \emph{*shuffles along the floor, playing the part of the ring*} Finite fields, come! Rings of functions, come! \emph{*hops*} I think they are here now. 
+\end{quote}
+
+这一章开始让我们也呼唤环的到来，同时也呼唤群的到来！
+
+阅读这一章所需的预备知识大致有：基本抽象代数(群、环、域)，基础同调代数等，其它相关知识会在讲义中回忆或介绍。Weibel\cite{weibel2013k}第三章的主要包含了
+\begin{itemize}
+	\item $K_1$, $K_2$的定义
+	\item 相对$K_1$, $K_2$的定义
+	\item 负$K$理论，代数$K$理论基本定理
+	\item Milnor $K$理论
+\end{itemize}
+
+在第四章将对于一般的$n\geq 0$, 定义$K_n(R)=\pi_n(K(R))$, 其中$K(R)$是$K$理论空间. 当然$K(R)$有很多种取法, 如$K_0(R)\times BGL(R)^+$($+$构造)或者$\Omega BQ\mathbf{P}(R)$(Q-构造), 另外还有其他构造.
+
+在$K$理论的历史中会出现的著名数学人物有
+\begin{itemize}
+	\item[$K_0$:] A. Grothendieck
+	\item[$K_1$:] J.\,H.\, C.\,Whitehead, Hyman Bass 
+	\item[$K_2$:] John Milnor
+	\item[$K_n$:] Daniel Quillen, Waldhausen ...
+\end{itemize}
+研究领域涉及到$K$理论的华人学者有王湘浩、林节玄(T. Y. Lam)、项武忠(W.-C. Hsiang)等.
+
+环$R$的$K_1$群与$K_2$群主要研究两个基本的数学对象--- $GL(R)$与$E(R)$. 其中$GL(R)$在许多数学分支都占据着重要地位, 从线性代数、李群、表示论到纤维丛、微分几何都会出现它的身影. 接下来我们看看$K$理论中是如何研究这些对象的.
+\section{环的$K_1$群}
+若不特别指出的话, 这一节中的$R$均为含幺结合环(不要求交换).
+
+首先我们介绍$GL(R)$的定义. 
+\begin{definition}[一般线性群]
+	令$R$是含幺结合环, $GL_n(R)$是$n$阶一般线性群\index{一般线性群}, 
+\begin{align*}
+GL_n(R)\overset{\text{嵌入}}\hookrightarrow& GL_{n+1}(R) \\
+g \mapsto& \begin{pmatrix}
+	g & 0\\ 0 & 1
+\end{pmatrix}
+\end{align*}
+从而有
+\[R^*=GL_1(R)\hookrightarrow GL_2(R)\hookrightarrow \cdots GL_n(R) \hookrightarrow GL_{n+1}(R)\hookrightarrow \cdots.\]
+一般线性群(general linear group)$GL(R)$定义为 
+\[GL(R)=\bigcup_{n=1}^\infty GL_n(R)=\varinjlim_{n\to \infty} GL_n(R),\]
+则$GL_n(R)\longrightarrow GL(R)$由
+\[g \mapsto \begin{pmatrix}
+		g & 0\\ 0 & 1_{\infty}
+\end{pmatrix}\]
+给出, 其中$1_{\infty}$表示无穷单位矩阵.
+\end{definition}
+由正向极限的泛性质, 任意$i<j$, 有交换图
+\[\begin{tikzcd}[column sep=tiny]
+GL_i(R)\arrow[rr, hook] \arrow[rd] \arrow[rdd,green] & & GL_j(R)\arrow[ld] \arrow[ldd,green]\\
+& GL(R) \arrow[d,dashrightarrow,red] & \\
+& X &
+\end{tikzcd}\]
+
+
+注意$GL(R)$一般不是交换群, 即使$R$交换, $GL(R)$也未必是交换群, 易看出
+\[\begin{pmatrix}
+	1 & 1\\ 0 & 1
+\end{pmatrix}\begin{pmatrix}
+	0 & 1\\ 1 & 0
+\end{pmatrix}=\begin{pmatrix}
+	1 & 1\\ 1 & 0
+\end{pmatrix}, \begin{pmatrix}
+	0 & 1\\ 1 & 0
+\end{pmatrix}\begin{pmatrix}
+	1 & 1\\ 0 & 1
+\end{pmatrix}=\begin{pmatrix}
+	0 & 1\\ 1 & 1
+\end{pmatrix}.\]
+比如矩阵$A$右乘$\begin{pmatrix}
+	0 & 1\\ 1 & 0
+\end{pmatrix}$表示$A$的第一列与第二列互换, 而$\begin{pmatrix}
+	0 & 1\\ 1 & 0
+\end{pmatrix}$左乘$A$表示$A$的第一行与第二行互换. 
+
+回想$K_0$群的定义, 把交换半群$\mathbf{P}(R)$作群完备化后即得交换群$K_0(R)$. 对于$K_1$群, 想法是把$GL(R)$"变成"交换群. 这一手段称为交换化(abelianization).
+在抽象代数中, 把一个群$G$模掉它的换位子群$[G,G]$就变成交换群$G/[G,G]$. 想法是这样的: 对于任意的$g,h\in G$, 要想使得$gh=hg$, 即需要$ghg^{-1}h^{-1}=1$, 但在$G$中未必满足这样的等式. 我们可以通过商群的构造把$ghg^{-1}h^{-1}$这种形式的元和单位元$1$等同起来. 这样"等同"的思想在几何中也经常出现, 考虑$I=[0,1]$, $I/0\sim 1\cong S^1$, 或者$S^2/\text{对径点等同}\cong \mathbb{R}P^2$. 交换化的具体做法是这样的: 
+\begin{definition}[交换化\index{交换化}]
+	令$[G,G] \subset G$是由群$G$中的换位子$[g,h]=ghg^{-1}h^{-1}$\index{换位子}生成的子群, 称作$G$的换位子群\index{换位子群}, 则\\
+	1. $[G,G]\lhd G$是正规子群, 从而可以作商群$G/[G,G]$.\\
+	2. 商群$G/[G,G]$是交换群.\\
+	3. 泛性质: 若$A$是一个交换群, $f: G\longrightarrow A$是群同态, 则$f$可通过$G/[G,G]$唯一分解, 
+	\[\begin{tikzcd}[column sep=tiny]
+G \arrow[rr,"f"] \arrow[rd] & & A \\
+& G/[G,G]  \arrow[ur,dashrightarrow] & 
+\end{tikzcd}\]
+\end{definition}
+%把所有$$这种形式的元(叫做换位子)收集起来(还不够)生成一个$G$的子群$$(换位子群)
+因为在$A$中$f(g)f(h)=f(h)f(g)$, 由$f$是群同态得到$f(ghg^{-1}h^{-1})=1$, 即$[G,G]\subset \ker f$, 由于商群是余核%($1\longrightarrow [G,G] \overset{\pi}\longrightarrow G\longrightarrow \coker \pi=G/[G,G]$)
+, 由余核的泛性质
+\[\begin{tikzcd}
+	1 \ar[r] & {[G,G]} \ar[r,"\pi"] \ar[rd,"0"']& G \ar[r]\ar[d,"f"] & \coker \pi=G/{[G,G]} \ar[ld, dashrightarrow] \ar[r] & 0 \\
+			 &					  & A &		&
+\end{tikzcd}\]
+存在唯一同态$G/[G,G]\longrightarrow A$使得上图交换. 实际上交换化是一个从群范畴到交换群范畴的函子
+\begin{align*}
+-_{\mathrm{ab}}\colon \mathrm{Group}&\longrightarrow \mathrm{Ab}\\
+G &\mapsto G_{\mathrm{ab}}=G/[G,G]
+\end{align*}
+熟悉群同调\index{群同调}的读者可以看出实际上这个函子就是群$G$的$1$阶同调, $G_{\mathrm{ab}}=H_1(G,\mathbb{Z})=G/[G,G]$. 现在我们根据之前的想法给出$K_1$群\index{$K_1$群}的定义
+\begin{definition}
+	令$R$是含幺结合环, 定义$K_1(R)=GL(R)_{\mathrm{ab}}=GL(R)/[GL(R),GL(R)]$. 有正合列
+	\[1\longrightarrow [GL(R),GL(R)] \longrightarrow GL(R)\longrightarrow K_1(R)\longrightarrow 0\footnote{注意这里和上面正合列中右端的$0$表示前一项是交换群, 将交换群的运算记为加法, 那么$0$是加法单位元.}.\]
+\end{definition}
+将上面交换化的泛性质翻译成$K_1$的泛性质, 即\\ 对任意的交换群$A$与群同态$GL(R)\longrightarrow A$, 存在唯一的交换群同态$K_1(R)\longrightarrow A$使得下图交换
+	\[\begin{tikzcd}[column sep=tiny]
+GL(R) \arrow[rr] \arrow[rd] & & A \\
+& K_1(R)  \arrow[ur,dashrightarrow] & 
+\end{tikzcd}\]
+
+另外由于正向极限(余极限)是正合函子, 故它与同调函子可交换, 从而
+\[K_1(R)=H_1(GL(R),\mathbb{Z})=H_1(\varinjlim GL_n(R),\mathbb{Z})=\varinjlim H_1(GL_n(R),\mathbb{Z}).\]
+
+环的$K$理论实际上是研究从环范畴$\mathrm{Ring}$到交换群范畴$\mathrm{Ab}$的一系列函子$K_n$, 现在我们有了对象之间的对应
+\begin{align*}
+K_1 \colon \mathrm{Ring} &\longrightarrow \mathrm{Ab}\\
+ R&\mapsto K_1(R)
+\end{align*}
+接下来我们考虑态射之间的对应. 令$f: R\longrightarrow S$是环同态, 则利用泛性质可以得到交换群同态$K_1(f): K_1(R)\longrightarrow K_1(S)$:
+\[\begin{tikzcd}[column sep=huge, row sep=huge]
+	GL(R) \ar[r,"\text{1.}"] \ar[d,"\text{3.}\text{由泛性质}"'] \ar[rd,dashrightarrow,"\text{1.}\text{2.}\text{的合成}"] & GL(S) \ar[d,"\text{2.}\text{自然同态}"]\\
+	K_1(R) \ar[r,"K_1(f)","\text{4.}"']	& K_1(S)
+\end{tikzcd}\]
+
+\begin{prop}
+	若$R$可以写成两个环的直积$R_1\times R_2$, 由于$GL(R)=GL(R_1)\times GL(R_2)$(任意$f:R_1\times R_2\longrightarrow R_1\times R_2 \in GL_n(R)$ 都可以写成$f=(f_1,f_2)$, $f_i\in GL_n(R_i)$), $GL(R)$换位子群也可以写成直积的形式$[GL(R_1)\times GL(R_2),GL(R_1)\times GL(R_2)]=[GL(R_1),GL(R_1)]\times [GL(R_2),GL(R_2)]$, 故$K_1(R)=K_1(R_1)\oplus K_1(R_2)$. 
+\end{prop}
+实际上, 在今后可以得到对于任意的$n\in \mathbb{Z}$, 均有$K_n(R)=K_n(R_1)\oplus K_n(R_2)$.
+
+\subsection{Whitehead引理}
+接下来我们会给出$K_1(R)$的等价表述Whitehead引理, 从某种程度上说这是$K$理论的源头. 首先介绍初等矩阵群$E(R) \subset GL(R)$, 这立马会提出两个问题: $E(R)$是否是$GL(R)$的正规子群, $E(R)$和$GL(R)$有什么更紧密的联系? Whitehead引理回答了这个问题$E(R)=[GL(R), GL(R)]$, 故$E(R)\lhd GL(R)$, 从而得到$K_1(R)=GL(R)/E(R)$.
+\begin{definition}[初等矩阵群\index{初等矩阵群}]
+	令$i\neq j$是两个不相等的正整数, $r\in R$, 定义初等矩阵\index{初等矩阵}$e_{ij}(r)\in GL(R)$为以下形状的矩阵: 对角线元均为$1$, 在$i$行$j$列\footnote{台湾的朋友请注意这里遵循大陆的线性代数书籍的叫法, \xpinyin{行}{hang2}表示row, 列表示column.}的位置上的元为$r$, 其余位置均为$0$.
+	\[e_{ij}(r)=
+\begin{blockarray}{cccccccc}
+&   &   & & j\text{列} & & &\\
+&   &   & & \downarrow& & &\\
+\begin{block}{(ccccccc)c}
+1 &  &  & & & & &\\
+ & \ddots &  & & & \text{\Huge 0}& & \\
+ &  &1  &\cdots & r & & & \leftarrow i\text{行}\\
+ &  &  &\ddots &\vdots & & & \\
+ &  &  & & 1 & & & \\
+ & \text{\Huge 0} &   & & &\ddots & & \\
+&  &  & & & & \ddots & \\
+\end{block}
+\end{blockarray}.
+\]
+令$E_n(R)\subset GL_n(R)$为满足$1\leq i,j\leq n$的所有初等矩阵$e_{ij}(r)$生成的子群, 同样地,
+$E_2(R)\hookrightarrow E_3(R)\hookrightarrow \cdots E_n(R) \hookrightarrow E_{n+1}(R)\hookrightarrow \cdots$,
+初等矩阵群\index{初等矩阵群}$E(R)$定义为
+\[E(R)=\bigcup E_n(R)=\varinjlim_{n\to \infty} E_n(R),\]
+是由所有的初等矩阵生成的一个$GL(R)$的子群.
+\end{definition}
+固定下标$i,j$后, 
+\begin{align*}
+e_{ij}(r)e_{ij}(s)&=e_{ij}(r+s),\\
+e_{ij}(-r)&=e_{ij}(r)^{-1}.
+\end{align*}
+为了方便计算初等矩阵的乘积, 我们给出以下交换子公式(除了$j=k$并且$i=l$的情况均容易验算), 
+\begin{equation}
+	[e_{ij}(r),e_{kl}(s)]=\begin{cases}
+		1, & \text{若 $j\neq k$ and $i\neq l$}\\
+		e_{il}(rs), & \text{若 $j=k$ and $i\neq l$}\\
+		e_{kj}(-sr), & \text{若 $j\neq k$ and $i=l$}
+	\end{cases}.
+\end{equation}
+若$j\neq k$ and $i\neq l$, $e_{ij}(r)e_{kl}(s)=e_{kl}(s)e_{ij}(r)$得到的是一个对角线位置为$1$, $(i,j)$位置为$r$, $(k,l)$位置为$s$, 其它位置均为$0$的矩阵. 设$g=(g_{ij})\in GL_n(R)$, 于是分块上(下)三角阵$\begin{pmatrix}
+	1_n & g\\ 0 & 1_n
+\end{pmatrix}$可以写成初等矩阵的乘积
+\[\begin{pmatrix}
+	1_n & g\\ 0 & 1_n
+\end{pmatrix}=\prod_{1\leq i,j\leq n}e_{i,n+j}(g_{ij})\in E_{2n}(R),\]
+同理
+\[\begin{pmatrix}
+	1_n & 0\\ g & 1_n
+\end{pmatrix}=\prod_{1\leq i,j\leq n}e_{n+i,j}(g_{ij})\in E_{2n}(R).\]
+
+
+回忆若$G=[G,G]$, 则称$G$是完满群\footnote{Perfect group, 有些译作完全群, 但完全群也常指complete group; 为了消除歧义, 将perfect group译为完满群, complete group译为完备群, 后者在本书中不会提及.}.
+若$H\subset G$是完满子群, 则显然$H=[H,H]\subset [G,G]$. 
+\begin{lemma}
+\label{lem:ERperfect}
+ 	若$n\geq 3$, 则$E_n(R)$是完满群, 因此$E(R)$是完满群.
+\end{lemma} 
+\begin{proof}
+	由以下等式
+	\[e_{ij}(r)=[e_{ik}(r),e_{kj}(1)], \quad \text{$i,j,k$互不相同,}\]
+	可得$E(R)\subset [E(R),E(R)]$, 而反方向的包含是显然的.
+\end{proof}
+为了方便证明Whitehead引理, 我们引入记号$\bar{w}_{ij}(r)$, 这在定义$K_2$群的Steinberg符号中起到了重要作用.
+若$r\in R^*$是环$R$中的可逆元, 记$\bar{w}_{ij}(r)=e_{ij}(r)e_{ji}(-r^{-1})e_{ij}(r)$. 我们在此计算$\bar{w}_{12}(r)$, 对于一般的$i,j$是类似的,
+\[\bar{w}_{12}(r)=e_{12}(r)e_{21}(-r^{-1})e_{12}(r)=\begin{pmatrix}
+	1 & {\color{green}r}\\ 0 & 1
+\end{pmatrix}\begin{pmatrix}
+	1 & 0\\ {\color{blue}-r^{-1}} & 1
+\end{pmatrix}\begin{pmatrix}
+	1 & {\color{green}r}\\ 0 & 1
+\end{pmatrix}=\begin{pmatrix}
+	0 & {\color{green}r}\\ {\color{blue}-r^{-1}}  & 0
+\end{pmatrix},\]
+可得$\bar{w}_{ij}(r)\bar{w}_{ij}(-r)=1$.
+实际上可以看出若$g\in GL_n(R)$, 将$e_{ij}(g)$视作分块矩阵\footnote{这里实际上是初等矩阵的乘积.}, 这一等式仍是对的.
+该等式的重要性体现在以下事实中(\cite{weibel2013k}, chapter 2, exercise 1.11):
+\begin{lemma}
+\label{lem:gginverse}
+	若$g\in GL_n(R)$, 则在$GL_{2n}(R)$在有等式,
+	\[\begin{pmatrix}
+	g & 0\\ 0 & g^{-1}
+\end{pmatrix}=\begin{pmatrix}
+	1_n & {\color{green}g}\\ 0 & 1_n
+\end{pmatrix}\begin{pmatrix}
+	1_n & 0\\ {\color{blue}-g^{-1}} & 1_n
+\end{pmatrix}\begin{pmatrix}
+	1_n & {\color{green}g}\\ 0 & 1_n
+\end{pmatrix}\begin{pmatrix}
+	0 & -1_n\\ 1_n & 0
+\end{pmatrix}\]
+	从而说明$\begin{pmatrix}
+		g & 0\\ 0 & g^{-1}
+	\end{pmatrix}\in E_{2n}(R)$.
+\end{lemma}
+\begin{definition}
+	若矩阵在相差正负号的情况下置换了集合$\{e_1,\cdots, e_n\}$中的元, 则称该矩阵为符号置换矩阵. 任意置换矩阵均是符号置换矩阵.
+\end{definition}
+特别地, 矩阵$\begin{pmatrix}
+	0 & 1\\ -1 & 0
+\end{pmatrix}\in GL_2(R)$是一个符号置换矩阵, 是否可以把它写成初等矩阵的乘积? 我们通过列运算\footnote{同样可以使用行运算.}可以得到
+\[\begin{pmatrix}
+	0 & 1\\ -1 & 0
+\end{pmatrix}\overset{\cdot \begin{pmatrix}
+	1 & -1\\ 0 & 1
+\end{pmatrix}}\longrightarrow \begin{pmatrix}
+	0 & 1\\ -1 & 1
+\end{pmatrix}\overset{\cdot\begin{pmatrix}
+	1 & 0\\ 1 & 1
+\end{pmatrix}}\longrightarrow \begin{pmatrix}
+	1 & 1\\ 0 & 1
+\end{pmatrix}\overset{\cdot\begin{pmatrix}
+	1 & -1\\ 0 & 1
+\end{pmatrix}}\longrightarrow \begin{pmatrix}
+	1 & 0\\ 0 & 1
+\end{pmatrix},\]
+从而$\begin{pmatrix}
+	0 & 1\\ -1 & 0
+\end{pmatrix}=e_{12}(1)e_{21}(-1)e_{12}(1)\in E_2(R)$.
+
+接下来我们证明Whitehead引理\index{Whitehead引理}
+\begin{lemma}[Whitehead引理, \cite{Whitehead50}]
+	对任意结合幺环$R$, $E(R)=[GL(R),GL(R)]$, 从而$K_1(R)=GL(R)/E(R)$.
+\end{lemma}
+\begin{proof}
+	由引理\ref{lem:ERperfect}得$E(R)\subset [GL(R),GL(R)]$. 下证$[GL(R),GL(R)]\subset E(R)$:
+	设$[g,h]\in [GL_n(R),GL_n(R)]$, 则
+	\[\left[\begin{pmatrix}
+	g & 0\\ 0 & 1_n
+\end{pmatrix},\begin{pmatrix}
+	h & 0\\ 0 & 1_n
+\end{pmatrix}\right]=\begin{pmatrix}
+	g & 0\\ 0 & g^{-1}
+\end{pmatrix}\begin{pmatrix}
+	h & 0\\ 0 & h^{-1}
+\end{pmatrix}\begin{pmatrix}
+	(hg)^{-1} & 0\\ 0 & hg
+\end{pmatrix}\]
+由引理\ref{lem:gginverse}, 右端的三项均属于$E_{2n}(R)$, 故$\begin{pmatrix}
+	[g,h] & 0\\ 0 & 1_n
+\end{pmatrix}=\left[\begin{pmatrix}
+	g & 0\\ 0 & 1_n
+\end{pmatrix},\begin{pmatrix}
+	h & 0\\ 0 & 1_n
+\end{pmatrix}\right]\in E_{2n}(R)$. 因此$[GL_n(R),GL_n(R)]\subset E_{2n}(R)\subset E(R)$, 故$[GL(R),GL(R)]\subset E(R)$.
+\end{proof}
+
+
+
+
+
+
+
+
+\section{交换环的$K_1$群}
+
+
+\section{投射模与$K_1$群}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,198 @@
+%!TEX root = ../main.tex
+\chapter{Note on Some Formulas Pertaining to the K-theory of Commutative Groupschemes}
+
+Author: Spencer BLOCH
+
+Journal of algebra 1978
+
+$k$: ground ring
+
+$k-alg$: the category of $k$-algebras (all rings and algebras commutative with $1$)
+
+$\widehat{k-alg}$: the category  of functors $F: k-alg \longrightarrow Ab$, i.e.\ $\widehat{k-alg}=Ab^{k-alg}$
+
+Some examples of objects in $\widehat{k-alg}$:
+(a)  Any commutative  group  scheme $G$ over $k$ ($G(A)=Mor_k(Spec(A),G)$).\\
+我们主要关注的是(b)  Any  of the $K$-functors of Grothendieck-Bass-Milnor-Quillen.\\
+(c)  Let  $F,  G \in Obj(\widehat{k-alg})$. There is an internal  hom, $\Hom(G, F) \in  Obj(\widehat{k-alg})$,
+defined  by
+\[\Hom(G, F)(A)  =  \Hom_{\widehat{A-alg}}(G|_{A-alg}, F|_{A-alg}),\]
+
+character  group  $\Hom(G, G_m)$  associated  to a groupscheme  $G$ ($G_m=$
+"multiplicative  group",  $G_m(A)  =  A^*  = $ units in $A$). 
+
+Under  certain  reasonable hypotheses  $\Hom(G,  G_m)$  is representable  and one has a duality  (Cartier  duality)
+\[\Hom(\Hom(G, G_m), G_m) = G.\]
+
+研究$\Hom(G, G_m)$, 但是替换成变种$\Hom(G, K_n)$
+
+首先定理
+\begin{theorem}
+	$n\geq 1$, $\Hom(G_m,K_n)=K_{n-1}$.
+\end{theorem}
+\begin{theorem}
+	Let $G$ be representable  and assume $G$ satisfies Cartier  duality,
+$\Hom(\Hom(G, G_m), G_m) = G$. Then the natural  map
+\[G \longrightarrow  \Hom(\Hom(G, K_n), K_n) \]
+is a (canonically)  split injection  for any $n \geq  1$.
+\end{theorem}
+
+\begin{definition}
+	Define  a covariant  functor  "translation  by $n$" from  the category  of groupschemes  over  $k$ satisfying  Cartier  duality  to $\widehat{k-alg}$:
+	\[G\{n\} := \Hom(\Hom(G, G_m), K_{n+1}), n\geq 0.\]
+\end{definition}
+\begin{example}
+	$G_m\{n\}=K_{n+1}$, $\mathbb{Z}\{n\}=K_n$.
+\end{example}
+Concern the functors\\
+$C_nK_q =$ curves of length $n$ on $K_q$,\\
+$CK_q=$   curves  on $K_q$ ,\\
+$\widehat{CK}_q=$ formal  curves on $K_q$\\
+defined  by
+\[C_nK_q(A)  = \ker(K_q(A[T]/(T^{n+1})) \overset{T\mapsto 0}\longrightarrow K_q(A))\]
+\[CK_q(A)=\varprojlim_n C_nK_q(A)\] % inverse limit
+\[\widehat{CK}_q(A)=\ker(K_q(A[T]) \overset{T\mapsto 0}\longrightarrow K_q(A))\]
+
+用$NK$的语言看最熟悉的是$\widehat{CK}_q=NK_q$. 我们关心的$\mathbb{F}_p$-algebra $\mathbb{F}_p[C_p]$,
+\[C_{p-1}K_q(\mathbb{F}_p)=\ker(K_q(\mathbb{F}_p[T]/(T^p)) \longrightarrow K_q(\mathbb{F}_p))\]
+这个对于$K_2$来讲是平凡的，因为$K_2(\mathbb{F}_q)=0$, $K_2(\mathbb{F}_p[T]/(T^n))=0$， 实际上对于perfect field of char $p>0$, $K_2(k[T]/(T^n))=K_2(k)$参考“Derivarions of witt vectors with application to $K_2$ of truncated polynomial rings and laurent series”
+
+考虑smooth $\mathbb{F}_p$-algebra $\mathbb{F}_p[x]$，
+\[C_{p-1}K_2(\mathbb{F}_p[x])=\ker(K_2(\mathbb{F}_p[C_p][x]) \longrightarrow K_2(\mathbb{F}_p)[x])=0\]
+实际上有$C_{p-1}K_2(\mathbb{F}_p[x])=\widehat{CK}_2(\mathbb{F}_p[C_p])=NK_2(\mathbb{F}_p[C_p])$, 并且对于一般的$n$有
+\[C_nK_2(\mathbb{F}_p[x])=K_2(\mathbb{F}_p[x,T]/(T^{n+1}))\]
+RHS is the $K_2$ of truncated polynomial rings.
+
+Back to paper
+
+\[CK_1(A)=\varprojlim_n C_nK_1(A)=BigWitt(A)=(1+TA[[T]])^*\] % INVERSE LIMIT
+the big Witt vectors over $A$. 
+
+$\widehat{CK}_1(A)=NK_1(A)$ contains as a direct factor the group $\widehat{BigWitt}(A)$ = invertible
+elements  in $(1 +  TA[T])$  (big  formal  Witt  vectors  on $A$) 参考P. CARTIER,  Groupes  formels  associes  aux  anneaux  de Witt  generalises。
+
+When $k$ is a $\mathbb{Z}_{(p)}$-algebra (like $\mathbb{F}_p$), $\mathbb{Z}_{(p)}=\mathbb{Z}[1/l\mid(l,p)=1]$. The functors $CK_q,\widehat{CK}_q=NK_q, BigWitt, \widehat{BigWitt}$ split into product of $p$-typical pieces denoted
+\[TCK_q,T\widehat{CK}_q=TNK_q, W, \widehat{W}\]
+respectively. ({\color{red}Jan Stienstra 中On $K_2$ and $K_3$ of truncated polynomial rings中还有一些更多的内容})
+\begin{theorem}
+	Assume some prime  number $p$ is nilpotent  in $k$, then there are isomorphisms
+	\begin{align*}
+	TCK_q & \cong\Hom(\widehat{W}, K_q),\\
+	TNK_q=T\widehat{CK}_q  &\cong \Hom( W, K_q)
+	\end{align*}
+\end{theorem}
+As an application,  we prove a more precise  form  of Cartier
+duality  for $\widehat{W}$ and $K_2$:
+\begin{theorem}
+	Assume some prime  number $p$ is nilpotent  in $k$. Then
+	\[\Hom(\Hom(\widehat{W},  K_2),  K_2)  = T\widehat{CK}_1=TNK_1.\]
+\end{theorem}
+
+\section{DUALITY  AND  TRANSLATION}
+$k$: ground commutative ring
+
+$k-alg$: the category of $k$-algebras (all rings and algebras commutative with $1$)
+
+\begin{definition}
+	We define  $\Hom(F,  G)  \in Obj(\widehat{k-alg})$ by
+	\[\Hom(F,  G)(A)  =  \Hom_{\widehat{A-alg}}(F |_{A-alg},  G |_{A-alg}).\]
+\end{definition}
+Viewing  $F, G$ as functors $ k-alg \longrightarrow Sets$,  we can define  $Mor(F,  G)$ by considering  morphisms  of functors  which  are not necessarily  compatible  with  the Abelian  group  structure.  Clearly,  $\Hom(F,  G) \subset Mor(F,  G)$.
+\begin{definition}
+	$F \in Obj(\widehat{k-alg})$ is said to be representable  if there  exists  an $A  \in Obj(k-alg)$ and an
+	isomorphism  of functors
+	\[F(-) = \Hom_{k-alg}(A, -).\]
+	When  this is the case, there is an isomorphism  (Yoneda)
+	\[Mor(F,  G) =  G(A).\]
+\end{definition}
+Suppose  for example  $F =  G_m$ is the functor
+$G_m(A)  = A^*  =$  units in $A$. $G_m$ is represented  by the algebra $k[T, T^{-1}]$.  
+
+We obtain for any $G \in \widehat{k-alg}$, an inclusion  $\Hom(G_m, G)=\Hom(\Hom(k[T, T^{-1}],-),G(-)) \subset G(k[T, T^{-1}])$.  
+
+Particularly  interesting  for  us will be the  case $G =  K_i$ , one  of the  $K$-functors  of Grothendieck-Bass-MiInor-Quillen.
+\begin{theorem}
+	$\Hom(G_m, K_n)  = K_{n-1}$
+\end{theorem}
+A  basic  theorem  (proved independently  by Quillen  and Waldhausen)  gives a split-exact  sequence
+\[0 \longrightarrow  K_n(R[T])  \oplus K_n(R[T^{-1}])  \longrightarrow K_n(R[T, T^{-1}]) \longrightarrow K_{n-1}(R)  \longrightarrow 0.\]
+Elements  of  $K_n(R)$ correspond  to constant  morphisms  $G_m\longrightarrow K_n$. 
+
+A group  scheme  $G$ over $Spec(k)$ will  be said to satisfy  Cartier  duality  if the
+natural  map
+\[G \overset{\sim}\longrightarrow  \Hom(\Hom(G, G_m), G_m).\]
+is an isomorphism.  
+When  $k$ is Noetherian,  finite  flat group  schemes  and formal
+group  schemes satisfy Cartier  duality.
+
+\begin{theorem}
+	Let  $G$ be a groupscheme  satisfying  Cartier  duality,  and  let
+	$n \geq  1$ be an integer.  Then the  natural  map
+	\[G \rightarrowtail  \Hom(\Hom(G,  K_n), K_n)\]
+	is a (canonically)  split injection.
+\end{theorem}
+{\color{red}一些$\Hom(G,K_n)$的计算，某些条件下$\Hom(\widehat{W},K_q)\cong TCK_q$, $\Hom(W,K_q)\cong T\widehat{CK}_q$}
+
+\begin{definition}
+	Let $n\geq 0$ be an integer and let $Cartier/k$ denote the category of group schemes over  $k$  satisfying Cartier duality. The functor translation by  $n$:  $Cartier/k \longrightarrow \widehat{k-alg}$, $G \mapsto G\{n\}$ is given by
+	\[G\{n\}  =  \Hom(\Hom(G,  G_m),  K_{n+1}).\]
+\end{definition}
+
+For example, $\mathbb{Z}\{n\} = K_n$, $G_m\{n\} = K_{n+1}$.
+\begin{prop}
+	(i)  $G$ is a direct  summand  of $G\{0\}$.  When  $\Hom(G,  G_m)$
+	is infinitesimal,  we have $G \cong G\{0\}$.\\
+	(ii) $ \Hom(G_m, G\{n + 1\}) \cong  G\{n\}$,  $n \geq 0$.\\
+	(iii)  Translation  by $n$ is a faithful  functor.
+\end{prop}
+Given  an extension  of rings  $0 \longrightarrow I \longrightarrow  A \longrightarrow B \longrightarrow 0$ with  $I$ nilpotent, we get $\ker(K_1(A)  \longrightarrow K_1(B))  \cong (1 + I)^*$.
+
+\begin{definition}
+	Let  $F \in Obj(\widehat{k-alg})$. The  tangent  space of $F$,  $t_F  \in Obj(\widehat{k-alg})$, is defined  by
+\[t_F(A)  =  \ker(F(A[\varepsilon]/(\varepsilon^2)) \overset{\varepsilon\mapsto 0}\longrightarrow F(A)).\]
+The  bitangent  space $bi-t_F$ is given  by
+\[bi-t_F(A)  =  \ker(F(A[\varepsilon,  \delta]/(\varepsilon^2, \delta^2, \varepsilon \delta)) \longrightarrow F(A[\varepsilon]) \oplus F(A[\delta])).\]
+\end{definition}
+
+{\color{red}当我们考虑$F=K_2$时，
+\[t_{K_2}(\mathbb{F}_2)=\ker(K_2(\mathbb{F}_2[C_2]) \overset{\varepsilon \mapsto 0}\longrightarrow K_2(\mathbb{F}_2))=0\]
+\[t_{K_2}(\mathbb{F}_2[x])=NK_2(\mathbb{F}_2[C_2])=K_2(\mathbb{F}_2[C_2][x])\]
+\[t_{K_2}(\mathbb{F}_{2^f}[x])=NK_2(\mathbb{F}_{2^f}[C_2])\]
+看看一般的能不能推出来
+}
+
+
+\begin{prop}
+	(i) Assume $F$ is representable,  i.e., there exists a $\Lambda  \in Obj(k-alg)$
+	and a $\lambda \in F(\Lambda)$  inducing  an isomorphism  $F(-) \cong  \Hom_{k-alg}(\Lambda,-)$. The identity  element $0 \in F(k)$  gives a $k$-homomorphism  $\rho \colon \Lambda \longrightarrow k$. Let $I =  \ker \rho$. Then
+	\begin{align*}
+	t_F(A) &= \Hom_{k-mod}(I/I^2,A), \\
+	bi-t_F &= 0.
+	\end{align*}
+	Assume now that $1/2 \in k$. Then\\
+	(ii)  $t_{K_2}(A)  = \Omega_A =$ module  of  absolute  K\"{a}hler  differentials  of $A$. $bi-t_{K_2}(A)  = A$.\\
+	(iii)  Let $G/k$ be a  group  scheme satisfying  Cartier  duality  and such that $t_G$ is locally free, $G^*  = \Hom(G,  G_m)$. Then
+	\begin{align*}
+	t_{G\{1\}}(A)& \cong (t_G(A)\otimes_A \Omega_A^1)\oplus t_{G^*}^*(A)\\
+	bi-t_{G\{1\}}(A)& \cong t_G(A).
+	\end{align*}
+	where $t^*(A)=\Hom_A(t(A),A)$.
+\end{prop}
+
+By definition, an element in $ t_F(A)$  is a $k$-algebra homomorphism
+$f: \Lambda \longrightarrow A[\varepsilon]$ such that the diagram
+\begin{equation*}
+	\begin{tikzcd}
+		\Lambda \ar[r,"f"] \ar[d,"\rho"']& A[\varepsilon]\ar[d,"\varepsilon \mapsto 0"]\\
+		k\ar[r] & A\\
+	\end{tikzcd}
+\end{equation*}
+commutes. 
+\begin{equation*}
+	\begin{tikzcd}
+		\Hom(\Lambda,\Lambda)=F(\Lambda) \ar[r,"F(f)"] \ar[d,"\rho"']& F(A[\varepsilon])=\Hom(\Lambda,A[\varepsilon])\ar[d]\\
+		\Hom(\Lambda,k)=F(k)\ar[r] & F(A)=\Hom(\Lambda,A)\\
+		\rho \mapsfrom 0 &
+	\end{tikzcd}
+\end{equation*}
+后面还没看

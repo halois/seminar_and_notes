@@ -18,12 +18,12 @@ Let $k$ be a finite field of characteristic $p>0$. Let $I=(t_1^m,t_2^n)$ be a pr
 	\item[generators:]   $\langle a,b \rangle $, $(a,b)\in A\times M \cup M \times A$;
 	\item[relations:] $\langle a,b\rangle = -\langle b,a \rangle$, \\
 	$\langle a,b\rangle +\langle c,b \rangle=\langle a+c-abc,b\rangle$, \\
-	 $\langle a,bc\rangle =\langle ab,c\rangle +\langle ac,b\rangle$ for $(a,b,c)\in A\times M \times A \cup M\times A\times M$.
+	 $\langle a,bc\rangle =\langle ab,c\rangle +\langle ac,b\rangle$ for $(a,b,c)\in A\times M \times A \cup M\times A\times A \cup A\times A\times M$.
 \end{itemize}
 
 Now we introduce some notations followed \cite{MR86f:18017}
 \begin{itemize}
-	\item $\mathbb{N}$: the monoid of non-negative integers, 
+	\item $\mathbb{N}$: the monoid of natural numbers, 
 	\item $\epsilon^1 = (1,0)\in \mathbb{N}^2$, $\epsilon^2 = (0,1)\in \mathbb{N}^2$,
 	\item for $\alpha \in \mathbb{N}^2$, one writes $t^{\alpha}=t_1^{\alpha_1}t_2^{\alpha_2}$, so $t^{\epsilon^1}=t_1$, $t^{\epsilon^2}=t_2$,
 	\item $\Delta=\{\alpha\in\mathbb{N}^2\mid  t^{\alpha}\in I\}$,
@@ -56,7 +56,7 @@ then $\Gamma_{\alpha,i}$ induces a homomorphism
 	Obeserve that the orders of the elements $1+x,1+x^3\in (1+x \mathbb{F}_2[x]/(x^4))^{\times}$ are $4$ and $2$ respectively. The subgroups $\langle 1+x \rangle = \{1,1+x,1+x^2,1+x+x^2+x^3\}$, $\langle 1+x^3 \rangle = \{1,1+x^3\}$. Let $\sigma,\tau$ be the generators of $\mathbb{Z}/4 \mathbb{Z}$ and $\mathbb{Z}/2 \mathbb{Z}$ respectively, then the homomorphism 
 		\begin{align*}
 		\mathbb{Z}/4 \mathbb{Z} \oplus \mathbb{Z}/2 \mathbb{Z} &\longrightarrow (1+x\mathbb{F}_2[x]/(x^{4}))^{\times} \\
-		(\sigma,\tau) & \mapsto (1+x)(1+x^3)=1+x+x^3. \\
+		(\sigma,\tau) & \mapsto (1+x)(1+x^3)=1+x+x^3.
 		\end{align*}
 	is an isomorphism.
 \end{proof}
@@ -80,7 +80,6 @@ Let $C_4\times C_4$ be the direct product of two cyclic groups of order $4$, the
 	Set $A=\mathbb{F}_2[t_1,t_2]/(t_1^4,t_2^4)$, then $I=(t_1^4,t_2^4)$, $M=(t_1,t_2)$, $A/M=\mathbb{F}_2$. Thus 
 	\[\Delta =\{(\alpha_1,\alpha_2)\in\mathbb{N}^2\mid  \alpha_1 \geq 4 \text{ or } \alpha_2 \geq 4\},\] 
 	\[\Lambda =\{(\alpha,i)\mid \alpha_i \geq 1\}.\]
-
 	For $(\alpha,i)\in \Lambda$, 
 	\[ [\alpha,1]=\min\{\left \lceil \frac{5}{\alpha_1} \right \rceil, \left \lceil \frac{4}{\alpha_2} \right \rceil \}, \]
 	\[ [\alpha,2]=\min\{\left \lceil \frac{4}{\alpha_1} \right \rceil, \left \lceil \frac{5}{\alpha_2} \right \rceil \},\]
@@ -125,11 +124,17 @@ Let $C_4\times C_4$ be the direct product of two cyclic groups of order $4$, the
 \end{array}\]
 Hence $K_2(\mathbb{F}_2[C_4\times C_4])  \cong (\mathbb{Z}/4 \mathbb{Z})^3 \oplus (\mathbb{Z}/2 \mathbb{Z})^9$.
 
+Consider $((1,1),2)\in \Lambda^{00}$,
+  \begin{align*}
+ \Gamma_{(1,1),2} \colon (1+x \mathbb{F}_2[x]/(x^{4}))^{\times} &\rightarrowtail K_2(A,M)\\
+ 1+x \text{(order 4)} &\mapsto \langle t_1,t_2 \rangle,\\
+ 1+x^3 \text{(order 2)} &\mapsto \langle t_1^3t_2^{2},t_2 \rangle.
+ \end{align*}
 Furthermore, one can use the homomorphism $\Gamma_{\alpha,i}$ to determine the generators as below,\\
 the generators of order $4$:
 \[\langle t_1t_2,t_1 \rangle, \langle t_1t_2,t_2 \rangle, \langle t_1,t_2 \rangle,\] 
 the generators of order $2$:
-\[\langle t_1t_2^3,t_1 \rangle, \langle t_1^3t_2,t_1 \rangle, \langle t_1^3t_2^3,t_1 \rangle,\langle t_1t_2^3,t_2 \rangle, \langle t_1^3t_2^2,t_2 \rangle, \langle t_1t_2^2,t_2 \rangle,\langle t_1^3t_2,t_2 \rangle, \langle t_1^3t_2^3,t_2 \rangle, \langle t_1^3,t_2 \rangle.\]
+\[\langle t_1t_2^3,t_1 \rangle, \langle t_1^3t_2,t_1 \rangle, \langle t_1^3t_2^3,t_1 \rangle,\langle t_1t_2^3,t_2 \rangle, \langle t_1^3t_2^2,t_2 \rangle, \langle t_1t_2^2,t_2 \rangle,\langle t_1^3t_2,t_2 \rangle, \langle t_1^3t_2^3,t_2 \rangle, \langle t_1^3,t_2 \rangle. \qedhere\]
 \end{proof}
 \begin{remark}
 	Compared with \cite{陈虹:419}, note that $\langle t_1^3,t_2 \rangle=\langle t_1^2t_2,t_1\rangle$, because
@@ -142,6 +147,118 @@ the generators of order $2$:
 	\end{align*}
 	since $\langle t_1^2t_2,t_1 \rangle+\langle t_1^2t_2,t_1 \rangle=\langle 0,t_1\rangle =0$ and $\langle t_1^3,t_2 \rangle=-\langle t_1^3,t_2 \rangle$.
 \end{remark}
+
+$K_2(\mathbb{F}_{2}[C_2\times C_2])$ 推广至 $K_2(\mathbb{F}_{p}[C_p\times C_p])$
+接着算$K_2(\mathbb{F}_{3}[C_9\times C_9])$ 推广至 $K_2(\mathbb{F}_{p}[C_{p^2}\times C_{p^2}])$. 另外$K_2(\mathbb{F}_{2}[C_2\times C_4])$ 推广至 $K_2(\mathbb{F}_{2}[C_{2^i}\times C_{2^j}])$
+
+\section{$K_2(\mathbb{F}_{p}[C_p\times C_p])$}
+$K_2(\mathbb{F}_{p}[C_p\times C_p])=K_2(\mathbb{F}_{p}[t_1,t_2]/(t_1^p,t_2^p),(t_1,t_2))$
+
+\[\Delta =\{(\alpha_1,\alpha_2)\in\mathbb{N}^2\mid  \alpha_1 \geq p \text{ or } \alpha_2 \geq p\},\] 
+	\[\Lambda =\{(\alpha,i)\mid \alpha_i \geq 1\}.\]
+
+	For $(\alpha,i)\in \Lambda$, 
+	\[ [\alpha,1]=\min\{\left \lceil \frac{p+1}{\alpha_1} \right \rceil, \left \lceil \frac{p}{\alpha_2} \right \rceil \}, \]
+	\[ [\alpha,2]=\min\{\left \lceil \frac{p}{\alpha_1} \right \rceil, \left \lceil \frac{p+1}{\alpha_2} \right \rceil \},\]
+	where $\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}\mid m\geq x\}$.
+
+$gcd(p,\alpha_1,\alpha_2)=1$, $[\alpha]=\max\{[\alpha,i]\mid  \alpha_i  \not\equiv 0 \bmod p\}$
+\begin{enumerate}
+	\item If $p\mid \alpha_1$, $p\nmid \alpha_2$, $[\alpha]=[\alpha,2]$.
+	\item If $p\nmid \alpha_1$, $p\mid \alpha_2$, $[\alpha]=[\alpha,1]$.
+	\item If $p\nmid \alpha_1$, $p\nmid \alpha_2$, $[\alpha]=\max\{[\alpha,1],[\alpha,2]\}$.
+\end{enumerate}
+$\Lambda_{>1}^{00}$: 
+\begin{itemize}
+	\item $gcd(\alpha_1,\alpha_2)=1$, $p\mid \alpha_1$, $1\leq \alpha_1\leq p$, $p\nmid \alpha_2$, $(\alpha,1)\in \Lambda_{>1}^{00}$, $[\alpha,1]=\min\{\left \lceil \frac{p+1}{\alpha_1} \right \rceil, \left \lceil \frac{p}{\alpha_2} \right \rceil \}$.
+	\item $gcd(\alpha_1,\alpha_2)=1$, $p\nmid \alpha_1$, $1\leq \alpha_1\leq p$, if $p \mid \alpha_2$, then $[\alpha]=[\alpha,1]$, $(\alpha,2)\in \Lambda_{>1}^{00}$. Else if $p \nmid \alpha_2$, then  $(\alpha,2)\in \Lambda_{>1}^{00}$ only if $[\alpha]=[\alpha,1]$. In both case, $[\alpha,2]=\min\{\left \lceil \frac{p}{\alpha_1} \right \rceil, \left \lceil \frac{p+1}{\alpha_2} \right \rceil \}$.
+\end{itemize}
+\[\begin{array}{|c|c|}
+	\hline	
+	(\alpha,i)\in \Lambda_{>1}^{00} & [\alpha,i]\\
+	\hline
+	((p,\alpha_2),1), 1\leq \alpha_2\leq p-1 &2\\
+	\hline
+	((\alpha_1,p),2), 1\leq \alpha_1\leq p-1 &2\\
+	\hline
+	((1,\alpha_2),2), 1\leq \alpha_2\leq p-1 & \left \lceil \frac{p+1}{\alpha_2} \right \rceil\\
+	\hline
+	((\alpha_1,1),2), 1\leq \alpha_1\leq p-1 & \left \lceil \frac{p}{\alpha_1} \right \rceil\\
+	\hline
+\end{array}\]
+{\color{red}上面最后一行有些问题，需要订正}
+when $p$ is a small prime, such as $2$ or $3$,
+
+when $p=2$:
+	\[\begin{array}{|c|c|c|c|}
+	\hline
+	(\alpha,i)\in \Lambda^{00}_{>1} & [\alpha,i] & (1+x \mathbb{F}_p[x]/(x^{[\alpha,i]}))^{\times} \\
+	\hline
+	((2,1),1)  & 2 & \mathbb{Z}/2 \mathbb{Z}\\
+	\hline
+	((1,2),2)  & 2& \mathbb{Z}/2 \mathbb{Z} \\
+	\hline
+	((1,1),2)  & 2& \mathbb{Z}/2 \mathbb{Z} \\
+	\hline
+		\end{array}\]
+When $p=3$:
+	\[\begin{array}{|c|c|c|c|}
+	\hline
+	(\alpha,i)\in \Lambda^{00}_{>1} & [\alpha,i] & (1+x \mathbb{F}_p[x]/(x^{[\alpha,i]}))^{\times} \\
+	\hline
+	((3,1),1)  & 2 & \mathbb{Z}/3 \mathbb{Z}\\
+	\hline
+	((3,2),1)  & 2& \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	((1,3),2)  & 2& \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	((2,3),2)  & 2& \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	((1,1),2)  & 3& \mathbb{Z}/3 \mathbb{Z}\oplus \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	((1,2),2)  & 2& \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	((2,1),2)  & 2& \mathbb{Z}/3 \mathbb{Z} \\
+	\hline
+	\end{array}\]
+	Note that  $(1+x \mathbb{F}_3[x]/(x^3))^{\times}=BigWitt_2(\mathbb{F}_3)=(\mathbb{Z}/3 \mathbb{Z})^2$. 
+	Hence $K_2(\mathbb{F}_{2}[C_2\times C_2])\cong (\mathbb{Z}/2 \mathbb{Z})^3 $, $K_2(\mathbb{F}_{3}[C_3\times C_3])\cong (\mathbb{Z}/3 \mathbb{Z})^8$.
+
+\section{$K_2(\mathbb{F}_{p}[C_{p^2}\times C_{p^2}])$}
+$K_2(\mathbb{F}_{p}[C_{p^2}\times C_{p^2}])\cong K_2(\mathbb{F}_{p}[t_1,t_2]/(t_1^{p^2},t_2^{p^2}),(t_1,t_2))$, let $A=\mathbb{F}_{p}[t_1,t_2]/(t_1^{p^2},t_2^{p^2})$, $I=(t_1^{p^2},t_2^{p^2})$, $M$ is the nilradical $(t_1,t_2)$.
+\[\Delta =\{(\alpha_1,\alpha_2)\in\mathbb{N}^2\mid  \alpha_1 \geq p^2 \text{ or } \alpha_2 \geq p^2\},\] 
+	\[\Lambda =\{(\alpha,i)\mid \alpha_i \geq 1\}.\]
+
+	For $(\alpha,i)\in \Lambda$, 
+	\[ [\alpha,1]=\min\{\left \lceil \frac{p^2+1}{\alpha_1} \right \rceil, \left \lceil \frac{p^2}{\alpha_2} \right \rceil \}, \]
+	\[ [\alpha,2]=\min\{\left \lceil \frac{p^2}{\alpha_1} \right \rceil, \left \lceil \frac{p^2+1}{\alpha_2} \right \rceil \},\]
+	where $\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}\mid m\geq x\}$.
+
+If $gcd(p,\alpha_1,\alpha_2)=1$, $[\alpha]=\max\{[\alpha,i]\mid  \alpha_i  \not\equiv 0 \bmod p\}$
+\begin{enumerate}
+	\item If $p\mid \alpha_1$, $p\nmid \alpha_2$, $[\alpha]=[\alpha,2]$.
+	\item If $p\nmid \alpha_1$, $p\mid \alpha_2$, $[\alpha]=[\alpha,1]$.
+	\item If $p\nmid \alpha_1$, $p\nmid \alpha_2$, $[\alpha]=\max\{[\alpha,1],[\alpha,2]\}$.
+\end{enumerate}
+
+Now we want to know when $\min\{j\mid \alpha_j\not\equiv 0 \bmod p, [\alpha,j]=[\alpha]\}$ is $1$ or $2$.
+
+Firstly, we can easily get if  $p\nmid \alpha_1$ and $p\mid \alpha_2$ or $p\nmid \alpha_1$ and $p\nmid \alpha_2$ with $[\alpha,2]\leq [\alpha,1]$, then $p\nmid \alpha_1$ and $[\alpha]=[\alpha,1]$, hence $\min\{j\mid \alpha_j\not\equiv 0 \bmod p, [\alpha,j]=[\alpha]\}=1$. In both cases, $(\alpha,2)\in\Lambda^{00}$.
+
+Similarly, if $p\mid\alpha_1$ and $p\nmid \alpha_2$ or $p\nmid\alpha_1$ and $p\nmid \alpha_2$ with $[\alpha,1] < [\alpha,2]$ , then $(\alpha,1)\in\Lambda^{00}$.
+
+When $p\mid \alpha_2$,i.e.\ $\alpha_2=p,2p,\cdots,(p-1)p$ $((1,\alpha_2),2)\in \Lambda^{00}$, $[(1,ip),2]=\left \lceil \frac{p^2+1}{ip} \right \rceil$.
+
+
+
+
+
+
+
+
+
+
+
 
 
 

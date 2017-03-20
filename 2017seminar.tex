@@ -1,0 +1,47 @@
+% !mode::"TeX:UTF-8"
+% !TEX program = xelatex
+% +-----------------------------------------------------------------------------
+% | File: seminar notes
+% | Author: Zhang Hao
+% |
+% | 
+% | 			
+% | Description:
+% |     2017年春K理论讨论班笔记
+% |
+% | 
+% | 
+% +-----------------------------------------------------------------------------
+%样式
+\input{styles/formatZH}
+\input{styles/titlepage}%封面
+\usepackage{xpinyin} %使用拼音
+\usepackage{blkarray} % 矩阵标号
+
+\begin{document}
+	%封面
+		\pagestyle{empty}
+		\pdfbookmark[0]{封面}{title}
+		\titleBC
+	%目录
+		\clearpage
+		\pdfbookmark[0]{目录}{contents}
+		\tableofcontents
+
+	%章节 
+		\include{seminartex/K1}
+		\include{seminartex/relativeK1}
+
+	% 参考文献
+		\bibliographystyle{plain} %参考文献格式
+		\pdfbookmark[0]{参考文献}{references}
+		\bibliography{bib/seminar_notes} 
+
+	% 索引	 
+		\indexprologue{{\em 部分名词与专业用语索引如下}}
+		\printindex
+		\pdfbookmark[0]{索引}{index}
+
+\end{document}
+
+

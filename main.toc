@@ -1,94 +1,152 @@
-\contentsline {chapter}{\numberline {1}$K$理论简介}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}释题}{5}{section.1.1}
-\contentsline {paragraph}{“$K$”}{5}{section*.2}
-\contentsline {paragraph}{分类}{5}{section*.3}
-\contentsline {section}{\numberline {1.2}历史}{6}{section.1.2}
-\contentsline {paragraph}{想法}{6}{section*.4}
-\contentsline {section}{\numberline {1.3}讲了几章Srinivas书后的想法}{6}{section.1.3}
-\contentsline {paragraph}{参考}{7}{section*.5}
-\contentsline {section}{\numberline {1.4}相对$K_1$群}{8}{section.1.4}
-\contentsline {chapter}{\numberline {2}Notes on Higher $K$-theory of group-rings of virtually infinite cyclic groups}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introduction}{10}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Preliminaries}{10}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}The Farrell-Jones conjecture}{11}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Notations}{12}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}已知结果}{13}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}这篇文章的结果}{13}{subsection.2.1.5}
-\contentsline {paragraph}{第1节}{13}{section*.6}
-\contentsline {paragraph}{第2节}{14}{section*.7}
-\contentsline {paragraph}{第3节}{14}{section*.8}
-\contentsline {section}{\numberline {2.2}$K$-theory for the first type of virtually infinite cyclic groups}{15}{section.2.2}
-\contentsline {paragraph}{原型}{15}{section*.9}
-\contentsline {paragraph}{推广到数域$F$和代数整数环$R$}{16}{section*.10}
-\contentsline {paragraph}{群环推广到半单代数}{16}{section*.11}
-\contentsline {section}{\numberline {2.3}Nil-groups for the second type of virtually infinite cyclic groups}{17}{section.2.3}
-\contentsline {chapter}{\numberline {3}Witt vectors and $NK$-groups}{20}{chapter.3}
-\contentsline {paragraph}{Ernst Witt}{21}{section*.12}
-\contentsline {section}{\numberline {3.1}$p$-Witt vectors}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2}Big Witt vectors}{25}{section.3.2}
-\contentsline {section}{\numberline {3.3}Module structure on $NK_*$}{26}{section.3.3}
-\contentsline {paragraph}{Notations}{26}{section*.13}
-\contentsline {subsection}{\numberline {3.3.1}$\mathrm {End}_0(\Lambda )$}{26}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Grothendieck rings and Witt vectors}{29}{subsection.3.3.2}
-\contentsline {paragraph}{Computation in $W(R)$}{30}{section*.14}
-\contentsline {paragraph}{Operations on $W(R)$ and $\mathrm {End}_0(R)$}{31}{section*.15}
-\contentsline {subsection}{\numberline {3.3.3}$\mathrm {End}_0(R)$-module structure on $\mathrm {Nil}_0(\Lambda )$}{33}{subsection.3.3.3}
-\contentsline {paragraph}{More operations}{35}{section*.16}
-\contentsline {subsection}{\numberline {3.3.4}$W(R)$-module structure on $\mathrm {Nil}_0(\Lambda )$}{35}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}$W(R)$-module structure on $\mathrm {Nil}_*(\Lambda )$}{36}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Modern version}{36}{subsection.3.3.6}
-\contentsline {section}{\numberline {3.4}Some results}{36}{section.3.4}
-\contentsline {chapter}{\numberline {4}Notes on $NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}{38}{chapter.4}
-\contentsline {section}{\numberline {4.1}Outline}{38}{section.4.1}
-\contentsline {section}{\numberline {4.2}Preliminaries}{38}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Regular rings}{38}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}The ring of Witt vectors}{39}{subsection.4.2.2}
-\contentsline {paragraph}{additional structure}{39}{section*.17}
-\contentsline {subsection}{\numberline {4.2.3}Dennis-Stein symbol}{40}{subsection.4.2.3}
-\contentsline {paragraph}{Steinberg symbol}{40}{section*.18}
-\contentsline {paragraph}{Dennis-Stein symbol {\color {green}version 1}}{40}{section*.19}
-\contentsline {paragraph}{Dennis-Stein symbol {\color {green}version 2}}{41}{section*.20}
-\contentsline {subsection}{\numberline {4.2.4}Relative group and double relative group}{42}{subsection.4.2.4}
-\contentsline {paragraph}{Relative groups}{42}{section*.21}
-\contentsline {paragraph}{Double relative groups}{44}{section*.22}
-\contentsline {section}{\numberline {4.3}$W(R)$-module structure}{45}{section.4.3}
-\contentsline {paragraph}{$W(\mathbb {F}_2)$-module structure on $V=x \mathbb {F}_2[x]$}{45}{section*.23}
-\contentsline {paragraph}{$W(\mathbb {F}_2)$-module structure on $\Omega _{\mathbb {F}_2[x]}=\mathbb {F}_2[x]\tmspace +\thinmuskip {.1667em}dx = \oplus _{i=1}^\infty \mathbb {F}_2 e^i$}{46}{section*.24}
-\contentsline {section}{\numberline {4.4}$NK_i$ of the groups $C_2$ and $C_p$}{47}{section.4.4}
-\contentsline {section}{\numberline {4.5}$NK_i$ of the group $D_2$}{49}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}A result from the $K$-book}{50}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}About the lemma}{51}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}$NK_i$ of the group $C_4$}{51}{section.4.6}
-\contentsline {section}{\numberline {4.7}$NK_i$ of the group $D_4$}{51}{section.4.7}
-\contentsline {chapter}{\numberline {5}Lower Bounds for the Order of $K_2(\mathbb {Z}G)$ and $Wh_2(G)$}{52}{chapter.5}
-\contentsline {paragraph}{elementary abelian $p$-groups}{52}{section*.25}
-\contentsline {section}{\numberline {5.1}第一部分}{53}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Remarks}{54}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Theorem}{56}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}第二部分}{59}{section.5.2}
-\contentsline {section}{\numberline {5.3}推广和其它}{61}{section.5.3}
-\contentsline {paragraph}{abelian $p$-groups which are not elementary}{61}{section*.26}
-\contentsline {chapter}{\numberline {6}Some Results of Grouprings}{62}{chapter.6}
-\contentsline {paragraph}{On the K-theory of truncated polynomial rings in non-commuting variables 中的有关结果}{62}{section*.27}
-\contentsline {section}{\numberline {6.1}Relative K-theory and topological cyclic homology}{63}{section.6.1}
-\contentsline {section}{\numberline {6.2}Cyclic polytopes and the $K$-theory of truncated polynomial algebras}{64}{section.6.2}
-\contentsline {chapter}{\numberline {7}$NK_{2}(\mathbb {F}_{2^f}[C_{2^n}])$}{65}{chapter.7}
-\contentsline {section}{\numberline {7.1}引言}{65}{section.7.1}
-\contentsline {section}{\numberline {7.2}预备知识}{66}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Dennis-Stein符号}{66}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}符号说明}{67}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Witt向量}{68}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}$NK_2(\mathbb {F}_2[C_2])$}{71}{section.7.3}
-\contentsline {section}{\numberline {7.4}$NK_2(\mathbb {F}_2[C_{4}])$}{75}{section.7.4}
-\contentsline {section}{\numberline {7.5}$NK_2(\mathbb {F}_q[C_{2^n}])$}{78}{section.7.5}
-\contentsline {section}{\numberline {7.6}$NK_2$ of finite abelian $p$-groups}{80}{section.7.6}
-\contentsline {section}{\numberline {7.7}其他可以考虑的问题}{80}{section.7.7}
-\contentsline {chapter}{\numberline {8}On the calucation of $K_2(\mathbb {F}_2[C_4\times C_4])$}{81}{chapter.8}
-\contentsline {section}{\numberline {8.1}Abstract}{81}{section.8.1}
-\contentsline {section}{\numberline {8.2}Introduction}{81}{section.8.2}
-\contentsline {section}{\numberline {8.3}Preliminaries}{81}{section.8.3}
-\contentsline {section}{\numberline {8.4}Main result}{82}{section.8.4}
-\contentsline {chapter}{\numberline {9}$NK_i(FG)$ }{85}{chapter.9}
-\contentsline {section}{\numberline {9.1}Preliminaries}{85}{section.9.1}
-\contentsline {section}{\numberline {9.2}Main Theorem}{86}{section.9.2}
-\contentsline {chapter}{\numberline {10}有限域总结}{89}{chapter.10}
+\contentsline {chapter}{\numberline {1}$K$理论简介}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}释题}{7}{section.1.1}
+\contentsline {paragraph}{“$K$”}{7}{section*.2}
+\contentsline {paragraph}{分类}{8}{section*.3}
+\contentsline {section}{\numberline {1.2}历史}{8}{section.1.2}
+\contentsline {paragraph}{想法}{8}{section*.4}
+\contentsline {section}{\numberline {1.3}讲了几章Srinivas书后的想法}{8}{section.1.3}
+\contentsline {paragraph}{参考}{10}{section*.5}
+\contentsline {chapter}{\numberline {2}Notes on Higher $K$-theory of group-rings of virtually infinite cyclic groups}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{11}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Preliminaries}{11}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}The Farrell-Jones conjecture}{13}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Notations}{13}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Known results}{14}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Main results}{15}{subsection.2.1.5}
+\contentsline {paragraph}{Part 1}{15}{section*.6}
+\contentsline {paragraph}{Part 2}{15}{section*.7}
+\contentsline {paragraph}{第3节}{16}{section*.8}
+\contentsline {section}{\numberline {2.2}$K$-theory for the first type of virtually infinite cyclic groups}{16}{section.2.2}
+\contentsline {paragraph}{原型}{16}{section*.9}
+\contentsline {paragraph}{推广到数域$F$和代数整数环$R$}{17}{section*.10}
+\contentsline {paragraph}{群环推广到半单代数}{18}{section*.11}
+\contentsline {section}{\numberline {2.3}Nil-groups for the second type of virtually infinite cyclic groups}{19}{section.2.3}
+\contentsline {chapter}{\numberline {3}Witt vectors and $NK$-groups}{22}{chapter.3}
+\contentsline {paragraph}{Ernst Witt}{22}{section*.12}
+\contentsline {section}{\numberline {3.1}$p$-Witt vectors}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}Big Witt vectors}{27}{section.3.2}
+\contentsline {section}{\numberline {3.3}Truncation set}{29}{section.3.3}
+\contentsline {section}{\numberline {3.4}Module structure on $NK_*$}{29}{section.3.4}
+\contentsline {paragraph}{Notations}{29}{section*.13}
+\contentsline {subsection}{\numberline {3.4.1}$\mathrm {End}_0(\Lambda )$}{30}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Grothendieck rings and Witt vectors}{33}{subsection.3.4.2}
+\contentsline {paragraph}{Computation in $W(R)$}{34}{section*.14}
+\contentsline {paragraph}{Operations on $W(R)$ and $\mathrm {End}_0(R)$}{35}{section*.15}
+\contentsline {subsection}{\numberline {3.4.3}$\mathrm {End}_0(R)$-module structure on $\mathrm {Nil}_0(\Lambda )$}{38}{subsection.3.4.3}
+\contentsline {paragraph}{More operations}{40}{section*.16}
+\contentsline {subsection}{\numberline {3.4.4}$W(R)$-module structure on $\mathrm {Nil}_0(\Lambda )$}{40}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}$W(R)$-module structure on $\mathrm {Nil}_*(\Lambda )$}{40}{subsection.3.4.5}
+\contentsline {paragraph}{Verschiebung and Frobenius}{41}{section*.17}
+\contentsline {subsection}{\numberline {3.4.6}Modern version}{44}{subsection.3.4.6}
+\contentsline {section}{\numberline {3.5}Some results}{44}{section.3.5}
+\contentsline {chapter}{\numberline {4}Notes on $NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}{45}{chapter.4}
+\contentsline {section}{\numberline {4.1}Outline}{45}{section.4.1}
+\contentsline {section}{\numberline {4.2}Preliminaries}{46}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Regular rings}{46}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}The ring of Witt vectors}{46}{subsection.4.2.2}
+\contentsline {paragraph}{additional structure}{46}{section*.18}
+\contentsline {subsection}{\numberline {4.2.3}Dennis-Stein symbol}{47}{subsection.4.2.3}
+\contentsline {paragraph}{Steinberg symbol}{47}{section*.19}
+\contentsline {paragraph}{Dennis-Stein symbol {\color {green}version 1}}{48}{section*.20}
+\contentsline {paragraph}{Dennis-Stein symbol {\color {green}version 2}}{48}{section*.21}
+\contentsline {subsection}{\numberline {4.2.4}Relative group and double relative group}{49}{subsection.4.2.4}
+\contentsline {paragraph}{Relative groups}{50}{section*.22}
+\contentsline {paragraph}{Double relative groups}{52}{section*.23}
+\contentsline {section}{\numberline {4.3}$W(R)$-module structure}{53}{section.4.3}
+\contentsline {paragraph}{$W(\mathbb {F}_2)$-module structure on $V=x \mathbb {F}_2[x]$}{53}{section*.24}
+\contentsline {paragraph}{$W(\mathbb {F}_2)$-module structure on $\Omega _{\mathbb {F}_2[x]}=\mathbb {F}_2[x]\tmspace +\thinmuskip {.1667em}dx = \oplus _{i=1}^\infty \mathbb {F}_2 e^i$}{54}{section*.25}
+\contentsline {section}{\numberline {4.4}$NK_i$ of the groups $C_2$ and $C_p$}{55}{section.4.4}
+\contentsline {section}{\numberline {4.5}$NK_i$ of the group $D_2$}{57}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}A result from the $K$-book}{59}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}About the lemma}{60}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}$NK_i$ of the group $C_4$}{60}{section.4.6}
+\contentsline {section}{\numberline {4.7}$NK_i$ of the group $D_4$}{60}{section.4.7}
+\contentsline {chapter}{\numberline {5}Lower Bounds for the Order of $K_2(\mathbb {Z}G)$ and $Wh_2(G)$}{61}{chapter.5}
+\contentsline {paragraph}{elementary abelian $p$-groups}{61}{section*.26}
+\contentsline {section}{\numberline {5.1}Part 1}{62}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Remarks}{63}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Theorem}{65}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Part 2}{69}{section.5.2}
+\contentsline {section}{\numberline {5.3}Generalizations}{71}{section.5.3}
+\contentsline {paragraph}{abelian $p$-groups which are not elementary}{71}{section*.28}
+\contentsline {chapter}{\numberline {6}Some Results of Grouprings}{72}{chapter.6}
+\contentsline {paragraph}{On the K-theory of truncated polynomial rings in non-commuting variables 中的有关结果}{72}{section*.29}
+\contentsline {section}{\numberline {6.1}Relative K-theory and topological cyclic homology}{73}{section.6.1}
+\contentsline {section}{\numberline {6.2}Cyclic polytopes and the $K$-theory of truncated polynomial algebras}{74}{section.6.2}
+\contentsline {chapter}{\numberline {7}An introduction to $NK$-groups}{76}{chapter.7}
+\contentsline {section}{\numberline {7.1}Nil-groups}{76}{section.7.1}
+\contentsline {paragraph}{Some results about twisted plynomial rings and twisted Laurent polynomial rings}{78}{section*.30}
+\contentsline {section}{\numberline {7.2}Regular rings}{80}{section.7.2}
+\contentsline {section}{\numberline {7.3}The nonfiniteness of Nil}{82}{section.7.3}
+\contentsline {paragraph}{Bass Nil-groups}{82}{section*.31}
+\contentsline {paragraph}{Farrell Nil-groups}{83}{section*.32}
+\contentsline {section}{\numberline {7.4}Vanishing results}{83}{section.7.4}
+\contentsline {section}{\numberline {7.5}Non-vanishing results}{84}{section.7.5}
+\contentsline {chapter}{\numberline {8}$NK_{2}(\mathbb {F}_{2^f}[C_{2^n}])$}{86}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{86}{section.8.1}
+\contentsline {section}{\numberline {8.2}Preliminaries}{87}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Relative $K$-groups}{87}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Dennis-Stein symbols}{88}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Big Witt vectors and Witt decomposition}{89}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Artin-Hasse exponential}{92}{subsection.8.2.4}
+\contentsline {section}{\numberline {8.3}The computation of $NK_2$ groups}{93}{section.8.3}
+\contentsline {section}{\numberline {8.4}The computation of $NK_2(\mathbb {F}_2[C_2])$}{94}{section.8.4}
+\contentsline {section}{\numberline {8.5}$NK_2(\mathbb {F}_2[C_{4}])$}{99}{section.8.5}
+\contentsline {section}{\numberline {8.6}$NK_2(\mathbb {F}_2[C_2\times C_2])$}{102}{section.8.6}
+\contentsline {paragraph}{Some non-trivial elements in $NK_2(\mathbb {Z}[C_2\times C_2])$}{104}{section*.35}
+\contentsline {section}{\numberline {8.7}$NK_2(\mathbb {F}_2[C_4\times C_4])$}{105}{section.8.7}
+\contentsline {section}{\numberline {8.8}$NK_2(\mathbb {F}_q[C_{2^n}])$}{105}{section.8.8}
+\contentsline {section}{\numberline {8.9}$NK_2$ of finite abelian groups}{106}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}$NK_2$ of finite cyclic $p$-groups}{106}{subsection.8.9.1}
+\contentsline {subsection}{\numberline {8.9.2}$NK_2$ of finite abelian $p$-groups}{108}{subsection.8.9.2}
+\contentsline {subsection}{\numberline {8.9.3}Computation of $NK_2(\mathbb {F}[G])$}{110}{subsection.8.9.3}
+\contentsline {chapter}{\numberline {9}On the calucation of $K_2(\mathbb {F}_2[C_4\times C_4])$}{112}{chapter.9}
+\contentsline {section}{\numberline {9.1}Abstract}{112}{section.9.1}
+\contentsline {section}{\numberline {9.2}Introduction}{112}{section.9.2}
+\contentsline {section}{\numberline {9.3}Preliminaries}{112}{section.9.3}
+\contentsline {section}{\numberline {9.4}Main result}{114}{section.9.4}
+\contentsline {section}{\numberline {9.5}$K_2(\mathbb {F}_{p}[C_p\times C_p])$}{116}{section.9.5}
+\contentsline {section}{\numberline {9.6}$K_2(\mathbb {F}_{p}[C_{p^2}\times C_{p^2}])$}{117}{section.9.6}
+\contentsline {chapter}{\numberline {10}$NK_i(FG)$ }{119}{chapter.10}
+\contentsline {section}{\numberline {10.1}Preliminaries}{119}{section.10.1}
+\contentsline {section}{\numberline {10.2}Main Theorem}{120}{section.10.2}
+\contentsline {chapter}{\numberline {11}Note on Some Formulas Pertaining to the K-theory of Commutative Groupschemes}{123}{chapter.11}
+\contentsline {section}{\numberline {11.1}DUALITY AND TRANSLATION}{125}{section.11.1}
+\contentsline {chapter}{\numberline {12}有限域总结}{129}{chapter.12}
+\contentsline {chapter}{\numberline {13}问题}{131}{chapter.13}
+\contentsline {section}{\numberline {13.1}其他可以考虑的问题}{131}{section.13.1}
+\contentsline {section}{\numberline {13.2}TODO}{132}{section.13.2}
+\contentsline {paragraph}{Frobenius}{136}{section*.37}
+\contentsline {section}{\numberline {13.3}Nil-groups}{138}{section.13.3}
+\contentsline {section}{\numberline {13.4}Topological cyclic homology}{139}{section.13.4}
+\contentsline {section}{\numberline {13.5}Milnor square}{139}{section.13.5}
+\contentsline {paragraph}{$NK_2(\mathbb {Z}[C_{pq}])$}{142}{section*.38}
+\contentsline {section}{\numberline {13.6}Explicit examples in $NK_1$}{144}{section.13.6}
+\contentsline {section}{\numberline {13.7}Excision and group rings}{147}{section.13.7}
+\contentsline {section}{\numberline {13.8}From {\em Higher $K'$-Groups of Integral Group Rings }}{148}{section.13.8}
+\contentsline {section}{\numberline {13.9}Notes on group theory}{148}{section.13.9}
+\contentsline {subsection}{\numberline {13.9.1}The structure of finite abelian groups}{148}{subsection.13.9.1}
+\contentsline {subsection}{\numberline {13.9.2}groups of square-free order}{149}{subsection.13.9.2}
+\contentsline {subsection}{\numberline {13.9.3}Some classes of groups}{150}{subsection.13.9.3}
+\contentsline {subsection}{\numberline {13.9.4}Elementary groups}{152}{subsection.13.9.4}
+\contentsline {subsection}{\numberline {13.9.5}Elementary abelian groups}{152}{subsection.13.9.5}
+\contentsline {section}{\numberline {13.10}A square}{153}{section.13.10}
+\contentsline {section}{\numberline {13.11}Negative $K$-theory}{154}{section.13.11}
+\contentsline {section}{\numberline {13.12}Truncated polynomial rings}{155}{section.13.12}
+\contentsline {subsection}{\numberline {13.12.1}Kernels of truncated polynomials}{155}{subsection.13.12.1}
+\contentsline {subsection}{\numberline {13.12.2}$K_2$ of some truncated polynomial rings}{155}{subsection.13.12.2}
+\contentsline {section}{\numberline {13.13}A lower bounds for the order of $K_2(\mathbb {Z}[C_2^k\times C_{2^n}])$}{157}{section.13.13}
+\contentsline {section}{\numberline {13.14}Notes on Witt vectors}{157}{section.13.14}
+\contentsline {subsection}{\numberline {13.14.1}Witt decomposition}{157}{subsection.13.14.1}
+\contentsline {subsection}{\numberline {13.14.2}construction of the product on $\mathbb {W}(R)$}{158}{subsection.13.14.2}
+\contentsline {subsection}{\numberline {13.14.3}Another definition}{159}{subsection.13.14.3}
+\contentsline {section}{\numberline {13.15}$K_2$ of fields}{160}{section.13.15}
+\contentsline {section}{\numberline {13.16}Regularity}{160}{section.13.16}
+\contentsline {section}{\numberline {13.17}Tate conjecture}{160}{section.13.17}
+\contentsline {subsection}{\numberline {13.17.1}$\ell $-adic cohomology theory}{163}{subsection.13.17.1}
+\contentsline {paragraph}{Lefschetz Trace Formula}{164}{section*.39}
+\contentsline {subsection}{\numberline {13.17.2}Tate Conjecture}{164}{subsection.13.17.2}
+\contentsline {section}{\numberline {13.18}一些其他关系不大的笔记}{165}{section.13.18}
+\contentsline {subsection}{\numberline {13.18.1}$\mathbb {F}_q^r$}{166}{subsection.13.18.1}
+\contentsline {subsection}{\numberline {13.18.2}Differential modules}{166}{subsection.13.18.2}
+\contentsline {subsection}{\numberline {13.18.3}Homological Algebra}{167}{subsection.13.18.3}

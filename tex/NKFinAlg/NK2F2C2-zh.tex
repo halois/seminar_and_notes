@@ -1,0 +1,181 @@
+%!TEX root = ../../testmain.tex
+% 粘贴自NKFinAlg.tex 
+% 有修改，注意原稿要校对
+计算$k=\mathbb{F}_2$, $p=2$, $n=2$的情形, 即$NK_2(\mathbb{F}_2[C_2])\cong K_2(\mathbb{F}_2[t_1, t_2]/(t_1^2), (t_1))$. 
+\begin{theorem}
+	(1)$NK_2(\mathbb{F}_2[C_2])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}$, \\
+	(2)$NK_2(\mathbb{F}_2[C_2])\cong K_2(\mathbb{F}_2[t, x]/(t^2), (t))$是由Dennis-Stein符号$\{\langle tx^i, x \rangle \mid i\geq 0\}$与$\{\langle tx^i, t \rangle \mid i\geq 1\text{为奇数}\}$生成的, 这样的符号均为$2$阶元. 
+\end{theorem}
+\begin{proof}
+	(1)令$A=\mathbb{F}_2[t_1, t_2]/(t_1^2) \cong \mathbb{F}_2[C_{2}][x]$, 此时$I=(t_1^2)$, $M=(t_1)$, $A/M \cong \mathbb{F}_2[x]$. 记号如\ref{subsec:符号}所述.
+\begin{align*}
+\Delta &=\{(\alpha_1, \alpha_2)\in\mathbb{Z}_+^2\mid  t_1^{\alpha_1}t_2^{\alpha_2}\in (t_1^2)\}\\
+	&=\{(\alpha_1, \alpha_2)\mid \alpha_1\geq 2, \alpha_2 \geq 0\}, \\
+\Lambda &=\{((\alpha_1, \alpha_2), i)\in\mathbb{Z}_+^2 \times \{1, 2\}\mid \alpha_i\geq 1, \text{且} t_1^{\alpha_1}t_2^{\alpha_2}\in (t_1)\} \\
+	&=\{((\alpha_1, \alpha_2), i)\in\mathbb{Z}_+^2 \times \{1, 2\}\mid \alpha_i\geq 1, \alpha_1\geq 1, \alpha_2\geq 0\} \\
+	&=\{((\alpha_1, \alpha_2), 1) \mid \alpha_1\geq 1, \alpha_2\geq 0\}\cup \{((\alpha_1, \alpha_2), 2) \mid \alpha_1\geq 1, \alpha_2\geq 1\}. 
+\end{align*}
+
+若$(\alpha, i)\in \Lambda$, $[\alpha, i] = \min \{m\in \mathbb{Z}\mid m \alpha -\varepsilon^i \in \Delta\}$, 于是有
+\begin{align*}
+[\alpha, 1] & = \min \{m\in \mathbb{Z} \mid m \alpha -\varepsilon^1 \in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid (m \alpha_1-1, m \alpha_2)\in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 3\}. \\
+[\alpha, 2] & = \min \{m\in \mathbb{Z} \mid m \alpha -\varepsilon^2 \in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid (m \alpha_1, m \alpha_2-1)\in \Delta\} \\
+& =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 2\}. 
+\end{align*}
+此时
+\begin{align*}
+[(1, \alpha_2), 1] & = 3, \ \alpha_2\geq 0, \\
+[(2, \alpha_2), 1] & = 2, \ \alpha_2\geq 0, \\
+[(\alpha_1, \alpha_2), 1] & = 1, \ \alpha_1\geq 3, \alpha_2\geq 0, \\
+[(1, \alpha_2), 2] & = 2, \ \alpha_2\geq 1, \\
+[(\alpha_1, \alpha_2), 2] & = 1, \ \alpha_1\geq 2, \alpha_2\geq 1. 
+\end{align*}
+
+
+
+若$gcd(2, \alpha_1, \alpha_2)=1$, 即$\alpha_1, \alpha_2$中至少一个是奇数, 令$[\alpha]=\max\{[\alpha, i]\mid  \alpha_i  \not\equiv 0 \bmod 2\}$. 若仅$\alpha_1$是奇数, $[\alpha]=[\alpha, 1]$, 若仅$\alpha_2$是奇数, $[\alpha]=[\alpha, 2]$, 若两者均为奇数, 则$[\alpha]=\max\{[\alpha, 1], [\alpha, 2]\}$, 即有
+\begin{align*}
+[(1, \alpha_2)]&=\max\{[(1, \alpha_2), 1], [(1, \alpha_2), 2]\}=3, \text{$\alpha_2 \geq 1$是奇数}\\
+[(1, \alpha_2)]&=[(1, \alpha_2), 1]=3, \text{$\alpha_2 \geq 0$是偶数}\\
+[(3, \alpha_2)]&=\max\{[(3, \alpha_2), 1], [(3, \alpha_2), 2]\}=1, \text{$\alpha_2\geq 1$是奇数}\\
+[(3, \alpha_2)]&=[(3, \alpha_2), 1]=1, \text{$\alpha_2\geq 0$是偶数}\\
+[(2, 1)]&=[(2, 1), 2]=1, \\
+[\alpha]&=1, \text{其它符合条件的$\alpha$. }
+\end{align*}
+为了方便我们把上面的计算结果列表如下
+\[\begin{array}{|c|c|c|c|}
+\hline
+(\alpha_1, \alpha_2) & [(\alpha_1, \alpha_2), 1] &[(\alpha_1, \alpha_2), 2] &[(\alpha_1, \alpha_2)]  \\
+\hline
+(1, \alpha_2)  & 3, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 3 \\
+\hline
+(2, \alpha_2)  & 2, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1, \text{当$\alpha_2$是奇数时} \\
+\hline
+(3, \alpha_2)  & 1, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1 \\
+\hline
+(\alpha_1, 0), \alpha_1 \geq 3 & 1 & \text{无定义} &1, \text{当$\alpha_1$是奇数时} \\
+\hline
+(\alpha_1, \alpha_2), \alpha_1 \geq 3, \alpha_2 \geq 1& 1 & 1& 1, \text{当$gcd(2,\alpha_1, \alpha_2)=1$时} \\ % 注意这里(3,9)还在，后面要求alpha1,2互素时才能去掉
+\hline
+\end{array}\]
+
+
+下面计算$\Lambda^{00}=\big\{(\alpha, i)\in \Lambda\mid  gcd(\alpha_1, \alpha_2)=1, i\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [\alpha, j]=[\alpha]\} \big\}$.
+\begin{enumerate}
+	\item 对于任何的$\alpha_2\geq 0$, $((1, \alpha_2), 1) \not \in \Lambda^{00}$, 这是因为$1\not\equiv 0 \bmod 2$且$[(1, \alpha_2), 1]=3=[(1, \alpha_2)]$, 从而$\min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [(1, \alpha_2), j]=[(1, \alpha_2)]\}=1$.
+	\item 对于任何的$\alpha_2\geq 1$, $((1, \alpha_2), 2) \in \Lambda^{00}$, 且$[(1, \alpha_2), 2]=2$. 这是因为此时$[(1, \alpha_2), 1]=3=[(1, \alpha_2)]$, $\min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [\alpha, j]=[\alpha]\}=1$, .
+	\item 对于任何的奇数$\alpha_2\geq 1$, $((2, \alpha_2), 1) \in \Lambda^{00}$, 且$[(2, \alpha_2), 1]=2$. 因为$\alpha_2\not\equiv 0 \bmod 2$并且$[(2, \alpha_2), 2]=1=[(2, \alpha_2)]$, 故$\{j\mid \alpha_j\not\equiv 0 \bmod 2, [(2, \alpha_2), j]=[(2, \alpha_2)]\}=2\neq 1$. 注意若$\alpha_2\geq 0$为偶数时, $[2,\alpha_2]$无定义, 因此$((2, \alpha_2), 1) \not \in \Lambda^{00}$, 同理$((2, \alpha_2), 2) \not \in \Lambda^{00}$.
+	\item 对于任何的奇数$\alpha_2\geq 1$, $((2, \alpha_2), 2) \not \in \Lambda^{00}$. 由于$[(2, \alpha_2), 2]=1=[(2, \alpha_2)]$, 与$2\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [\alpha, j]=[\alpha]\}$矛盾.
+	\item 对于偶数$\alpha_1\geq 3$和奇数$\alpha_2\geq 1$, $((\alpha_1, \alpha_2), 1)  \in \Lambda^{00}$, 且$[(\alpha_1, \alpha_2), 1]=1$. 而当$\alpha_1\geq 3$为奇数$\alpha_2\geq 1$时, 或$\alpha_1, \alpha_2$均为偶数时, $((\alpha_1, \alpha_2), 1) \not  \in \Lambda^{00}$. 由于$((\alpha_1, \alpha_2), 1)  \in \Lambda^{00}$要求$1\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [(\alpha_1, \alpha_2), j]=[(\alpha_1, \alpha_2)]\}$, 当$\alpha_1\geq 3$为奇数时上式不成立, $2= \min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [(\alpha_1, \alpha_2), j]=[(\alpha_1, \alpha_2)]\}$当且仅当$\alpha_1\geq 3$为偶数且$\alpha_2\geq 1$为奇数.
+	\item 对于奇数$\alpha_1\geq 3$和任意$\alpha_2\geq 1 $, 且$[(\alpha_1, \alpha_2), 2]=1$. $((\alpha_1, \alpha_2), 2)  \in \Lambda^{00}$, 其余情况只要当$\alpha_1\geq 3$为偶数时$((\alpha_1, \alpha_2), 2) \not  \in \Lambda^{00}$. 由于$((\alpha_1, \alpha_2), 2)  \in \Lambda^{00}$要求$2\neq \min\{j\mid \alpha_j\not\equiv 0 \bmod 2, [(\alpha_1, \alpha_2), j]=[(\alpha_1, \alpha_2)]\}$, 当$\alpha_1$为偶数时上式不成立, 而当$\alpha_1$为奇数时, 任意$\alpha_2\geq 1$, $[(\alpha_1, \alpha_2), 1]=1=[(\alpha_1, \alpha_2)]$. 
+\end{enumerate}
+
+
+
+从而
+\begin{align*}
+\Lambda^{00}=&\{((1, \alpha_2), 2)\mid  \alpha_2\geq 1\} \\
+	&\cup \{((2, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\} \\
+	&\cup \{((\alpha_1, \alpha_2), 1) \mid \alpha_1\geq 3\text{为偶数}, \alpha_2\geq 1\text{为奇数}\} \\
+	&\cup \{((\alpha_1, \alpha_2), 2) \mid \alpha_1\geq 3\text{为奇数}, \alpha_2\geq 1\}. 
+\end{align*}
+记$\Lambda^{00}_d=\{(\alpha, i)\in \Lambda^{00}\mid  [(\alpha, i)]=d\}$, $\Lambda^{00}_{> 1}=\{(\alpha, i)\in \Lambda^{00}\mid  [(\alpha, i)]>1\}$, 则有
+$\Lambda^{00}_1=\{(\alpha, i)\in \Lambda^{00}\mid  [(\alpha, i)]=1\}$, $\Lambda^{00}_{>1}=\Lambda^{00}_2=\{(\alpha, i)\in \Lambda^{00}\mid  [(\alpha, i)]=2\}$, 于是有
+\begin{align*}
+\Lambda^{00}_1 &= \{((\alpha_1, \alpha_2), 1) \mid  \alpha_1\geq 3\text{为偶数}, \alpha_2\geq 1\text{为奇数}\} \cup \{((\alpha_1, \alpha_2), 2) \mid  \alpha_1\geq 3\text{为奇数}, \alpha_2\geq 1\}   \\
+{\color{blue}\Lambda^{00}_2} &=\{((2, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\} \cup \{((1, \alpha_2), 2)\mid  \alpha_2\geq 1\}
+\end{align*}
+\[\Lambda^{00}=\Lambda^{00}_1 \sqcup \Lambda^{00}_2.\]
+若$[\alpha, i]=1$时, $(1+x\mathbb{F}_{2}[x]/(x))^{\times}$是平凡的, $[\alpha, i]=2$时, $(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times}\cong \mathbb{Z}/2 \mathbb{Z}$, 从而由定理\ref{K2(A, M)}得
+
+\begin{align*}
+NK_2(\mathbb{F}_2[C_2])\cong K_2(A, M) &\cong \bigoplus_{(\alpha, i)\in\Lambda^{00}}(1+x\mathbb{F}_{2}[x]/(x^{[\alpha, i]}))^{\times}\\
+& = \bigoplus_{(\alpha, i)\in \Lambda^{00}_2}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times}\\
+& = \bigoplus_{\scriptsize\substack{((1, \alpha_2), 2) \\ \alpha_2 \geq 1}}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times} \oplus \bigoplus_{\scriptsize\substack{((2, \alpha_2), 1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_{2}[x]/(x^{2}))^{\times} \\
+& = \bigoplus_{\alpha_2 \geq 1}\mathbb{Z}/2 \mathbb{Z} \oplus \bigoplus_{\alpha_2\geq 1\text{为奇数}}\mathbb{Z}/2 \mathbb{Z}, 
+\end{align*}
+作为交换群, 
+\[NK_2(\mathbb{F}_2[C_2]) \cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}. \]
+% 
+% 定理第二部分
+% 
+% 
+
+	(2)由\ref{K2(A, M)}, 对于任意$(\alpha, i)\in \Lambda^{00}$, $\Gamma_{\alpha, i}$诱导了同态
+ \begin{align*}
+ \Gamma_{\alpha, i} \colon \big(1+xk[x]/(x^{[\alpha, i]})\big)^{\times} &\longrightarrow K_2(A, M)\\
+ 1-xf(x) &\mapsto \langle f(t^\alpha)t^{\alpha-\varepsilon^i}, t_i \rangle. 
+ \end{align*}
+ 此时只需考虑$\Lambda^{00}_2=\{((2, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\} \cup \{((1, \alpha_2), 2)\mid  \alpha_2\geq 1\}$, 对于任意$(\alpha, i)\in \Lambda^{00}_2$, $\Gamma_{\alpha, i}$均诱导了单射, 对任意$\alpha_2\geq 1$, 
+  \begin{align*}
+ \Gamma_{(1, \alpha_2), 2} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A, M)\\
+ 1+x &\mapsto 
+ \langle t_1t_2^{\alpha_2-1}, t_2 \rangle, 
+ \end{align*}
+对任意$\alpha_2\geq 1$为奇数, 
+ \begin{align*}
+ \Gamma_{(2, \alpha_2), 1} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A, M)\\
+ 1+x &\mapsto \langle t_1t_2^{\alpha_2}, t_1 \rangle, 
+ \end{align*}
+
+我们作简单的替换令$t=t_1, x=t_2$, 于是$\langle t_1t_2^{\alpha_2-1}, t_2 \rangle = \langle tx^{\alpha_2-1}, x \rangle$, $\langle t_1t_2^{\alpha_2}, t_1 \rangle=\langle t x^{\alpha_2}, t  \rangle$. 由同构\ref{K2(A, M)}可知$NK_2(\mathbb{F}_2[C_2])$是由Dennis-Stein符号$\{\langle tx^i, x \rangle \mid i\geq 0\}$与$\{\langle tx^i, t \rangle \mid i\geq 1\text{为奇数}\}$生成的, 由于$t^2=0$故$\langle tx^i, x \rangle+\langle tx^i, x \rangle=\langle tx^i+tx^i-t^2x^{2i+1}, x \rangle=0$, $\langle tx^i, t \rangle+\langle tx^i, t \rangle=\langle tx^i+tx^i-t^3x^{2i}, t \rangle=0$. 
+\end{proof}
+\begin{remark}
+	对于$i\geq 1\text{为偶数}$, $\langle tx^i, t \rangle=\langle x^{i/2}, t \rangle+\langle x^{i/2}, t \rangle=\langle x^{i/2}+x^{i/2}+tx^i, t \rangle=0$. 
+\end{remark}
+
+Weibel在\cite{weibel2009nk0}中给出了以下可裂正合列
+	\[0\longrightarrow V/\Phi(V) \overset{F}\longrightarrow NK_2(\mathbb{F}_2[C_2])\overset{D}\longrightarrow \Omega_{\mathbb{F}_2[x]}\longrightarrow 0, \]
+其中$V=x \mathbb{F}_2[x]$, $\Phi(V)=x^2 \mathbb{F}_2[x^2]$是$V$的子群, $\Omega_{\mathbb{F}_2[x]}\cong \mathbb{F}_2[x] \, \mathrm{d} x$是绝对K\"{a}hler微分模, $F(x^n)=\langle tx^n, t \rangle$, $D(\langle ft, g+g't \rangle)=f\, dg$. 显然$D(\langle tx^i, t \rangle)=0$, $D(\langle tx^i, x \rangle)=x^i\, \mathrm{d} x$, 可以看出$NK_2(\mathbb{F}_2[C_2])$的直和项
+$$\bigoplus_{((2, \alpha_2), 1), \alpha_2\geq 1\text{为奇数}} \mathbb{Z}/2\mathbb{Z} \cong V/\Phi(V),$$ 
+直和项
+$$\bigoplus_{((1, \alpha_2), 2), \alpha_2\geq 1} \mathbb{Z}/2\mathbb{Z} \cong \mathbb{F}_2[x]\, \mathrm{d} x.$$ 
+
+$V$和$\Omega_{\mathbb{F}_2[x]}$作为交换群是同构的, 但作为$W(\mathbb{F}_2)$-模是不同的. $V=x \mathbb{F}_2[x]$上的$W(\mathbb{F}_2)$-模结构(见\cite{MR96j:16008})为 
+\begin{align*}
+ V_m(x^n)&=x^{mn}, \\
+ F_d(x^n)&=\begin{cases}
+ 	\, \mathrm{d} x^{n/d}, & \mbox{ 若 $d|n$}\\
+ 	0, & \mbox{其它}
+ \end{cases}, \\
+ [a]x^n&=a^nx^n. 
+ \end{align*}
+$\Omega_{\mathbb{F}_2[x]}=\mathbb{F}_2[x]\, \mathrm{d} x $上的$W(\mathbb{F}_2)$-模结构(见\cite{MR96j:16008})为
+\begin{align*}
+ V_m(x^{n-1}\, \mathrm{d} x)&=mx^{mn-1}\, \mathrm{d} x, \\
+ F_d(x^{n-1}\, \mathrm{d} x)&=\begin{cases}
+ 	x^{n/d-1}\, \mathrm{d} x, & \mbox{ 若 $d|n$}\\
+ 	0, & \mbox{其它}
+ \end{cases}, \\
+ [a]x^{n-1}\, \mathrm{d} x&=a^nx^{n-1}\, \mathrm{d} x. 
+ \end{align*}
+结合两者我们可以得到$NK_2(\mathbb{F}_2[C_2])$的$W(\mathbb{F}_2)$-模结构为
+\begin{align*}
+ V_m(\langle tx^n, t \rangle)&=\begin{cases}
+ 	\langle tx^{mn}, t \rangle, & \mbox{若$m$是奇数}\\
+ 	0, & \mbox{若$m$是偶数}
+ \end{cases}, \quad \mbox{$n\geq 1$为奇数} \\
+  V_m(\langle tx^{n-1}, x \rangle)&=\begin{cases}
+ 	\langle tx^{mn-1}, x \rangle, & \mbox{若$m$是奇数}\\
+ 	0, & \mbox{若$m$是偶数}
+ \end{cases}
+ , \quad \mbox{$n\geq 1$} \\
+ F_d(\langle tx^n, t \rangle)&=\begin{cases}
+ 	\langle tx^{n/d}, t \rangle, & \mbox{ 若$d|n$}\\
+ 	0, & \mbox{其它}
+ \end{cases}, \quad \mbox{$n\geq 1$为奇数} \\
+ F_d(\langle tx^{n-1}, x \rangle)&=\begin{cases}
+ 	\langle tx^{n/d-1}, x \rangle, & \mbox{若$d|n$}\\
+ 	0, & \mbox{其它}
+ \end{cases}
+ , \quad \mbox{$n\geq 1$} \\
+ [1]\langle tx^n, t \rangle&=\langle tx^n, t \rangle, \quad \mbox{$n\geq 1$为奇数} \\
+ [1]\langle tx^{n-1}, x \rangle&=\langle tx^{n-1}, x \rangle, \quad \mbox{$n\geq 1$}. 
+ \end{align*}
+
+
+
+% 粘贴自NKFinAlg. tex 结束

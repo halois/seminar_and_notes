@@ -10,6 +10,9 @@ References:
 	\item[part 3] D.\, R.\ Grayson, Grothendieck rings and Witt vectors.
 	\item[part 3] C.\,A.\ Weibel, The $K$-Book: An introduction to algebraic $K$-theory.
 \end{itemize}
+We list some more (blog) articles about Witt vectors, \href{https://hilbertthm90.wordpress.com/tag/witt-vectors/}{series about Witt ring},  \href{http://www.neverendingbooks.org/big-witt-vectors-for-everyone-12}{big Witt vectors for everyone}, \href{http://chromotopy.org/what-are-witt-vectors}{What are Witt vectors}.
+
+We recommende these \href{http://www.cip.ifi.lmu.de/~grinberg/algebra/algebra.html}{sidenotes} to Hazewinkel's \emph{Witt vectors}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.3\textwidth]{./figures/Witt}
@@ -29,7 +32,7 @@ In this section we introduce $p$-Witt vectors. Witt vectors generalize the $p$-a
 
 From now on, fix a prime number $p$.
 \begin{definition}
-	A $p$-Witt vector\index{$p$-Witt vectors} over a commutative ring $R$ is a sequence $(X_0,X_1,X_2,\cdots)$ of elements of $R$.
+	A $p$-Witt vector\index{$p$-Witt vector} over a commutative ring $R$ is a sequence $(X_0,X_1,X_2,\cdots)$ of elements of $R$.
 \end{definition}
 \begin{remark}
 	If $R=\mathbb{F}_p$, any $p$-Witt vector over $\mathbb{F}_p$ is just a $p$-adic integer $a_0+a_1p+a_2p^2+\cdots$ with $a_i\in \mathbb{F}_p$.
@@ -105,7 +108,7 @@ isomorphism.)
 
 Note that the functions $P_k$ and $S_k$ are actually only involve the variables of index $\leqslant k$ of $A$ and $B$. In particular if we truncate all the vectors at the $k$-th entry, we can still add and multiply them.
 \begin{definition}
-Truncated $p$-Witt ring\index{truncated $p$-Witt ring} $W_k(R)=\{(a_0,a_1,\cdots,a_{k-1})| a_i\in R\}$ (also called the ring of Witt vectors of length $k$.\index{the ring of Witt vectors of length $k$})
+Truncated $p$-Witt ring\index{truncated $p$-Witt ring} $W_k(R)=\{(a_0,a_1,\cdots,a_{k-1})| a_i\in R\}$ (also called the ring of Witt vectors of length $k$).
 \end{definition}
 \begin{example}
 	$W_1(R)=R$, $W(R)=\varprojlim W_k(R)$. Since $W_k(\mathbb{F}_p)=\Z/p^k\Z$, $W(\mathbb{F}_p)=\Z_{(p)}$.
@@ -185,7 +188,7 @@ It suffices to check this when $R$ is perfect. Note that a ring $R$ of character
 % section p_witt_vectors (end)
 \section{Big Witt vectors} % (fold)
 \label{sec:big_witt_vectors}
-Now we turn to the \texttt{big}(universal) Witt vectors\index{big Witt vectors}. J.\,P,\ May once said ``This(the theory of Witt vectors) is a strange and beautiful piece of mathematics that every well-educated mathematician should see at least once''.
+Now we turn to the \texttt{big}(universal) Witt vectors\index{big Witt vector}. J.\,P,\ May once said ``This(the theory of Witt vectors) is a strange and beautiful piece of mathematics that every well-educated mathematician should see at least once''.
 
 Take the ring of all big vectors of a commutative ring is a functor 
 \begin{align*}
@@ -197,10 +200,10 @@ In this section, $R$ is a commutative ring with unit.
 The ring of all big Witt vectors in $R$ which also denoted by $W(R)$ is defined as follows,\\
 as a set: $W(R)=\{a(T)\in R\llbracket T\rrbracket | a(T)=1+a_1T+a_2T^2+\cdots\}=1+TR\llbracket T\rrbracket $; (we note that as a set $W(R)$ is the kernel of the map $A\llbracket T\rrbracket ^*\overset{T\mapsto 0}\longrightarrow A^*$)\\
 addition in $W(R)$: usual multiplication of formal power series, sum $a(T)b(T)$, difference $\frac{a(T)}{b(T)}$; $(W(R),+)\cong (1+TR\llbracket T\rrbracket ,\times)$ which is a subgroup of the group of units $R\llbracket T\rrbracket ^{\times}$ of the ring $R\llbracket T\rrbracket $\\
-multiplication in $W(R)$: denoted by $*$, this is a little mysterious, we will talk the details later. For the present purposes we only define $*$ as the unique continuous functorial operation for which $(1-aT)*(1-bT)=(1-abT)$.\\
+multiplication in $W(R)$: denoted by $*$, this is a little mysterious, we will talk the details later. For the present purposes we only define $*$ as the unique continuous functorial operation for which $(1-aT)*(1-bT)=(1-abT)$. Therefore $\prod_i (1-a_iT)*\prod_j(1-b_jT)=\prod_{i,j}(1-a_ib_jT)$.\\
 'zero'(additive identity) of $W(R)$: $1$.\\
 'one'(multiplicative identity) of $W(R)$: $[1]=1-T$. Note that $[1]$ is the image of $1\in R$ under the multiplicative (Teichmuller) map 
-\[R\longrightarrow W(R)\]
+\[R\longrightarrow W(R)=1+TR\llbracket T\rrbracket\]
 \[a \mapsto [a]=1-aT\]
 functoriality: any homomorphism $f\colon R \longrightarrow S$ induces a ring homomorphism 
 \[W(f)\colon W(R) \longrightarrow W(S).\]
@@ -215,7 +218,66 @@ It is obtained from the abelian group homomorphism
 the right side of $gh$ is $R^\N$ via $\sum a_nt^n \longleftrightarrow (a_1,a_2,\cdots)$.
 
 A basic principle of the theory of Witt vectors is that to demonstrate certain equations it suffices to check them on vectors of the form $1-aT$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 % section big_witt_vectors (end)
+\section{Truncation set} % (fold)
+\label{sec:truncation_set}
+Given a truncation set $S \subset \mathbb{N}_+=\{1,2,\cdots\}$ and a commutative ring $R$ we can define a commutative ring $\mathbb{W}_S(R)$.
+
+As a set, $\mathbb{W}_S(R)=R^S$, and we define addition and multiplication in such a way that the ghost map
+\begin{align*}
+w\colon \mathbb{W}_S(R) \longrightarrow& R^S\\
+(a_s)_{s\in S} \mapsto& (w_s)_{s\in S}
+\end{align*}
+where
+\[w_s=\sum_{s=di}ia_i^d.\]
+This map is a ring map. One can show that there is exactly one functorial way to do this.
+
+We will focus on three families of truncation sets.
+\begin{itemize}
+	\item If $S=\{1,2,3,\cdots,m\}$, we denote $\mathbb{W}_S(R)$ by $\mathbb{W}_m(R)$ and call it the big Witt vectors of length $m$.
+	\item If $S=\{1,p,p^2,\cdots,p^{m-1}\}$, we denote $\mathbb{W}_S(R)$ by $\mathbb{W}_m(R;p)$ and call it the $p$-typical Witt vectors of length $m$. If $R$ is a $\mathbb{Z}_{(p)}$-algebra, there is a splitting
+	\[\mathbb{W}_m(R)\cong \prod_{(p, n)=1} \mathbb{W}_{\left \lfloor \log_p(m/n)+1\right \rfloor}(R;p)\]
+	\item For any $m$, there is a truncation set generated by $m$: $S=\langle m\rangle=\{d\in \mathbb{N}\mid d|m\}$ and the associated Witt vectors $\mathbb{W}_{\langle m\rangle}(R)$.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% section truncation_set (end)
+
+
+
+
+
 \section{Module structure on $NK_*$} % (fold)
 \label{sec:module_structure_on_}
 \paragraph{Notations} $\Lambda$: a ring with $1$\\
@@ -240,7 +302,7 @@ Goals:
 Let $\mathbf{End}(\Lambda)$ denote the exact category of endomorphisms of finitely generated projective right $\Lambda$-modules.\\
 Objects: pairs $(M,f)$ with $M$ finitely generated projective and $f\in \End(M)$.\\
 Morphisms: $(M_1,f_1) \overset{\alpha}\longrightarrow (M_2,f_2)$ with $f
-_2\circ \alpha =\alpha \circ f_1$, i.e. such $\alpha$ make the following diagram commutes
+_2\circ \alpha =\alpha \circ f_1$, i.e.\ such $\alpha$ make the following diagram commutes
 \[
 \begin{tikzcd}
 	M_1 \arrow[r,"f_1"] \arrow[d,"\alpha"] & M_1 \arrow[d,"\alpha"]\\
@@ -259,7 +321,7 @@ Since inclusions are split and all the functors below are exact, they induce hom
 \begin{definition}
 	$K_n(\mathbf{End}(\Lambda))=K_n(\Lambda) \oplus \End_n(\Lambda)$, $K_n(\mathbf{Nil}(\Lambda))=K_n(\Lambda) \oplus \Nil_n(\Lambda)$
 \end{definition}
-Now suppose $\Lambda$ is an $R$-algebra for some commutative ring $R$, then there are exact pairings (i.e. bifunctors):
+Now suppose $\Lambda$ is an $R$-algebra for some commutative ring $R$, then there are exact pairings (i.e.\ bifunctors):
 \begin{align*}
 	\otimes\colon &\mathbf{End}(R) \times \mathbf{End}(\Lambda) \longrightarrow \mathbf{End}(\Lambda) \\
 	\otimes\colon &\mathbf{End}(R) \times \mathbf{Nil}(\Lambda) \longrightarrow \mathbf{Nil}(\Lambda) \\
@@ -304,7 +366,7 @@ $\chi$ is a ring homomorphism, and $\ima \chi =$ the set of all rational functio
 \[\det (1-fT)\det(1-gT)=\det(1-(f\oplus g)T),\quad \det (1-fT)*\det(1-gT)=\det(1-(f\otimes g)T),\]
 for more details we refer the reader to S.Lang {\em Algebra}, Chapter 14, Exercise 15.
 \begin{remark}
-	when $R$ is a algebraically closed field (for instance $\mathbb{C}$), we can use Jordan canonical forms to prove the last identity (i.e. it can be reduced to check that $\prod_i (1-\lambda_i T) * \prod_j (1-\mu_j T) =\prod_{i,j} (1-\lambda_i \mu_j T)$).
+	when $R$ is a algebraically closed field (for instance $\mathbb{C}$), we can use Jordan canonical forms to prove the last identity (i.e.\ it can be reduced to check that $\prod_i (1-\lambda_i T) * \prod_j (1-\mu_j T) =\prod_{i,j} (1-\lambda_i \mu_j T)$).
 \end{remark}
 
 
@@ -320,6 +382,7 @@ Note that $NK_1(\Lambda)\cong K_1(\Lambda[y],(y-\lambda))$, $\forall \lambda\in 
 y\mapsto \lambda.
 \end{gather*}
 Since $[(P,\nu)]=[(P\oplus Q,\nu\oplus 0)]-[(Q,0)]\in K_0(\mathbf{Nil}(\Lambda))$, we see $\Nil_0(\Lambda)$ is generated by elements of the form $[(\Lambda^n,\nu)]-n[(\Lambda,0)]$ for some $n$ and some nilpotent matrix $\nu$
+
 Sign convention:
 \begin{align*}
 	NK_1(\Lambda) & \cong \Nil_0(\Lambda)\\
@@ -398,7 +461,7 @@ Note that $\chi\Big(\begin{pmatrix}
 \end{gather*}
 
 If we use the previous formula 
-\[(1-rT^m)*(1-sT^n)=(1-r^{n/d}s^{m/d}T^{mn/d})^d,\ d=\mbox{gcd}(m,n),\]
+\[(1-rT^m)*(1-sT^n)=(1-r^{n/d}s^{m/d}T^{mn/d})^d,\ d=\mathrm{gcd}(m,n),\]
 we obtain the same answer. Indeed we have the formula 
 \[\det (1-fT)*\det(1-gT)=\det(1-(f\otimes g)T),\]
 if a polynomial is $1 + a_1T+ \cdots + a_nT^n\in W(R)$, we can write 
@@ -599,7 +662,7 @@ Note that if $\exists N$ such that $\nu^N=0$, $\beta$ is independent of the $a_i
 Let $F_n\mathbf{Nil}(\Lambda)$ denote the full exact subcategory of $\mathbf{Nil}(\Lambda)$ on the $(P, \nu)$ with $\nu^n = 0$. If $\Lambda$ is an algebra over a commutative
 ring $R$, the kernel $F_n\Nil_0(\Lambda)$ of $K_0 (F_n\mathbf{Nil}(\Lambda)) \longrightarrow  K_0 (\mathbf{P}(\Lambda))$ is an $\End_0(R)$-module and $F_n\Nil_0(\Lambda)\longrightarrow \Nil_0(\Lambda)$ is a module map.
 
-The exact endofunctor $F_m \colon (P, \nu)\mapsto  (P, \nu^m)$ on $\mathbf{Nil}(\Lambda)$ is zero on $F_m\mathbf{Ni1}(\Lambda)$. For $\alpha \in \End_0(R)$ and $(P, \nu) \in \Nil_0(\Lambda)$, nota that $(V_m \alpha)*(P, \nu) =
+The exact endofunctor $F_m \colon (P, \nu)\mapsto  (P, \nu^m)$ on $\mathbf{Nil}(\Lambda)$ is zero on $F_m\mathbf{Ni1}(\Lambda)$. For $\alpha \in \End_0(R)$ and $(P, \nu) \in \Nil_0(\Lambda)$, note that $(V_m \alpha)*(P, \nu) =
 V_m (\alpha *F_m (P, \nu))$, and we can conclude that $V_m \End_0(R)$ acts trivially on the image of $F_m \Nil_0(\lambda)$ in $\Nil_0(\lambda)$. For more details, see Weibel, $K$-book chapter 2, pp 155 Exercise II.7.17.
 
 
@@ -640,6 +703,82 @@ The $W(R)$-module structure on $NK_1(\Lambda)$ is completely determined by the f
 \[\alpha(t) * [1-\nu y]=[\alpha(\nu y)].\]
 And the $W(R)$-module structure on $NK_n(\Lambda)$ 
 \[\alpha(t) * \{\gamma,1-\nu y\}=\{\gamma,\alpha(\nu y)\} \in NK_n(\Lambda), \quad \gamma\in K_{n-1}(R).\]
+
+
+\paragraph{Verschiebung and Frobenius}
+\cite{K-theory/0605}
+Next, we introduce the Bloch-Stienstra formula on the relationship between Verschiebung and Frobenius in the context of the action of big Witt vectors on NK-groups.
+
+For a (commutative) ring $R$ the additive group of $\mathbb{W}(R)$ is the multiplicative group $1+TR[[T]]$, $T$ a variable. The decreasing filtration of subgroups  $I_m(R) = 1+T^mR[[T]]$ makes $\mathbb{W}(R)$ a topological group and any element $w(T) \in \mathbb{W}(R)$ has a unique convergent expansion 
+\[w(T) = \prod_{n\geq 1}(1 - r_nT^n), r_n \in R.\]
+When $w(T) \in I_m(R)$, then the expansion is of the type 
+\[w(T) = \prod_{n\geq m}(1 - r_nT^n).\] 
+The multipicative structure on $\mathbb{W}(R)$ is the unique continuous extension to the whole $\mathbb{W}(R)$ of
+the pairing
+\[(1 - rT^m) * (1 - sT^n) = (1 - r^{n/d} s^{m/d} T^{mn/d})^d, r, s \in R, d = \mathrm{gcd}(m, n).\]
+The Frobenius endomorphism is a ring endomorphism
+\begin{align*}
+F_m \colon \mathbb{W}(R) \longrightarrow& \mathbb{W}(R)\\
+1 - rT^n \mapsto &  (1 - r^{n/d}T^{n/d})^d, d = \mathrm{gcd}(m, n), r \in R.
+\end{align*}
+
+
+When $\mathbb{Q}\subset R$ the ghost isomorphism between the multiplicative and additive
+groups
+\begin{align*}
+-T\frac{ d \log}{d T}\colon 1 + TR[[T]] &\longrightarrow TR[[T]]\\
+ \alpha &\mapsto  -T\frac{d \alpha}{\alpha d t}
+\end{align*}
+is actually a ring isomorphism $\mathbb{W}(R) \longrightarrow \prod_{1}^{\infty} R$ where the right hand side is viewed as $TR[[T]]$ under the assignment 
+\begin{align*}
+\prod_{1}^{\infty} R &\longrightarrow TR[[T]]\\
+(r_1, r_2,\cdots) &\mapsto r_1T +r_2T^2 +\cdots.
+\end{align*}
+What we need here is the fact that the diagonal injection $\lambda_T \colon R \longrightarrow \prod_{1}^{\infty} R = \mathbb{W}(R)$ is invariant under
+$F_m$ for all $m \in \mathbb{N}$, $F_m(\lambda_T)=\lambda_T$.
+
+The $R$-algebra endomorphism 
+\begin{align*}
+R[T] &\longrightarrow R[T],\\ T  &\mapsto T^m
+\end{align*}
+induces a group endomorphism $V_m \colon NK_i(R) \longrightarrow NK_i(R)$ – the Verschiebung.
+
+Bloch \cite{BLOCH1978304} and then Stienstra (Operations in the higher K-theory of endomorphisms) defined a $\mathbb{W}(R)$-module structure on $NK_i(R)$. The action of $1 - rT^m \in \mathbb{W}(R)$, $r \in R$ on $NK_i(R)$ is the effect of the composite functor
+\[\mathbf{P}(R[T]) \overset{t_m}\longrightarrow  \mathbf{P}(R[T]) \overset{\bar{r}}\longrightarrow  \mathbf{P}(R[T]) \overset{v_m}\longrightarrow  \mathbf{P}(R[T])\]
+where 
+\begin{itemize}
+	\item $v_m$ corresponds to the base change through $T \mapsto T^m$ (it gives rise to the $m$th Verschiebung),
+	\item  $\bar{r}$ corresponds to the base change through $T \mapsto rT$,
+	\item  and $t_n$ corresponds to the scalar restriction through $T \mapsto T^m$ (the corresponding endomorphism of $NK_i(R)$ is the transfer).
+\end{itemize}
+This determines the action of the whole $\mathbb{W}(R)$ because any element of $NK_i(R)$ is annihilated by the ideal $I_m(R)$ for some $m$, i.\,e.\, $NK_i(R)$ is a continuous $\mathbb{W}(R)$-module.
+
+We have the following relationship between $F_m$ and $V_m$
+\[V_m(F_m(\alpha) * z) = \alpha * z, \alpha \in \mathbb{W}(R), z \in NK_i(R), m \in N,\]
+where $*$ refers to the $\mathbb{W}(R)$-module structure. 
+
+In particular, when $\mathbb{Q}\subset R$ the equality above implies
+\begin{lemma}
+	For any natural number $m$ the Verschiebung $V_m$ is an $R$-linear endomorphism of $NK_i(R)$.
+\end{lemma}
+
+Weibel \cite{MR88f:18018} has generalized the $\mathbb{W}(R)$-module structure to the graded situation so that for a graded ring $A = A_0\oplus A_1\oplus \cdots$ and a subring $R \subset A_0$ there is a functorial continuous $\mathbb{W}(R)$-module structure on $K_i(A, A_+)$, where $A_+ =A_1 \oplus A_2 \oplus \cdots$.
+
+In particular, the $\mathbb{W}(R)$-module structure on $NK_i(A, A_+)$ is the restriction of that on $NK_i(A)$ under the embedding $NK_i(A, A_+) \longrightarrow NK_i(A)$ induced by the graded homomorphism
+\begin{align*}
+w \colon A_0 \oplus  A_1 \oplus  A_2 \oplus  \cdots &\longrightarrow A[T] = A + TA + T^2A + \cdots,\\
+a_0 \oplus  a_1 \oplus  a_2 \oplus  \cdots &\mapsto a_0 + a_1T + a_2T^2 + \cdot
+\end{align*}
+and, at the same time, the latter module structure is just the scalar restriction of the $\mathbb{W}(A)$-module structure through $\mathbb{W}(R) \longrightarrow \mathbb{W}(A)$. That 
+\[NK_i(A, A_+) \longrightarrow NK_i(A)\]
+is in fact an embedding follows from the fact that $w$ splits the non-graded augmentation $A[T] \longrightarrow A$, $T \mapsto 1$, in particular $K_i(A) \longrightarrow K_i(A[T])$ is a split monomorphism. Due to the split exact sequence 
+\[0 \longrightarrow A_+ \longrightarrow A \longrightarrow A_0 \longrightarrow 0\] 
+with $A$ as above, that there is a natural isomorphism $K_i(A, A_+) =K_i(A)/K_i(A_0)$. Also, the latter group will be thought of as a direct summand of $K_i(A)$ in a natural way.
+
+
+
+
+
 %
 % Modern version
 %

@@ -1,18 +1,18 @@
 % !mode::"TeX:UTF-8"
 % !TEX program = xelatex
 % +-----------------------------------------------------------------------------
-% | File: 格式文档
+% | File: 中文格式文档
 % | 
 % |
 % | 
 % | 
 % | Description:
 % |   主要是为了方便而设立。  
-% |   使用\include{format} 加载本文档
+% |   使用\include{formatZH} 加载本文档
 % | 
 % | 
 % +-----------------------------------------------------------------------------
-\documentclass[openany,leqno,12pt]{book}  %ctexart,article
+\documentclass[openany,leqno,12pt]{ctexbook}  %ctexart,article
 
 \usepackage{imakeidx}
 \usepackage{multicol,multirow} % used for the two-column index 多行多列, 在表格中会用到
@@ -110,28 +110,28 @@
 \newcommand{\SL}{\operatorname {SL}}
 
 %------这个部分包含了计数器，使得定理，引理等按照同一顺序编号
-\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{theorem}{定理}[chapter]
 \renewcommand\thetheorem{\arabic{chapter}.\arabic{theorem}} 
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma}[theorem]{引理}
 \renewcommand\thelemma{\arabic{chapter}.\arabic{lemma}} 
-\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{命题}
 \renewcommand\theprop{\arabic{chapter}.\arabic{prop}} 
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{corollary}[theorem]{推论}
 \renewcommand\thecorollary{\arabic{chapter}.\arabic{corollary}} 
 \renewcommand\theequation{\thetheorem}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem*{theorem*}{Theorem}
-\newtheorem*{corollary*}{Corollary}
-\newtheorem*{lemma*}{Lemma}
+\newtheorem{conjecture}[theorem]{猜想}
+\newtheorem*{theorem*}{定理}
+\newtheorem*{corollary*}{推论}
+\newtheorem*{lemma*}{引理}
 
 %These deal with definition-like environments (i.e., non-italic)
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem*{definition*}{Definition}
-\newtheorem*{example*}{Example}
-\newtheorem*{remark*}{Remark}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}[theorem]{例}
+\newtheorem{remark}[theorem]{注记}
+\newtheorem*{definition*}{定义}
+\newtheorem*{example*}{例}
+\newtheorem*{remark*}{注记}
 \renewcommand\theexample{\arabic{chapter}.\arabic{example}} 
 
 \makeindex

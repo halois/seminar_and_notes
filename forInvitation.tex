@@ -13,35 +13,34 @@
 % | 
 % +-----------------------------------------------------------------------------
 %样式
-\input{styles/format}
-\input{styles/titlepage}%封面
+\input{styles/formatEN}
+\input{styles/booktitlepage}%封面
 
 
 \begin{document}
 	%封面
 		\pagestyle{empty}
-		\pdfbookmark[0]{封面}{title}
+		\pdfbookmark[0]{title}{title}
 		\titleBC
 	%目录
 		\clearpage
-		\pdfbookmark[0]{目录}{contents}
+		\pdfbookmark[0]{contents}{contents}
 		\tableofcontents
 
 	%章节 
-		\include{tex/Kintro} %厦大报告
-		\include{tex/hikofvc} %higher k-theory of virtually cyclic groups论文笔记
+		% \include{tex/Kintro} %厦大报告
+		% \include{tex/relativeK1}
+		% \include{tex/hikofvc} %higher k-theory of virtually cyclic groups论文笔记
 		\include{tex/wittring} %Witt rings and NK_* groups
 		\include{tex/weibelnk} % Notes on \textit{$NK_0$ and $NK_1$ of the groups $C_4$ and $D_4$}
-		\include{tex/Lowerbounds}
-		\include{tex/ResultsofGroupring}
-		\include{tex/NilK}
-		% \include{tex/NKFinAlg} %中文的，改到毕业论文里
-		\include{tex/NKFinAlgEN}
+		% \include{tex/Lowerbounds}
+		% \include{tex/ResultsofGroupring}
+		% \include{tex/NKFinAlg}
+		% \include{tex/NKFinAlgEN}
 		\include{tex/K2F2C4C4}
-		\include{tex/NKiFG}
-		\include{tex/KofComGrpSch}
-		\include{tex/finitefields}
-		\include{tex/question}
+		% \include{tex/NKiFG}
+		% \include{tex/finitefields}
+		% \include{tex/question}
 		% \include{}
 		% \include{}
 		% \include{}
@@ -54,13 +53,13 @@
 
 	% 参考文献
 		\bibliographystyle{plain} %参考文献格式
-		\pdfbookmark[0]{参考文献}{references}
+		\pdfbookmark[0]{References}{references}
 		\bibliography{bib/seminar_notes} 
 
 	% 索引	 
-		\indexprologue{{\em 部分名词与专业用语索引如下}}
-		\printindex
-		\pdfbookmark[0]{索引}{index}
+		% \indexprologue{{\em 部分名词与专业用语索引如下}}
+		% \printindex
+		% \pdfbookmark[0]{索引}{index}
 
 \end{document}
 

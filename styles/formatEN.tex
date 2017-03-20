@@ -2,13 +2,13 @@
 % !TEX program = xelatex
 % +-----------------------------------------------------------------------------
 % | File: 格式文档
-% | 
+% | 标题章节等均为英文
 % |
 % | 
 % | 
 % | Description:
 % |   主要是为了方便而设立。  
-% |   使用\include{format} 加载本文档
+% |   使用\include{formatEN} 加载本文档
 % | 
 % | 
 % +-----------------------------------------------------------------------------
@@ -48,8 +48,8 @@
 
 \usepackage[pdfencoding=auto,psdextra]{hyperref} % hyperref还是有些小问题，比如section的名字里不能有数学符号，需要用特殊的命令处理掉它。
 \usepackage{bookmark}
-\renewcommand\bibname{参考文献} %修改bib的名称
-
+\renewcommand\bibname{References} %修改bib的名称
+\renewcommand\contentsname{Contents}  % 修改Content名称
 %improving spacing in tables (space above and below characters in a row)
 \newcommand{\tfix}{\rule{0pt}{2.6ex}}
 \newcommand{\bfix}{\rule[-1.2ex]{0pt}{0pt}}
@@ -57,18 +57,16 @@
 %--一些数学符号, 常用的有\Hom \End \iso(向右箭头上有同构) \id \ker \ima \coker \tor \ext \N \Z \Q \R \mathbb{C}
 \newcommand{\Hom}{\mathop{\mathrm{Hom}}} %这个常用
 \newcommand{\End}{\mathrm{End}}
-\newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Nil}{\mathrm{Nil}}
-\newcommand{\Gal}{\mathrm{Gal}}
 \newcommand{\rank}{\mathrm{rank\ }}
 \newcommand{\ord}{\mathrm{ord}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\id}{\mathrm{id}} %这个常用
-\newcommand{\coker}{\mathrm{coker\,}}
+\newcommand{\coker}{\mathrm{coker}}
 %\newcommand{\ker}{\mathrm{ker}} %\ker直接输入就好
 \newcommand{\tor}{\mathrm{Tor}}
 \newcommand{\ext}{\mathrm{Ext}}
-\newcommand{\ima}{\mathrm{Im\,}}
+\newcommand{\ima}{\mathrm{Im}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Zn}[1]{\Z/{#1}\Z}
@@ -155,6 +153,3 @@
 %修改英文字体  这个字体挺好看的 下面两句都是重要的
 \usepackage[T1]{fontenc} % The default font encoding only contains Latin characters
 \usepackage[noBBpl]{mathpazo}
-%ams notices里的字体 试用
-% \usepackage{fontspec}
-% \setmainfont{Lucida Bright}

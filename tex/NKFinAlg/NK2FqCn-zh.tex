@@ -1,0 +1,53 @@
+%!TEX root = ../../testmain.tex
+设$\mathbb{F}_q$是特征为$2$的有限域, $q=2^f$, $C_{2^n}$是$2^n$阶循环群, 这一节计算$NK_2(\mathbb{F}_q[C_{2^n}])$. 假设$A=\mathbb{F}_q[t_1, t_2]/(t_1^{2^n})=\mathbb{F}_q[C_{2^n}][x]$, 此时$I=(t_1^{2^n})$, $M=(t_1)$, $A/M=\mathbb{F}_q[x]$. 
+
+\begin{lemma}
+	$\Delta =\{(\alpha_1, \alpha_2)\mid \alpha_1\geq 2^n, \alpha_2 \geq 0\}$, $\Lambda = \{((\alpha_1, \alpha_2), 1) \mid \alpha_1\geq 1, \alpha_2\geq 0\}\cup \{((\alpha_1, \alpha_2), 2) \mid \alpha_1\geq 1, \alpha_2\geq 1\}$, 对任意$(\alpha, i)\in \Lambda$, $[\alpha, 1]=\left \lceil (2^n+1)/\alpha_1 \right \rceil$, $[\alpha, 2]=\left \lceil 2^n/\alpha_1 \right \rceil$, 其中$\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}\mid  m\geq x\}$表示不小于$x$的最小整数. 
+\end{lemma}
+
+\begin{lemma}
+令$I_1 =\{((\alpha_1, \alpha_2), 1)\mid gcd(\alpha_1, \alpha_2)=1, 1< \alpha_1\leq 2^n\text{为偶数}, \alpha_2\geq 1\text{为奇数}\}$, $I_2=\{((\alpha_1, \alpha_2), 2)\mid gcd(\alpha_1, \alpha_2)=1, 1\leq \alpha_1<2^n\text{为奇数}, \alpha_2\geq 1\}$, 则$\Lambda^{00}_{>1}=I_1\sqcup I_2$. 
+\end{lemma}
+由定理\ref{K2(A, M)}, 
+
+\begin{align*}
+NK_2(\mathbb{F}_q[C_{2^n}])\cong K_2(A, M) &\cong \bigoplus_{(\alpha, i)\in\Lambda^{00}}(1+x\mathbb{F}_q[x]/(x^{[\alpha, i]}))^{\times}\\
+& = \bigoplus_{(\alpha, i)\in \Lambda^{00}_{>1}}(1+x\mathbb{F}_q[x]/(x^{[\alpha, i]}))^{\times}\\
+& = \bigoplus_{(\alpha, 1)\in I_1}(1+x\mathbb{F}_q[x]/(x^{\left \lceil (2^n+1)/\alpha_1 \right \rceil}))^{\times} \\
+& \oplus \bigoplus_{(\alpha, 2)\in I_2}(1+x\mathbb{F}_q[x]/(x^{\left \lceil 2^n/\alpha_1 \right \rceil}))^{\times}. 
+\end{align*}
+注意到$BigWitt_{k}(R)=(1+x R\llbracket x\rrbracket )^{\times}/(1+x^{k+1} R\llbracket x\rrbracket )^{\times} \cong (1+x R[x]/(x^{k+1}))^{\times}$, 
+根据公式\ref{cor:BW}, 
+
+\begin{align*}
+NK_2(\mathbb{F}_q[C_{2^n}])\cong & \bigoplus_{(\alpha, 1)\in I_1}\bigoplus_{\scriptsize\substack{1\leq m\leq \left \lceil (2^n+1)/\alpha_1 \right \rceil-1 \\ gcd(m, 2)=1}}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{\left \lceil (2^n+1)/\alpha_1 \right \rceil-1}{m}  \right \rfloor}\mathbb{Z})^f \\
+& \oplus \bigoplus_{(\alpha, 2)\in I_2}\bigoplus_{\scriptsize\substack{ 1 \leq m\leq \left \lceil 2^n/\alpha_1 \right \rceil-1 \\ gcd(m, 2)=1}}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{\left \lceil 2^n/\alpha_1 \right \rceil-1}{m}  \right \rfloor}\mathbb{Z})^f. 
+\end{align*}
+
+接下来我们证明对于任意$1\leq k\leq n$, $\mathbb{Z}/2^k \mathbb{Z}$都在$NK_2(\mathbb{F}_q[C_{p^n}])$出现无限多次
+
+\begin{lemma}
+\label{lem:log2}
+	对于任意的$1\leq k < n$, $1+\left \lfloor \log_2(\frac{2^n-1}{2^k+1}) \right \rfloor = n-k$. 
+\end{lemma}
+\begin{proof}
+	当$1\leq k < n$时, $2^k-1\geq 1 \geq \frac{1}{2^{n-k-1}}$, 即
+	\[2^{n-1}-2^{n-k-1}\geq 1, \]
+	上式等价于$2^n-1\geq 2^{n-k-1}(2^k+1)$, 且$2^n-1<2^{n-k}(2^k+1)$, 于是
+	\[2^{n-k}> \frac{2^n-1}{2^k+1} \geq 2^{n-k-1}, \]
+	取对数得$\left \lfloor \log_2(\frac{2^n-1}{2^k+1}) \right \rfloor = n-k-1$. 
+\end{proof}
+考虑$((1, \alpha_2), 2)\in I_2$, 
+$$\bigoplus_{(\alpha, 2)\in I_2}\bigoplus_{\scriptsize\substack{1\leq m\leq  2^n-1 \\ gcd(m, 2)=1 }}(\mathbb{Z}/2^{1+ \left \lfloor\log_2 \frac{2^n-1}{m}  \right \rfloor}\mathbb{Z})^f$$
+是$NK_2(\mathbb{F}_{2^f}[C_{2^n}])$的直和项, 当$m=1$时$1+ \left \lfloor\log_2 (2^n-1)\right \rfloor=n$, 当$m=2^k+1 (1\leq k < n)$为奇数时, 由\ref{lem:log2}, $1+ \left \lfloor\log_2 \frac{2^n-1}{m}\right \rfloor=n-k$, {\color{blue}于是对于任何的$1\leq k\leq n$, $\mathbb{Z}/2^k\mathbb{Z}$均出现在直和项中, 且对于任意$\alpha_2\geq 1$, 这样的项总会出现}, 于是
+\[NK_2(\mathbb{F}_q[C_{2^n}])\cong \bigoplus_\infty \bigoplus_{k=1}^n \mathbb{Z}/2^k\mathbb{Z}. \]
+
+接下来给出一些$NK_2(\mathbb{F}_q[C_{2^n}])$中的$2^k(1\leq k \leq n)$阶元素. 
+
+对任意$\alpha_2\geq 1, a\in \mathbb{F}_q$, 
+  \begin{align*}
+ \Gamma_{(1, \alpha_2), 2} \colon (1+x \mathbb{F}_q[x]/(x^{2^n}))^{\times} &\rightarrowtail K_2(A, M)\\
+ 1+ax \text{($2^n$阶元)} &\mapsto \langle atx^{\alpha_2-1}, x \rangle, \\
+ 1+ax^3 \text{($2^{n-1}$阶元)} &\mapsto \langle at^3x^{3\alpha_2-1}, x \rangle, \\
+ 1+ax^{2^k+1} \text{($2^{n-k}$阶元)} &\mapsto \langle at^{2k+1}x^{(2k+1)\alpha_2-1}, x \rangle. 
+ \end{align*}

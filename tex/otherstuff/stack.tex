@@ -1,0 +1,11 @@
+\section{栈(Stacks)}
+% 翻译自COMPLEX ORIENTED COHOMOLOGY THEORIES AND THE LANGUAGE OF STACKS  p25页
+令$X$是一个拓扑空间，可以将$X$想象成一个范畴，对象是$X$的开集，态射是集合的含入映射，记这个范畴是$\mathcal{C}_X$. 对拓扑群$G$,  每一个开集合$U\rightarrowtail X$对应一个对象是主$G$丛和态射是同构的广群(群胚, groupoid)。$X$中每一个含入$V\rightarrowtail U$都对应从$U$上的主$G$丛到$V$上的主$G$丛的一个拉回函子，这个对应（几乎）是从$\mathcal{C}_X$到groupoids的函子。
+
+\begin{definition}
+	$X$上的一个层$F$是一个反变函子$F\colon \mathcal{C}_X \longrightarrow Sets$， 满足"层条件"：
+	 如果$\{U_i\}$是$U$的一个覆盖，则
+	 \[F(U)\longrightarrow \prod F(U_i) \Longrightarrow \prod F(U_i\cap U_j)\]
+	 是一个对等子序列(equalizer sequence).
+\end{definition}
+最简单的例子：每一个开集$U$对应到$U$上的连续实值函数的集合这个函子是$X$上的一个层

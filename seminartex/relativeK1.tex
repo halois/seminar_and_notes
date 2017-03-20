@@ -1,0 +1,110 @@
+%!TEX root = ../main.tex
+\section{相对$K_1$群}
+目标: 将环$R$与它的商环$R/I$的$K_1$群联系起来.
+
+步骤: 定义相对$K_1$群$K_1(R,I)$, 连接$K_0$和$K_1$的六项正合列. 由此得到计算$K$群的工具, 如$SK_1(R,I)$与Mayer-Vietoris序列.
+
+\begin{definition}
+	$R$:环, $I\subset R$:理想. $R\rightarrow R/I$诱导了$GL(R)\rightarrow GL(R/I)$. 
+
+	定义$GL(I):=\ker (GL(R)\rightarrow GL(R/I))$, $GL_n(I):=\ker(GL_n(R)\rightarrow GL_n(R/I))$.
+
+	$E(R,I):=$包含初等阵$e_{ij}(x), x\in I$的$E(R)$的最小的正规子群, 实际上是$E(R,I)=\langle e_{ij}(x) \mid x\in I\rangle^{E(R)}$.
+
+	$E_n(R,I):=$由$e_{ij}(x), x\in I, 1\leq i \neq j \leq n$这些矩阵生成的$E_n(R)$的正规子群, 实际上是$E_n(R,I)=\langle e_{ij}(x) \mid x\in I,1\leq i\neq j\leq n\rangle^{E_n(R)}\lhd E_n(R)$.
+
+	$E(R,I)=\bigcup_nE_n(R,I)$.
+\end{definition}
+\begin{remark}
+	Rosenberg的书中将$GL(I)$记为$GL(R,I)$, Weibel在$K$-book的第三章习题1.1.10中说$GL(I)$与$R$的选择无关, 仅与$I$视为无幺元的环的结构有关。令$I$是无幺元的环, 可以将其添加一个幺元使它成为含幺环, 记为$I_+=I\oplus \mathbb{Z}$,\\
+	其中的加法结构: $(x,n)+(y,m)=(x+y,n+m)$\\
+	乘法结构: $(x,n)\cdot (y,m)=(xy+ny+mx,nm)$\\
+	乘法单位元$(0,1)$: $(x,n)(0,1)=(x,n)=(0,1)(x,n)$.\\
+	$GL_n(I):=\ker(GL_n(I\oplus \mathbb{Z})\rightarrow GL_n(\mathbb{Z}))$, 若$I\subset R$是理想, 则有$GL_n(I)=\ker(GL_n(R)\rightarrow GL_n(R/I))$.
+
+	$E(R,I)$中的初等阵在模$I$后为单位矩阵, 即$e_{ij}(x) \equiv \id (\bmod I)$, 故$E(R,I) \subset GL(I)$.
+
+
+\end{remark}
+接下来想要定义$K_1(R,I)$为$GL(I)/E(R,I)$, 必须要求$E(R,I)\lhd GL(I)$: 这就是相对Whitehead引理.
+\begin{lemma}[相对Whitehead引理]
+	$E(R,I)\lhd GL(I)$, $[GL(I),GL(I)]\subset E(R,I)$.
+\end{lemma}
+\begin{proof}
+	(i) 下面证明对于$g\in GL_n(I)$, $h\in E_n(G,I)$, 下式成立
+	\[ \begin{pmatrix}
+		ghg^{-1} & \\
+			& 1
+	\end{pmatrix} \in E(R,I).\]
+	实际上有
+	\[\begin{pmatrix}
+		ghg^{-1} & \\
+			& 1
+	\end{pmatrix} = \begin{pmatrix}
+		g & \\
+			& g^{-1}
+	\end{pmatrix}\begin{pmatrix}
+		h & \\
+			& 1
+	\end{pmatrix}\begin{pmatrix}
+		g^{-1} & \\
+			& g
+	\end{pmatrix}.\]
+	若将$g$写成$g=1+\alpha \in GL_n(I)$, 由于$GL(I)$中元映到$GL_n(R/I)$为$1$, 故$\alpha$这个矩阵中的元素都属于$I$,
+	\begin{align*}
+	    \begin{pmatrix}
+      g & 0 \\
+      0 & g^{-1} 
+    \end{pmatrix}
+ &=e_{12}(1)e_{21}(\alpha)e_{12}(-1)e_{12}(g^{-1}\alpha)e_{21}(-g\alpha)\\
+ &=\begin{pmatrix}
+      1 & 1 \\
+      0 & 1 
+    \end{pmatrix}\begin{pmatrix}
+      1 & 0 \\
+      \alpha & 1
+    \end{pmatrix}\begin{pmatrix}
+      1 & -1 \\
+      0 & 1
+    \end{pmatrix}\begin{pmatrix}
+      1 & g^{-1}\alpha \\
+      0 & 1
+    \end{pmatrix}\begin{pmatrix}
+      1 & 0 \\
+      -g\alpha & 1
+    \end{pmatrix},
+	\end{align*}
+	右边的式子前三项乘起来在$E_{2n}(R,I)$中, 从而$\begin{pmatrix}
+      g & 0 \\
+      0 & g^{-1} 
+    \end{pmatrix}\in E_{2n}(R,I)$, 故$\begin{pmatrix}
+		ghg^{-1} & \\
+			& 1
+	\end{pmatrix} \in E(R,I)$.
+
+	(ii)若$g,h\in GL(I)$, 则
+	\[ [g,h]= \begin{pmatrix}
+		g & \\
+			& g^{-1}
+	\end{pmatrix}\begin{pmatrix}
+		h & \\
+			& h^{-1}
+	\end{pmatrix}\begin{pmatrix}
+		(hg)^{-1} & \\
+			& hg
+	\end{pmatrix} \in E_{2n}(R,I) \subset E(R,I).\]
+
+\end{proof}
+
+有了上面的引理, 我们可以定义相对$K_1$群. 由于$E(R,I)\lhd GL(I)$, 因此可以做商群, 并且由于$[GL(I),GL(I)]\subset E(R,I)$, 因此商群是交换群, 这是因为对于任意的$\bar{g},\bar{h}\in K_1(R,I)$, $\bar{g} \bar{h} \bar{g}^{-1} \bar{h}^{-1}=\overline{ghg^{-1}h^{-1}}\in E(R,I)$, 因此$\bar{g}\bar{h}=\bar{h}\bar{g}$.
+\begin{definition}
+	$K_1(R,I):= GL(I)/E(R,I)$, 且为交换群.
+\end{definition}
+
+接下来我们从$GL(I) \rightarrowtail GL(R)$类比想得到$K_1(R,I)\rightarrow K_1(R)$这样的映射。
+
+若$R\rightarrow S$是环同态, $R$的理想$I$对应为$S$的理想$I'$, 则映射$GL(I)\rightarrow GL(I')$和$E(R)\rightarrow E(S)$诱导了映射$K_1(R,I)\rightarrow K_1(S,I')$.
+
+\begin{remark}
+	若$R\rightarrow S$是环同态, $R$的理想$I$同构地对应为$S$的理想$I$, 则$K_1(R,I)\rightarrow K_1(S,I)$是满射, 两者都是$GL(I)$的商群. 因为$E(R,I)\subset E(S,I)$, 故$GL(I)/E(R,I)\twoheadrightarrow GL(I)/E(S,I)$.
+\end{remark}

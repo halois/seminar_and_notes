@@ -5,3 +5,1324 @@ $K_2(\mathbb{F}_2C_2)=K_2(\mathbb{F}_2[x]/(x^2)) = ?$
 $K_2(\mathbb{F}_pC_p)=K_2(\mathbb{F}_p[x]/(x^p)) = ?$
 
 $\mathbb{Z}[Q_8]$, $Q_8 = \langle a,b | a^2=b^2=-1,(ab)^2=-1\rangle$
+
+slogan: "you can do for vector spaces you can do for finitely generated projective modules"
+
+拆成两篇：一篇简单的涉及$F_2[C_2]$和$F_2[C_4]$的，这样里面可以不涉及witt向量的分解
+之后另一篇再算上witt向量的分解，对于一般的p都写出来
+
+regular ring 与regular local ring关系
+\begin{theorem}[Auslander-Buchsbaum Theorem, 1959]
+	regular local rings are unique factorization domains.
+\end{theorem}
+\section{其他可以考虑的问题}
+
+$NK_2(\mathbb{F}_{p^m}[C_{p^n}])=?$
+
+$\mathbb{F}_2[C_2\times C_2] \cong\mathbb{F}_2[C_2]\otimes\mathbb{F}_2[C_2] \cong \mathbb{F}_2[x,y]/(x^2,y^2)$, 看看能否用同样的方法得到一些结果. 
+\[
+	0\longrightarrow K_2(k[t_1,t_2,t_3]/(t_1^n,t_2^n),(t_1,t_2)) \longrightarrow K_2(k[t_1,t_2,t_3]/(t_1^n,t_2^n)) \longrightarrow K_2(k[t_3]) \longrightarrow 0
+	\]
+对于有限域$k$来讲$K_2(k[t_3])=0$,
+\[0\longrightarrow NK_2(\mathbb{F}_2[C_{2}\times C_2]) \longrightarrow K_2(\mathbb{F}_2[C_{2}\times C_2][x])\longrightarrow K_2(\mathbb{F}_2[C_{2}\times C_2]) \longrightarrow 0,\]
+中间那项就是可以用这篇文章里的方法确定, 又$K_2(\mathbb{F}_2[C_{2}\times C_2])$可以通过Gao Yubin等文章得到, 应该是$C_2^3$,于是可以得到$NK_2(\mathbb{F}_2[C_{2}\times C_2])$, 猜测也是$\oplus_{\infty} \mathbb{Z}/2 \mathbb{Z}$.
+
+另外可以考虑直接用本章里的方式重新计算高玉彬师兄文章里的结果, 看是否更简洁, 或者是否更繁复, 复杂在哪里, 哪里可以进行简化, 简化后是否可以用到算$NK$的内容中. 
+
+
+一个关于模结构的问题, 在Weibel的文章\cite{MR88f:18018}中5.5和5.7给出的模结构和本文上面的模结构并不一致, 用$V_m$作用差一个$t^m$. 
+
+$C_{p^{n-1}}\rtimes C_p$
+
+\section{TODO}
+$NK$
+\begin{itemize}
+	\item 好好写一下$NK$的introduction，中文的可以按照毕业论文的要求写出来,NIl要送尽可能介绍的详细
+	\item 把算NK的程序变成有界面的。python改成面向对象的，设计实现流程。比如把打印出表格一行那一部分单独写成函数，def printrow(arg1, arg2, arg3)。 请输入一个素数$p$,请输入阶$ord=n=?$,输出$\alpha_1$变化范围到ALPHAMAX,输出$\alpha$和对应的$[\alpha],[\alpha,i]=?$.
+	写程序时遇到的情况，要求$gcd(p,\alpha_1,\alpha_2)=1$, 分解成几种情况，最简单的是$(\alpha_1,\alpha_2)=1$, since $p$ is a prime number, if $gcd(p,\alpha_1,\alpha_2)\neq 1$, then $gcd(p,\alpha_1,\alpha_2)=p$. PF: Assume $gcd(p,\alpha_1,\alpha_2)=d$, because $d|p$, then $d=1$ or $d=p$. So if $gcd(p,\alpha_1,\alpha_2)\neq 1$, then $p|\alpha_1, p|\alpha_2$.
+	\item $\mathbb{F}_q[G]$的$NK$出来后做$\mathbb{Z}[G]$的$NK$，然后考虑$(\mathbb{Z}/n\mathbb{Z}) G$ 的$NK$（看下张亚坤的）
+	\item $NK$与localization，考虑有没有例子
+	\item $NK$与半直积
+	\item $NK$的“有限性”，参考Grunewald, The finiteness of $NK_1(\mathbb{Z}[G])$. 看$\mathbb{Z}[Q_8]$, $\mathbb{Z}[C_4]$是不是f.g. 那个xx模。$NK_2(\mathbb{Z}[C_p])$是f.g。
+	 Ve，Frobenius模，$NK_1(\mathbb{Z}[C_2\times C_2])$不是。看看$NK_2(\mathbb{Z}[C_2\times C_2])$这些是不是f.g. witt module。
+	\item $NK$与Grayson用代数的方法定义能不能联系起来。比如用代数的方法定义$NK_i$
+	\item $NK$的乘积公式，把weibel的那个$NK_1\longrightarrow NK_2$ 的写清楚看看
+	\item $NK$的模结构介绍，把几篇文章综合一下，看能不能应用于$NK(\mathbb{F}_q[G])$中
+	\item induction,restriction的作用 有没有互反律之类的，如何给分次
+\end{itemize}
+
+$NK_1$
+\begin{itemize}
+	\item $NK_1$检验Weible的witt vectors module structure 和Madsen他们的方法正合列得到的一样吗。有篇文章说$NK_i$都同构，写出$NK_1,NK_2$看看。
+	\item 看$SK1$怎么做出来的，还有$NK_1$做么做,$NK_1^\alpha(\mathbb{Z}[G])$是如何证的？带扭和不带扭计算时的区别
+	\item 看看wang kun，还有之前NIL非零就无穷多的那里面$\alpha$,尽管之前是$NK_1( \mathbb{F}_p[C_p]_{\alpha}[t])$是什么样子
+\end{itemize}
+
+$NK_2$
+\begin{itemize}
+	\item 检查计算是否正确
+	\item check the case of $\mathbb{F}_{2^f}[C_{2^n}]$, 用$\mathbb{F}_{2}[C_{2^2}]$, $\mathbb{F}_{2}[C_{2^3}]$对一下结果，看看还有哪些元素是落下的，看看用什么办法可以确定这些元素。
+	\item 算一下$\mathbb{F}_{3}[C_{3}]$, $\mathbb{F}_{3}[C_{3^2}]$的$NK$，看一些问题主要出在哪里。进而$\mathbb{F}_{p^f} C_{p^n}$
+	\item 把$NK_2(\mathbb{F}_2[C_2\times C_2))$和$NK_2(\mathbb{F}_2[C_2])$做比较，看看一般的$p$是否也有类似的规律。之前有一篇文章中出现了$NK_2(\mathbb{F}_2[C_2\times C_2])$，看一下现在的结果和那篇文章中的过程对一下是否一致。
+	\item write the case of $NK_2(F[G\times H])$, for example $NK_2(\mathbb{F}_2[C_2\times C_2])$.  The general case $NK_2(\mathbb{F}_p[C_p\times C_p])$, $NK_2(\mathbb{F}_{p^f}[C_{p^m}\times C_{p^n}])$。推广到两个群的直积，首先是阶互素的两个群。推广到一般的$G$上一般这里的$G$是一个$p$群。
+	\item 之前写的看能否推广到$NK_2(\mathbb{F}_p[C_p\times C_q])$, 或者$C_q$换成更一般的阶与$p$互素的群。 参考magurn之前的文章，还有唐高华的关于群环分解的一些prop，一般交换群环的结构
+	\item 论文中，$\mathbb{Z}/p^k\mathbb{Z}$都出现无限多次，要加上，当$k>n$时 $\mathbb{Z}/p^k\mathbb{Z}$不会出现。
+	\item $NK_2^\alpha(\mathbb{F}_2[C_2])$有没有结果，搞清$\alpha$怎么来的及什么时候有$\alpha$
+	\item 对于$NK_2(\mathbb{F}[C_p\times C_p])$，检查前面$NK\cong K_2(A,M)$的过程是否也对，前面的转化至关重要，一定要确保$NK_2$可以转化成相对$K_2$
+	\item 看看这样的问题对吗，若$K_2(\mathbb{Z}/n\mathbb{Z} G)\neq 0$, 则$NK_2(\mathbb{Z}/n\mathbb{Z} G)$是无限生成的。若$n$是素数$p$, 看看成立不。推广到一般的环肯定是不对的，因为$K_2(\mathbb{Z})\neq 0$ 但是$NK_2(\mathbb{Z})=0$. 何时$K_2(\mathbb{F}_q[G])=0$?,写出条件来，和$NK$对比
+	\begin{prop}
+		当$K_2(\mathbb{F}_q[G])$中有$p^n$阶元，则$NK_2(\mathbb{F}_q[G])$中有无限多个$p^n$阶元。（看下对不对，最好写出元素来，证明确实是$p^n$阶元）
+	\end{prop}
+	从$K_2(\mathbb{F}_2[C_4])$中先看是否成立，$K_2(\mathbb{F}_2[C_4])=C_2^? \oplus C_4^?$, $NK_2(\mathbb{F}_2[C_4])=\oplus_{\infty} C_2 \oplus \oplus_{\infty} C_4$.
+	\item $0\longrightarrow NK_2(\mathbb{F}[G])\longrightarrow K_2(\mathbb{F}[G][x])\longrightarrow K_2(\mathbb{F}[G])\longrightarrow 0$,右边满射，每一个D-S符号$<a,b>$有提升$<a,b>$, 若满足条件$1-ab$可逆，$<ax,b>$映为$<0,b>$为$0$所以在核中，应该$<a,b>\in K_2(\mathbb{F}[G])$, 应该有$<ax,b>\in NK_2(\mathbb{F}[G])$,考虑对称性$<ax,b>=<a,bx>$看看对不对或者差一点东东。这样写出$K_2(\mathbb{F}[G])$中的一组基，就可以写成无限多$NK_2$中的线性无关元，写出$(\alpha,i)$需要判断在$\Lambda^{00}$中并判断是多少阶元，另外找其他规律写出$<ax,x>$这样的符号
+	\item $\mathbb{F}_2[C_{2^n}]$与$HH_n(\mathbb{F}_2[x])$联系，看看有没有映射。
+	\item[D-S symbols] $\langle t^3x^2,x \rangle = -\langle x, t^3x^2\rangle = - (\langle xt^3,x^2\rangle +\langle x^3,t^3 \rangle)=-(\langle x^2t^3,x \rangle + \langle x^2t^3,x\rangle + 3\langle x^3t^2,t \rangle)$, $3\langle t^3x^2,x \rangle = -3\langle x^3t^2,t \rangle$, if $3$ is invertible, then $\langle t^3x^2,x \rangle = -\langle x^3t^2,t \rangle$.
+	\begin{itemize}
+		\item $\langle f(x,t),t^n \rangle = n\langle f(x,t)t^{n-1},t \rangle$
+		\item $\langle f(x,t),x^m \rangle = m\langle f(x,t)x^{m-1},x \rangle$
+	\end{itemize}
+	$\rho_2 \colon x\mathbb{F}_2[x]/x^2\mathbb{F}_2[x^2] \longrightarrow NK_2(\mathbb{F}_2[C_4])$, $a \mapsto \langle a t^3,t\rangle$, 加法群同态, $\langle a t^3,t\rangle +\langle a t^3,t\rangle =\langle a t^3+bt^3-abt^7,t\rangle=\langle (a+b) t^3,t\rangle$.
+
+	If $t^n=0$, then $-\langle at^{n-1},t \rangle=\langle t,at^{n-1} \rangle=\langle at,t^{n-1} \rangle = (n-1)\langle at^{n-1},t \rangle$, hence $n\langle at^{n-1},t \rangle=0.$
+\end{itemize}
+
+Witt vectors 和模作用
+we briefly recall the action of $W(A)$ on $NK_n(A)$ (\cite{MR82k:18010},\cite{MR55:5721}, \cite{MR81e:13014}, S. Bloch, Some formulas pertaining to the $K$-theory of commutative group schemes. J. Algebra 53, 305-326 (1978), J. Stienstra, Operations in the higher $K$-theory of endomorphisms. In: Current Trends in algebraic topology, CMS Conference Proceedings, vol. 2, part 1, p. 59-115 )
+
+
+
+
+
+
+\begin{itemize}
+	\item Module structures on the K-theory of graded rings weibel这篇文章最后面又模结构的讨论
+	\item witt vectors decompostion。Artin-Hasse公式写出来。COMPLEX ORIENTED COHOMOLOGY THEORIES AND THE LANGUAGE OF STACKS \url{https://ncatlab.org/nlab/files/HopkinsLecture.pdf}  这篇笔记第52页有一个比较详细的证明。
+	\item 研究$(1+xk[x])/(x^m)$中$1-ax$的阶多少，还有其他生成元是什么样子。google关键词 “truncated witt vectors generators”
+	\item $NK_2(R)$上Witt vector模结构的问题，$NK_2(\mathbb{F}_2[C_2])$,$NK_2(\mathbb{F}_2[C_4])$上$W(\mathbb{F}_2)$-module. 参考文章把D-S符号的模结构（witt vectors 作用在symbols上）搞清楚，公式整理出来(注意如果是老式的D-S符号要转化成现在常用的符号)，套在NK上试一下是否和Weibel之前的一致。weibel有篇文章说两种不同的分次会有两种不同的结构，考虑一下分别的公式。
+	\item $F_m(1+ax)=1+ax^m$, $V_m(1+ax)=1+a^mx$.
+	\item $D=-x \frac{d}{dx}\log \colon 1+xR[[x]]\longrightarrow xR[[x]]$,
+$D(1-xf(x))=\frac{1+x^2f'(x)}{1-xf(x)}-1$. $D(1-x)=\frac{1}{1-x}-1=x+x^2+x^3+\cdots$. 得到是一个无穷级数，如果是有限的就好了，简单的例子看看何时是有限的。
+\end{itemize}
+
+\begin{align*}
+W(R) \times NK_1(\Lambda) & \longrightarrow NK_1(\Lambda) \\
+\alpha(t) *[1-vx] &=[\alpha(vx)]\\
+W(R) \times NK_2(\Lambda) & \longrightarrow NK_2(\Lambda) \\
+\alpha(t) *\{r,1-vx\} &=\{r,\alpha(vx)\}, r\in K_1(\Lambda)
+\end{align*}
+\begin{gather*}
+V_n([1-vx])=[1-vx^n]\\
+F_n([1-vx])=[1-v^nx]\\
+[a]([1-vx])=[1-avx]
+\end{gather*}
+
+\begin{align*}
+d\log \colon K_2(R[t]/(t^2),(t)) & \longrightarrow \Omega^2_{R[t]/(t^2)}\\
+\langle a,b \rangle &\mapsto \frac{da\wedge db}{1-ab}
+\end{align*}
+
+\cite{MR88f:18018}$A=\mathbb{F}[t_1,t_2]/I$, $I=(t_1^n)$. We grade $A$ by putting $A_0=\mathbb{F}[t_2]$ and letting $t_1$ belong to $A_1$.
+\begin{align*}
+\Gamma_{\alpha,i}\colon (1+xk[[x]])^{\times} &\longrightarrow K_2(A,M) \\
+1-xf(x) &\mapsto \langle f(t^\alpha)t^{\alpha-\varepsilon^i},t_i \rangle
+\end{align*}
+\begin{lemma}
+Given $\alpha$, let $e = \deg (t^\alpha) = \alpha_1$, and identify $(1+xk[[x]])^{\times}$ with the ideal $V_e W(k)$ of $W(k)=(1+tk[[T]])^{\times}$ via $x = T^e$. Then for all $i$, the map $\Gamma_{\alpha,i}$ is a $W(k)$-module homomorphism.
+\end{lemma}
+$(1-rT^m)*\Gamma_{\alpha,i}(1+x)=\Gamma_{\alpha,i}((1-rT^m)*(1+x))$.
+
+Formula from \cite{MR88f:18018}: 
+\begin{itemize}
+	\item $V_m(1-rT)*\langle a, s\rangle=(1 - rT^m) *\langle a, s\rangle = d\langle a^{m/d}r^{i/d}s^{m/d-1}, s\rangle$,  where $r, s\in A_0$, $a\in A_i$ and $d = gcd(m, i)$. 
+	\item $(l-rT^m)*\langle a,b\rangle  = (um+iv)\langle a^k b^{k-1}r^n,b\rangle - jv\langle a^{k-1} b^k r^n,a\rangle + ju\langle  (ab)^k r^{n-1}, r\rangle + j(d-1)\langle -(ab)^kr^n, -1 \rangle$,  where $a\in A_i$,  $b\in A_j$, $r\in R$, $d = gcd(i + j, m)$, $k = m/d$, $n = (i + j)/d$ and $u$ and $v$ are integers such that $d = um + v(i +j)$.
+\end{itemize}
+
+Since $tx^{n-1}\in A_1$ and $x\in A_0$, one has $d=1$, $V_m(\langle tx^{n-1},x \rangle)=V_m(1-T)*(\langle tx^{n-1},x \rangle)=\langle (tx^{n-1})^m x^{m-1},x \rangle=\langle t^mx^{mn-1},x \rangle$. 
+
+{\color{red}MAYBE WRONG! If $m$ is even, $t^m=0$, hence $V_m(\langle tx^{n-1},x \rangle)=0$; if $m$ is odd, then $V_m(\langle tx^{n-1},x \rangle)=\langle t^mx^{mn-1},x \rangle$.}
+
+Consider $V_m(\langle tx^n,t \rangle)$, if $m$ is odd, $d=1$, $i=j=1$, let $u=1$ and $v=(1-m)/2$ such that $1=2v+mu$, then 
+\begin{align*}
+V_m(\langle tx^n,t \rangle) &= (\frac{m+1}{2})\langle t^{2m-1}x^{mn},t\rangle - (\frac{1-m}{2})\langle t^{2m-1}x^{mn-n}, tx^n \rangle \\
+&= (\frac{m+1}{2})\langle t^{2m-1}x^{mn},t\rangle - (\frac{1-m}{2}) (n\langle t^{2m}x^{mn-1},x \rangle +\langle  t^{2m-1}x^{mn},t\rangle) \\
+& = m\langle t^{2m-1}x^{mn},t\rangle - \frac{(1-m)n}{2}\langle t^{2m}x^{mn-1},x \rangle \\
+& = \langle t^{2m-1}x^{mn},t\rangle
+\end{align*}
+
+
+\paragraph{Frobenius} % (fold)
+Jan Stienstra, On $K_2$ and $K_3$ of truncated polynomial rings \cite{MR82k:13016}
+下面这个应该有问题，要对着文章写出来，这里只是把草稿上的打出来
+\begin{align*}
+F_2 \colon  NK_2(\mathbb{F}_2[C_4]) &\longrightarrow NK_2(\mathbb{F}_2[C_2])\\
+\text{order 4 } \langle tx^{i-1},x \rangle &\mapsto \langle tx^{2i-1},x \rangle\\
+\text{order 2 } \langle t^3x^{3i-1},x \rangle &\mapsto \langle t^3x^{6i-1},x \rangle\\
+\text{order 2 } \langle t^3x^{i-1},x \rangle &\mapsto \langle t^3x^{2i-1},x \rangle\\
+\text{order 4, $i\geq 1$ odd } \langle tx^{i},t \rangle &\mapsto \langle tx^{i-1},x \rangle\\
+\text{order 2, $i\geq 1$ odd } \langle t^3x^{i},t \rangle &\mapsto \langle tx^{i},t \rangle
+\end{align*}
+前面四个在$\Omega_{\mathbb{F}_2[x]}$, 最后一个$V/\Phi(V)$.
+
+
+整群环
+\begin{itemize}
+	\item $NK_2(\mathbb{Z}[C_p])\neq 0$, $NK_2(\mathbb{Z}[G])\cong NK_2(\hat{\mathbb{Z}}_{|G|}[G])$（查一下出处）
+	\item 将有限群环中的$p^n$阶元提升到整群环中。$NK_2(\mathbb{Z}G)$，把Pineda文章找出来还有当时的笔记，试着用最近算出来的结果去修改证明，整群环和有限域上群环的联系，争取证明一般的$NK_2$都非零。
+	\item $NK_2(\mathbb{Z}[C_4])$中有没有4阶元(naive idea: $x\mathbb{F}_{p^2}[x]$)，有没有$NK_2(\mathbb{Z}[C_4])\longrightarrow NK_2(\mathbb{F}_2[C_4])$这样的映射，还有类似$\mathbb{F}_2[C_{2^m}]\longrightarrow \mathbb{F}_2[C_{2^n}]$诱导的$NK$的映射
+	\item prove $NK_2(\mathbb{Z}[C_{p^2}])\neq 0$ (find nontrivial elements), then generalize to $NK_2(\mathbb{Z}[C_{p^n}])$. prove $NK_2(\mathbb{Z}[C_{n}])\neq 0$ (find nontrivial elements)
+	\item $NK_2(\mathbb{Z}[C_2\times C_2])$中的元素，从$NK_2(\mathbb{F}_2[C_2\times C_2])$中提升上去，之后再类似看$NK_2(\mathbb{Z}[C_4\times C_4])$
+	\item $2\mathbb{Z}[C_4]\longrightarrow \mathbb{Z}[C_4]=\mathbb{Z}[x]/(x^4-1)\longrightarrow \mathbb{F}_2[C_4]$,$\sigma \mapsto \sigma$,$\sum_{i=0}^3a_i \sigma^i \mapsto \sum_{i=0}^3\overline{a_i} \sigma^i$,the kernel is $2\mathbb{Z}[C_4]$  ($\sum_{i=0}^3\overline{a_i} \sigma^i=0, \overline{a_i}=0$) relative exact sequence
+	\begin{gather*}
+		NK_3(\mathbb{F}_2[C_4])\longrightarrow  NK_2(\mathbb{Z}[C_4],2\mathbb{Z}[C_4])\longrightarrow NK_2(\mathbb{Z}[C_4])\\
+	\longrightarrow NK_2(\mathbb{F}_2[C_4])\longrightarrow NK_1(\mathbb{Z}[C_4],2\mathbb{Z}[C_4])
+	\end{gather*}
+	最后一项用别的方法算，看看$NK_1$的文章，比如哥伦比亚大学那篇毕业论文
+	\item $NK_1(\mathbb{Z}[C_2\times C_2])$, $NK_1(\mathbb{Z}[C_4])$, $NK_1(\mathbb{Z}[C_p\times C_p])$, $NK_1(\mathbb{Z}[C_{p^2}])$ 中的非平凡元
+	\item $(p,q)=1$,$NK_2[\mathbb{Z}[C_p\times C_q] \longrightarrow  NK_2[\mathbb{F}_p[C_p\times C_q]$ 或者$NK_2[\mathbb{F}_q[C_p\times C_q]$.
+	想证$NK_1(\mathbb{Z}[C_p\times C_q],p\mathbb{Z}[C_p\times C_q])=1$, $NK_1(\mathbb{Z}[C_p\times C_q],q\mathbb{Z}[C_p\times C_q])=1$成立的话，若$NK_2(\mathbb{F}_p[C_p\times C_q])$有$p$阶元的话，提升到$NK_2(\mathbb{Z}[C_p\times C_q])$有大于等于$p$阶的元，同理把$p$换成$q$，由于两个都是素数$(p,q)=1$,在整群环的$NK_2$中有大于等于$pq$阶的元。注意这都要建立在$NK_1$那个成立的基础上，看看有关$NK_1$的相对群。
+	\item $\mathbb{Z}[C_p\times C_q] \twoheadrightarrow \mathbb{Z}[C_p]$ 是不是可裂满射？用on the higher nils里面的证明$NK_2(\mathbb{Z}[G])$不为0. $NK_2(\mathbb{Z}[C_p\times C_q])$中非零元，比如$\langle x^n(1-\sigma_p),(1+\sigma_p+\cdots+\sigma_p^{p-1})\rangle + \langle x^n(1-\tau_q),(1+\tau_q+\cdots+\tau_q^{q-1})\rangle$.
+	\item 极大order $\mathbb{Z}[G]\longrightarrow \Gamma$
+	\item Dennis-Stein symbols 化成Steinberg symbols, lift to $\mathbb{Z}[G]$
+	\item 非交换群:$S_3$的用半直积写,对于一般的有限交换群的整群环映到$\mathbb{F}_p$
+	\item 群环中，找个整群环的DS符号，证明映射过去不平凡，就可以说明对于一般的有限交换群整群环都$NK$不为$0$
+	\item 有限交换群的可裂的扩张（半直积）也如此，再证任意有限交换群的$NK$都非0,具有多少阶元. 现证square-free的，参考 $G$-Theory of Group Rings for Groups of Square-Free Order
+	\item 关键是找符号，可能并不容易
+	\item 对于$S_3$还有其他例子是否有天然的映射，不用找符号。prove $NK_2(\mathbb{Z}[S_3])\neq 0$
+	\item 对一般有限交换群要找符号比如$\mathbb{Z}[C_p \times C_p]$试着找符号
+\end{itemize}
+$\mathbb{Z}[C_{p^r}] \longrightarrow \mathbb{Z}[C_p]$, $\sigma^{p^{r-1}}\mapsto \tau$. $(\sigma^{p^{r-1}})^p=\sigma^{p^{r}}=1\in \mathbb{Z}[C_{p^r}]$. Set $\tau=\sigma^{p^{r-1}}$, $(1-\tau^p)=(1-\tau)(1+\tau+\cdots+\tau^{p-1})$, $\langle(1+\tau+\cdots+\tau^{p-1})x^i,(1-\tau) \rangle$.
+
+If $C_{p^r}$ is a subgroup of $C_n$, then $\mathbb{Z}[C_n]\twoheadrightarrow \mathbb{Z}[C_{p^r}]$, it induces split surjection $K_i(\mathbb{Z}[C_n])\longrightarrow K_i(\mathbb{Z}[C_{p^r}])$?
+
+
+
+其他
+\begin{itemize}
+	\item 有限群环的结构，有限群环的商环。
+	\item 特殊有限环的$K_2$群
+	\item 有限交换群的正群环的$K_2$
+	\item 截断多项式环的$K$理论
+	\item 翻译成英文，中文的保留做毕业论文用。
+	\item 毕业论文:介绍farrell-jones conj 列举哪些类型的群是被证明了的
+	\item 群论:把所有常见群论定理如三百题中总结出来，$p$群的定理有限$p$群。
+	\item 下一步：拓扑循环同调与$NK$:
+    -定义写清楚
+	- 计算过程大致算一下
+	- 主要运用的定理
+	- 和$NK$有关的结论
+    群环的研究=> Madsen trace formula => $TC$, $THH$ => SPECTRA F-J conj
+\end{itemize}
+T. Gersten, Some exact sequence in the higher $K$-theory of rings.
+
+\section{Nil-groups}
+下面是从SOME REMARKS ON NIL GROUPS IN ALGEBRAIC K-THEORY 借鉴来的，需要修改
+The fundamental theorem of algebraic $K$-theory states that
+\[K_n R[t, t^{-1}] \cong K_n R \oplus K_{n-1}R \oplus NK_n R \oplus NK_n R .\]
+
+For any functor $F \colon \mathrm{Rings} \longrightarrow \mathrm{Ab}$, Bass \cite{MR40:2736} defines two functors
+\begin{align*}
+NF(R) & = \ker(F(R[t]) \longrightarrow F(R)),\\
+LF(R) & = \coker(F(R[t]) \oplus F(R[t^{-1}]) \longrightarrow F(R[t, t^{-1}])).
+\end{align*}
+The functor $F$ is called a contracted functor if the sequence
+\[0 \longrightarrow F(R) \longrightarrow F(R[t]) \oplus F(R[t^{-1}]) \longrightarrow F(R[t, t^{-1}]) \longrightarrow LF(R) \overset{\partial}\longrightarrow 0\]
+is exact and there is a splitting $h_{t,R}$ of the surjection $\partial$ which is natural in both $t$ and $R$. Note that $NLF(R)\cong LNF(R)$ if $F$ is contracted, then so are $NL$ and $LN$. The fundamental theorem of $K$-theory may be stated as the assertions that $K_n$ ($n\in \mathbb{Z}$) are contracted functors and there are natural identification $K_{n-1}=LK_n$.
+
+This leads to the calculation of the $K$-theory of polynomial rings and Laurent polynimial rings.
+\begin{align*}
+K_q(R[t_1, . . . t_n]) &\cong (I + N)^n K_q(R)\\
+K_q(R[t_1, t_1^{-1},\cdots ,t_n, t_n^{-1}]) &\cong (I + 2N + L)^n  K_q(R)
+\end{align*}
+
+放在intro里 摘自 wangkun ON PASSAGE TO OVER-GROUPS OF FINITE INDICES OF THE FARRELL-JONES CONJECTURE
+
+It is known that if the Bass Nil-groups of a ring $R$ vanish, i.e.\ $NK_n(R) = 0$, $n \in \mathbb{Z}$, then $NK_n(R[H])$ is rationally trivial for any finite group $H$. This was proved by Weibel \cite{MR82k:18010} for some special rings and by Hambleton and L\"{u}ck \cite{Hambleton12inductionand} for general rings.
+
+
+
+\section{Topological cyclic homology}
+Cyclotomic trace
+\[K(\mathbb{F}_2[t,x]/(t^2),(t))\overset{\sim}\longrightarrow TC(\mathbb{F}_2[t,x]/(t^2),(t)) \]
+
+
+$\Nil_q(A[x]/(x^m))$ is non-zero for all integer $q\geq 0$ and $m>1$. If $q<0$, it is trivial.
+
+$\Nil_k=NK_{k+1}$. If $A$ is a regular noetherian ring and $\mathbb{F}_{p}$-algebra,
+\[\cdots\longrightarrow \bigoplus_{i\geq 0}W_{i+1}\Omega_{(A[t],(t))}^{q-2i} \overset{V_m}\longrightarrow \bigoplus_{i\geq 0}W_{m(i+1)}\Omega_{(A[t],(t))}^{q-2i} \overset{\varepsilon}\longrightarrow \Nil_q(A[x]/(x^m))\longrightarrow \cdots \]
+where $W_{r}\Omega_{A[t]}^{q}=W_{r}\Omega_{A}^{q}\oplus W_{r}\Omega_{(A[t],(t))}^{q}$.
+
+If $p\nmid m$, then $V_m$ is injective.
+
+
+
+
+
+
+\section{Milnor square}
+$C_n=\langle \sigma \rangle$,  $I=(\sigma -1)$ and $J=1+\sigma+\cdots+\sigma^{n-1}$ are two disjoint ideals of $\mathbb{Z}[C_n]$, there is a Cartesian square
+\begin{equation*}
+	\begin{tikzcd}
+		\mathbb{Z}[C_n] \ar[r] \ar[d]& \mathbb{Z}[C_n]/J\ar[d]\\
+		 \mathbb{Z}\ar[r] & \mathbb{Z}/n\mathbb{Z}\\
+	\end{tikzcd}
+\end{equation*}
+since $\mathbb{Z}$ and  $\mathbb{Z}/n\mathbb{Z}$ are regular, hence we get a exact sequence
+\[NK_2(\mathbb{Z}[C_n])\longrightarrow NK_2(\mathbb{Z}[C_n]/J)\longrightarrow 0.\] 
+
+For $n=4$, $J=(1+\sigma+\sigma^2+\sigma^3)$, $\mathbb{Z}[C_4]/J=\mathbb{Z}[C_4]/(1+\sigma+\sigma^2+\sigma^3)\cong \mathbb{Z}[x]/(1+x)(1+x^2)$. If we can prove $\mathbb{Z}[C_4]/J\neq 0$, then $NK_2(\mathbb{Z}[C_4])\neq 0$. In fact $NK_2(\mathbb{Z}[C_4])\neq 0$ is proved in \cite{weibel2009nk0}, from the surjection $NK_2(\mathbb{Z}[C_4])\twoheadrightarrow x^2\mathbb{F}_2[x^2]$.
+
+from $(\mathbb{Z}[C_4],J)\longrightarrow (\mathbb{Z}[C_4]/(\sigma-1),(4))=(\mathbb{Z},(4))$ one has double relative exact sequence
+\[0=NK_3(\mathbb{Z},(4))\longrightarrow NK_2(\mathbb{Z}[C_4];J,(\sigma-1)) \longrightarrow NK_2(\mathbb{Z}[C_4],J)\longrightarrow NK_2(\mathbb{Z},(4))=0.\]
+\[NK_3(\mathbb{Z}[C_4]/J)\longrightarrow NK_2(\mathbb{Z}[C_4],J)\longrightarrow NK_2(\mathbb{Z}[C_4])\longrightarrow NK_2(\mathbb{Z}[C_4]/J).\]
+
+In \cite{weibel2009nk0}, Weibel stated $NK_2(\mathbb{Z}[C_4],(\sigma^2+1),(\sigma^2-1))\cong \mathbb{F}_2[C_2]\otimes x \mathbb{F}_2[x]$ on symbols $\langle \sigma^2+1,x^n(\sigma-1)\rangle$. We can get $K_2(\mathbb{Z}[C_4],(\sigma^2+1),(\sigma^2-1))\cong (\sigma^2+1)\otimes(\sigma^2-1)$, $NK_2(\mathbb{Z}[C_4],(\sigma^2+1),(\sigma^2-1))\cong (\sigma^2+1)\otimes(\sigma^2-1)[x]/(\sigma^2+1)\otimes(\sigma^2-1)$. $K_2(\mathbb{Z}[C_4],(\sigma-1),(1+\sigma+\sigma^2+\sigma^3))\cong (\sigma-1)\otimes(1+\sigma+\sigma^2+\sigma^3)$?
+
+
+
+考虑$C_6$
+\[\begin{tikzcd}
+		\mathbb{Z}[C_6] \ar[r] \ar[d]& \mathbb{Z}[x]/(1+x)(1+x^2+x^4)=R_1\ar[d]\\
+		 \mathbb{Z}\ar[r] & \mathbb{Z}/6\mathbb{Z}
+	\end{tikzcd}\]
+By Mayer-Vietoris sequence, $NK_i(R_1)=0$ for $i\leq 1$. And $NK_2(\mathbb{Z}[C_6]) \twoheadrightarrow NK_2(R_1)\longrightarrow 0$.
+
+Recall that $R_1=\mathbb{Z}[C_6]/(1+\sigma+\cdots+\sigma^5)$,
+\[\begin{tikzcd}
+		R_1=\mathbb{Z}[C_6]/(1+\sigma+\cdots+\sigma^5) \ar[r] \ar[d]& \mathbb{Z}[C_6]/(1+\sigma)= \mathbb{Z}\ar[d]\\
+		 R_2=\mathbb{Z}[C_6]/(1+\sigma^2+\sigma^4)\ar[r] & \mathbb{Z}[C_6]/3\mathbb{Z}[C_6]=\mathbb{F}_3[C_6]
+	\end{tikzcd}\]
+$NK_2(R_1)\longrightarrow NK_2(R_2)\longrightarrow NK_2(\mathbb{F}_3[C_6])\longrightarrow 0.$
+
+$\mathbb{Z}[C_6]/3\mathbb{Z}[C_6]\cong \mathbb{F}_3[C_6]$? right or not. We have $NK_2(\mathbb{F}_3[C_6])\cong \bigoplus_{\infty} \mathbb{Z}/3\mathbb{Z}$. Hence $NK_2(R_2)\neq 0$.
+
+$I=(1+\sigma+\sigma^2)/(1+\sigma^2+\sigma^4)$, $J=(1-\sigma+\sigma^2)/(1+\sigma^2+\sigma^4)$ are ideals of $R_2$
+\[\begin{tikzcd}
+		R_2=\mathbb{Z}[C_6]/(1+\sigma^2+\sigma^4)\ar[r] \ar[d]& R_2/I = \mathbb{Z}[\zeta_3]\ar[d]\\
+		 R_2/J=\mathbb{Z}[\zeta_3] \ar[r] & \mathbb{F}_2[\zeta_3]\cong \mathbb{F}_{4}
+	\end{tikzcd}\]
+
+this square is obtained by $\mathbb{Z}[C_2]$ tensor with $\mathbb{Z}[\zeta_3]\cong \mathbb{Z}[C_3]/(1+\tau+\tau^2)$.
+这儿会导出一个矛盾，看看出在哪里
+$NK_2(R_2)\longrightarrow 0\longrightarrow 0 \longrightarrow NK_1(R_2)\longrightarrow 0$, 但是
+$NK_1(R_2)\cong NK_1(\mathbb{F}_3[C_6])\neq 0$.
+
+
+$K_2(R_2,I,J)\cong I\otimes J$
+对于double relative 可以直接用$NK$函子吧？
+\[NK_3(R_2/J,I+J/J)\longrightarrow NK_2(R_2,I,J)\longrightarrow NK_2(R_2,I)\longrightarrow NK_2(R_2/J,I+J/J)\]
+第一项和最后一项应该是$0$吧
+\[NK_3(R_2/I)\longrightarrow NK_2(R_2,I)\longrightarrow NK_2(R_2)\longrightarrow NK_2(R/I)\]
+第一项和最后一项应该也是$0$。
+
+所以应该有$NK_2(R_2,I,J)=NK_2(R_2)\cong I\otimes J[x]/I\otimes J$. $NK_2(R_2)$ is generated by $\langle 1+\overline{\sigma}+\overline{\sigma}^2,(1-\overline{\sigma}+\overline{\sigma}^2)x^n \rangle$.
+
+$I\otimes J$ is generated by $\beta_1=\langle 1+\overline{\sigma}+\overline{\sigma}^2,1-\overline{\sigma}+\overline{\sigma}^2 \rangle$ and $\beta_2=\langle 1+\overline{\sigma}+\overline{\sigma}^2,\overline{\sigma}(1-\overline{\sigma}+\overline{\sigma}^2) \rangle$, $\beta_1^2=1$, $\beta_2=1$(可以得到), so is generated by $\beta_1$.
+
+$NK_2(R_2)\cong x \mathbb{F}_2[x]$, $NK_2(\mathbb{Z}[C_6]/(1+\sigma^2+\sigma^4))=NK_2(\mathbb{Z}[C_2]\otimes \mathbb{Z}[\zeta_3])\cong x \mathbb{F}_2[x]$. Witt vector module structure is same as $NK_2(\mathbb{Z}[C_2])$.
+
+Question: if $R$ regular, $NK_2(\mathbb{Z}[C_2]\otimes R)\cong NK_2(\mathbb{Z}[C_2])$?
+
+$I'=(1+\sigma), J'=(1+\sigma^2+\sigma^4)$ are ideals of $R_1$, $R_1/J'=R_2$, $R_1/I'=\mathbb{Z}$. $NK_2(R_1;J',I')\cong NK_2(R_1,J')$,
+\[NK_3(R_2)\longrightarrow NK_2(R_1,J')\longrightarrow NK_2(R_1)\longrightarrow NK_2(R_2)\longrightarrow NK_1(R_1,J')\longrightarrow NK_1(R_1)\]
+
+Given a Milnor square
+\[\begin{tikzcd}
+		R \ar[r,"\alpha"] \ar[d,"\beta"]& R/I\ar[d,"g"]\\
+		R/J \ar[r,"f"] & R/I+J
+	\end{tikzcd}\]
+if $R/I$, $R/J$, $R/I+J$ are all regular (or $NK_i(-)=0$), then
+\[\begin{tikzcd}
+	 & NK_3(R/J,I+J/J)=0 \ar[d] & & & \\
+	 & NK_2(R;I,J) \ar[d,"\cong"] \\
+0=NK_3(R/I)	\ar[r] & NK_2(R,I) \ar[r,"\cong"] \ar[d] & NK_2(R) \ar[r] &NK_2(R/I)=0\\
+	& NK_2(R/J,I+J/J)=0 
+\end{tikzcd}
+\]
+\[0=NK_{i+1}(R/I+J)\longrightarrow NK_i(R/J,I+J/J)\longrightarrow NK_i(R/J)=0 \Longrightarrow NK_i(R/J,I+J/J)=0.\]
+Therefore $NK_2(R)\cong NK_2(R;I,J)$.
+
+$K_2(R;I,J)\cong I\otimes J$, $K_2(R[x];I[x],J[x])\cong I\otimes J[x]$, $NK_2(R)\cong NK_2(R;I,J)=I\otimes J[x]/I\otimes J$.
+
+If $R/J$, $R/I+J$ are regular (or $NK_i(-)=0$, 换成quasi-regular会怎么样)
+\[\begin{tikzcd}
+	 & NK_3(R/J,I+J/J)=0 \ar[d] & & & \\
+	 & NK_2(R;I,J) \ar[d,"\cong"] \\
+NK_3(R/I)	\ar[r] & NK_2(R,I) \ar[r] \ar[d] & NK_2(R) \ar[r] &NK_2(R/I)\\
+	& NK_2(R/J,I+J/J)=0 
+\end{tikzcd}
+\]
+If moreover $R\longrightarrow R/I$ is a split surjection, then
+\[0\longrightarrow NK_2(R,I)\longrightarrow NK_2(R)\longrightarrow NK_2(R/I)\longrightarrow 0,\]
+hence $NK_2(R)\cong NK_2(R;I,J)\oplus NK_2(R/I)=(I\otimes J)\oplus NK_2(R/I)$.
+
+{\color{red} if $R,S$ are regular, is $R\times S$ also regular? For example $\mathbb{F}_{p}\times \mathbb{F}_{p}$ regular or not? Note that hereditary rings are regular rings.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\paragraph{$NK_2(\mathbb{Z}[C_{pq}])$}
+\[\begin{tikzcd}
+			\mathbb{Z}[C_p] \ar[r,"\sigma \mapsto \zeta_p"] \ar[d,"\sigma\mapsto 1"']& \mathbb{Z}[\zeta_p]\ar[d]\\
+			\mathbb{Z} \ar[r] & \mathbb{F}_p\\
+		\end{tikzcd}\]
+tensor with $\mathbb{Z}[C_q]$
+\[\begin{tikzcd}
+	\mathbb{Z}[C_{pq}]\cong	\mathbb{Z}[C_p] \otimes \mathbb{Z}[C_q] \ar[r] \ar[d]& \mathbb{Z}[\zeta_p][C_q]\ar [d]\\
+		 \mathbb{Z}[C_q]\ar[r] & \mathbb{F}_p[C_q]\\
+	\end{tikzcd}\]
+ By Mayer-Vietoris sequence for the $NK$-functor, one has
+    \[\begin{tikzcd}[column sep=small]
+		 NK_2(\mathbb{Z}[C_{pq}]) \ar[r] & NK_2(\mathbb{Z}[\zeta_p][C_q]) \oplus NK_2(\mathbb{Z}[C_q]) \ar[r] & NK_2(\mathbb{F}_p[C_q]) \ar[out=0, in=180, looseness=2, overlay]{dll}   \\
+		  NK_1(\mathbb{Z}[C_{pq}]) \ar[r]  & NK_1(\mathbb{Z}[\zeta_p][C_q]) \oplus NK_1(\mathbb{Z}[C_q]) \ar[r]& NK_1(\mathbb{F}_p[C_q])  \ar[out=0, in=180, looseness=2, overlay]{dll}   \\
+		 NK_0(\mathbb{Z}[C_{pq}]) \ar[r]  & NK_0(\mathbb{Z}[\zeta_p][C_q]) \oplus NK_0(\mathbb{Z}[C_q])  \\
+	\end{tikzcd}\]
+Note that for any finite group $G$ of aquare-free order, $NK_i(\mathbb{Z}[G])=0$ for any $i\leq 1$. And $NK_i(\mathbb{F}_p[C_q])=0$ when $p$ and $q$ are coprime. Since $NK_2(\mathbb{Z}[C_q])\neq 0$, then $NK_2(\mathbb{Z}[C_{pq}])\neq 0$. By induction, for a finite cyclic group $C_n$ of square-free order, we have $NK_2(\mathbb{Z}[C_n])\neq 0$.
+
+If $G=C_{2p}=C_p\times C_2=\{(\sigma,\iota)\mid \sigma^p=1,\iota^2=1\}$ with $p$ prime to $2$.
+\[\begin{tikzcd}
+		\mathbb{Z}[C_{2p}] \ar[r] \ar[d]& \mathbb{Z}[C_{p}]\ar[d]\\
+		 \mathbb{Z}[C_p]\ar[r] & \mathbb{F}_2[C_p]
+	\end{tikzcd}\]
+gives 
+\[NK_2(\mathbb{Z}[C_{2p}])\longrightarrow 2NK_2(\mathbb{Z}[C_p])\longrightarrow NK_2(\mathbb{F}_2[C_p])\longrightarrow NK_1(\mathbb{Z}[C_{2p}])\longrightarrow 0,\]
+$NK_2(\mathbb{F}_2[C_p])=0\Longrightarrow NK_1(\mathbb{Z}[C_{2p}])=0$. Then $\langle x^n \iota^i(\sigma-1),(1+\sigma+\cdots+\sigma^{p-1})\rangle$ ($i=0,1$) map to $\langle x^n(\sigma-1),(1+\sigma+\cdots+\sigma^{p-1})\rangle$.
+
+For cyclic group of order $p^2$, there are two Milnor squares
+	\[\begin{tikzcd}
+		\mathbb{Z}[C_{p^2}] \ar[r] \ar[d]& \mathbb{Z}[C_{p^2}]/J=\mathbb{Z}[x]/(1+\sigma+\cdots+\sigma^{p-1})(1+\sigma^p+\cdots+\sigma^{(p-1)p})\ar[d]\\
+		 \mathbb{Z}\ar[r] & \mathbb{Z}/p^2\mathbb{Z}
+	\end{tikzcd}\]
+	\[\begin{tikzcd}
+			\mathbb{Z}[C_{p^2}] \ar[r,"\sigma \mapsto \zeta_{p^2}"] \ar[d]& \mathbb{Z}[\zeta_{p^2}]\ar[d]\\
+			\mathbb{Z}[C_p] \ar[r] & \mathbb{Z}[\zeta_{p^2}]/(1-\zeta_{p^2}^p)
+		\end{tikzcd}\]
+Note that $\mathbb{Z}[\zeta_{p^2}]/(1-\zeta_{p^2}^p)\cong \mathbb{F}_p[t]/(t^p)$?
+
+Let $S_3=\langle h,f\mid h^3=1=f^2, fhf^{-1}=h^{-1} \rangle$
+\[\begin{tikzcd}
+		\mathbb{Z}[S_3] \ar[r] \ar[d]& A=\mathbb{Z}[\zeta,f]\ar[d]\\
+		 \mathbb{Z}[C_2]\ar[r] & \mathbb{F}_3[C_2]
+	\end{tikzcd}\]
+$A$ is hereditary.
+\[NK_2(\mathbb{Z}[S_3])\longrightarrow NK_2(\mathbb{Z}[C_2])\longrightarrow 0,\]
+$NK_2(\mathbb{Z}[C_2])\cong x \mathbb{F}_2[x]$, $\langle x^n(\sigma-1),(1+\sigma)\rangle$ corresponding to $x^n$. So we give some non-trivial elements in $NK_2(\mathbb{Z}[S_3])$:
+$\langle x^n(f-1),f+1\rangle$, $\langle x^n(f-h^{-1}),f+h\rangle$ (because $(f-h^{-1})(f+h)=f^2+fh-h^{-1}f-1=1+fh-fh-1=0$, $(f+h)(f-h^{-1})=f^2+hf-fh^{-1}-1=1+hf-hf-1=0$, note that $f^{-1}=f$), $\langle x^n(f-h),f+h^{-1}\rangle$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Explicit examples in $NK_1$}
+c.f. Scott Schmieding
+\begin{lemma}[Higman's trick]
+	$NK_1(R)$ is the set of elements of $K_1(R[x])$ which contain a matrix of the form $I-xN$, with $N$ a nilpotent matrix over $R$.
+\end{lemma}
+\begin{align*}
+NK_1(R) &\longrightarrow \Nil_0(R)\\
+I-xN &\mapsto [R^n,N], \text{ where $N$ is a $n\times n$ nilpotent matrix.}
+\end{align*}
+endomorphism 
+\begin{align*}
+V_k \colon NK_1(R) &\longrightarrow NK_1(R) \\
+[1-xN] &\mapsto [1-x^kN]\\
+F_k \colon NK_1(R) &\longrightarrow NK_1(R) \\
+[1-xN] &\mapsto [1-xN^k]\\
+V_k \colon \Nil_0(R) &\longrightarrow \Nil_0(R) \\
+[N] &\mapsto \left[\begin{pmatrix}
+	0& &  &N\\1&0 & &\\ &\ddots&\ddots&\\ & &1&0
+\end{pmatrix}\right]\\
+F_k \colon \Nil_0(R) &\longrightarrow \Nil_0(R) \\
+[N] &\mapsto [N^k]
+\end{align*}
+
+$NK_1(\mathbb{Z}[C_{p^n}])\neq 0$, $n\geq 2$.
+
+
+For general computation
+\[\begin{tikzcd}
+			\mathbb{Z}[C_{p^n}] \ar[r,"\sigma \mapsto \zeta_{p^n}"] \ar[d]& \mathbb{Z}[\zeta_{p^n}]\ar[d]\\
+			\mathbb{Z}[C_p] \ar[r] & \mathbb{Z}[\zeta_{p^n}]/(1-\zeta_{p^n}^p)
+		\end{tikzcd}\]
+Note that $\mathbb{Z}[\zeta_{p^n}]/(1-\zeta_{p^n}^p)\cong \mathbb{F}_p[t]/(t^p)=\mathbb{F}_p[C_p]$?
+
+$\zeta_{p^n}$: a primitive $p^n$-th root of unity. $\mathbb{Z}[\zeta_{p^n}]$: the ring of integers of $\mathbb{Q}[\zeta_{p^n}]$.
+ By Mayer-Vietoris sequence for the $NK$-functor, one has
+    \[\begin{tikzcd}[column sep=small]
+		 NK_2(\mathbb{Z}[C_{p^n}]) \ar[r] & NK_2(\mathbb{Z}[\zeta_{p^n}]\oplus NK_2(\mathbb{Z}[C_p]) \ar[r] & NK_2(\mathbb{F}_p[t]/(t^p)) \ar[out=0, in=180, looseness=2, overlay]{dll}   \\
+		  NK_1(\mathbb{Z}[C_{p^n}]) \ar[r]  & NK_1(\mathbb{Z}[\zeta_{p^n}]\oplus NK_1(\mathbb{Z}[C_p]) \ar[r]& NK_1(\mathbb{F}_p[t]/(t^p))  \ar[out=0, in=180, looseness=2, overlay]{dll}   \\
+		 NK_0(\mathbb{Z}[C_{p^n}]) \ar[r]  & NK_0(\mathbb{Z}[\zeta_{p^n}]\oplus NK_0(\mathbb{Z}[C_p]) 
+	\end{tikzcd}\]
+$NK_i(\mathbb{Z}[\zeta])=0$ for all $i$. $NK_1(\mathbb{Z}[C_{p^n}])\cong \coker(NK_2(\mathbb{Z}[C_p]) \longrightarrow NK_2(\mathbb{F}_p[t]/(t^p)))$.
+Since elements of $NK_2(\mathbb{F}_p[t]/(t^p))$ are $p$-torsion, hence $NK_1(\mathbb{Z}[C_{p^n}])\cong \bigoplus_{\infty}\mathbb{Z}/p\mathbb{Z}$. 
+
+\[0 \longrightarrow NK_1(\mathbb{F}_p[t]/(t^p))  \longrightarrow NK_0(\mathbb{Z}[C_{p^n}]) \longrightarrow 0\]
+
+$\begin{pmatrix}
+	A & B\\
+	C & D
+\end{pmatrix}$ in $NK_1(\mathbb{Z}[C_4])$ with 
+\begin{align*}
+	A =&1-(1-\sigma^2)(x-2x^2+2x^3-\sigma+x\sigma+x^2\sigma)\\
+	B =& (\sigma^2-1)(1+2x-x^2-x^3-2x^4+\sigma-x\sigma-2x^2\sigma-3x^3\sigma+2x^4\sigma)\\
+	C =& (\sigma^2-1)(-1+2x-5x^2+7x^3-3x^4+2x^5-\sigma+2x\sigma-2x^3\sigma+3x^4\sigma-2x^5\sigma)\\
+	D =& 1-(1-\sigma^2)(2+x-2x^2-4x^4-2x^5+\sigma-3x\sigma-x^2\sigma-4x^3\sigma+6x^4\sigma-4x^5\sigma+4x^6\sigma)
+\end{align*}
+is non-zero.
+
+
+$G=C_4=\langle \sigma \rangle$, $\sigma^4=1$.
+\[\begin{tikzcd}
+			\mathbb{Z}[C_4] \ar[r,"\sigma \mapsto i"] \ar[d,"\sigma^2\mapsto 1"']& \mathbb{Z}[i]\ar[d,"i\mapsto 1+\varepsilon"]\\
+			\mathbb{Z}[C_2] \ar[r,"q"] & \mathbb{F}_2[\varepsilon]/(\varepsilon^2)
+		\end{tikzcd}\]
+
+$NK_2(\mathbb{Z}[C_2])\overset{q}\longrightarrow NK_2(\mathbb{F}_{2}[\varepsilon]/(\varepsilon^2))\overset{\partial}\longrightarrow NK_1(\mathbb{Z}[C_4])\longrightarrow 0$,\\
+ $\ker \partial =\ima q =\ker (D\colon NK_2(\mathbb{F}_{2}[\varepsilon]/(\varepsilon^2))\longrightarrow \Omega_{\mathbb{F}_{2}[x]})$, $\langle f\varepsilon,g+g'\varepsilon\rangle \mapsto f dg$.
+
+For example, $D(\langle \varepsilon,x+\varepsilon\rangle)=d x\neq 0$, hence $\langle \varepsilon,x+\varepsilon\rangle \not\in \ima(q)$. $\ker \partial=\ima q$, so $\partial (\langle \varepsilon,x+\varepsilon\rangle)\neq 0$ in $NK_1(\mathbb{Z}[C_4])$.
+
+Compute $\partial (\langle \varepsilon,x+\varepsilon\rangle)$
+
+\[
+\begin{tikzcd}
+		& K_1(\mathbb{Z}[C_4][x],(1-\sigma^2)) \ar[r,"j"] \ar[d,"\psi","\cong"']& K_1(\mathbb{Z}[C_4])\\
+	K_2(\mathbb{F}_{2}[\varepsilon,x]/(\varepsilon^2)) \ar[r,"\partial_1"] & K_1(\mathbb{Z}[i][x],(2))
+\end{tikzcd}
+\]
+since $\sigma\mapsto i$ takes $(1-\sigma^2)\mapsto (2)$.
+
+$K_2(\mathbb{F}_{2}[\varepsilon,x]/(\varepsilon^2))$中的Dennis-Stein symbols: $\langle \varepsilon x^i,x\rangle$ ($i\geq 0$), $\langle \varepsilon x^i,\varepsilon \rangle$ ($i\geq i$ is odd).
+
+$NK_2(\mathbb{Z}[C_p])=x\mathbb{F}_{p}[x]$, $\langle (1-\sigma),(1+\sigma+\cdots+\sigma^{p-1})x^n\rangle$ corresponding to $x^n$.
+
+
+
+
+$G=C_4\times C_2$.
+\[\begin{tikzcd}
+			\mathbb{Z}[C_2\times C_4] \ar[r] \ar[d]& \mathbb{Z}[C_4]\ar[d,"\psi_1"]\\
+			\mathbb{Z}[C_4] \ar[r,"\psi_2"] & \mathbb{F}_2[C_4]
+		\end{tikzcd}\]
+$\psi_i$ are reduction $\bmod\ 2$ for $i=1,2$.
+\[NK_2(\mathbb{Z}[C_4\times C_2])\longrightarrow 2NK_2(\mathbb{Z}[C_4])\longrightarrow NK_2(\mathbb{F}_2[C_4])\longrightarrow NK_1(\mathbb{Z}[C_4\times C_2])\longrightarrow 2NK_1(\mathbb{Z}[C_4]),\]
+$NK_2(\mathbb{F}_2[C_4])=\bigoplus_{\infty}(\mathbb{Z}/4 \mathbb{Z}\oplus \mathbb{Z}/2 \mathbb{Z})$.
+
+
+
+
+
+
+
+
+
+
+
+\section{Excision and group rings}
+\cite{STEIN1980213}的笔记：
+
+之前的研究： groups of order $2$ and $3$, Dunwoody $K_2(\mathbb{Z}\pi)$ for $\pi$ a group of order two or three.(方法不适用于$C_4$,$C_6$...).\\
+Lower bounds for elementary abelian $p$-groups, Dennis, Keating, Stein \cite{Stein1976}.\\
+relative $K_2$:\\
+Keune, \cite{Keune1978The}, J.-L. Loday, Cohomologie et groupe de Steinberg relatifs.
+
+In this paper, talk about the following\\
+$K_2(\mathbb{Z}[G])$ for $G=C_p,C_4,C_6$ with $p$ prime; non-abelian metacyclic groups $K_2(\mathbb{Z}[S_3])$
+
+cokernels of maps of $K_3$'s: Stein, Maps of rings which induce surjections on $K_3$.
+
+这篇文章中用的Dennis-Stein symbols是旧的，应用时改成新的，也就是以前的$<a,b>$现在应该为$<-a,b>$.
+
+$R$, $I\subset R$ two-sided ideal, define $R(I)$ by the Cartesian square
+\[
+\begin{tikzcd}
+	R(I) \ar[r,"p_1"] \ar[d,"p_2"'] &R\ar[d]\\
+	R \ar[r] &R/I
+\end{tikzcd}
+\]
+$R(I)=\{(r_1,r_2)\in R\times R \mid r_1 \equiv r_2 \bmod I\}$. Let
+\[K_2^s(R,I)=\ker({p_1}_*\colon K_2(R(I))\longrightarrow K_2(R)),\]
+there exists ${p_2}_*\colon K_2^s(R,I)\longrightarrow K_2(R)$ induced by $p_2$. Keune defined $K_2(R,I)=K_2^s(R,I)/V$ where $V$ is generated by the elements
+\[\langle(0,s_2),(s_1,0) \rangle_{\text{old}}=[x_{12}(-s_1,0),x_{21}(0,s_2)],\quad s_1,s_2\in I.\]
+用这些可以算$\mathbb{Z}[C_n]$
+
+$NK_i$的M-V序列，一般只对$i\leq 2$成立，（一个观察，若$NK_3$适用，则会得出$NK_2(\mathbb{Z}[C_p])=0$的错误结论）。但是对于$NK_i(\mathbb{Z}[G])$ tensor了$\mathbb{Z}[\frac{1}{p}]$后的M-V序列是可以用的, $p\mid|G|$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{From {\em Higher $K'$-Groups of Integral Group Rings }}
+
+Let $R$ be a (not necessary commutative) ring with $1$ and let $G$ be a (multiplicative)
+finite group. We will denote the group ring associated with $R$ and $G$ by $R[G]$ and
+the canonical basis elements of $R[G]$ by $[g]$, $g \in G$. 
+\begin{definition}
+	For any normal subgroup $N$ of $G$, the ideal $I_N$ is defined to be the kernel of the canonical ring epimorphism $R[G] \longrightarrow R[G/N]$. 
+\end{definition}
+
+\begin{lemma}
+	The two-sided ideal $I_N$ is generated by the elements $[g] - [1]$, $g \in N$, as
+left and as right ideal. In particular: If $N_1, N_2$ are elementwise commuting normal
+subgroups of $G$, then $I_{N_1} I_{N_2} = I_{N_2} I_{N_1}$. 
+\end{lemma}
+
+\section{Notes on group theory}
+抽象代数拾遗
+$\mathbb{Q}$ is far from $\mathbb{Q}/\mathbb{Z}$, since the order of any element $1\neq x\in \mathbb{Q}$ is infinite while any element of $\mathbb{Q}/\mathbb{Z}$ has finite order.
+于是$\mathbb{Q}/\mathbb{Z}$是一个每个元的阶都有限但是本身不是有限群的例子.
+
+群按照元素个数和是否交换可以分成：交换群与非交换群；有限群与无限群。对于有限交换群后面会有结构定理，是研究比较透彻的。把交换群扩进来的下一个群类是可解群
+\[
+\text{可解群}\begin{cases}
+	\text{abelian groups}\\
+	\text{素数幂阶群, 阶为}p^\alpha\\
+	S_3\text{可解}, \{1\}\lhd A_3\lhd S_3\\
+	p^\alpha q^\beta\text{阶群可解, Burnside定理}\\
+	\text{奇数阶群可解, Feit-Thompson定理}
+\end{cases}
+\]
+$\sigma (i_1 \cdots i_r) \sigma^{-1}=(\sigma(i_1) \cdots \sigma(i_r))$, because $\sigma (i_1 \cdots i_r) \sigma^{-1}(\sigma(i_k))=\sigma(i_1\cdots i_r)(i_k)=\sigma (i_{k+1})$, $(\sigma(i_1) \cdots \sigma(i_r))(\sigma(i_k))=\sigma (i_{k+1})$.
+
+$A_4$没有$6$阶子群，说明Lagrange定理的逆是不对的。$|A_4|=12=2^2\cdot 3$.
+
+\subsection{The structure of finite abelian groups}
+\begin{theorem}
+	Let $G$ be a finite abelian group, then $G$ is (in a unique way) a direct product
+of cyclic groups of order $p^k$ with $p$ prime(not necessarily distinct).
+\end{theorem}
+
+\begin{theorem}[Cauchy]
+	If $G$ is a finite group, and $p \mid |G|$ is a prime, then $G$ has an element of
+order $p$ (or, equivalently, a subgroup of order $p$).
+\end{theorem}
+\begin{definition}
+	Given a prime $p$, a $p$-group is a group in which every element has order $p^k$ for some $k$. Let $G$ be a group such that $|G| = p^ka$ where $p$ is prime and $(p, a)=1$. A subgroup
+of order $p^k$ is called a Sylow $p$-subgroup of $G$.
+\end{definition}
+\begin{corollary}
+	A finite group is a $p$-group if and only if its order is a power of $p$.
+\end{corollary}
+\begin{lemma}
+	Let $G$ be an abelian group such that $|G| = p^ka$ where $p$ is prime and $(p, a)=1$. Then
+there exists a unique subgroup of order $p^k$.
+\end{lemma}
+
+\begin{theorem}
+	Let $G$ be a finite abelian group such that $|G| = p_1^{k_1}\cdots p_l^{k_l}$ where each of the $p_i$ are distinct primes. Then $G \cong G(p_1) \oplus \cdots\oplus G(p_l)$ where $G(p) = \{x \in G|x^{p^k}	= e\}$.\\
+	If $G(p)$ is a finite abelian $p$-group of order $p^k$, then there exist $n_1,\cdots,n_r \in \mathbb{N}$  with $\sum_{i=1}^r n_i =k$ such that 
+	\[G(p)\cong \bigoplus_{i=1}^r \mathbb{Z}/p^{n_i}\mathbb{Z}.\]
+\end{theorem}
+\begin{theorem}[Structure of finite cyclic groups]
+	Let $G = \langle x\rangle$ be a finite cyclic group of order $n$. The following hold:\\
+(i) Every subgroup of $G$ is cyclic and is equal to $\langle x^d \rangle$ where $d > 0$ and $d | n$.\\
+(ii) If $d$ and $d'\neq d$ are positive divisors of $n$, then $\langle x^d \rangle \neq\langle x^{d'} \rangle$.\\
+(iii) If $k \in \mathbb{Z}$, then $x^k$ is a generator of $G$ iff $k$ and $n$ are coprime.\\
+(iv) For any $k \in \mathbb{Z}$ we have $\langle x^k \rangle=\langle x^{d} \rangle$ where $d = gcd(n, k)$.\\
+(v) For any $k \in \mathbb{Z}$ we have $o(x^k) = n/gcd(n,k)$.
+\end{theorem}
+
+\subsection{groups of square-free order}
+Let $G$ be a group of square-free order. Then $G$ is metacyclic (see, e.g., \cite{Robinson1982A}, (10.1.10)), so it can be written as $G = \pi \rtimes \Gamma$, where $\pi, \Gamma$ are cyclic of square-free order.
+\begin{theorem}[H\"{o}lder, Burnside, Zassenhaus]
+If  $G$ is a finite  group all of whose Sylow subgroups are cyclic, then $G$ has a  presentation
+\[G = \langle a, b\mid a^m = 1 = b^n, b^{-1}ab = a^r \rangle\]
+where $r^n \equiv 1 (\bmod m)$, $m$ is odd, $0 <\leq r < m$, and $m$ and $n(r - 1)$ are coprime.
+
+Conversely in a group with such a presentation  all Sylow subgroups  are
+cyclic.
+\end{theorem}
+This means that a finite group whose Sylow subgroups are cyclic is an extension of one cyclic group by another; such groups are called  metacyclic.In particular the group is supersoluble.
+
+Prominent among the groups with cyclic Sylow subgroups are the groups
+with square-free order: such groups are therefore classified by the above theorem.
+
+
+
+
+\subsection{Some classes of groups} % (fold)
+\label{subsec:some_classes_of_groups}
+Can see \url{https://terrytao.wordpress.com/2010/01/23/some-notes-on-group-extensions/}
+
+In the study of infinite groups, the adverb \emph{virtually}\index{virtually} is used to modify a property so that it need only hold for a subgroup of finite index. Let $\chi$ be a property of groups. A group $G$ is virtually $\chi$ if it has a subgroup of finite index with the property $\chi$. A group $G$ is $\chi$-by-finite if it has a normal subgroup of finite index with the property $\chi$ \cite{Schneebeli1978}. 
+\begin{definition}
+A group $G$ is virtually abelian (or abelian-by-finite) \index{virtually abelian} if it has an abelian subgroup of finite index. Similarly, one can also define virtually nilpotent groups(nilpotent-by-finite), virtually solvable groups, virtually polycyclic groups(polycyclic-by-finite), virtually free groups. 
+\end{definition}
+Note that every $\chi$-by-finite group is virtually $\chi$, and the converse also holds if the property $\chi$ is inherited by subgroups. Note that all finite groups are virtually trivial (and trivial-by-finite).
+\begin{definition}[Virtually cyclic groups]
+	A group $V$ is virtually cyclic if it contains a cyclic subgroup of finite index. Equivalently:\\
+(I) $V$ is a finite group, or\\
+(II) $V$ is a group extension $1 \longrightarrow F \longrightarrow V \longrightarrow C_{\infty} \longrightarrow 1$ for some finite group $F$, or\\
+(III) $V$ is a group extension $1 \longrightarrow F \longrightarrow V \longrightarrow D_{\infty} \longrightarrow 1 $for some finite group $F$.
+\end{definition}
+
+\begin{example}
+The following groups are virtually abelian.
+\begin{itemize}
+	\item Any abelian group.
+	\item Any semidirect product $N\rtimes H$ where $N$ is abelian and $H$ is finite. (For example, any generalized dihedral group.)
+	\item Any semidirect product $N\rtimes H$ where $N$ is finite and $H$ is abelian.
+	\item Any finite group (since the trivial subgroup is abelian).
+\end{itemize}
+Virtually nilpotent groups:
+\begin{itemize}
+	\item Any virtually abelian group.
+	\item Any nilpotent group.
+	\item Any semidirect product $N\rtimes H$ where $N$ is nilpotent and $H$ is finite.
+	\item Any semidirect product $N\rtimes H$ where $N$ is finite and $H$ is nilpotent.
+\end{itemize}
+Virtually free groups:
+\begin{itemize}
+	\item  Any free group.
+	\item Any virtually cyclic group.
+	\item Any semidirect product $N\rtimes H$ where $N$ is free and $H$ is finite.
+	\item Any semidirect product $N\rtimes H$ where $N$ is finite and $H$ is free.
+	\item Any free product $H * K$, where $H$ and $K$ are both finite. (For example, the modular group $PSL(2,\mathbb{Z})$.)
+\end{itemize}
+It follows from  Note that torsion-free virtually free group is free by Stalling's theorem \url{https://en.wikipedia.org/wiki/Stallings_theorem_about_ends_of_groups#Applications_and_generalizations}.
+\end{example}
+A polycyclic group is a solvable group that satisfies the maximal condition on subgroups (that is, every subgroup is finitely generated). Polycyclic groups are finitely presented, and this makes them interesting from a computational point of view.
+\begin{definition}
+	 A group $G$ is polycyclic if it admits a subnormal series with cyclic factors, that is a finite set of subgroups $G_0,\cdots,G_n$ such that $G_0=G$,$G_n=\{1\}$, $G_{i+1}\lhd G_i$ normal and the quotient group $G_i/G_{i+1}$ is a cyclic group for $0\leq i\leq n-1$.
+
+	 A virtually polycyclic group is a group that has a polycyclic subgroup of finite index. Such a group necessarily has a normal polycyclic subgroup of finite index, and therefore such groups are also called polycyclic-by-finite groups. Note that polycyclic-by-finite groups need not be solvable.
+
+	A metacyclic group is a polycyclic group with $n \leq 2$, or in other words an extension of a cyclic group by a cyclic group. That is, it is a group $G$ for which there is a short exact sequence
+	\[1\rightarrow K\rightarrow G\rightarrow H\rightarrow 1,\]
+	where $H$ and $K$ are cyclic. Equivalently, a metacyclic group is a group $G$ having a cyclic normal subgroup $K$, such that the quotient $G/K$ is also cyclic. Also see Keating, Class groups of metacyclic groups of order $p^rq$, $p$ a regular prime.
+
+	A group $G$ is metabelian if there is an abelian normal subgroup $K$ such that the quotient group $G/K$ is abelian.
+\end{definition}
+Examples of metacyclic groups can be found at \url{https://en.wikipedia.org/wiki/Metacyclic_group}
+% subsection some_classes_of_groups (end)
+\subsection{Elementary groups}
+\begin{definition}
+	A $p$-elementary group\index{elementary group!p-elementary group} is a direct product of a finite cyclic group of order relatively prime to $p$ and a $p$-group. 
+
+	A finite group is an elementary group\index{elementary group} if it is $p$-elementary for some prime number $p$. An elementary group is nilpotent.
+
+	More generally, a finite group $G$ is called a $p$-hyperelementary\index{elementary group!hyperelementary group} if it has the extension (automatically split)
+	\[ 1\longrightarrow C\longrightarrow G\longrightarrow P\longrightarrow 1\] 
+	where $C$ is a cyclic group of order prime to $p$ and $P$ is a $p$-group. Note that not every hyperelementary group is elementary: for instance the non-abelian group of order $6$ ($S_3$) is $2$-hyperelementary, but not $2$-elementary.
+\end{definition}
+Brauer's theorem on induced characters states that a character on a finite group is a linear combination with integer coefficients of characters induced from elementary subgroups.
+
+\subsection{Elementary abelian groups}
+两个容易搞混的概念。
+\begin{definition}
+	An elementary abelian group\index{elementary abelian group} (or elementary abelian $p$-group) is an abelian group in which every nontrivial element has order $p$.  
+
+	In other word, it is a direct product of isomorphic subgroups, each being cyclic of prime order.
+\end{definition}
+The number $p$ must be prime, and the elementary abelian groups are a particular kind of $p$-group.The case where $p = 2$, i.e., an elementary abelian $2$-group, is sometimes called a Boolean group.
+
+Every elementary abelian $p$-group is a vector space over the prime field with $p$ elements, and conversely every such vector space is an elementary abelian group. By the classification of finitely generated abelian groups, or by the fact that every vector space has a basis, every finite elementary abelian group must be of the form $(\mathbb{Z}/p\mathbb{Z})^n$ for $n$ a non-negative integer (sometimes called the group's rank). 
+
+In general, a (possibly infinite) elementary abelian $p$-group is a direct sum of cyclic groups of order $p$. (Note that in the finite case the direct product and direct sum coincide, but this is not so in the infinite case.)
+
+Every finite elementary abelian group has a fairly simple finite presentation.
+\[(\mathbb {Z} /p\mathbb {Z} )^{n}\cong \langle e_{1},\ldots ,e_{n}\mid e_{i}^{p}=1,\ e_{i}e_{j}=e_{j}e_{i}\rangle \] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{A square} % (fold)
+Rognes and Weibel
+\begin{equation}
+	\begin{tikzcd}
+		\mathbb{Z}[C_p] \ar[r,"\sigma\mapsto \zeta_p"] \ar[d,"\sigma\mapsto 1"']& \mathbb{Z}[\zeta_p]\ar[d,"q"]\\
+		 \mathbb{Z}\ar[r,"q"] & \mathbb{F}_p\\
+	\end{tikzcd}
+\end{equation}
+There is a homotopy Cartesian square
+\begin{equation}
+	\begin{tikzcd}
+		K(\mathbb{Z}[C_p];\mathbb{Z}[\frac{1}{p}]) \ar[r] \ar[d]& K(\mathbb{Z}[\zeta_p];\mathbb{Z}[\frac{1}{p}]) \ar[d]\\
+		 K(\mathbb{Z};\mathbb{Z}[\frac{1}{p}])\ar[r] & K(\mathbb{F}_p;\mathbb{Z}[\frac{1}{p}])\\
+	\end{tikzcd}
+\end{equation}
+
+\[ K_n(\mathbb{F}_p)=\begin{cases}
+ 	\mathbb{Z},& n=0, \\
+ 	\mathbb{Z}/(p^i-1)\mathbb{Z},& n=2i-1,\\
+ 	0, & \text{otherwise.}
+ \end{cases}\]
+Let $F$ be a field, $\mathcal{O}_F$ the ring of algebraic integers in $F$, $G$ a finite group, then 
+
+\[ \rank (K_n(\mathcal{O}_F))=\begin{cases}
+ 	1,& n=0, \\
+ 	r_1+r_2-1,& n=1,\\
+ 	r_1+r_2, & n\equiv 1 \bmod 4, n\neq 1,\\
+ 	r_2, & n\equiv 3 \bmod 4,\\
+ 	0, & n>0 \text{ even.}
+ \end{cases}\]
+For $n>1$
+\[ \rank (K_n(\mathbb{Z}G))=\begin{cases}
+ 	r, & n\equiv 1 \bmod 4,\\
+ 	c, & n\equiv 3 \bmod 4,\\
+ 	0, & \text{otherwise.}
+ \end{cases}\]
+$r,c$ are the number of irreducible real and complex representations respectively.
+
+% section a_square (end)
+
+
+
+\section{Negative $K$-theory} % (fold)
+\label{sec:negativeK}
+\cite{weibel2013k} chapter III, EX 4.7
+Let $G$ be a finite group of order $n$. Let $\mathcal{O}$ be a maximal order in $\mathbb{Q}G$, $\mathbb{Z}G \subset \mathcal{O} \subset \mathbb{Q}G$. It is well-known that $\mathcal{O}$ is a regular ring containing $\mathbb{Z}G$ and that $I=n\mathcal{O}$ is an ideal of $\mathbb{Z}G$. Then 
+\begin{itemize}
+	\item (Bass, \cite{MR40:2736} p. 560) $K_{-n}(\mathbb{Z}G)=0$ for $n\geq 2$. 
+	\item $K_{-1}$ has the following resolution by free abelian groups: 
+	\[0 \longrightarrow \mathbb{Z} \longrightarrow H_0(\mathcal{O}) \oplus H_0(\mathbb{Z}/n[G]) \longrightarrow H_0( \mathcal{O}/n \mathcal{O}) \longrightarrow K_{-1}(\mathbb{Z}[G]) \longrightarrow 0.\]
+	
+	\item D. Carter has shown  that $K_{-1}(\mathbb{Z}[G]) \cong \mathbb{Z}^r \oplus(\mathbb{Z}/2\mathbb{Z})^s$, where $s$ equals the number of simple components $M_{n_i}(D_i)$ of the semisimple ring $\mathbb{Q}[G]$ such that the Schur index of $D$ is even, but the Schur index of $D_p$ is odd at each prime $p$ dividing $n$.
+	\item  In particular, if $G$ is abelian then $K_{-1}(\mathbb{Z}[G])$ is torsionfree (Bass, \cite{MR40:2736} p. 695).
+	\item (Bass) If $G$ is a finite abelian group of prime power order, then $K_{-1}(\mathbb{Z}[G])=0$. For example, $K_{-1}(\mathbb{Z}[C_4\times C_2])=0$.
+\end{itemize}
+
+% section negativeK (end)
+
+
+\section{Truncated polynomial rings}
+\subsection{Kernels of truncated polynomials}
+可能用到的定理
+\begin{theorem}
+	Let $R$ be a smooth local ring which is essentially of finite
+	type over a perfect field $k$ of characteristic $p > 0$, and let $n \geq 1$. Then
+	\[\ker \big( K_2 (R[t]/(t^{n+1} )) \longrightarrow K_2 (R[t]/(t^n)) \big)\]
+	is isomorphic with one of the following (unless $ n = 1$, $p = 2$):
+	\begin{align*}
+	\Omega^1_{R/\mathbb{Z}} & \text{ if }n \neq 0, -1 \bmod p \\
+	\Omega^1_{R/\mathbb{Z}} \oplus R/R^{p^r} &\text{ if } n = mp^r - 1, (m,p) = 1, r \geq 1, n \geq 2\\
+	\Omega^1_{R/\mathbb{Z}} /D_{r,R} &\text{ if } n = mp^r , (m,p) = 1, r \geq 1.
+	\end{align*}
+	Here $D_{r,R}$ is the subgroup of $\Omega^1_{R/\mathbb{Z}}$ generated by the forms $a^{p^j-1}\, \mathrm{d} a$ with $0 \leq j < r$.
+\end{theorem}
+
+If $n = 1$ and $p = 2$, then there is an exact sequence of $\mathbb{F}_2$-vector spaces
+\[0 \longrightarrow R/R^2 \longrightarrow K_2 (R[t]/(t^2 ),(t)) \longrightarrow \Omega^1_{R/\mathbb{Z}} \longrightarrow 0,\]
+which splits, but not naturally.
+
+Note that $\Omega^1_{R/\mathbb{Z}} = \Omega^1_{R/k}$
+since $k$ is perfect of $ch(k)=p  > 0$.
+
+$\mathbb{F}_{p}[x]$ is a smooth algebra over $\mathbb{F}_{p}$.
+
+\subsection{$K_2$ of some truncated polynomial rings}
+这篇笔记是关于Roberts的$K_2$ of some truncated polynomial rings\cite{MR80k:13005} 笔记，文章见\url{http://link.springer.com/chapter/10.1007%2FBFb0103163}，这篇文章收录在书《Ring Theory Waterloo 1978 Proceedings, University of Waterloo, Canada, 12-16 June, 1978》LNM734，可于\url{http://link.springer.com/book/10.1007/BFb0103151}下载.
+
+主要集中于第5节p263的笔记.
+
+The case $R=\mathbb{F}_p[x][t]/(t^{p^n})$. 文中的$k=\mathbb{F}_p[x]$,
+文中的$\tilde{K}_2(R):= \ker(K_2(R)\rightarrow K_2(k))$, i.e. 
+\[\tilde{K}_2(\mathbb{F}_p[x][t]/(t^{p^n}):= \ker(K_2(\mathbb{F}_p[x][t]/(t^{p^n}))\rightarrow K_2(\mathbb{F}_p[x]))\]
+
+$K_2(\mathbb{F}_p[x])=0$, so $\tilde{K}_2(\mathbb{F}_p[x][t]/(t^{p^n}) \cong K_2(\mathbb{F}_p[x][t]/(t^{p^n}))$.
+
+这里$p^n!$ is not a unit.
+
+下面是关于一些与NK有关的想法
+$R=\mathbb{F}_2[x]$, $A=\mathbb{F}_2[x,t]/(t^4)$
+\begin{align*}
+\rho_1 \colon \Omega_R &\longrightarrow K \\
+		a\,db & \mapsto \langle at^3,b \rangle \\
+		x^i\,dx & \mapsto \langle x^it^3,x \rangle \\
+\rho_2 \colon R/R^? &\longrightarrow K \\
+		a & \mapsto \langle at^3,t \rangle
+\end{align*}
+
+\[R/R^4\oplus \Omega_R \longrightarrow K_2(R[t]/(t^4),(t))=NK_2(\mathbb{F}_2[C_4]) \longrightarrow K_2(R[t]/(t^3),(t))\longrightarrow 0\]
+\[R/R^3\oplus \Omega_R \longrightarrow K_2(R[t]/(t^3),(t)) \longrightarrow K_2(R[t]/(t^2),(t))\longrightarrow 0\]
+\[0\longrightarrow R/R^2  \longrightarrow K_2(R[t]/(t^2),(t))=NK_2(\mathbb{F}_2[C_2]) \longrightarrow \Omega_R \longrightarrow 0\]
+
+$k=\mathbb{F}_2[x]$, $R=k[t]/(t^4)$, 原文中的$X$这里是$t$
+
+$\tilde{K}_2(\mathbb{F}_2[x,t]/(t^4))=\ker(K_2(\mathbb{F}_2[x,t]/(t^4))\longrightarrow K_2(\mathbb{F}_2[x]))=K_2(\mathbb{F}_2[x,t]/(t^4))=NK_2(\mathbb{F}_2[C_4])$.
+
+$n=mp^r$, $p=2$, $n=4=1\cdot 2^2$
+\begin{align*}
+\rho_2 \colon \mathbb{F}_2[x]/(\mathbb{F}_2[x])^4 &\longrightarrow NK_2(\mathbb{F}_2[C_4]) \\
+	\text{2阶元 }	a & \mapsto \langle at^3,t \rangle \text{ 2阶元}
+\end{align*}
+
+$R=\mathbb{F}_2[x]$ smooth algebra over perfect field $\mathbb{F}_2$, $ch(R)=2$.
+\[0\longrightarrow \Phi_3(R) \longrightarrow K_2(R[t]/(t^4))\longrightarrow K_2(R[t]/(t^3))\longrightarrow 0\]
+\[0\longrightarrow \Phi_2(R) \longrightarrow K_2(R[t]/(t^3))\longrightarrow K_2(R[t]/(t^2))\longrightarrow 0\]
+$\Phi_3(R)=\Omega_R\oplus R/R^4$, $\Phi_2(R)=\Omega_R/\langle da|a\in R\rangle=\Omega_R/\langle dx^i\rangle$, $K_2(R[t]/(t^2))\cong NK_2(\mathbb{F}_2[C_2])\cong \Omega_R \oplus R/R^2$.
+
+\section{A lower bounds for the order of $K_2(\mathbb{Z}[C_2^k\times C_{2^n}])$}
+\begin{align*}
+SK_1(\mathbb{Z}[C_{p^n}\times C_{p^2}])&\cong (\mathbb{Z}/p\mathbb{Z})^{(n-1)(p-1)}\\
+SK_1(\mathbb{Z}[C_{p^3}\times C_{p^3}])&\cong \begin{cases}
+	(\mathbb{Z}/p^2\mathbb{Z})^{p-1}\times (\mathbb{Z}/p\mathbb{Z})^{p^2-1} ,& p \text{ odd prime}\\
+	(\mathbb{Z}/2\mathbb{Z})^{4},& p=2\\
+\end{cases} 
+\end{align*}
+
+
+\section{Notes on Witt vectors}
+
+
+\subsection{Witt decomposition}
+\begin{prop}
+	 If R is a $\mathbb{Z}_{(p)}$-algebra, then
+	 \[bigWitt(R) \cong \prod_{gcd(m,p)=1} W(R)\]
+	 as rings.
+
+\end{prop}
+\begin{proof}
+	Let us define the map in the universal case $A = \mathbb{Z}_{(p)}[a_1, a_2,\cdots]$. Take $\sigma_p(a_i) = a_i^p$ and $\sigma_q(a_i) = 0$ for primes $q$ other than $p$. Notice that $(w_1(a),w_2(a),\cdots)$ splits to $w_m (a) = (w_{p^0 m}(a),w_{p^1 m}(a),w_{p^2 m}(a),\cdots)$ for $gcd(m,p) = 1$. Each sequence $w_m (a)$ has the property of the Dwork lemma, and therefore has the form $w(b^m)$ for some unique $b^m \in A^{\mathbb{N}}$. This defines the map
+	\begin{align*}
+	bigWitt(R) &\longrightarrow \prod_{gcd(m,p)=1} W(R)\\
+	a &\mapsto {b^m}.
+	\end{align*}
+	It is easy to see this is an isomorphism.
+\end{proof}
+ We have an explicit isomorphism
+ \[(1 + x\mathbb{Z}/p\llbracket x \rrbracket)^\times \cong \prod_{gcd(m,p)=1} \mathbb{Z}_p .\]
+We can do something similar for
+ \[(1 + x\mathbb{Z}/p\llbracket x \rrbracket/(x^n))^\times \cong \text{ product of cyclic groups of determined orders}.\]
+
+
+\subsection{construction of the product on $\mathbb{W}(R)$}
+关于Witt vectors 还有文献\cite{Ramachandran2015599}要加上.
+
+Kaledin \cite{MR3024824}, construction of the product on $\mathbb{W}(R)\subset R[[T]]^{\times}$
+where $A^{\times}=U(A)$ denotes the unit group of $A$.
+
+$R[[T]]^{\times}\overset{T\mapsto 0}\longrightarrow R$ induce
+\[
+\begin{tikzcd}
+		R[[T]]^{\times} \ar[r, hook] \ar[d,"T \mapsto 0"']& K_1(R[[T]])\ar[d]\\
+		R^{\times} & K_1(R)\\
+	\end{tikzcd}
+\]
+the upper left corner is a direct summand.
+
+$K_1(R)=R^{\times}\oplus SK_1(R)$, $K_1(R[[T]])=R[[T]]^{\times}\oplus SK_1(R[[T]])$
+
+$1\longrightarrow \mathbb{W}(R)\longrightarrow R[[T]]^{\times}\longrightarrow R^{\times} \longrightarrow 1.$
+one in fact has a split short exact sequence
+$0 \longrightarrow \mathbb{W}(R) \longrightarrow K_1(R[[T]]) \longrightarrow K_1(R) \longrightarrow 0,$
+so that Witt vectors can be understood as elements in $K_1(R[[T]])$. Given two such
+elements $f, g \in K_1(R[[T]])$, we can take their external product and obtain an element
+in $K_2(R[[T_1, T_2 ]])$. Then one has to cut the number of variables down to one, and
+pass from $K_2$ back to $K_1$. Both these tasks are easily accomplished at the same
+time by taking an appropriate tame symbol. The resulting formula for the Witt
+vector product is
+\begin{gather*}
+K_1(R[[T]])\otimes K_1(R[[T]]) \longrightarrow K_2(R[[T_1, T_2 ]])\longrightarrow  K_1(R[[T]])\\
+(f*g)(T)=\mathrm{res}_z \{f(\frac{T}{z}),g(z)\}
+\end{gather*}
+where $z$ is an additional formal variable, and $\mathrm{res}_z \{-, -\}$ is the tame symbol extended to a map
+\[K_1(R((z))[[T]]) \otimes K_1(R((z))[[T]]) \longrightarrow K_1(R[[T]])\]
+by taking a truncation at $T^n$ and then taking the limit with respect to $n$.
+
+$K_1(R[[T]]) \cong \varprojlim_n K_1(R[T]/(T^{n+1}))$
+
+{\color{red}下面正合列有一些问题，需要找原作者核实，需要考虑$SK_1$之间的映射}
+$0 \longrightarrow \mathbb{W}(R) \longrightarrow K_1(R[[T]]) \longrightarrow K_1(R) \longrightarrow 0$, if so
+\[
+\begin{tikzcd}
+	0 \arrow[r]& \mathbb{W}(R) \arrow[r]& K_1(R[[T]]) \arrow[r]& K_1(R) \arrow[r] \arrow[equal,d]& 0\\
+	0 \arrow[r]& NK_1(R) \arrow[r]& K_1(R[T]) \arrow[r] \arrow[u,"i_*"]& K_1(R) \arrow[r]& 0
+\end{tikzcd}
+\]
+$NK_1(R)$ 是$W(R)$-module,一个无穷的元素作用在$K_1(R[T])$后还在其中，也说明在足够大时零化了一些东西。
+
+
+\begin{align*}
+R^{\mathbb{N}} & \overset{\sim}\longrightarrow \mathbb{W}(R)\\
+a_. &\mapsto \prod (1-a_nT^n)
+\end{align*}
+group scheme 
+\begin{align*}
+\mathbb{G}_{a/R}\colon R\mathrm{-Alg} &\longrightarrow \mathrm{Ab}\\
+A&\mapsto (A,+)\\
+\mathbb{G}_{m/R}\colon R\mathrm{-Alg} &\longrightarrow \mathrm{Ab}\\
+A&\mapsto (A^{\times},\cdot)\\
+\mu_{n/R} = \ker (\mathbb{G}_{m/R} &\longrightarrow \mathbb{G}_{m/R})\\
+x&\mapsto x^n\\
+(\underline{\mathbb{Z}/n\mathbb{Z}})_{R}\colon R\mathrm{-Alg} &\longrightarrow \mathrm{Ab}\\
+A&\mapsto (\mathbb{Z}/n\mathbb{Z})^{\pi_0(\mathrm{Spec} A)}\\
+\end{align*}
+
+Witt ring scheme and Witt ring scheme of length $n$
+\begin{align*}
+W, W_n\colon \mathrm{Rings} & \longrightarrow \mathrm{Rings}\\
+W(\mathbb{F}_p) & =\mathbb{Z}_p\\
+W_n(\mathbb{F}_p) & =\mathbb{Z}/p^n\mathbb{Z}\\
+W(\mathbb{F}_{p^n}) & =\mathbb{Z}_{p^n} \text{(待核实)}
+\end{align*}
+
+\subsection{Another definition}
+$\Lambda_n(A)=\ker((A[t]/(t^{n+1}))^*\longrightarrow A^*)$, 记$\oplus$为其中乘法, $\mathbb{Z}$-module. $a\in A$, scaling operator
+\begin{align*}
+\phi_a \colon A[t]/(t^{n+1}) &\longrightarrow A[t]/(t^{n+1})\\
+t &\mapsto at
+\end{align*}
+$\phi_a \in \End_{\mathbb{Z}}(\Lambda_n(A))$, $\phi_a\phi_b=\phi_{ab}$. $E=\langle \phi_a \mid a\in A\rangle\subset \End_{\mathbb{Z}}(\Lambda_n(A))$.
+$(\Lambda_n(A),\oplus)$: $E$-module
+\begin{align*}
+E &\longrightarrow \Lambda_n(A)\\
+\phi_a &\mapsto \phi_a((1-t)^{-1})=(1-at)^{-1}
+\end{align*}
+$L_n(A)=\langle (1-at)^{-1}\rangle$, $(1-at)^{-1}\cdot (1-bt)^{-1}=(1-abt)^{-1}$. $L_n(A)=\{u(t)\}$. $u(t)=(1-a_1t)^{-1}\cdots (1-a_kt)^{-1} \bmod t^{n+1}$, $a_i\in A$. $u(t)\otimes v(t)=\prod_{i,j}(1-a_ib_jt)^{-1} \bmod t^{n+1}$.
+
+
+
+
+
+\section{$K_2$ of fields}
+$R$: the ring of integers in an algebraic number field, $\widetilde{K_0}(R)=\mathrm{Cl}(R)$, $K_1(R)=R^{\times}$.
+
+Garland proved that $K_2(R)$ is finite in \cite{MR45:6785}.
+
+Quillen's localization sequence 
+\[0\longrightarrow K_2(R) \longrightarrow K_2(F) \overset{T}\longrightarrow \bigoplus_{v}k(v)^{\times}\longrightarrow 0\]
+where $F$ is the fraction field, $k(v)$ is the residue field and $T$ is the sum of the tame symbols. The first map is injective because $K_2$ of a finite field is trivial, and the last map is surjective by Matsumoto's theorem.
+
+$K_2(R)$ is a subgroup of $K_2(F)$.
+\cite{K-theory/0482}
+For a field $F$, $K_2(F)=F^{\times} \otimes_{\mathbb{Z}}F^{\times}/\langle a\otimes (1-a) \mid a\neq 0,1\rangle$. 
+
+If $F$ is a global field, $K_2(F)\cong \bigoplus_{\ell} H^2(G_F,\mathbb{Z}_{\ell}^{(2)})_{tor}$, where $\ell \neq ch(F)$, see Tate \cite{MR55:2847}.
+
+\section{Regularity}
+参考$K$-Theory of Free Rings
+
+ Jean-Pierre Serre found a homological characterization of regular local rings: A local ring $A$ is regular if and only if $A$ has finite global dimension, i.e.\ if every $A$-module has a projective resolution of finite length.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Tate conjecture}
+\begin{itemize}
+	\item $K$: field, $\overline{K}$: its algebraic closure
+	\item $G_K=\Gal(\overline{K}/K)$: absolute Galois group. $K=\mathbb{F}_q,\mathbb{C}$ or algebraic number field
+	\item $\mathbb{A}^n(K)$: affine $n$-space
+	\item affine variety over $\overline{K}$: 
+	\[V=\{(x_1,\cdots,x_n)\in \mathbb{A}^n(\overline{K})\mid p(x_1,\cdots,x_n)=0, \forall p\in I\subset \overline{K}[X_1,\cdots,X_n] \text{ prime ideal}\}.\]
+	 If $I(V)$ can be generated by polynomials with coefficients in $K$, we say $V$ is defined over $K$, and a point $x\in V$ is called a $K$-rational point if the coordinates of $x$ lie in $K$.
+	\item affine coordinate ring $K[V]=K[X_1,\cdots,X_n]/I(V/K)$ where $I(V/K):=I(V)\cap K[X_1,\cdots,X_n]$.
+	\item $K(V)$: field of fractions of $K[V]$, function field of $V$ over $K$. 
+	\item $\dim V=\mathrm{tr.deg}(\overline{K}(V)/\overline{K})$. curve: a variety of dimension $1$, surface: a variety of dimension $2$.
+\end{itemize}
+nonsingular varieties: $X\subset \mathbb{A}^n$, ideal is generated by polynomials $p_1,\cdots,p_m$ is nonsingular at the point $x$ if $m\times n$ matrix $(\frac{\partial p_i(x)}{\partial x_j})$ has rank $n-\dim(V)$.
+
+Variety $\overset{\text{embeded}}{\hookrightarrow}$ projective space.
+
+projective variety $\mathbb{P}^n(K)$, points $(x_0:x_1: \cdots : x_n)$
+
+elliptic curves: nonsingular projective curves
+\[Y^2Z+a_1XYZ+a_3YZ^2=X^3+a_2X^2Z+a_4XZ^2+a_6Z^3\]
+which is the homogenization of the affine equation
+\[y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6.\]
+The points of an elliptic curve form an abelian group, identity element $(0:1:0)$, isogeny is a morphism between all curves which fixes the identity point. Any isogeny is a group homomorphism.
+
+Given an isogeny 
+\[
+\begin{tikzcd}[column sep=small]
+E \arrow[rr,"\phi"] \arrow[dash,rd] & & F \arrow[dash,ld]\\
+& K   & 
+\end{tikzcd}
+\]
+we may define a map of function fields
+\begin{align*}
+\phi^* \colon K(F)& \longrightarrow K(E) \\
+f& \mapsto f\circ \phi
+\end{align*}
+$K(E)/\phi^*(K(F))$ is a field extension, and $\mathrm{deg}(\phi):=\mathrm{deg}\big(K(E)/\phi^*(K(F))\big)$ is finite.
+
+If $X$ is a variety over $\mathbb{F}_q$ (finite field). Consider the number of points of $X$ over each finite extension $\mathbb{F}_{q^r}$. encode these information $\Longrightarrow$ zeta function of $X$. 
+
+Let $N_r$ denote the number of points of $X$ over $\mathbb{F}_{q^r}$, define
+\[Z(X,T):=\exp(\sum_{r=1}^{\infty}\frac{N_r}{r}T^r),\]
+this function has many useful properties.
+\begin{example}
+	$X=\mathbb{P}^n$. Over $\mathbb{F}_{q^r}$, the number of points in $\mathbb{P}^n$ is
+	\[1+q^r+q^{2r}+\cdots+q^{nr}\]
+	\begin{align*}
+	Z(\mathbb{P}^n,T)&=\exp (\sum_{r=1}^{\infty}\sum_{i=0}^n\frac{q^{ir}}{r}T^r)\\
+	&=\exp (\sum_{i=0}^n-\log(1-q^iT))\\
+	&=\prod_{i=0}^n (1-q^iT)^{-1}
+	\end{align*}
+	is a rational function of $T$. This is true for any nonsingular projective variety.
+\end{example}
+
+In 1949, Andr\'{e} Weil gave some conjecture on this zeta function, and Pierre Deligne proved them in 1973.
+
+$X$: nonsingular projective variety of dimension $n$ over the finite field $\mathbb{F}_q$.
+\begin{theorem}[Rationality]
+	$Z(X,T)$ is a rational function of $T$.
+\end{theorem}
+\begin{theorem}[Function Equation]
+	There is an integer $E$, called the Euler characteristic of $X$ such that 
+	\[Z(X,\frac{1}{q^nT})=\pm q^{nE/2}T^EZ(X,T).\]
+\end{theorem}
+\begin{theorem}[Riemann Hypothesis]
+	\[Z(X,T)=\frac{P_1(T)P_3(T)\cdots P_{2n-1}(T)}{P_0(T)P_2(T)\cdots P_{2n}(T)}\]
+	s.t. $P_i$ are polynomials with integer coefficients, $P_0(T)=1-T$, $P_{2n}(T)=1-q^nT$, each of the $P_i$ factors over $\mathbb{C}$ as $P_i(T)=\prod_j (1-\alpha_{i,j}T)$ where $\alpha_{i,j}$ is an algebraic integer of absolute value $q^{i/2}$.
+\end{theorem}
+\begin{theorem}[Comparison]
+	$\widetilde{X}$: variety defined over  an algebraic number field $K$ such that $X$ is the reduction of $\widetilde{X}$ modulo a prime ideal $P\subset \mathcal{O}_K$. Then the degree of each $P_i$ is the $i$-th Betti number $B_i$ of $\widetilde{X}$ viewed as a variety over $\mathbb{C}$.
+\end{theorem}
+The above Euler characteristic of $X$ = top Euler characteristic $\sum_{i=0}^{2n}(-1)^iB_i$.
+\begin{gather*}
+	\text{Betti number of } \mathbb{P}^n =\begin{cases}
+		1,&0\leq i \leq 2n \text{ even}\\
+		0,& i \text{ odd}
+	\end{cases}
+\end{gather*}
+\begin{equation*}
+	P_i=\begin{cases}
+		1-q^{i/2}T,& \text{for even } i\\
+		1,& \text{for odd } i
+	\end{cases}
+\end{equation*}
+$e(\mathbb{P}^n)=n+1$.
+\[Z(\mathbb{P}^n,\frac{1}{q^nT})=\pm q^{n(n+1)/2}T^{n+1}Z(\mathbb{P}^n,T).\]
+\begin{align*}
+LHS&=\prod_{i=0}^n (1-q^{i-n}T^{-1})^{-1}=\prod_{i=0}^n \frac{1}{1-\frac{q^i}{q^{n}T}}\\
+&=\prod_{i=0}^n \frac{q^{n}T}{q^{n}T-q^i}=\prod_{i=0}^n \frac{q^i(q^{n-i}T)}{-q^{i}(1-q^{n-i}T)}\\
+&=\prod_{i=0}^n \frac{(q^{n-i}T)}{-(1-q^{n-i}T)}=\prod_{i=0}^n \frac{-(q^{i}T)}{(1-q^{i}T)}\\
+&=(-1)^{n+1}q^{n(n+1)/2}T^{n+1}\prod_{i=0}^n(1-q^iT)^{-1},
+\end{align*}
+\[RHS=q^{n(n+1)/2}T^{n+1}\prod_{i=0}^n(1-q^iT)^{-1}.\]
+\subsection{$\ell$-adic cohomology theory}
+$X$: nonsingular projective variety of dimension $n$ over the field $K$. For any prime $\ell\neq ch(K)$, there exist $\ell$-adic cohomology groups $H^i_{\ell}(X)$ for $0\leq i \leq 2n$, which are vector spaces over the field $\mathbb{Q}_{\ell}$ of $\ell$-adic numbers.
+
+Functoriality: cup product $y\cup x =(-1)^{ij}(x\cup y)$.\\
+Poincar\'{e} Duality: $H^{2n}_{\ell}(X)\cong \mathbb{Q}_{\ell}$
+\[H^i_{\ell}(X)\times H^{2n-i}_{\ell}(X) \longrightarrow \mathbb{Q}_{\ell}\]
+is nondegenerate, $H^i_{\ell}(X)$ and $H^{2n-i}_{\ell}(X)$ are dual vector space.
+\paragraph{Lefschetz Trace Formula} Let $\phi \colon X \longrightarrow X$ be a morphism, define two subvarieties of $X\times X$:
+\begin{itemize}
+	\item diagonal $\Delta =\{(x,x)\mid x\in X\}$
+	\item graph $\Gamma_\phi =\{(x,\phi(x))\mid x\in X\}$
+\end{itemize}
+intersection number $\Delta\cdot \Gamma_\phi$ counts the number of fixed points of $\phi$,
+\[\Delta\cdot \Gamma_\phi=\sum_{i=0}^{2n}(-1)^i\tr(\phi^*\colon H^i_{\ell}(X)\longrightarrow H^i_{\ell}(X)) \]
+Lefschetz formula is the key to understand Weil conjecture. Note that $N_r$ is same as the number of fixed points of the $r$-th power of the Frobenius morphism $F\colon X\longrightarrow X$, $(x_0:x_1:\cdots:x_n)\mapsto (x_0^q:x_1^q:\cdots:x_n^q)$.
+
+Let $F_i$ be the matrix of $F^*$ on $H^i_\ell(X)$, Lefschetz trace formula
+\[N_r=\sum_{i=0}^{2n}(-1)^i\tr(F_i^r).\]
+\[Z(X,T)=\exp(\sum_{i=0}^{2n}(-1)^i\sum_{r=1}^{\infty}(\tr(F_i^r)\frac{T^r}{r})).\]
+Note that $\sum_{r=1}^{\infty}(\tr(F_i^r)\frac{T^r}{r})=-\log(\det(1-F_iT))$ as formal power series. Thus
+\[Z(X,T)=\prod_{i=0}^{2n}\det(1-F_iT)^{(-1)^{i+1}}\]
+$\mathrm{deg} P_i=\dim H^i_\ell(X)$.
+
+\subsection{Tate Conjecture}
+$K$: finitely generated over its prime subfield. $G_K$ acts on the $\ell$-adic cohomology groups, giving a representation
+\[G_K\longrightarrow \Aut_{\mathbb{Q}_\ell}(H^i_\ell(X))\]
+for each $i$.
+
+1963, Tate conjecture, one other representation of $G_K$, $\ell$-adic cyclotomic chracter. $\ell$-adic Tate module of roots of unity in the algebraic closure $\overline{K}$, $\mu_{\ell^n}$: the group of $\ell^n$-th roots of unity in $\overline{K}$.
+\[\mu_{\ell^{n+1}}\longrightarrow \mu_{\ell^n}\]
+given by raising to the $\ell$-th power.
+
+inverse system, $\ell$-adic Tate module 
+\begin{itemize}
+	\item $T_\ell(\mu)=\varprojlim_n \mu_{\ell^n}$.
+	\item $\mu_{\ell^n}\cong \mathbb{Z}/\ell^n \mathbb{Z}$ group isomorphism
+	\item $T_\ell(\mu)\cong \mathbb{Z}_\ell$ of $\ell$-adic integers
+\end{itemize}
+$G_K$ acts on $T_\ell(\mu)$ giving a representation $G_K\longrightarrow \Aut(\mathbb{Z}_\ell)\cong (\mathbb{Z}_\ell)^{\times}$, embedding $\mathbb{Z}_\ell^\times \hookrightarrow \mathbb{Q}_\ell^\times$ gives a $1$-dimensional representation of $G_K$ over $\mathbb{Q}_\ell$ called the $\ell$-adic cyclotomic character of $G_K$ denoted by $\mathbb{Q}_\ell(1)$. $\mathbb{Q}_\ell(k)=\mathbb{Q}_\ell(1)^{\otimes k}$.
+
+For any finite dimensional representation $V$ of $G_K$ over $\mathbb{Q}_\ell$, define the $k$-fold Tate twist $V(k)=V\otimes \mathbb{Q}_\ell(k)$.
+
+Tate conjecture: the classes in $H_\ell^{2d}(X)(d)$, $0\leq d \leq n$, which are fixed by a finite-index subgroup of $G_K$.
+algebraic cycle group $Z^d(X_{\overline{K}})$: the free abelian group generated by the subvarieties of $X$ of codimension $d$, there is a homomorphism $c\colon Z^d(X_{\overline{K}})\longrightarrow H_\ell^{2d}(X)(d)$ which commutes with the action of $G_K$.
+
+Let $H_{\text{alg}}^{2d}:=c(Z^d(X_{\overline{K}}))\otimes \mathbb{Q}_\ell \subset H_\ell^{2d}(X)(d)$. By Hilbert Basis theorem, any subvariety of $X$ over $\overline{K}$ is defined over some finite extension $L/K$. So any cycle class in $Z^d(X_{\overline{K}})$ is fixed by a finite-index subgroup of $G_K$.
+
+Denote the set of all classes in $H_\ell^{2d}(X)(d)$ fixed by a finite-index subgroup of $G_K$ by $H_{\text{Tate}}^{2d}$.
+\begin{theorem}
+	$c$ commutes with the action of $G_K$, we have $H_{\text{alg}}^{2d}\subset H_{\text{Tate}}^{2d}$.
+\end{theorem}
+\begin{conjecture}[Tate conjecture]
+	$H_{\text{alg}}^{2d}= H_{\text{Tate}}^{2d}$.
+\end{conjecture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{一些其他关系不大的笔记}
+（在一次李代数的报告上，$V\overset{Y(\cdot,\cdot)}\longrightarrow \End(V)[[z,z^{-1}]]$, $\hat{g}=g\oplus \mathbb{C}[t,t^{-1}]\oplus \mathbb{C}o$ affine Kac-Moody algebra. twisted 变成一个fixed. $M((x))$下方截断，$\mathrm{deg}\, x^n =n$, $\mathbb{Z}$-graded algebra.）
+
+完备化是遗忘函子的左伴随
+$\Hom (M,res(N))\overset{\sim}\longrightarrow \Hom (\hat{M},N)$.
+
+Pr\"{u}fer ring$\hat{\mathbb{Z}}=\varprojlim_n \mathbb{Z}/n\mathbb{Z}=\prod_p \mathbb{Z}_p=\varprojlim(\mathbb{Z}/1\mathbb{Z} \to \mathbb{Z}/2!\mathbb{Z} \to\mathbb{Z}/3!\mathbb{Z}\to\cdots)$(这里箭头还需要再验证), topology $\mathcal{F}=\{n\mathbb{Z} \mid n \text{ is an integer}\}$.
+
+\subsection{$\mathbb{F}_q^r$}
+\url{https://sbseminar.wordpress.com/}
+$\mathbb{F}_3^2$, define an addtion $(x_0,x_1)\oplus (y_0,y_1)=(x_0+y_0,x_1+y_1-x_0^2y_0-x_0y_0^2)$,
+\[\mathbb{F}_3^2 \overset{\sim}\longrightarrow C_9.\]
+For example $(1,0)\oplus (1,0)\oplus (1,0)=(2,1)\oplus (1,0) =(0,1)$, $(0,1)\oplus (0,1) \oplus(0,1)=(0,0)$. In fact 
+\[\mathbb{F}_p^r \overset{\sim}\longrightarrow C_{p^r},\]
+and the addtion $x\oplus y =(x_0,x_1,\cdots,x_{r-1})\oplus (y_0,y_1,\cdots,y_{r-1})=(s_0(x,y),s_1(x,y),\cdots,s_{r-1}(x,y))$ where $s_i$ are Witt polynimials.
+
+For any $0\leq m \leq p^r-1$ ,
+\begin{align*}
+C_{p^r} &\longrightarrow \mathbb{F}_p, \\
+x &\mapsto \binom{x}{m}.
+\end{align*}
+Lucas's theorem 
+\[ \binom{x-1}{p^r-1}=\begin{cases}
+ 	1,& x \equiv 0 \bmod  p^r, \\
+ 	0,& \mbox{otherwise.}
+ \end{cases}\]
+
+\subsection{Differential modules}
+$\overline{B}=B/I$ for some ideal $I\subset B$, the fundamental exact sequence
+\[I/I^2\longrightarrow \Omega_{B/A}\otimes_B \overline{B} \longrightarrow \Omega_{\overline{B}/A}\longrightarrow 0\]
+the fisrt map is induced by $f\mapsto df$.
+
+For example, $A=k$, $B=k[X_1,\cdots,X_n]$, $\overline{B}=B/I$
+\[I/I^2\longrightarrow \Omega_{k[X_1,\cdots,X_n]/k}\otimes_{k[X_1,\cdots,X_n]} \overline{B} \longrightarrow \Omega_{\overline{B}/k}\longrightarrow 0\]
+$\Omega_{k[X_1,\cdots,X_n]/k}$ is a free $k[X_1,\cdots,X_n]$-module on $dX_1,\cdots,dX_n$. $\Omega_{\overline{B}/k}$ is the quotient of $\bigoplus_{i=1}^n \overline{B}\cdot dX_i$ by the submodule generated by 
+\[df=\sum \frac{\partial f}{\partial X_i}dX_i, \text{ for $f\in I.$}\]
+
+\subsection{Homological Algebra}
+$\Hom(\varinjlim F,Z)\cong \varprojlim \Hom(F(-),Z)$, $\Hom(Z,\varprojlim F)\cong \varprojlim \Hom(Z,F(-))$\\
+left exact if commutes with finite projecive limit, i.e.\ inverse limit (limit) $\varprojlim$\\
+right exact if commutes with finite colimit $\varinjlim$
+
+i.e.\ $\varinjlim$ right exact; $\varprojlim$ left exact
+
+If $I$ is a filtering category, then $\varinjlim_I F$ is exact.
+
+Cofinality(共尾性) 是为了变index category 把一个大的index category 变成更小的，比如the category of projecive module and the category of free module.

@@ -1,0 +1,122 @@
+%!TEX root = ../../testmain.tex
+用同样的方法计算$NK_2(\mathbb{F}_2[C_{2^2}])$, 继而对于任意$n$可以得到类似的结果. 
+
+\begin{theorem}
+	$NK_2(\mathbb{F}_2[C_4])\cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}\oplus \bigoplus_{\infty}\mathbb{Z}/4 \mathbb{Z}$. 
+\end{theorem}
+\begin{proof}
+	$\mathbb{F}_2[t_1, t_2]/(t_1^4)=\mathbb{F}_2[C_{4}][t_2]$, 此时$I=(t_1^4)$, $M=(t_1)$不变, 我们直接写出以下集合
+
+\begin{align*}
+\Delta &=\{(\alpha_1, \alpha_2)\mid \alpha_1\geq 4, \alpha_2 \geq 0\}, \\
+\Lambda &=\{((\alpha_1, \alpha_2), 1) \mid \alpha_1\geq 1\}\cup \{((\alpha_1, \alpha_2), 2) \mid \alpha_1\geq 1, \alpha_2\geq 1\}, 
+\end{align*}
+用$\left \lceil x \right \rceil=\min \{m\in \mathbb{Z}\mid m\geq x\}$表示不小于$x$的最小整数, 
+\begin{align*}
+[\alpha, 1] & =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 5\}=\left \lceil 5/\alpha_1 \right \rceil, \\
+[\alpha, 2] & =\min \{m\in \mathbb{Z} \mid m \alpha_1\geq 4\}=\left \lceil 4/\alpha_1 \right \rceil. 
+\end{align*}
+
+例如
+\begin{align*}
+[(1, \alpha_2), 1] & = 5, \ \alpha_2\geq 0, \\
+[(2, \alpha_2), 1] & = 3, \ \alpha_2\geq 0, \\
+[(3, \alpha_2), 1] & = 2, \ \alpha_2\geq 0, \\
+[(4, \alpha_2), 1] & = 2, \ \alpha_2\geq 0, \\
+[(\alpha_1, \alpha_2), 1] & = 1, \ \alpha_1\geq 5, \alpha_2\geq 0, \\
+[(1, \alpha_2), 2] & = 4, \ \alpha_2\geq 1, \\
+[(2, \alpha_2), 2] & = 2, \ \alpha_2\geq 1, \\
+[(3, \alpha_2), 2] & = 2, \ \alpha_2\geq 1, \\
+[(\alpha_1, \alpha_2), 2] & = 1, \ \alpha_1\geq 4, \alpha_2\geq 1. 
+\end{align*}
+
+
+\[\begin{array}{|c|c|c|c|}
+\hline
+(\alpha_1, \alpha_2) & [(\alpha_1, \alpha_2), 1] &[(\alpha_1, \alpha_2), 2] &[(\alpha_1, \alpha_2)]  \\
+\hline
+(1, \alpha_2)  & 5, \alpha_2 \geq 0& 4 , \alpha_2\geq 1 & 5 \\
+\hline
+(2, \alpha_2)  & 3, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 2, \text{当$\alpha_2$是奇数时} \\
+\hline
+(3, \alpha_2)  & 2, \alpha_2 \geq 0& 2 , \alpha_2\geq 1 & 2 \\
+\hline
+(4, \alpha_2)  & 2, \alpha_2 \geq 0& 1 , \alpha_2\geq 1 & 1 \text{当$\alpha_2$是奇数时}\\
+\hline
+(\alpha_1, 0), \alpha_1 \geq 5 & 1 & \text{无定义} &1, \text{当$\alpha_1$是奇数时} \\
+\hline
+(\alpha_1, \alpha_2), \alpha_1 \geq 5, \alpha_2 \geq 1& 1 & 1& 1, \text{当$(\alpha_1, \alpha_2)=1$时} \\
+\hline
+\end{array}\]
+
+
+记$\Lambda^{00}_d=\{(\alpha, i)\in \Lambda^{00}\mid   [(\alpha, i)]=d\}$, $\Lambda^{00}_{>1}=\{(\alpha, i)\in \Lambda^{00}\mid   [(\alpha, i)]>1\}$
+
+由于$(\alpha, i)\in \Lambda^{00}_1$均有$[(\alpha, i)]=1$, 实际上要计算$(1+x\mathbb{F}_2[x]/(x^{[\alpha, i]}))^{\times}$只需确定$\Lambda^{00}_{>1}$. 由同样的方法可得
+$\Lambda^{00}_4=\{((1, \alpha_2), 2)\mid  \alpha_2\geq 1\}$, $\Lambda^{00}_3=\{((2, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\}$, $\Lambda^{00}_2=\{((3, \alpha_2), 2)\mid  gcd(3, \alpha_2)=1, \alpha_2\geq 1\}\cup \{((4, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\}$, 
+{\color{blue}\begin{align*}
+\Lambda^{00}_{>1}&= \{((1, \alpha_2), 2)\mid  \alpha_2\geq 1\}\cup \{((3, \alpha_2), 2)\mid gcd(3, \alpha_2)=1, \alpha_2\geq 1\}\\
+	& \cup \{((2, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\}  \cup \{((4, \alpha_2), 1)\mid  \alpha_2\geq 1\text{为奇数}\}. 
+\end{align*}}
+
+
+
+
+由定理\ref{K2(A, M)}, 
+
+\begin{align*}
+NK_2(\mathbb{F}_2[C_4])\cong K_2(A, M) &\cong \bigoplus_{(\alpha, i)\in\Lambda^{00}}(1+x\mathbb{F}_2[x]/(x^{[\alpha, i]}))^{\times}\\
+& = \bigoplus_{(\alpha, i)\in \Lambda^{00}_{>1}}(1+x\mathbb{F}_2[x]/(x^{[\alpha, i]}))^{\times}\\
+& = \bigoplus_{\scriptsize\substack{((3, \alpha_2), 2) \\ gcd(3, \alpha_2)=1 \\ \alpha_2\geq 1}}(1+x\mathbb{F}_2[x]/(x^{2}))^{\times}\oplus \bigoplus_{\scriptsize\substack{((4, \alpha_2), 1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_2[x]/(x^{2}))^{\times} \\
+& \oplus \bigoplus_{\scriptsize\substack{((2, \alpha_2), 1) \\ \alpha_2\geq 1\text{为奇数}}}(1+x\mathbb{F}_2[x]/(x^{3}))^{\times} \oplus \bigoplus_{\scriptsize\substack{((1, \alpha_2), 2) \\ \alpha_2\geq 1}}(1+x\mathbb{F}_2[x]/(x^{4}))^{\times}. 
+\end{align*}
+
+由\ref{ex:W3(F2)}有$(1+x\mathbb{F}_2[x]/(x^{4}))^{\times}\cong \mathbb{Z}/2 \mathbb{Z}\times {\color{red}\mathbb{Z}/4 \mathbb{Z}}$, $(1+x\mathbb{F}_2[x]/(x^{3}))^{\times}\cong {\color{red}\mathbb{Z}/4 \mathbb{Z}}$, 于是$NK_2(\mathbb{F}_2[C_4])$作为交换群有
+\[NK_2(\mathbb{F}_2[C_4]) \cong \bigoplus_{\infty} \mathbb{Z}/2 \mathbb{Z}\oplus \bigoplus_{\infty}{\color{red}\mathbb{Z}/4 \mathbb{Z}}. \]
+
+
+
+
+对于任意$(\alpha, i)\in \Lambda^{00}_{>1}$, $\Gamma_{\alpha, i}$均诱导了单射, 对任意$\alpha_2\geq 1$, $gcd(3, \alpha_2)=1$
+  \begin{align*}
+ \Gamma_{(3, \alpha_2), 2} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A, M)\\
+ 1+x &\mapsto  \langle t_1^3t_2^{\alpha_2-1}, t_2 \rangle, 
+ \end{align*}
+对任意$\alpha_2\geq 1$, 
+  \begin{align*}
+ \Gamma_{(1, \alpha_2), 2} \colon (1+x \mathbb{F}_2[x]/(x^{4}))^{\times} &\rightarrowtail K_2(A, M)\\
+ {\color{red}1+x \text{(四阶元)}} &\mapsto {\color{red}\langle t_1t_2^{\alpha_2-1}, t_2 \rangle}, \\
+ 1+x^3 \text{(二阶元)} &\mapsto \langle t_1^3t_2^{3\alpha_2-1}, t_2 \rangle, 
+ \end{align*}
+
+对任意$\alpha_2\geq 1$为奇数, 
+ \begin{align*}
+ \Gamma_{(4, \alpha_2), 1} \colon (1+x \mathbb{F}_2[x]/(x^{2}))^{\times} &\rightarrowtail K_2(A, M)\\
+ 1+x &\mapsto \langle t_1^3t_2^{\alpha_2}, t_1 \rangle, \\
+ \Gamma_{(2, \alpha_1), 1} \colon (1+x \mathbb{F}_2[x]/(x^{3}))^{\times} &\rightarrowtail K_2(A, M)\\
+ {\color{red}1+x\text{(四阶元)} }&\mapsto {\color{red}\langle t_1t_2^{\alpha_2}, t_1 \rangle}. 
+ \end{align*}
+
+我们作简单的替换令$t=t_1, x=t_2$, 由同构\ref{K2(A, M)}可知$NK_2(\mathbb{F}_2[C_4])$是由Dennis-Stein符号
+${\color{red}\{\langle tx^{i-1}, x \rangle \mid i\geq 1\}}$, 
+${\color{red}\{\langle tx^i, t \rangle \mid i\geq 1\text{为奇数}\}}$, 
+$\{\langle t^3x^{3i-1}, x \rangle \mid i\geq 1\}$, 
+$\{\langle t^3x^{i-1}, x \rangle \mid i\geq 1, gcd(i, 3)=1\}$, 
+$\{\langle t^3x^i, t \rangle \mid i\geq 1\text{为奇数}\}$
+生成的. 
+
+\end{proof}
+
+\begin{remark}
+
+	$\langle t^3x^{2i}, t \rangle =\langle tx^{i}, t \rangle+\langle tx^{i}, t \rangle$是二阶元. 
+	根据\cite{MR80k:13005}, 存在同态
+	\begin{align*}
+	\rho_1 \colon \mathbb{F}_2[x]\, \mathrm{d} x &\longrightarrow NK_2(\mathbb{F}_2[C_4])\\
+				x^i\, \mathrm{d} x &\mapsto \langle t^3x^i, x\rangle \\
+	\rho_2 \colon x\mathbb{F}_2[x]/x^4\mathbb{F}_2[x^4] &\longrightarrow NK_2(\mathbb{F}_2[C_4])\\
+				x^i &\mapsto \langle t^3x^i, t\rangle 
+	\end{align*}
+
+	$\{\langle t^3x^{i-1}, x \rangle \mid i\geq 1\}=\{\langle t^3x^{3i-1}, x \rangle \mid i\geq 1\}\cup\{\langle t^3x^{i-1}, x \rangle \mid i\geq 1, gcd(i, 3)=1\}$. %, 从而$\Omega_{\mathbb{F}_2[x]}\oplus x\mathbb{F}_2[x]/x^4\mathbb{F}_2[x^4]$是$NK_2(\mathbb{F}_2[C_4])$的直和项. 
+\end{remark}
